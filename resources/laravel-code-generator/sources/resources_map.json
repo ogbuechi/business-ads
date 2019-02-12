@@ -1,0 +1,21 @@
+[
+    {
+        "model-name": "Slider",
+        "resource-file": "sliders.json"
+    },
+    {
+        "model-name": "settings",
+        "resource-file": "settings.json",
+        "table-name": "settings"
+    },
+    {
+        "model-name": "roles",
+        "resource-file": "roles.json",
+        "table-name": "roles"
+    },
+    {
+        "model-name": "User",
+        "resource-file": "users.json",
+        "table-name": "users"
+    }
+]

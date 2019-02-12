@@ -12,7 +12,7 @@
                         @csrf
 
                         <div class="form-group row">
-                            <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Name') }}</label>
+                            <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Username') }}</label>
 
                             <div class="col-md-6">
                                 <input id="name" type="text" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" name="name" value="{{ old('name') }}" required autofocus>
@@ -58,6 +58,23 @@
 
                             <div class="col-md-6">
                                 <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group row {{ $errors->has('role_id') ? 'has-error' : '' }}">
+                            <label for="account_id" class="col-md-4 col-form-label text-md-right">Role</label>
+                            <div class="col-md-6">
+                                <select class="form-control" id="role_id" name="role_id">
+                                    {{--<option value="" style="display: none;" disabled selected>Enter account here...</option>--}}
+                                    <option value="" style="display: none;" {{ old('role_id' ?: '') == '' ? 'selected' : '' }} disabled selected> Select Role</option>
+                                    @foreach ($roles as $key => $role)
+                                        <option value="{{ $key }}" {{ old('role_id') == $key ? 'selected' : '' }}>
+                                            {{ $role }}
+                                        </option>
+                                    @endforeach
+                                </select>
+
+                                {!! $errors->first('role_id', '<p class="help-block">:message</p>') !!}
                             </div>
                         </div>
 
