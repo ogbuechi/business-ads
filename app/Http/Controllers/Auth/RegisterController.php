@@ -24,6 +24,12 @@ class RegisterController extends Controller
 
     use RegistersUsers;
 
+    public function showRegistrationForm()
+    {
+        $roles = Role::where('slug','!=','admin')->pluck('name','id')->all();
+        return view('auth.register', compact('roles'));
+    }
+
     /**
      * Where to redirect users after registration.
      *
