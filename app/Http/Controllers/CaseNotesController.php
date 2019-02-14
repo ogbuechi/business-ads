@@ -2,40 +2,44 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Slider;
+use App\User;
+//use App\Models\Nurse;
+use App\Models\CaseNote;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Exception;
+use Illuminate\Support\Facades\Auth;
 
-class SlidersController extends Controller
+class CaseNotesController extends Controller
 {
 
     /**
-     * Display a listing of the sliders.
+     * Display a listing of the case notes.
      *
      * @return Illuminate\View\View
      */
     public function index()
     {
-        $sliders = Slider::paginate(25);
+        $caseNotes = CaseNote::with('user')->paginate(25);
 
-        return view('admin.sliders.index', compact('sliders'));
+        return view('case_notes.index', compact('caseNotes'));
     }
 
     /**
-     * Show the form for creating a new slider.
+     * Show the form for creating a new case note.
      *
      * @return Illuminate\View\View
      */
     public function create()
     {
+        $users = User::pluck('name','id')->all();
+$nurses = User::pluck('id','id')->all();
         
-        
-        return view('admin.sliders.create');
+        return view('case_notes.create', compact('users','nurses'));
     }
 
     /**
-     * Store a new slider in the storage.
+     * Store a new case note in the storage.
      *
      * @param Illuminate\Http\Request $request
      *
@@ -44,13 +48,13 @@ class SlidersController extends Controller
     public function store(Request $request)
     {
         try {
-            
+//            $request['nurse_id'] = Auth::id();
             $data = $this->getData($request);
             
-            Slider::create($data);
+            CaseNote::create($data);
 
-            return redirect()->route('sliders.slider.index')
-                             ->with('success_message', 'Slider was successfully added!');
+            return redirect()->route('case_notes.case_note.index')
+                             ->with('success_message', 'Case Note was successfully added!');
 
         } catch (Exception $exception) {
 
@@ -60,7 +64,7 @@ class SlidersController extends Controller
     }
 
     /**
-     * Display the specified slider.
+     * Display the specified case note.
      *
      * @param int $id
      *
@@ -68,13 +72,13 @@ class SlidersController extends Controller
      */
     public function show($id)
     {
-        $slider = Slider::findOrFail($id);
+        $caseNote = CaseNote::with('user')->findOrFail($id);
 
-        return view('admin.sliders.show', compact('slider'));
+        return view('case_notes.show', compact('caseNote'));
     }
 
     /**
-     * Show the form for editing the specified slider.
+     * Show the form for editing the specified case note.
      *
      * @param int $id
      *
@@ -82,14 +86,15 @@ class SlidersController extends Controller
      */
     public function edit($id)
     {
-        $slider = Slider::findOrFail($id);
-        
+        $caseNote = CaseNote::findOrFail($id);
+        $users = User::pluck('name','id')->all();
+$nurses = User::pluck('id','id')->all();
 
-        return view('admin.sliders.edit', compact('slider'));
+        return view('case_notes.edit', compact('caseNote','users','nurses'));
     }
 
     /**
-     * Update the specified slider in the storage.
+     * Update the specified case note in the storage.
      *
      * @param  int $id
      * @param Illuminate\Http\Request $request
@@ -102,11 +107,11 @@ class SlidersController extends Controller
             
             $data = $this->getData($request);
             
-            $slider = Slider::findOrFail($id);
-            $slider->update($data);
+            $caseNote = CaseNote::findOrFail($id);
+            $caseNote->update($data);
 
-            return redirect()->route('sliders.slider.index')
-                             ->with('success_message', 'Slider was successfully updated!');
+            return redirect()->route('case_notes.case_note.index')
+                             ->with('success_message', 'Case Note was successfully updated!');
 
         } catch (Exception $exception) {
 
@@ -116,7 +121,7 @@ class SlidersController extends Controller
     }
 
     /**
-     * Remove the specified slider from the storage.
+     * Remove the specified case note from the storage.
      *
      * @param  int $id
      *
@@ -125,11 +130,11 @@ class SlidersController extends Controller
     public function destroy($id)
     {
         try {
-            $slider = Slider::findOrFail($id);
-            $slider->delete();
+            $caseNote = CaseNote::findOrFail($id);
+            $caseNote->delete();
 
-            return redirect()->route('sliders.slider.index')
-                             ->with('success_message', 'Slider was successfully deleted!');
+            return redirect()->route('case_notes.case_note.index')
+                             ->with('success_message', 'Case Note was successfully deleted!');
 
         } catch (Exception $exception) {
 
@@ -148,16 +153,14 @@ class SlidersController extends Controller
     protected function getData(Request $request)
     {
         $rules = [
-            'title' => 'string|min:1|max:255|nullable',
-            'description' => 'string|min:1|max:1000|nullable',
-            'image' => 'string|nullable',
-            'is_active' => 'boolean|nullable',
+            'user_id' => 'nullable',
+            'nurse_id' => 'nullable',
+            'note' => 'string|min:1|max:1000|nullable',
      
         ];
         
         $data = $request->validate($rules);
 
-        $data['is_active'] = $request->has('is_active');
 
         return $data;
     }

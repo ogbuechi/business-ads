@@ -44,7 +44,7 @@
             <dt>Description</dt>
             <dd>{{ $slider->description }}</dd>
             <dt>Image</dt>
-            <dd>{{ $slider->image }}</dd>
+            <dd><img src="{{ asset($slider->image) }}" class="img-responsive"></dd>
             <dt>Is Active</dt>
             <dd>{{ ($slider->is_active) ? 'Yes' : 'No' }}</dd>
 

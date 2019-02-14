@@ -2,7 +2,7 @@
     <div class="navbar-wrapper">
         <div class="navbar-logo">
             <a href="#">
-                <img class="img-fluid" src="{{ asset('admin/files/assets/images/logo.png') }}" alt="Theme-Logo" />
+                <img class="img-fluid" src="{{ asset('admin/files/assets/images/logo.png') }}" alt="{{ Auth::user()->name }}" />
             </a>
             <a class="mobile-menu" id="mobile-collapse" href="#!">
                 <i class="feather icon-menu icon-toggle-right"></i>
@@ -37,14 +37,14 @@
                 <li class="user-profile header-notification">
                     <div class="dropdown-primary dropdown">
                         <div class="dropdown-toggle" data-toggle="dropdown">
-                            <img src="{{ asset('admin/files/assets/images/avatar-4.jpg') }}" class="img-radius" alt="User-Profile-Image">
-                            <span>Elisha Caldwell</span>
+                            <img src="{{ asset(Auth::user()->avatar) }}" class="img-radius" alt="User-Profile-Image">
+                            <span>{{ Auth::user()->name }}</span>
                             <i class="feather icon-chevron-down"></i>
                         </div>
                         <ul class="show-notification profile-notification dropdown-menu" data-dropdown-in="fadeIn" data-dropdown-out="fadeOut">
 
                             <li>
-                                <a href="profile.html">
+                                <a href="{{ route('profiles.profile.myprofile') }}">
                                     <i class="feather icon-user"></i> Profile
                                 </a>
                             </li>

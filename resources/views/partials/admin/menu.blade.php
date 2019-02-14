@@ -81,8 +81,8 @@
 
                     </ul>
                 </li>
-                <ul class="pcoded-item pcoded-left-item">
-                    <li class="pcoded-hasmenu">
+                <ul class="pcoded-item  pcoded-left-item">
+                    <li class="pcoded-hasmenu {{ active(['case_notes.case_note.*'], 'pcoded-trigger') }} {{ active(['case_notes.case_note.*']) }} ">
                         <a href="javascript:void(0)" class="waves-effect waves-dark">
 <span class="pcoded-micon">
 <i class="feather icon-credit-card"></i>
@@ -90,13 +90,13 @@
                             <span class="pcoded-mtext">Nurses Actions</span>
                         </a>
                         <ul class="pcoded-submenu">
-                            <li class=" ">
+                            <li class="{{ active('case_notes.case_note') }}">
                                 <a href="nrecord.html" class="waves-effect waves-dark">
                                     <span class="pcoded-mtext">Nursing Visits Record</span>
                                 </a>
                             </li>
-                            <li class=" ">
-                                <a href="ncases.html" class="waves-effect waves-dark">
+                            <li class="{{ active('case_notes.case_note.index') }}">
+                                <a href="{{ route('case_notes.case_note.index') }}" class="waves-effect waves-dark">
                                     <span class="pcoded-mtext">Cases Notes</span>
                                 </a>
                             </li>
@@ -185,6 +185,27 @@
                     </a>
 
                 </li>
+
+
+                <li class=" pcoded-hasmenu {{ active(['profiles.profile.*'], 'pcoded-trigger') }} {{ active(['profiles.profile.*']) }}">
+                    <a href="#" class="waves-effect waves-dark">
+                        <span class="pcoded-micon"><i class="feather icon-user-x"></i></span>
+                        <span class="pcoded-mtext">Profile</span>
+                    </a>
+                    <ul class="pcoded-submenu">
+                        <li class=" {{ active(['profiles.profile.myprofile']) }}">
+                            <a href="{{ route('profiles.profile.myprofile') }}" class="waves-effect waves-dark">
+                                <span class="pcoded-mtext">View Profile</span>
+                            </a>
+                        </li>
+                        <li class="{{ active(['users.user.index']) }}">
+                            <a href="{{ route('profiles.profile.edit_my_profile') }}" class="waves-effect waves-dark">
+                                <span class="pcoded-mtext">Edit Profile</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+
             </ul>
 
 

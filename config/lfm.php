@@ -45,7 +45,7 @@ return [
     // You should create routes to serve images if it is not set to public.
     'base_directory' => 'public',
 
-    'images_folder_name' => 'photos',
+    'images_folder_name' => 'files',
     'files_folder_name'  => 'files',
 
     'shared_folder_name' => 'shares',
@@ -60,7 +60,7 @@ return [
     // The default display type for items.
     // Supported: "grid", "list"
     'images_startup_view' => 'grid',
-    'files_startup_view' => 'list',
+    'files_startup_view' => 'grid',
 
     /*
     |--------------------------------------------------------------------------

@@ -71,7 +71,7 @@
                     @foreach($sliders as $slider)
                         <tr>
                             <td>{{ $slider->title }}</td>
-                            <td>{{ $slider->image }}</td>
+                            <td><img style="height: 100px" src="{{ asset($slider->image) }}"></td>
                             <td>{{ ($slider->is_active) ? 'Yes' : 'No' }}</td>
 
                             <td>

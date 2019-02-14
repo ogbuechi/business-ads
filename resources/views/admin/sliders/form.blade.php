@@ -15,12 +15,19 @@
     </div>
 </div>
 
-<div class="form-group {{ $errors->has('image') ? 'has-error' : '' }}">
-    <label for="image" class="col-md-2 control-label">Image</label>
-    <div class="col-md-10">
-        <input class="form-control" name="image" type="number" id="image" value="{{ old('image', optional($slider)->image) }}" placeholder="Enter image here...">
-        {!! $errors->first('image', '<p class="help-block">:message</p>') !!}
-    </div>
+<div class="input-group col-md-10">
+   <span class="input-group-btn">
+     <a id="lfm" data-input="thumbnail" data-preview="holder" class="btn btn-primary">
+       <i class="fa fa-picture-o"></i> Choose Image
+     </a>
+   </span>
+
+    <input value="{{ old('image', optional($slider)->image) }}" placeholder="Select Image" id="thumbnail" class="form-control" type="text" name="image">
+    {!! $errors->first('image', '<p class="help-block">:message</p>') !!}
+</div>
+<div class="col-md-12">
+    <img id="holder" style="margin-top:0px;max-height:100px;">
+
 </div>
 
 <div class="form-group {{ $errors->has('is_active') ? 'has-error' : '' }}">
@@ -36,4 +43,5 @@
         {!! $errors->first('is_active', '<p class="help-block">:message</p>') !!}
     </div>
 </div>
+
 

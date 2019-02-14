@@ -17,6 +17,9 @@ class UsersController extends Controller
      *
      * @return Illuminate\View\View
      */
+
+
+
     public function index()
     {
         $users = User::with('roles')->paginate(25);

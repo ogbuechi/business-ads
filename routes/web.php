@@ -20,6 +20,21 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('bt-admin', 'AdminController@index')->name('admin.home');
 Route::get('bt-admin/media', 'AdminController@media')->name('admin.media');
+Route::get('bt-admin/profile', 'AdminController@profile')->name('admin.profile');
+//['middleware' => ['role:admin']],
+Route::group([ 'prefix' => 'bt-admin','middleware' => ['auth', 'level:2']], function () {
+    Route::get('/my_profile', 'ProfilesController@myProfile')->name('profiles.profile.myprofile');
+    Route::get('/edit_profile', 'ProfilesController@editMyProfile')->name('profiles.profile.edit_my_profile');
+    Route::group(['prefix' => 'profiles',], function () {
+    Route::get('/', 'ProfilesController@index')->name('profiles.profile.index');
+    Route::get('/create','ProfilesController@create')->name('profiles.profile.create');
+    Route::get('/show/{profile}','ProfilesController@show')->name('profiles.profile.show')->where('id', '[0-9]+');
+    Route::get('/{profile}/edit','ProfilesController@edit')->name('profiles.profile.edit')->where('id', '[0-9]+');
+    Route::post('/', 'ProfilesController@store')->name('profiles.profile.store');
+    Route::put('profile/{profile}', 'ProfilesController@update')->name('profiles.profile.update')->where('id', '[0-9]+');
+    Route::delete('/profile/{profile}','ProfilesController@destroy')->name('profiles.profile.destroy')->where('id', '[0-9]+');
+});
+});
 
 Route::group(
 [
@@ -145,6 +160,38 @@ Route::group(
 
     Route::delete('/user/{user}','UsersController@destroy')
          ->name('users.user.destroy')
+         ->where('id', '[0-9]+');
+
+});
+
+Route::group(
+[
+    'prefix' => 'case_notes',
+], function () {
+
+    Route::get('/', 'CaseNotesController@index')
+         ->name('case_notes.case_note.index');
+
+    Route::get('/create','CaseNotesController@create')
+         ->name('case_notes.case_note.create');
+
+    Route::get('/show/{caseNote}','CaseNotesController@show')
+         ->name('case_notes.case_note.show')
+         ->where('id', '[0-9]+');
+
+    Route::get('/{caseNote}/edit','CaseNotesController@edit')
+         ->name('case_notes.case_note.edit')
+         ->where('id', '[0-9]+');
+
+    Route::post('/', 'CaseNotesController@store')
+         ->name('case_notes.case_note.store');
+               
+    Route::put('case_note/{caseNote}', 'CaseNotesController@update')
+         ->name('case_notes.case_note.update')
+         ->where('id', '[0-9]+');
+
+    Route::delete('/case_note/{caseNote}','CaseNotesController@destroy')
+         ->name('case_notes.case_note.destroy')
          ->where('id', '[0-9]+');
 
 });

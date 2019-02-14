@@ -97,12 +97,28 @@
 <script src="{{ asset('admin/files/assets/pages/widget/amchart/serial.js') }}"></script>
 <script src="{{ asset('admin/files/assets/pages/widget/amchart/light.js') }}"></script>
 
+<script src="{{ asset('admin/files/bower_components/jquery.steps/js/jquery.steps.js') }}"></script>
+<script src="{{ asset('admin/files/bower_components/jquery-validation/js/jquery.validate.js') }}"></script>
 <script src="{{ asset('admin/files/assets/js/pcoded.min.js') }}"></script>
+<script src="{{ asset('admin/files/assets/pages/forms-wizard-validation/form-wizard.js') }}"></script>
 <script src="{{ asset('admin/files/assets/js/vertical/vertical-layout.min.js') }}"></script>
 <script type="text/javascript" src="{{ asset('admin/files/assets/pages/dashboard/custom-dashboard.min.js') }}"></script>
 <script type="text/javascript" src="{{ asset('admin/files/assets/js/script.min.js') }}"></script>
 
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script>
+
+<script src="{{ asset('vendor/laravel-filemanager/js/lfm.js') }}"></script>
+
+
+{{--<script src="https://cloud.tinymce.com/5/tinymce.min.js"></script>--}}
+<script src="//cdn.tinymce.com/4/tinymce.min.js"></script>
+<script type="text/javascript">
+    $('#lfm').filemanager('image');
+    tinymce.init({
+        selector: '#textarea'
+    });
+</script>
+
 <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}

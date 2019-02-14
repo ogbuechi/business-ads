@@ -17,5 +17,13 @@
         "model-name": "User",
         "resource-file": "users.json",
         "table-name": "users"
+    },
+    {
+        "model-name": "CaseNote",
+        "resource-file": "case_notes.json"
+    },
+    {
+        "model-name": "Profile",
+        "resource-file": "profiles.json"
     }
 ]

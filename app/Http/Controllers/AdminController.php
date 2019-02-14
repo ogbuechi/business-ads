@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+
+use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class AdminController extends Controller
 {
@@ -10,6 +13,7 @@ class AdminController extends Controller
     {
         return view('admin.index');
     }
+
     public function media()
     {
         return view('admin.media');
