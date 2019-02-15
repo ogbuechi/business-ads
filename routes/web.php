@@ -22,7 +22,7 @@ Route::get('bt-admin', 'AdminController@index')->name('admin.home');
 Route::get('bt-admin/media', 'AdminController@media')->name('admin.media');
 Route::get('bt-admin/profile', 'AdminController@profile')->name('admin.profile');
 //['middleware' => ['role:admin']],
-Route::group([ 'prefix' => 'bt-admin','middleware' => ['auth', 'level:2']], function () {
+Route::group([ 'prefix' => 'bt-admin','middleware' => ['auth', 'level:1']], function () {
     Route::get('/my_profile', 'ProfilesController@myProfile')->name('profiles.profile.myprofile');
     Route::get('/coming-soon', 'AdminController@soon')->name('coming');
     Route::get('/patient/create', 'ProfilesController@patientCreate')->name('patients.patient.create');
