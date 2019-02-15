@@ -4,7 +4,7 @@
             <ul class="pcoded-item pcoded-left-item">
                 <li class="{{ active('admin.home') }}">
                 {{--<li class=" {{ active(['patient', 'users/*', 'posts.*', 'pages.contact']) }} pcoded-trigger">--}}
-                    <a href="#" class="waves-effect waves-dark">
+                    <a href="{{ route('admin.home') }}" class="waves-effect waves-dark">
                         <span class="pcoded-micon"><i class="feather icon-home"></i></span>
                         <span class="pcoded-mtext">Dashboard</span>
                     </a>
@@ -12,24 +12,24 @@
                 </li>
 
 
-                <li class=" pcoded-hasmenu">
+                <li class="{{ active(['patients.patient.*'], 'pcoded-trigger') }} {{ active(['patients.patient.*']) }} pcoded-hasmenu">
                     <a href="#" class="waves-effect waves-dark">
-                        <span class="pcoded-micon"><i class="feather icon-home"></i></span>
+                        <span class="pcoded-micon"><i class="feather icon-user-check"></i></span>
                         <span class="pcoded-mtext">Manage Patients</span>
                     </a>
                     <ul class="pcoded-submenu">
-                        <li class="">
-                            <a href="pregister.html" class="waves-effect waves-dark">
+                        <li class="{{ active('patients.patient.create') }}">
+                            <a href="{{ route('patients.patient.create') }}" class="waves-effect waves-dark">
                                 <span class="pcoded-mtext">Register Patients</span>
                             </a>
                         </li>
-                        <li class="">
-                            <a href="pview.html" class="waves-effect waves-dark">
+                        <li class="{{ active('patients.patient.index') }}">
+                            <a href="{{ route('patients.patient.index') }}" class="waves-effect waves-dark">
                                 <span class="pcoded-mtext">View Patient</span>
                             </a>
                         </li>
                         <li class="">
-                            <a href="phistory.html" class="waves-effect waves-dark">
+                            <a href="{{ route('coming') }}" class="waves-effect waves-dark">
                                 <span class="pcoded-mtext">Patient History</span>
                             </a>
                         </li>
@@ -63,12 +63,12 @@
                     </a>
                     <ul class="pcoded-submenu">
                         <li class="active pcoded-hasmenu">
-                            <a href="report.html" class="waves-effect waves-dark">
+                            <a href="{{ route('coming') }}" class="waves-effect waves-dark">
                                 <span class="pcoded-mtext">Patient Report</span>
                             </a>
                             <ul class="pcoded-submenu">
                                 <li class="">
-                                    <a href="dnote.html" class="waves-effect waves-dark">
+                                    <a href="{{ route('coming') }}" class="waves-effect waves-dark">
                                         <span class="pcoded-mtext">Discharge Note</span>
                                     </a>
                                 </li>
@@ -91,13 +91,18 @@
                         </a>
                         <ul class="pcoded-submenu">
                             <li class="{{ active('case_notes.case_note') }}">
-                                <a href="nrecord.html" class="waves-effect waves-dark">
+                                <a href="{{ route('coming') }}" class="waves-effect waves-dark">
                                     <span class="pcoded-mtext">Nursing Visits Record</span>
                                 </a>
                             </li>
                             <li class="{{ active('case_notes.case_note.index') }}">
                                 <a href="{{ route('case_notes.case_note.index') }}" class="waves-effect waves-dark">
                                     <span class="pcoded-mtext">Cases Notes</span>
+                                </a>
+                            </li>
+ <li class="{{ active('case_notes.case_note.create') }}">
+                                <a href="{{ route('case_notes.case_note.create') }}" class="waves-effect waves-dark">
+                                    <span class="pcoded-mtext">Add Case Note</span>
                                 </a>
                             </li>
 
@@ -115,12 +120,12 @@
                             </a>
                             <ul class="pcoded-submenu">
                                 <li class=" ">
-                                    <a href="bs-basic-table.html" class="waves-effect waves-dark">
+                                    <a href="{{ route('coming') }}" class="waves-effect waves-dark">
                                         <span class="pcoded-mtext">All Reports</span>
                                     </a>
                                 </li>
                                 <li class=" ">
-                                    <a href="bs-table-sizing.html" class="waves-effect waves-dark">
+                                    <a href="{{ route('coming') }}" class="waves-effect waves-dark">
                                         <span class="pcoded-mtext">Cases Notes</span>
                                     </a>
                                 </li>
@@ -198,7 +203,7 @@
                                 <span class="pcoded-mtext">View Profile</span>
                             </a>
                         </li>
-                        <li class="{{ active(['users.user.index']) }}">
+                        <li class="{{ active(['profiles.profile.edit_my_profile']) }}">
                             <a href="{{ route('profiles.profile.edit_my_profile') }}" class="waves-effect waves-dark">
                                 <span class="pcoded-mtext">Edit Profile</span>
                             </a>

@@ -2,7 +2,7 @@
     <div class="navbar-wrapper">
         <div class="navbar-logo">
             <a href="#">
-                <img class="img-fluid" src="{{ asset('admin/files/assets/images/logo.png') }}" alt="{{ Auth::user()->name }}" />
+                <img class="img-fluid" src="{{ asset(Setting::get('admin_logo', 'admin/files/assets/images/logo.png')) }}" alt="{{ Auth::user()->name }}" />
             </a>
             <a class="mobile-menu" id="mobile-collapse" href="#!">
                 <i class="feather icon-menu icon-toggle-right"></i>

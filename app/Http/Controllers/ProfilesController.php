@@ -2,12 +2,15 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Country;
 use App\User;
 use App\Models\Profile;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Exception;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
+use jeremykenedy\LaravelRoles\Models\Role;
 
 class ProfilesController extends Controller
 {
@@ -37,8 +40,16 @@ class ProfilesController extends Controller
     public function create()
     {
         $users = User::pluck('name','id')->all();
-        
+
         return view('admin.profiles.create', compact('users'));
+    }
+
+    public function patientCreate(){
+        $users = User::pluck('name','id')->all();
+        $user = User::findOrFail(Auth::id());
+        $countries = Country::pluck('name','id')->all();
+        return view('admin.patient.create', compact('users','user','countries'));
+
     }
 
     /**
@@ -51,13 +62,28 @@ class ProfilesController extends Controller
     public function store(Request $request)
     {
         try {
-            
-            $data = $this->getData($request);
-            
-            Profile::create($data);
 
-            return redirect()->route('profiles.profile.index')
-                             ->with('success_message', 'Profile was successfully added!');
+            $data = $this->getData($request);
+
+            $user = User::create([
+                'name' => $data['name'],
+                'email' => $data['email'],
+                'password' => Hash::make($data['password']),
+                'status'    =>  true
+            ]);
+
+            $role = Role::where('name', '=', 'patient')->first();
+
+            $user->attachRole($role);
+
+            $p_data = ['user_id'    =>  $user->id];
+
+            $profileData = array_merge($data,$p_data);
+
+            Profile::create($profileData);
+
+            return redirect()->back()
+                ->with('success_message', 'Patients Successfully Registered!');
 
         } catch (Exception $exception) {
 
@@ -95,6 +121,7 @@ class ProfilesController extends Controller
         return view('admin.profiles.edit', compact('profile','users'));
     }
 
+
     public function editMyProfile()
     {
         $user = User::with('profile')->whereId(Auth::id())->first();
@@ -117,9 +144,11 @@ class ProfilesController extends Controller
             $data = $this->getData($request);
             
             $profile = Profile::findOrFail($id);
+            $user = User::findOrFail($profile->user_id);
             $profile->update($data);
+            $user->update($data);
 
-            return redirect()->route('profiles.profile.index')
+            return redirect()->back()
                              ->with('success_message', 'Profile was successfully updated!');
 
         } catch (Exception $exception) {
@@ -162,13 +191,16 @@ class ProfilesController extends Controller
     protected function getData(Request $request)
     {
         $rules = [
-            'user_id' => 'nullable',
-            'first_name' => 'string|min:1|nullable',
-            'last_name' => 'string|min:1|nullable',
-            'phone' => 'string|min:1|nullable',
-            'country' => 'string|nullable',
-            'state' => 'string|min:1|nullable',
-            'city' => 'string|min:1|nullable',
+            'password'  =>  'required|string|min:6|confirmed',
+            'name'      =>  'nullable',
+            'email'     =>  'required|string|email|max:255|unique:users',
+            'user_id'   =>  'nullable',
+            'first_name'=>  'string|min:1|nullable',
+            'last_name' =>  'string|min:1|nullable',
+            'phone'     =>  'string|min:1|nullable',
+            'country'   =>  'string|nullable',
+            'state'     => 'string|min:1|nullable',
+            'city'      => 'string|min:1|nullable',
             'residential_address' => 'string|min:1|nullable',
             'parmenent_address' => 'string|min:1|nullable',
             'marital_status' => 'string|min:1|nullable',

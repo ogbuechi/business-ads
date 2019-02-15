@@ -108,7 +108,11 @@
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script>
 
 <script src="{{ asset('vendor/laravel-filemanager/js/lfm.js') }}"></script>
-
+<style>
+    .wizard>.content {
+        min-height: 32em;
+    }
+</style>
 
 {{--<script src="https://cloud.tinymce.com/5/tinymce.min.js"></script>--}}
 <script src="//cdn.tinymce.com/4/tinymce.min.js"></script>

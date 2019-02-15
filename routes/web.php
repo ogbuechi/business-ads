@@ -24,6 +24,10 @@ Route::get('bt-admin/profile', 'AdminController@profile')->name('admin.profile')
 //['middleware' => ['role:admin']],
 Route::group([ 'prefix' => 'bt-admin','middleware' => ['auth', 'level:2']], function () {
     Route::get('/my_profile', 'ProfilesController@myProfile')->name('profiles.profile.myprofile');
+    Route::get('/coming-soon', 'AdminController@soon')->name('coming');
+    Route::get('/patient/create', 'ProfilesController@patientCreate')->name('patients.patient.create');
+    Route::get('/patient/all', 'UsersController@patients')->name('patients.patient.index');
+    Route::get('/patient/show/{patient}','UsersController@show')->name('patients.patient.show')->where('id', '[0-9]+');
     Route::get('/edit_profile', 'ProfilesController@editMyProfile')->name('profiles.profile.edit_my_profile');
     Route::group(['prefix' => 'profiles',], function () {
     Route::get('/', 'ProfilesController@index')->name('profiles.profile.index');

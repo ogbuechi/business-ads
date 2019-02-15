@@ -25,5 +25,10 @@
     {
         "model-name": "Profile",
         "resource-file": "profiles.json"
+    },
+    {
+        "model-name": "Country",
+        "resource-file": "countries.json",
+        "table-name": "countries"
     }
 ]

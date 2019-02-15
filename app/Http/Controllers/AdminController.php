@@ -13,6 +13,9 @@ class AdminController extends Controller
     {
         return view('admin.index');
     }
+public function soon(){
+        return view('admin.coming');
+}
 
     public function media()
     {

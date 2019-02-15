@@ -6,6 +6,20 @@
 
         <div class="page-header card">
             <div class="row align-items-end">
+                @if(Session::has('success_message'))
+                    <div class="col-md-12">
+                        <div class="alert alert-success">
+                            <span class="glyphicon glyphicon-ok"></span>
+                            {!! session('success_message') !!}
+
+                            <button type="button" class="close" data-dismiss="alert" aria-label="close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+
+                        </div>
+
+                    </div>
+                @endif
                 <div class="col-lg-8">
                     <div class="page-header-title">
                         <i class="feather icon-user bg-c-blue"></i>
@@ -17,14 +31,7 @@
                 </div>
                 <div class="col-lg-4">
                     <div class="page-header-breadcrumb">
-                        <ul class=" breadcrumb breadcrumb-title">
-                            <li class="breadcrumb-item">
-                                <a href="index.html"><i class="feather icon-home"></i></a>
-                            </li>
-                            <li class="breadcrumb-item">
-                                <a href="#!">Forms Wizard</a>
-                            </li>
-                        </ul>
+
                     </div>
                 </div>
             </div>
@@ -59,7 +66,7 @@
                                                                         <label for="userName-2" class="block">User name *</label>
                                                                     </div>
                                                                     <div class="col-sm-12">
-                                                                        <input id="userName" name="userName" value="{{ old('name', optional($user)->name) }}" type="text" class=" form-control">
+                                                                        <input id="userName" name="name" value="{{ old('name', optional($user)->name) }}" type="text" class=" form-control">
                                                                     </div>
                                                                 </div>
                                                                 <div class="form-group row">
@@ -67,7 +74,7 @@
                                                                         <label for="email-2" class="block">Email *</label>
                                                                     </div>
                                                                     <div class="col-sm-12">
-                                                                        <input id="email" name="email" value="{{ old('email', optional($user)->email) }}" type="email" class=" form-control">
+                                                                        <input id="email" disabled value="{{ old('email', optional($user)->email) }}" type="email" class=" form-control">
                                                                     </div>
                                                                 </div>
                                                                 <div class="form-group row">
@@ -138,7 +145,8 @@
                                                                         <label for="University-2" class="block">Parmenent Address</label>
                                                                     </div>
                                                                     <div class="col-sm-12">
-                                                                        <input id="University-2a" name="University" type="text" class="form-control required">
+                                                                        <input id="parmenent_address" value="{{ old('parmenent_address', optional($user)->profile->parmenent_address) }}" name="parmenent_address" type="text" class="form-control required">
+                                                                        {!! $errors->first('parmenent_address', '<p class="help-block">:message</p>') !!}
                                                                     </div>
                                                                 </div>
                                                                 <div class="form-group row">
@@ -146,7 +154,8 @@
                                                                         <label for="Country-2" class="block">Residential Address</label>
                                                                     </div>
                                                                     <div class="col-sm-12">
-                                                                        <input id="Country-2a" name="Country" type="text" class="form-control required">
+                                                                        <input value="{{ old('residential_address', optional($user)->profile->residential_address) }}" id="Country-2a" name="residential_address" type="text" class="form-control required">
+                                                                        {!! $errors->first('residential_address', '<p class="help-block">:message</p>') !!}
                                                                     </div>
                                                                 </div>
                                                                 <div class="form-group row">

@@ -10,7 +10,7 @@
                         <i class="feather icon-home bg-c-blue"></i>
                         <div class="d-inline">
                             <h5>Dashboard</h5>
-                            <span>Advanced Eli Health Record System for Medical Report </span>
+                            <span>Eli Health Record System for Medical Report </span>
                         </div>
                     </div>
                 </div>
@@ -18,7 +18,7 @@
                     <div class="page-header-breadcrumb">
                         <ul class=" breadcrumb breadcrumb-title">
                             <li class="breadcrumb-item">
-                                <a href="index.html"><i class="feather icon-home"></i></a>
+                                <a href="#"><i class="feather icon-home"></i></a>
                             </li>
                             <li class="breadcrumb-item"><a href="#">Dashboard</a> </li>
                         </ul>
@@ -43,8 +43,8 @@
                                         <div class="row align-items-center">
                                             <div class="col">
                                                 <h6 class="m-b-25">Impressions</h6>
-                                                <h3 class="f-w-700 text-c-blue">1,563</h3>
-                                                <p class="m-b-0">May 23 - June 01 (2017)</p>
+                                                <h3 class="f-w-700 text-c-blue">15</h3>
+                                                {{--<p class="m-b-0">May 23 - June 01 (2017)</p>--}}
                                             </div>
                                             <div class="col-auto">
                                                 <i class="fas fa-eye bg-c-blue"></i>
@@ -65,8 +65,8 @@
                                         <div class="row align-items-center">
                                             <div class="col">
                                                 <h6 class="m-b-25">Impressions</h6>
-                                                <h3 class="f-w-700 text-c-blue">1,563</h3>
-                                                <p class="m-b-0">May 23 - June 01 (2017)</p>
+                                                <h3 class="f-w-700 text-c-blue">17</h3>
+                                                {{--<p class="m-b-0">May 23 - June 01 (2017)</p>--}}
                                             </div>
                                             <div class="col-auto">
                                                 <i class="fas fa-eye bg-c-blue"></i>
@@ -86,8 +86,8 @@
                                         <div class="row align-items-center">
                                             <div class="col">
                                                 <h6 class="m-b-25">Impressions</h6>
-                                                <h3 class="f-w-700 text-c-blue">1,563</h3>
-                                                <p class="m-b-0">May 23 - June 01 (2017)</p>
+                                                <h3 class="f-w-700 text-c-blue">43</h3>
+                                                {{--<p class="m-b-0">May 23 - June 01 (2017)</p>--}}
                                             </div>
                                             <div class="col-auto">
                                                 <i class="fas fa-eye bg-c-blue"></i>

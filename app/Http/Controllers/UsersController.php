@@ -27,6 +27,13 @@ class UsersController extends Controller
         return view('users.index', compact('users'));
     }
 
+    public function patients()
+    {
+        $users = Role::where('name', 'patient')->first()->users()->paginate(10);
+
+        return view('admin.patient.index', compact('users'));
+    }
+
     /**
      * Show the form for creating a new user.
      *
@@ -84,6 +91,12 @@ class UsersController extends Controller
         $user = User::findOrFail($id);
 
         return view('users.show', compact('user'));
+    }
+    public function showPatient($id)
+    {
+        $user = User::findOrFail($id);
+
+        return view('admin.patient.show', compact('user'));
     }
 
     /**

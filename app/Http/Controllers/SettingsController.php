@@ -99,9 +99,9 @@ class SettingsController extends Controller
     public function update($id, Request $request)
     {
         try {
-            
+//
             $data = $this->getData($request);
-            
+
             $setting = Setting::findOrFail($id);
             $setting->update($data);
 
@@ -112,7 +112,7 @@ class SettingsController extends Controller
 
             return back()->withInput()
                          ->withErrors(['unexpected_error' => 'Unexpected error occurred while trying to process your request!']);
-        }        
+        }
     }
 
     /**
@@ -148,7 +148,7 @@ class SettingsController extends Controller
     protected function getData(Request $request)
     {
         $rules = [
-            'key' => 'required|string|min:1|max:191',
+            'key' => 'nullable|string|min:1|max:191',
             'value' => 'nullable|string|min:0|max:191',
             'locale' => 'nullable|string|min:0|max:191',
      
