@@ -1,1 +1,1 @@
-# eli_emr_app
+# Laravel Admin App
