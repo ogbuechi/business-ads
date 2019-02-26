@@ -1,7 +1,246 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7861fb1a-2fb1-484c-8386-186c13a6677e" name="Default Changelist" comment="" />
+    <list default="true" id="7861fb1a-2fb1-484c-8386-186c13a6677e" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/Medical forms-1/Medical forms/discharge-summary-template-1.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/Medical forms-1/Medical forms/doctors-note-template-2.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/Medical forms-1/Medical forms/medical-history-form-2.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/Medical forms-1/Medical forms/medical-history-form-3.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/Medical forms-1/Medical forms/medical-records-request-form.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/Medical forms-1/Medical forms/nursing-visit-record.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/Medical forms-1/Medical forms/virginia-medical-records-release-form-3.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/animate.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/app.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/assets/arrow_left.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/assets/arrow_left2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/assets/arrow_right.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/assets/arrow_right2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/assets/arrowleft.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/assets/arrowright.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/assets/boxed_bgtile.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/assets/bullet.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/assets/bullet_boxed.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/assets/bullets.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/assets/bullets2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/assets/coloredbg.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/assets/gridtile.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/assets/gridtile_3x3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/assets/gridtile_3x3_white.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/assets/gridtile_white.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/assets/large_left.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/assets/large_right.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/assets/loader.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/assets/navigdots.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/assets/navigdots_bgtile.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/assets/shadow1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/assets/shadow2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/assets/shadow3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/assets/small_left.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/assets/small_left_boxed.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/assets/small_right.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/assets/small_right_boxed.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/assets/timer.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/bootstrap-material-design.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/bootstrap.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/font-awesome.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/form-validation.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/hover.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/jquery.fancybox.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/owl.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/owl.video.play.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/responsive.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/revolution-slider.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/style.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/fonts/flaticon/Flaticon.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/fonts/flaticon/Flaticon.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/fonts/flaticon/Flaticon.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/fonts/flaticon/Flaticon.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/fonts/flaticon/Flaticond41d.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/fonts/flaticon/flaticon.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/fonts/fontawesome-webfont914c.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/fonts/fontawesome-webfont914c.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/fonts/fontawesome-webfont914c.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/fonts/fontawesome-webfont914c.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/fonts/fontawesome-webfont914c.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/fonts/fontawesome-webfontd41d.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/fonts/glyphicons-halflings-regular.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/fonts/glyphicons-halflings-regular.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/fonts/glyphicons-halflings-regular.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/fonts/glyphicons-halflings-regular.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/fonts/glyphicons-halflings-regular.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/fonts/glyphicons-halflings-regulard41d.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/fonts/revicons90c690c6.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/fonts/revicons90c690c6.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/fonts/revicons90c690c6.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/fonts/revicons90c690c6.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/background/bg-pattern.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/background/image-1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/background/image-2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/background/image-3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/background/image-4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/background/image-5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/background/image-6.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/background/image-7.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/background/image-8.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/background/page-title-1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/background/page-title-10.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/background/page-title-12.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/background/page-title-2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/background/page-title-4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/background/page-title-5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/background/page-title-6.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/background/page-title-9.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/call-to-action/center-box-bg.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/call-to-action/left-box-bg.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/call-to-action/right-box-bg.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/clients/1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/clients/2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/clients/3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/clients/4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/clients/5.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/clients/6.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/fancybox/blank.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/fancybox/fancybox_loading.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/fancybox/fancybox_loading@2x.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/fancybox/fancybox_overlay.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/fancybox/fancybox_sprite.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/fancybox/fancybox_sprite@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/gallery/1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/gallery/10.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/gallery/11.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/gallery/12.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/gallery/13.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/gallery/14.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/gallery/15.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/gallery/16.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/gallery/17.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/gallery/18.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/gallery/19.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/gallery/2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/gallery/20.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/gallery/21.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/gallery/27.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/gallery/28.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/gallery/3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/gallery/4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/gallery/5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/gallery/6.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/gallery/7.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/gallery/8.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/gallery/9.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/gradient/g30.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/gradient/g40.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/icons/icon-cross.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/icons/icon-select.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/icons/icon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/icons/preloader.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/logo-2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/logo-small.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/logo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/main-slider/1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/main-slider/2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/main-slider/3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/resource/author-thumb-1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/resource/author-thumb-2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/resource/author-thumb-3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/resource/author-thumb-4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/resource/blog-image-1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/resource/blog-image-10.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/resource/blog-image-11.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/resource/blog-image-12.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/resource/blog-image-13.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/resource/blog-image-14.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/resource/blog-image-15.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/resource/blog-image-16.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/resource/blog-image-2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/resource/blog-image-3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/resource/blog-image-4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/resource/blog-image-5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/resource/blog-image-6.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/resource/blog-image-7.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/resource/blog-image-8.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/resource/blog-image-9.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/resource/eli.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/resource/fact-counter-bg.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/resource/featured-image-1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/resource/featured-image-10.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/resource/featured-image-11.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/resource/featured-image-12.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/resource/featured-image-13.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/resource/featured-image-14.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/resource/featured-image-15.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/resource/featured-image-16.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/resource/featured-image-2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/resource/featured-image-3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/resource/featured-image-4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/resource/featured-image-5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/resource/featured-image-6.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/resource/featured-image-9.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/resource/footer-gallery-1-1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/resource/footer-gallery-1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/resource/footer-gallery-2-1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/resource/footer-gallery-2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/resource/footer-gallery-3-1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/resource/footer-gallery-3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/resource/footer-gallery-4-1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/resource/footer-gallery-4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/resource/footer-gallery-5-1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/resource/footer-gallery-5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/resource/footer-gallery-6-1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/resource/footer-gallery-6.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/resource/francis.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/resource/full-image-1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/resource/kamara.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/resource/post-thumb-1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/resource/post-thumb-2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/resource/post-thumb-3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/resource/post-thumb-4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/resource/post-thumb-5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/resource/post-thumb-6.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/resource/team-image-1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/resource/team-image-10.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/resource/team-image-2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/resource/team-image-3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/resource/team-image-4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/resource/team-image-5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/resource/team-image-6.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/resource/team-image-7.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/resource/team-image-8.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/resource/team-image-9.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/resource/testi-image-1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/resource/testi-image-10.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/resource/testi-image-2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/resource/testi-image-3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/resource/testi-image-4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/resource/testi-image-5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/resource/testi-image-6.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/resource/testi-image-7.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/resource/testi-image-8.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/resource/testi-image-9.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/bootstrap-material-design.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/bootstrap.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/custom.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/jquery-1.11.1.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/jquery-slim.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/jquery.appear.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/jquery.countTo.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/jquery.fancybox-media.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/jquery.fancybox.pack.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/jquery.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/map-script.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/mixitup.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/owl.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/popper.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/revolution.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/script.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/validate.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/vendor/holder.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/wow.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/front-end.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/front-end.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/welcome.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/welcome.blade.php" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,7 +266,7 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/routes/web.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="119">
@@ -37,17 +276,19 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/.env">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="253">
+              <caret line="11" column="24" lean-forward="true" selection-start-line="11" selection-start-column="24" selection-end-line="11" selection-end-column="24" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/welcome.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="395">
-              <caret line="479" selection-start-line="479" selection-end-line="479" />
-              <folding>
-                <element signature="e#78#9756#0#HTML" />
-                <element signature="e#9783#12420#0#HTML" />
-                <element signature="e#12453#16968#0#HTML" />
-                <element signature="e#17014#20402#0#HTML" />
-                <element signature="e#20472#25993#0#HTML" />
-              </folding>
+            <state relative-caret-position="46">
+              <caret line="2" selection-start-line="2" selection-start-column="4" selection-end-line="478" selection-end-column="15" />
             </state>
           </provider>
         </entry>
@@ -64,11 +305,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/admin/settings/form.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="326">
+            <state relative-caret-position="391">
               <caret line="17" column="67" selection-start-line="17" selection-start-column="67" selection-end-line="17" selection-end-column="67" />
-              <folding>
-                <element signature="n#div#1;n#!!top" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -83,18 +321,9 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/vendor/unisharp/laravel-settings/src/Setting/Setting.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="395">
-              <caret line="146" column="6" selection-start-line="146" selection-start-column="6" selection-end-line="146" selection-end-column="6" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Models/Setting.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-180">
+            <state relative-caret-position="851">
               <caret line="37" column="6" selection-start-line="37" selection-start-column="6" selection-end-line="37" selection-end-column="6" />
             </state>
           </provider>
@@ -103,20 +332,23 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/SettingsController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="184">
+            <state relative-caret-position="3381">
               <caret line="150" column="22" selection-start-line="150" selection-start-column="22" selection-end-line="150" selection-end-column="22" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/resources/views/layouts/front-end.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="183" column="22" lean-forward="true" selection-start-line="183" selection-start-column="22" selection-end-line="183" selection-end-column="22" />
+            <state relative-caret-position="281">
+              <caret line="150" column="132" selection-start-line="150" selection-start-column="118" selection-end-line="150" selection-end-column="132" />
               <folding>
-                <element signature="n#head#0;n#html#0;n#!!top" />
-                <element signature="n#footer#0;n#div#0;n#body#0;n#html#0;n#!!top" />
+                <element signature="n#div#1;n#body#0;n#html#0;n#!!top" />
+                <element signature="n#style#0;n#img#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#img#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#img#0;n#div#0;n#div#2;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#img#0;n#div#0;n#div#3;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -125,15 +357,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/home.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="483">
+            <state relative-caret-position="10971">
               <caret line="477" selection-end-line="479" />
-              <folding>
-                <element signature="e#78#9756#0#HTML" />
-                <element signature="e#9783#12420#0#HTML" />
-                <element signature="e#12453#16968#0#HTML" />
-                <element signature="e#17014#20402#0#HTML" />
-                <element signature="e#20472#25993#0#HTML" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -191,7 +416,6 @@
         <option value="$PROJECT_DIR$/resources/views/partials/admin/head.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/admin/tt.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/admin/profiles/edit.blade.php" />
-        <option value="$PROJECT_DIR$/.env" />
         <option value="$PROJECT_DIR$/resources/views/admin/profiles/edit_my.blade.php" />
         <option value="$PROJECT_DIR$/app/Models/Profile.php" />
         <option value="$PROJECT_DIR$/public/admin/files/assets/pages/forms-wizard-validation/form-wizard.js" />
@@ -212,10 +436,11 @@
         <option value="$PROJECT_DIR$/resources/views/partials/admin/menu.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Auth/LoginController.php" />
         <option value="$PROJECT_DIR$/resources/views/home.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/welcome.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/partials/admin/nav.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/SettingsController.php" />
         <option value="$PROJECT_DIR$/resources/views/admin/settings/form.blade.php" />
+        <option value="$PROJECT_DIR$/.env" />
+        <option value="$PROJECT_DIR$/resources/views/welcome.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/layouts/front-end.blade.php" />
       </list>
     </option>
@@ -332,267 +557,31 @@
         <subPane subId="Scope 'Project Files'; set:Project Files; class com.intellij.psi.search.scope.ProjectFilesScope">
           <expand>
             <path>
-              <item name="emr" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="business_ads" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
               <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
             </path>
             <path>
-              <item name="emr" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
-              <item name="app" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-            </path>
-            <path>
-              <item name="emr" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
-              <item name="app" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="Http" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-            </path>
-            <path>
-              <item name="emr" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
-              <item name="app" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="Http" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="Controllers" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-            </path>
-            <path>
-              <item name="emr" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
-              <item name="app" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="Http" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="Controllers" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="Auth" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-            </path>
-            <path>
-              <item name="emr" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
-              <item name="app" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="Models" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-            </path>
-            <path>
-              <item name="emr" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
-              <item name="config" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-            </path>
-            <path>
-              <item name="emr" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
-              <item name="database" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-            </path>
-            <path>
-              <item name="emr" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
-              <item name="database" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="migrations" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-            </path>
-            <path>
-              <item name="emr" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="business_ads" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
               <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
               <item name="public" type="9f88c78c:ScopeViewTreeModel$FileNode" />
             </path>
             <path>
-              <item name="emr" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
-              <item name="public" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="admin" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-            </path>
-            <path>
-              <item name="emr" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
-              <item name="public" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="admin" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="files" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-            </path>
-            <path>
-              <item name="emr" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
-              <item name="public" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="admin" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="files" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="assets" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-            </path>
-            <path>
-              <item name="emr" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
-              <item name="public" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="admin" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="files" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="assets" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="pages" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-            </path>
-            <path>
-              <item name="emr" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
-              <item name="public" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="admin" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="files" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="assets" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="pages" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="forms-wizard-validation" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-            </path>
-            <path>
-              <item name="emr" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
-              <item name="public" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="photos" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-            </path>
-            <path>
-              <item name="emr" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
-              <item name="public" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="vendor" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-            </path>
-            <path>
-              <item name="emr" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
-              <item name="public" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="vendor" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="laravel-filemanager" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-            </path>
-            <path>
-              <item name="emr" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
-              <item name="public" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="vendor" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="laravel-filemanager" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="js" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-            </path>
-            <path>
-              <item name="emr" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="business_ads" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
               <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
               <item name="resources" type="9f88c78c:ScopeViewTreeModel$FileNode" />
             </path>
             <path>
-              <item name="emr" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
-              <item name="resources" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="laravel-code-generator" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-            </path>
-            <path>
-              <item name="emr" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
-              <item name="resources" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="laravel-code-generator" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="sources" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-            </path>
-            <path>
-              <item name="emr" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="business_ads" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
               <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
               <item name="resources" type="9f88c78c:ScopeViewTreeModel$FileNode" />
               <item name="views" type="9f88c78c:ScopeViewTreeModel$FileNode" />
             </path>
             <path>
-              <item name="emr" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
-              <item name="resources" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="views" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="admin" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-            </path>
-            <path>
-              <item name="emr" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
-              <item name="resources" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="views" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="admin" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="settings" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-            </path>
-            <path>
-              <item name="emr" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
-              <item name="resources" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="views" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="admin" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="sliders" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-            </path>
-            <path>
-              <item name="emr" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
-              <item name="resources" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="views" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="auth" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-            </path>
-            <path>
-              <item name="emr" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
-              <item name="resources" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="views" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="case_notes" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-            </path>
-            <path>
-              <item name="emr" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="business_ads" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
               <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
               <item name="resources" type="9f88c78c:ScopeViewTreeModel$FileNode" />
               <item name="views" type="9f88c78c:ScopeViewTreeModel$FileNode" />
               <item name="layouts" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-            </path>
-            <path>
-              <item name="emr" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
-              <item name="resources" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="views" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="partials" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-            </path>
-            <path>
-              <item name="emr" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
-              <item name="resources" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="views" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="partials" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="admin" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-            </path>
-            <path>
-              <item name="emr" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
-              <item name="resources" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="views" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="users" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-            </path>
-            <path>
-              <item name="emr" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
-              <item name="routes" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-            </path>
-            <path>
-              <item name="emr" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
-              <item name="storage" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-            </path>
-            <path>
-              <item name="emr" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
-              <item name="storage" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="app" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-            </path>
-            <path>
-              <item name="emr" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
-              <item name="storage" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="app" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="public" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-            </path>
-            <path>
-              <item name="emr" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
-              <item name="storage" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="framework" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-            </path>
-            <path>
-              <item name="emr" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
-              <item name="storage" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="framework" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="cache" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-            </path>
-            <path>
-              <item name="emr" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
-              <item name="storage" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="framework" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="cache" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="data" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-            </path>
-            <path>
-              <item name="emr" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
-              <item name="vendor" type="9f88c78c:ScopeViewTreeModel$FileNode" />
             </path>
           </expand>
           <select />
@@ -603,21 +592,22 @@
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="configurable.group.appearance" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/resources/views/admin" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/public" />
+      <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/resources/views/admin/profiles" />
       <recent name="$PROJECT_DIR$/resources/views/profiles" />
       <recent name="$PROJECT_DIR$/public/vendor/laravel-filemanager/js" />
-      <recent name="$PROJECT_DIR$/public/defaults" />
-      <recent name="$PROJECT_DIR$/resources/laravel-code-generator/templates" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/resources/views/admin" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -654,17 +644,18 @@
       <workItem from="1549961384086" duration="25112000" />
       <workItem from="1550065838633" duration="36228000" />
       <workItem from="1550223354411" duration="18449000" />
+      <workItem from="1551157466432" duration="2942000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="110888000" />
+    <option name="totallyTimeSpent" value="113830000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="-4" width="1366" height="772" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.23791541" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24093656" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info id="npm" order="3" side_tool="true" />
@@ -678,7 +669,7 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="8" />
       <window_info anchor="bottom" id="Version Control" order="9" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="10" sideWeight="0.49924472" visible="true" weight="0.37871674" />
+      <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.49924472" visible="true" weight="0.23004694" />
       <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.5007553" side_tool="true" weight="0.26604068" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -766,13 +757,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state>
           <caret selection-end-line="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.env">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="299">
-          <caret line="13" column="12" selection-start-line="13" selection-start-column="12" selection-end-line="13" selection-end-column="12" />
         </state>
       </provider>
     </entry>
@@ -1001,31 +985,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/home.blade.php">
+    <entry file="file://$PROJECT_DIR$/vendor/unisharp/laravel-settings/src/Setting/Setting.php" />
+    <entry file="file://$PROJECT_DIR$/routes/web.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="483">
-          <caret line="477" selection-end-line="479" />
-          <folding>
-            <element signature="e#78#9756#0#HTML" />
-            <element signature="e#9783#12420#0#HTML" />
-            <element signature="e#12453#16968#0#HTML" />
-            <element signature="e#17014#20402#0#HTML" />
-            <element signature="e#20472#25993#0#HTML" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/welcome.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="395">
-          <caret line="479" selection-start-line="479" selection-end-line="479" />
-          <folding>
-            <element signature="e#78#9756#0#HTML" />
-            <element signature="e#9783#12420#0#HTML" />
-            <element signature="e#12453#16968#0#HTML" />
-            <element signature="e#17014#20402#0#HTML" />
-            <element signature="e#20472#25993#0#HTML" />
-          </folding>
+        <state relative-caret-position="119">
+          <caret line="26" column="68" selection-start-line="26" selection-start-column="68" selection-end-line="26" selection-end-column="68" />
         </state>
       </provider>
     </entry>
@@ -1036,34 +1000,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/unisharp/laravel-settings/src/Setting/Setting.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="395">
-          <caret line="146" column="6" selection-start-line="146" selection-start-column="6" selection-end-line="146" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Models/Setting.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-180">
-          <caret line="37" column="6" selection-start-line="37" selection-start-column="6" selection-end-line="37" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/SettingsController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="184">
-          <caret line="150" column="22" selection-start-line="150" selection-start-column="22" selection-end-line="150" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/admin/settings/form.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="326">
+        <state relative-caret-position="391">
           <caret line="17" column="67" selection-start-line="17" selection-start-column="67" selection-end-line="17" selection-end-column="67" />
-          <folding>
-            <element signature="n#div#1;n#!!top" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1074,21 +1014,52 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/layouts/front-end.blade.php">
+    <entry file="file://$PROJECT_DIR$/app/Models/Setting.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="183" column="22" lean-forward="true" selection-start-line="183" selection-start-column="22" selection-end-line="183" selection-end-column="22" />
-          <folding>
-            <element signature="n#head#0;n#html#0;n#!!top" />
-            <element signature="n#footer#0;n#div#0;n#body#0;n#html#0;n#!!top" />
-          </folding>
+        <state relative-caret-position="851">
+          <caret line="37" column="6" selection-start-line="37" selection-start-column="6" selection-end-line="37" selection-end-column="6" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/routes/web.php">
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/SettingsController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="26" column="68" selection-start-line="26" selection-start-column="68" selection-end-line="26" selection-end-column="68" />
+        <state relative-caret-position="3381">
+          <caret line="150" column="22" selection-start-line="150" selection-start-column="22" selection-end-line="150" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/home.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="10971">
+          <caret line="477" selection-end-line="479" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.env">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="253">
+          <caret line="11" column="24" lean-forward="true" selection-start-line="11" selection-start-column="24" selection-end-line="11" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/welcome.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="46">
+          <caret line="2" selection-start-line="2" selection-start-column="4" selection-end-line="478" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/layouts/front-end.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="281">
+          <caret line="150" column="132" selection-start-line="150" selection-start-column="118" selection-end-line="150" selection-end-column="132" />
+          <folding>
+            <element signature="n#div#1;n#body#0;n#html#0;n#!!top" />
+            <element signature="n#style#0;n#img#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#div#0;n#div#2;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#div#0;n#div#3;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
