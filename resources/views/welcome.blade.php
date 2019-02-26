@@ -1,479 +1,344 @@
-@extends('layouts.front-end')
-
-{{--@section('content')--}}
-    {{--<!--Main Slider-->--}}
-    {{--<section class="main-slider">--}}
-
-        {{--<div class="tp-banner-container">--}}
-            {{--<div class="tp-banner">--}}
-                {{--<ul>--}}
-
-                    {{--<li data-transition="fade" data-slotamount="1" data-masterspeed="1000" data-thumb="images/main-slider/1.jpg"  data-saveperformance="off"  data-title="Awesome Title Here">--}}
-                        {{--<img src="images/main-slider/1.jpg"  alt=""  data-bgposition="center top" data-bgfit="cover" data-bgrepeat="no-repeat">--}}
-
-                        {{--<div class="tp-caption sfl sfb tp-resizeme"--}}
-                             {{--data-x="left" data-hoffset="15"--}}
-                             {{--data-y="center" data-voffset="-100"--}}
-                             {{--data-speed="1500"--}}
-                             {{--data-start="0"--}}
-                             {{--data-easing="easeOutExpo"--}}
-                             {{--data-splitin="none"--}}
-                             {{--data-splitout="none"--}}
-                             {{--data-elementdelay="0.01"--}}
-                             {{--data-endelementdelay="0.3"--}}
-                             {{--data-endspeed="1200"--}}
-                             {{--data-endeasing="Power4.easeIn"><div class="subtitle-text">Welcome to Eli Medical Record System</div></div>--}}
-
-                        {{--<div class="tp-caption sfl sfb tp-resizeme"--}}
-                             {{--data-x="left" data-hoffset="15"--}}
-                             {{--data-y="center" data-voffset="-20"--}}
-                             {{--data-speed="1500"--}}
-                             {{--data-start="500"--}}
-                             {{--data-easing="easeOutExpo"--}}
-                             {{--data-splitin="none"--}}
-                             {{--data-splitout="none"--}}
-                             {{--data-elementdelay="0.01"--}}
-                             {{--data-endelementdelay="0.3"--}}
-                             {{--data-endspeed="1200"--}}
-                             {{--data-endeasing="Power4.easeIn"><h2>We are <span class="theme_color">experts</span><br>in the field of medical record!</h2></div>--}}
-
-                        {{--<div class="tp-caption sfr sfb tp-resizeme"--}}
-                             {{--data-x="left" data-hoffset="15"--}}
-                             {{--data-y="center" data-voffset="80"--}}
-                             {{--data-speed="1500"--}}
-                             {{--data-start="1000"--}}
-                             {{--data-easing="easeOutExpo"--}}
-                             {{--data-splitin="none"--}}
-                             {{--data-splitout="none"--}}
-                             {{--data-elementdelay="0.01"--}}
-                             {{--data-endelementdelay="0.3"--}}
-                             {{--data-endspeed="1200"--}}
-                             {{--data-endeasing="Power4.easeIn"><a href="contact.html" class="theme-btn btn-style-two">contact us</a></div>--}}
-
-                        {{--<div class="tp-caption sfr sfb tp-resizeme"--}}
-                             {{--data-x="left" data-hoffset="180"--}}
-                             {{--data-y="center" data-voffset="80"--}}
-                             {{--data-speed="1500"--}}
-                             {{--data-start="1500"--}}
-                             {{--data-easing="easeOutExpo"--}}
-                             {{--data-splitin="none"--}}
-                             {{--data-splitout="none"--}}
-                             {{--data-elementdelay="0.01"--}}
-                             {{--data-endelementdelay="0.3"--}}
-                             {{--data-endspeed="1200"--}}
-                             {{--data-endeasing="Power4.easeIn"><a href="#" class="theme-btn btn-style-three">our solutions</a></div>--}}
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+    <meta charset="utf-8">
+    <title>Business Ad | Business Planing</title>
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta property="og:image" content="path/to/image.jpg">
+    <!--Favicon-->
+    <link rel="icon" href="{{ asset('img/favicon/favicon.ico') }}">
+    <!--Libs css-->
+    <link rel="stylesheet" href="{{ asset('css/libs.css') }}">
+    <!--Main css-->
+    <link rel="stylesheet" href="{{ asset('css/main.css') }}">
 
 
-                    {{--</li>--}}
+    <link rel="stylesheet" href="{{ asset('css/range.css') }}">
+    <link rel="stylesheet" type="text/css" href="animate.css">
 
-                    {{--<li data-transition="fade" data-slotamount="1" data-masterspeed="1000" data-thumb="images/main-slider/2.jpg"  data-saveperformance="off"  data-title="Awesome Title Here">--}}
-                        {{--<img src="images/main-slider/2.jpg"  alt=""  data-bgposition="center top" data-bgfit="cover" data-bgrepeat="no-repeat">--}}
+    <link rel="stylesheet" type="text/css" href="{{ asset('animate.css') }}">
+</head>
+<body class="dark-load">
+<header id="top-nav" class="top-nav page-header">
+    <div class="container"><a href="#" class="logo smooth-scroll"><img src="{{ asset('img/mark.png') }}" alt="logo" class="logo-white"><img src="{{ asset('img/mark.png') }}" alt="logo" class="logo-dark"></a>
+        <nav class="top-menu">
+            <ul class="sf-menu">
+                <!--Menu default-->
+                <li><a href="">Home</a>
 
-                        {{--<div class="tp-caption sft sfb tp-resizeme"--}}
-                             {{--data-x="right" data-hoffset="-137"--}}
-                             {{--data-y="center" data-voffset="-50"--}}
-                             {{--data-speed="1500"--}}
-                             {{--data-start="0"--}}
-                             {{--data-easing="easeOutExpo"--}}
-                             {{--data-splitin="none"--}}
-                             {{--data-splitout="none"--}}
-                             {{--data-elementdelay="0.01"--}}
-                             {{--data-endelementdelay="0.3"--}}
-                             {{--data-endspeed="1200"--}}
-                             {{--data-endeasing="Power4.easeIn"><h2>Your health <br><span class="theme_color">our first priority!</span></h2></div>--}}
+                </li>
+                <li><a href="">Features</a>
 
-                        {{--<div class="tp-caption sfr sfb tp-resizeme"--}}
-                             {{--data-x="right" data-hoffset="-60"--}}
-                             {{--data-y="center" data-voffset="40"--}}
-                             {{--data-speed="1500"--}}
-                             {{--data-start="500"--}}
-                             {{--data-easing="easeOutExpo"--}}
-                             {{--data-splitin="none"--}}
-                             {{--data-splitout="none"--}}
-                             {{--data-elementdelay="0.01"--}}
-                             {{--data-endelementdelay="0.3"--}}
-                             {{--data-endspeed="1200"--}}
-                             {{--data-endeasing="Power4.easeIn"><div class="text text-right">Your Medical Records and History are safe and in conformance with best ethical practice.</div></div>--}}
+                </li>
+                <li><a href="">Prices</a>
 
-                        {{--<div class="tp-caption sfr sfb tp-resizeme"--}}
-                             {{--data-x="center" data-hoffset="140"--}}
-                             {{--data-y="center" data-voffset="110"--}}
-                             {{--data-speed="1500"--}}
-                             {{--data-start="1000"--}}
-                             {{--data-easing="easeOutExpo"--}}
-                             {{--data-splitin="none"--}}
-                             {{--data-splitout="none"--}}
-                             {{--data-elementdelay="0.01"--}}
-                             {{--data-endelementdelay="0.3"--}}
-                             {{--data-endspeed="1200"--}}
-                             {{--data-endeasing="Power4.easeIn"><a href="#" class="theme-btn btn-style-two">contact us</a></div>--}}
+                </li>
+                <li><a href="">Blog</a>
 
-                        {{--<div class="tp-caption sfr sfb tp-resizeme"--}}
-                             {{--data-x="center" data-hoffset="320"--}}
-                             {{--data-y="center" data-voffset="110"--}}
-                             {{--data-speed="1500"--}}
-                             {{--data-start="1500"--}}
-                             {{--data-easing="easeOutExpo"--}}
-                             {{--data-splitin="none"--}}
-                             {{--data-splitout="none"--}}
-                             {{--data-elementdelay="0.01"--}}
-                             {{--data-endelementdelay="0.3"--}}
-                             {{--data-endspeed="1200"--}}
-                             {{--data-endeasing="Power4.easeIn"><a href="#" class="theme-btn btn-style-three">our solutions</a></div>--}}
+                </li>
+                <li><a href="">Affiliates</a>
+
+                </li>
+                @guest()
+                    <li><a href="{{ url('login') }}">Sign in</a></li>
+                    <li><a href="{{ url('login') }}" class="btn dark-btn large-btn" id="butn">Try Free Today</a></li>
+                @endguest()
 
 
-                    {{--</>--}}
+            </ul>
 
-                    {{--<li data-transition="fade" data-slotamount="1" data-masterspeed="1000" data-thumb="images/main-slider/3.jpg"  data-saveperformance="off"  data-title="Awesome Title Here">--}}
-                        {{--<img src="images/main-slider/3.jpg"  alt=""  data-bgposition="center top" data-bgfit="cover" data-bgrepeat="no-repeat">--}}
+            <!--&lt;!&ndash; Start toggle menu&ndash;&gt;<a href="#" class="toggle-mnu"><span></span></a>-->
+            <!--&lt;!&ndash; Start toggle menu&ndash;&gt;<a href="#" class="toggle-top"><span></span><span></span><span></span><span></span><span></span></a>-->
+        </nav>
+        <!-- Start mobile menu-->
+        <div id="mobile-menu">
+            <div class="inner-wrap">
+                <nav>
+                    <ul class="nav_menu">
+                        <li class="menu-item-has-children current-menu-item"><a href="#">Home</a>
 
-                        {{--<div class="tp-caption sft sfb tp-resizeme"--}}
-                             {{--data-x="right" data-hoffset="-55"--}}
-                             {{--data-y="center" data-voffset="-120"--}}
-                             {{--data-speed="1500"--}}
-                             {{--data-start="0"--}}
-                             {{--data-easing="easeOutExpo"--}}
-                             {{--data-splitin="none"--}}
-                             {{--data-splitout="none"--}}
-                             {{--data-elementdelay="0.01"--}}
-                             {{--data-endelementdelay="0.3"--}}
-                             {{--data-endspeed="1200"--}}
-                             {{--data-endeasing="Power4.easeIn"><div class="text-left"><h2>Medical Services<br><span class="theme_color">That You Can Trust</span><br><div class="text text-left">Guided by United States Medical Record Laws and Privacy Protection.</div></h2></div>--}}
-                        {{--</div>--}}
+                        </li>
 
-                        {{--<div class="tp-caption sfb sfb tp-resizeme"--}}
-                             {{--data-x="right" data-hoffset="-350"--}}
-                             {{--data-y="center" data-voffset="0"--}}
-                             {{--data-speed="1500"--}}
-                             {{--data-start="500"--}}
-                             {{--data-easing="easeOutExpo"--}}
-                             {{--data-splitin="none"--}}
-                             {{--data-splitout="none"--}}
-                             {{--data-elementdelay="0.01"--}}
-                             {{--data-endelementdelay="0.3"--}}
-                             {{--data-endspeed="1200"--}}
-                             {{--data-endeasing="Power4.easeIn"><a href="#" class="theme-btn btn-style-two">contact us</a></div>--}}
+                        <li><a href="#about" class="smooth-scroll">About</a></li>
 
-                        {{--<div class="tp-caption sfb sfb tp-resizeme"--}}
-                             {{--data-x="right" data-hoffset="-155"--}}
-                             {{--data-y="center" data-voffset="0"--}}
-                             {{--data-speed="1500"--}}
-                             {{--data-start="1000"--}}
-                             {{--data-easing="easeOutExpo"--}}
-                             {{--data-splitin="none"--}}
-                             {{--data-splitout="none"--}}
-                             {{--data-elementdelay="0.01"--}}
-                             {{--data-endelementdelay="0.3"--}}
-                             {{--data-endspeed="1200"--}}
-                             {{--data-endeasing="Power4.easeIn"><a href="#" class="theme-btn btn-style-three">our solutions</a></div>--}}
+                    </ul>
+                </nav>
+            </div>
+        </div>
+        <!-- End mobile menu-->
+    </div>
+</header>
+<div id="top" class="slider">
 
+    <div class="full-slider intro" id="backend">
+        <!-- Start slide-->
+        <div data-image="img/bgn22.jpg" class="slide bg-mask background-image full-vh">
+            <div class="container-slide vertical-align center head-desc">
+                <div class="container">
+                    <div class="row" id="designs">
+                        <div class="col-md-12">
+                            <div class="heading-title-big">Best <span>For Business Ads</span></div>
 
-                    {{--</li>--}}
+                            <div id="types">
+                                <div id="typewriters">  </div><div id="cursor"></div></div>
+                            <!--<div class="animated fadeInRight">Repricing - allowing you to stay ahead of the competition.</div>-->
+                            <!--<div class="buttons-section"><a href="login.html" class="btn dark-btn large-btn">Login</a></div>-->
+                            <div class="buttons-section"><a href="/register" class="btn dark-btn large-btn">Create Account</a></div>
 
-                {{--</ul>--}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="particles-js" class="canvas-background"></div>
+        </div>
+    </div>
+    <!--Contol slider-->
+    <div id="dots-control-full-slider" class="dots-control-carousel"></div>
+    <!-- Strat Control carousel-->
+    <div id="control-full-slider" class="prev-next-block-rotate opacity-control">
+        <div class="wrap-prev">
+            <div class="prev"><i aria-hidden="true" class="fa fa-angle-left"></i></div>
+        </div>
+        <div class="wrap-next">
+            <div class="next"><i aria-hidden="true" class="fa fa-angle-right"></i></div>
+        </div>
+    </div><a href="#into" class="smooth-scroll btn-down"><i aria-hidden="true" class="fa fa-angle-down"></i></a>
+</div>
+<!-- End slider section-->
+<!--Start into slider-->
+<div id="into" data-image="img/bgn1.jpg" class="into-slider background-image">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-3">
+                <div class="item">
+                    <img style="width: 75px;" src="assets/images/items/invent.png">
+                    <h4>Register deals </h4>
+                    <p>Get the best of services using a specialized inventory structure and platform.</p>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="item"><img style="width: 75px;" src="assets/images/items/listin.png">
+                    <h4>Manage Deal</h4>
+                    <p>Create and maintain orders as you wish</p>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="item"><img style="width: 75px;" src="assets/images/items/order.png">
+                    <h4>More</h4>
+                    <p>Use the Sensei feature to manage your multiple accounts.</p>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="item"><img style="width: 75px;" src="assets/images/items/ninja.png">
+                    <h4>More</h4>
+                    <p>This platform is for you, explore and do more than Business Plan.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--End into slider-->
+<!-- Section about-->
+<section id="about" class="about-us">
+    <div class="container">
+        <div class="row">
 
-                {{--<div class="tp-bannertimer"></div>--}}
-            {{--</div>--}}
-        {{--</div>--}}
-    {{--</section>--}}
+            <div class="col-md-8 col-md-push-2">
+                <div class="heading-title center">
+                    <h2>How it <span>Works</span></h2>
+                    <div class="small-desd">Steps to  <span>a successful Business</span></div>
+                    <p>Use the following steps to create a perfect Business Plan </p>
+                </div>
+            </div>
+        </div>
 
+    </div>
 
-    {{--<!--Home-box-->--}}
-    {{--<section class="call-to-action home-one">--}}
-        {{--<div class="container-fluid">--}}
-            {{--<div class="clearfix">--}}
-                {{--<div class="call-to-action-corner col-md-4" style="background-image: url(images/call-to-action/left-box-bg.jpg);">--}}
-                    {{--<div class="single-call-to-action open-hours">--}}
-                        {{--<div class="icon-box">--}}
-                            {{--<div class="inner-box">--}}
-                                {{--<i class="flaticon-clock"></i>--}}
-                            {{--</div>--}}
-                        {{--</div>--}}
-                        {{--<div class="content-box">--}}
-                            {{--<h3>OPEN HOURS</h3>--}}
-                            {{--<ul>--}}
-                                {{--<li><span>Monday - Friday</span> <span>9am - 10pm</span></li>--}}
-                                {{--<li><span>Sunday</span> <span>Closed</span></li>--}}
-                                {{--<li><span>Saturday</span> <span>Closed</span></li>--}}
-                            {{--</ul>--}}
-                        {{--</div>--}}
-                    {{--</div>--}}
-                {{--</div>--}}
-                {{--<div class="call-to-action-center col-md-4" style="background-image: url(images/call-to-action/center-box-bg.jpg);">--}}
-                    {{--<div class="single-call-to-action">--}}
-                        {{--<div class="icon-box">--}}
-                            {{--<div class="inner-box">--}}
-                                {{--<i class="flaticon-appointment-book"></i>--}}
-                            {{--</div>--}}
-                        {{--</div>--}}
-                        {{--<div class="content-box">--}}
-                            {{--<h3>Appointment</h3>--}}
-                            {{--<p>Appointment are available, call us <br> today or book a appoinment</p>--}}
-                            {{--<a href="contact.html" class="thm-btn inverse">Book Now</a>--}}
-                        {{--</div>--}}
-                    {{--</div>--}}
-                {{--</div>--}}
-                {{--<div class="call-to-action-corner col-md-4" style="background-image: url(images/call-to-action/right-box-bg.jpg);">--}}
-                    {{--<div class="single-call-to-action">--}}
-                        {{--<div class="icon-box">--}}
-                            {{--<div class="inner-box">--}}
-                                {{--<i class="flaticon-speech-bubble"></i>--}}
-                            {{--</div>--}}
-                        {{--</div>--}}
-                        {{--<div class="content-box">--}}
-                            {{--<h3>ONLINE BILL SYSTEM</h3>--}}
-                            {{--<p>There are many variations of lorem <br>passagei of Lorem Ipsum availabl <br> but the majority have </p>--}}
-                        {{--</div>--}}
-                    {{--</div>--}}
-                {{--</div>--}}
-            {{--</div>--}}
-        {{--</div>--}}
-    {{--</section>--}}
+</section>
 
-    {{--<!--Welcome Section-->--}}
-    {{--<section class="welcome-section">--}}
-        {{--<div class="auto-container">--}}
-            {{--<div class="welcome-content">--}}
-                {{--<!--Section Title-->--}}
-                {{--<div class="sec-title text-center">--}}
-                    {{--<h2>Welcome <span class="theme_color">To Our Health care!</span></h2>--}}
-                    {{--<h3 class="sub-title">A Team Of Medical Professionals to Take Care Of Your Health Records</h3>--}}
-                    {{--<div class="images-holder">--}}
-                        {{--<img src="images/icons/icon.png" alt="Awesome Image">--}}
-                    {{--</div>--}}
-                {{--</div>--}}
+<!--Section services-->
+<h1>Our <span><a name="prices">prices</a></span></h1>
+<!-- horizontal line-->
+<span class="horizontal-line"></span><span></span>
+<!-- description slider-->
+<div class="description">
+    <div class="budget-wrap">
+        <div class="budget">
+            <div class="header">
+                <div class="title clearfix">
+                    Our Price Range! <span class="pull-right">
 
-                {{--<div class="text">Eli Health System (EHS) is an emerging community global healthcare organization founded on the need to serve vulnerable populations through primary care in high-risk disease burden countries in Sub-Sahara Africa. EHS provides essential health services (EHS) in both outpatient and inpatient care, emergency service, treatment and prevention of infectious disease (Hepatitis B,C, HIV/AIDS and TB), Chronic disease, infant and maternal care, reproductive health, disability care, prescription drugs, preventive services, vaccination programs, and mental health that are indicative of improving population health. EHS has a priority to make healthcare coverage a universal right.</div>--}}
-                {{--<div class="link-box"><a href="contact.html" class="theme-btn normal-link">Request A Quote</a></div>--}}
-            {{--</div>--}}
+				</span></div>
+            </div>
+            <div class="content">
+                <input type="range" min="1" max="100" value="20" data-rangeslider>
+                <p class="pricingValues">Our Values <span class="pull-left"></span></p>
+            </div>
+            <div class="footer clearfix">
 
-            {{--<div class="row clearfix">--}}
-                {{--<!--Featured Service Column-->--}}
-                {{--<div class="featured-service-column col-md-4 col-sm-6 col-xs-12">--}}
-                    {{--<div class="inner-box wow fadeIn" data-wow-delay="0ms" data-wow-duration="1500ms">--}}
-                        {{--<div class="image-box">--}}
-                            {{--<div class="icon-box"><span class="flaticon-first-aid-kit"></span></div>--}}
-                            {{--<figure class="image"><a href="#"><img src="images/resource/featured-image-1.jpg" alt=""></a></figure>--}}
-                            {{--<a href="#" class="theme-btn service-title">Best Record Systems</a>--}}
-                        {{--</div>--}}
-                        {{--<div class="lower-content">--}}
-                            {{--<div class="text">We have a secured record system backed by up to date security structure.</div>--}}
-                            {{--<div class="link-box"><a href="#" class="theme-btn normal-link">Read More</a></div>--}}
-                        {{--</div>--}}
-                    {{--</div>--}}
-                {{--</div>--}}
+            </div>
+        </div>
+    </div></div>
+<!--Section how we work-->
+<section data-image="img/bg2.jpg" class="section-how-we-work bg-white-section background-image">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 col-md-push-2">
+                <div class="heading-title center">
+                    <h2>Testimonies from Users</h2>
+                    <div class="small-desd">We create <span>awesome stuff</span></div>
+                    <p>Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium lectorum. Mirum est notare quam littera gothica, quam nunc putamus parum</p>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <!-- Item-->
+            <div class="col-md-3 col-sm-6 col-xs-12 item-icon">
+                <div class="icon-container">
+                    <div class="icon icon-circle"><i class="pe-7s-look"></i></div>
+                </div>
+                <h3>Awesome</h3>
+                <p>Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium lectorum.</p>
+            </div>
+            <!-- Item-->
+            <div class="col-md-3 col-sm-6 col-xs-12 item-icon">
+                <div class="icon-container">
+                    <div class="icon icon-circle"><i class="pe-7s-light"></i></div>
+                </div>
+                <h3>Innovative</h3>
+                <p>Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium lectorum.</p>
+            </div>
+            <!-- Item-->
+            <div class="col-md-3 col-sm-6 col-xs-12 item-icon">
+                <div class="icon-container">
+                    <div class="icon icon-circle"><i class="pe-7s-like2"></i></div>
+                </div>
+                <h3>Creative</h3>
+                <p>Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium lectorum.</p>
+            </div>
+            <!-- Item-->
+            <div class="col-md-3 col-sm-6 col-xs-12 item-icon">
+                <div class="icon-container">
+                    <div class="icon icon-circle"><i class="pe-7s-graph1"></i></div>
+                </div>
+                <h3>EXPERIMENTAL</h3>
+                <p>Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium lectorum.</p>
+            </div>
+            <!-- Edn items-->
+        </div>
+    </div>
+</section>
+<!--Section work progress-->
+<!--Section our some work-->
+<!--Section trigger-->
+<!--Section we are in numbers-->
+<!--Section our skills-->
+<!--Section carousel trigger-->
+<!--Section our team-->
+<!--Section testimonials-->
+<!--Section why chose us-->
+<!--Section our clients-->
+<!--Section contact with us-->
+<!--Section our location-->
+<!--<div class="map-section">-->
+<!--  <div id="map" data-zoom="13" data-height="400" data-address="Konotop" data-address-details="Our location" class="map-content"></div>-->
+<!--</div>-->
+<!-- Old browsers support--><!--[if lt IE 9]>
+<script src="libs/html5shiv/es5-shim.min.js"></script>
+<script src="libs/html5shiv/html5shiv.min.js"></script>
+<script src="libs/html5shiv/html5shiv-printshiv.min.js"></script>
+<script src="libs/respond/respond.min.js"></script>
+<![endif]-->
+<![endif]-->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3">
+                <!--<div class="logo"><img src="img/mark.png" alt="logo" class="logo-white"></div>-->
+                <p>We are a creative agency with a passion for design & developing beautiful creations.</p>
+                <!--Start social links-->
+                <ul class="social-links">
+                    <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                    <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                    <li><a href="#"><i class="fa fa-skype"></i></a></li>
+                    <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                </ul>
+                <!--End social links-->
+            </div>
+            <div class="col-md-3">
+                <div class="links">
+                    <h5>ADDITIONAL LINKS</h5>
+                    <ul class="list">
+                        <li><a href="">For Freelancer</a></li>
+                        <li><a href="">For Photographs</a></li>
+                        <li><a href="">Contact</a></li>
+                        <li><a href="">FAQ</a></li>
+                        <li><a href="">404 page</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="links">
+                    <h5>Pages</h5>
+                    <ul class="list">
+                        <li><a href="">About page</a></li>
+                        <li><a href="">Blog page</a></li>
+                        <li><a href="">Price page</a></li>
+                        <li><a href="">Portfolio page</a></li>
+                        <li><a href="">Portfolio single</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="links">
+                    <h5>Info</h5>
+                </div>
+                <div class="linked">
 
-                {{--<!--Featured Service Column-->--}}
-                {{--<div class="featured-service-column col-md-4 col-sm-6 col-xs-12">--}}
-                    {{--<div class="inner-box wow fadeIn" data-wow-delay="300ms" data-wow-duration="1500ms">--}}
-                        {{--<div class="image-box">--}}
-                            {{--<div class="icon-box"><span class="flaticon-test-tube-experiment"></span></div>--}}
-                            {{--<figure class="image"><a href="#"><img src="images/resource/featured-image-2.jpg" alt=""></a></figure>--}}
-                            {{--<a href="#" class="theme-btn service-title">Medical Excellence</a>--}}
-                        {{--</div>--}}
-                        {{--<div class="lower-content">--}}
-                            {{--<div class="text">We are known for effective service delivery.</div>--}}
-                            {{--<div class="link-box"><a href="#" class="theme-btn normal-link">Read More</a></div>--}}
-                        {{--</div>--}}
-                    {{--</div>--}}
-                {{--</div>--}}
+                    <ul class="list">
+                        <li>Phone:  +44 7421 112063</li>
+                        <li>Email:support@sellingsumo.com</li>
 
-                {{--<!--Featured Service Column-->--}}
-                {{--<div class="featured-service-column col-md-4 col-sm-6 col-xs-12">--}}
-                    {{--<div class="inner-box wow fadeIn" data-wow-delay="600ms" data-wow-duration="1500ms">--}}
-                        {{--<div class="image-box">--}}
-                            {{--<div class="icon-box"><span class="flaticon-monitor"></span></div>--}}
-                            {{--<figure class="image"><a href="#"><img src="images/resource/featured-image-3.jpg" alt=""></a></figure>--}}
-                            {{--<a href="#" class="theme-btn service-title">Latest Technologies</a>--}}
-                        {{--</div>--}}
-                        {{--<div class="lower-content">--}}
-                            {{--<div class="text">We use latest technology across our facility centres.</div>--}}
-                            {{--<div class="link-box"><a href="#" class="theme-btn normal-link">Read More</a></div>--}}
-                        {{--</div>--}}
-                    {{--</div>--}}
-                {{--</div>--}}
+                        <li>Skype: live:sellingsumo_1</li></ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="down-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <p>© 2019 Copyright SellingSumo - All Rights Reserved.</p>
+                    <ul class="footer-menu">
+                        <li><a href="{{ url('/') }}">Home</a></li>
+                        <!--<li><a href="about.html" class="smooth-scroll">About</a></li>-->
+                        <!--<li><a href="services" class="smooth-scroll">Services</a></li>-->
+                        <!--<li><a href="#portfolio" class="smooth-scroll">Our works</a></li>-->
+                        <!--<li><a href="#skills" class="smooth-scroll">Skills</a></li>-->
+                        <!--<li> <a href="contact" class="smooth-scroll">Contact</a></li>-->
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+<!--button to top-->
+<div class="top icon-down toTopFromBottom"><a href="#top" class="smooth-scroll"><i class="pe-7s-angle-up"></i></a></div>
+<!--end button to top-->
+<!--Google map-->
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDfIvcRb39yOu1OFOX2G0c4jemKpLgpJl0&amp;sensor=false"></script>
+<!--Libs-->
+<script src="{{ asset('js/libs.js') }}"></script>
+<!--Use scripts-->
+<script src="{{ asset('js/common.js') }}"></script>
+<!--Use scripts-->
+<script src="{{ asset('js/customs.js') }}"></script>
 
+<!--Use scripts-->
+<script src="{{ asset('js/wow.js') }}"></script>
 
-
-            {{--</div>--}}
-
-        {{--</div>--}}
-    {{--</section>--}}
-
-
-    {{--<!--start We Specialize section-->--}}
-    {{--<section class="home-serivce sec-padding">--}}
-        {{--<div class="container">--}}
-            {{--<div class="sec-title text-center">--}}
-                {{--<h1>We Specialize In</h1>--}}
-                {{--<div class="images-holder">--}}
-                    {{--<img src="images/icons/icon.png" alt="Awesome Image">--}}
-                {{--</div>--}}
-                {{--<p>Our specialization and focus is on Patient Medical Record which stays electronically.</p>--}}
-                {{--<span class="decor"><span class="inner"></span></span>--}}
-            {{--</div>--}}
-            {{--<div class="row">--}}
-                {{--<div class="col-md-4 col-sm-6">--}}
-                    {{--<div class="single-service-home">--}}
-                        {{--<div class="icon-box">--}}
-                            {{--<div class="inner-box">--}}
-                                {{--<i class="flaticon-caries"></i>--}}
-                            {{--</div>--}}
-                        {{--</div>--}}
-                        {{--<div class="content">--}}
-                            {{--<h3>Medical History</h3>--}}
-                            {{--<p>This unit is responsible for all  <br>Patient Medical History.--}}
-                                {{--<a href="service-details.html">Read More</a>--}}
-                        {{--</div>--}}
-                    {{--</div>--}}
-                {{--</div>--}}
-                {{--<div class="col-md-4 col-sm-6">--}}
-                    {{--<div class="single-service-home">--}}
-                        {{--<div class="icon-box">--}}
-                            {{--<div class="inner-box">--}}
-                                {{--<i class="flaticon-cardiology"></i>--}}
-                            {{--</div>--}}
-                        {{--</div>--}}
-                        {{--<div class="content">--}}
-                            {{--<h3>Doctor's Report</h3>--}}
-                            {{--<p>Efficient Doctor's are on <br> ground to work on patient history reports </p>--}}
-                            {{--<a href="service-details.html">Read More</a>--}}
-                        {{--</div>--}}
-                    {{--</div>--}}
-                {{--</div>--}}
-                {{--<div class="col-md-4 col-sm-6">--}}
-                    {{--<div class="single-service-home">--}}
-                        {{--<div class="icon-box">--}}
-                            {{--<div class="inner-box">--}}
-                                {{--<i class="flaticon-brain-and-head"></i>--}}
-                            {{--</div>--}}
-                        {{--</div>--}}
-                        {{--<div class="content">--}}
-                            {{--<h3>Nurses</h3>--}}
-                            {{--<p>Our Nurses provide adequate care for patients <br> and provide rapid response. </p>--}}
-                            {{--<a href="service-details.html">Read More</a>--}}
-                        {{--</div>--}}
-                    {{--</div>--}}
-                {{--</div>--}}
-                {{--<div class="col-md-4 col-sm-6">--}}
-                    {{--<div class="single-service-home">--}}
-                        {{--<div class="icon-box">--}}
-                            {{--<div class="inner-box">--}}
-                                {{--<i class="flaticon-scissors"></i>--}}
-                            {{--</div>--}}
-                        {{--</div>--}}
-                        {{--<div class="content">--}}
-                            {{--<h3>Database Administrators</h3>--}}
-                            {{--<p>As a way of providing support, <br>our database unit is available with database backend support.</p>--}}
-                            {{--<a href="service-details.html">Read More</a>--}}
-                        {{--</div>--}}
-                    {{--</div>--}}
-                {{--</div>--}}
-
-
-            {{--</div>--}}
-        {{--</div>--}}
-    {{--</section>--}}
-    {{--<!--end We Specialize section-->--}}
-
-
-    {{--<!--Team Style One-->--}}
-    {{--<section class="team-style-one">--}}
-        {{--<div class="auto-container">--}}
-            {{--<div class="row clearfix">--}}
-                {{--<!--Team Member-->--}}
-                {{--<div class="intro-column col-lg-3 col-md-12 col-sm-12 col-xs-12">--}}
-                    {{--<div class="inner-box">--}}
-                        {{--<h2>Our Great Team</h2>--}}
-                        {{--<div class="text">Team collaboration is our strength<p>We strive to satisfy you our patient</p><p>We are trust worthy and believe in data protection.</p></div>--}}
-                        {{--<div class="link-box"><a href="#" class="theme-btn normal-link">meet all members</a></div>--}}
-                    {{--</div>--}}
-                {{--</div>--}}
-
-                {{--<!--Team Member-->--}}
-                {{--<div class="member-style-one col-lg-3 col-md-4 col-sm-6 col-xs-12">--}}
-                    {{--<div class="inner-box wow fadeInUp" data-wow-delay="0ms" data-wow-duration="1500ms">--}}
-                        {{--<div class="image-box">--}}
-                            {{--<figure class="image"><img src="images/resource/kamara.jpg" alt=""></figure>--}}
-                            {{--<!--  <div class="overlay">--}}
-                                 {{--<div class="content">--}}
-                                     {{--<ul class="info">--}}
-                                         {{--<li>Phone : (+09) 123 456 7896</li>--}}
-                                         {{--<li>Email : Info@Domain.com</li>--}}
-                                     {{--</ul>--}}
-                                     {{--<div class="social-links">--}}
-                                         {{--<a href="#"><span class="fa fa-facebook-f"></span></a>--}}
-                                         {{--<a href="#"><span class="fa fa-twitter"></span></a>--}}
-                                         {{--<a href="#"><span class="fa fa-google-plus"></span></a>--}}
-                                         {{--<a href="#"><span class="fa fa-linkedin"></span></a>--}}
-                                     {{--</div>--}}
-                                 {{--</div>--}}
-                             {{--</div> -->--}}
-                        {{--</div>--}}
-                        {{--<div class="lower-content">--}}
-                            {{--<h3>Boakai Lamin Kamara</h3>--}}
-                            {{--<div class="designation">Director of Data Analytics, Liberia</div>--}}
-                        {{--</div>--}}
-                    {{--</div>--}}
-                {{--</div>--}}
-
-                {{--<!--Team Member-->--}}
-                {{--<div class="member-style-one col-lg-3 col-md-4 col-sm-6 col-xs-12">--}}
-                    {{--<div class="inner-box wow fadeInDown" data-wow-delay="0ms" data-wow-duration="1500ms">--}}
-                        {{--<div class="image-box">--}}
-                            {{--<figure class="image"><img src="images/resource/eli.jpg" alt=""></figure>--}}
-                            {{--<!-- <div class="overlay">--}}
-                            	{{--<div class="content">--}}
-                                	{{--<ul class="info">--}}
-                                    	{{--<li>Phone : (+09) 123 456 7896</li>--}}
-                                        {{--<li>Email : Info@Domain.com</li>--}}
-                                    {{--</ul>--}}
-                                    {{--<div class="social-links">--}}
-                                    	{{--<a href="#"><span class="fa fa-facebook-f"></span></a>--}}
-                                        {{--<a href="#"><span class="fa fa-twitter"></span></a>--}}
-                                        {{--<a href="#"><span class="fa fa-google-plus"></span></a>--}}
-                                        {{--<a href="#"><span class="fa fa-linkedin"></span></a>--}}
-                                    {{--</div>--}}
-                                {{--</div>--}}
-                            {{--</div> -->--}}
-                        {{--</div>--}}
-                        {{--<div class="lower-content">--}}
-                            {{--<h3>Elisha Caldwell</h3>--}}
-                            {{--<div class="designation">President and CEO</div>--}}
-                        {{--</div>--}}
-                    {{--</div>--}}
-                {{--</div>--}}
-
-                {{--<!--Team Member-->--}}
-                {{--<div class="member-style-one col-lg-3 col-md-4 col-sm-6 col-xs-12">--}}
-                    {{--<div class="inner-box wow fadeInUp" data-wow-delay="0ms" data-wow-duration="1500ms">--}}
-                        {{--<div class="image-box">--}}
-                            {{--<figure class="image"><img src="images/resource/francis.jpg" alt=""></figure>--}}
-                            {{--<!--  <div class="overlay">--}}
-                                 {{--<div class="content">--}}
-                                     {{--<ul class="info">--}}
-                                         {{--<li>Phone : (+09) 123 456 7896</li>--}}
-                                         {{--<li>Email : Info@Domain.com</li>--}}
-                                     {{--</ul>--}}
-                                     {{--<div class="social-links">--}}
-                                         {{--<a href="#"><span class="fa fa-facebook-f"></span></a>--}}
-                                         {{--<a href="#"><span class="fa fa-twitter"></span></a>--}}
-                                         {{--<a href="#"><span class="fa fa-google-plus"></span></a>--}}
-                                         {{--<a href="#"><span class="fa fa-linkedin"></span></a>--}}
-                                     {{--</div>--}}
-                                 {{--</div>--}}
-                             {{--</div> -->--}}
-                        {{--</div>--}}
-                        {{--<div class="lower-content">--}}
-                            {{--<h3>Francis V. Zayzay, BSN/MPH</h3>--}}
-                            {{--<div class="designation">Vice President</div>--}}
-                        {{--</div>--}}
-                    {{--</div>--}}
-                {{--</div>--}}
-
-
-            {{--</div>--}}
-        {{--</div>--}}
-    {{--</section>--}}
-
-{{--@endsection--}}
+<script src="{{ asset('js/range.js') }}"></script>
+</body>
+</html>
