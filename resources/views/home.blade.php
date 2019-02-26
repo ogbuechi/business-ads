@@ -2,7 +2,7 @@
 <html lang="en" class="no-js">
 <head>
     <meta charset="utf-8">
-    <title>Amazon | eBay Dropshiping Software</title>
+    <title>Business Ad | Business Planing</title>
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -79,13 +79,13 @@
                 <div class="container">
                     <div class="row" id="designs">
                         <div class="col-md-12">
-                            <div class="heading-title-big">Best <span>For Dropshipping</span></div>
+                            <div class="heading-title-big">Best <span>For Business Ads</span></div>
 
                             <div id="types">
                                 <div id="typewriters">  </div><div id="cursor"></div></div>
                             <!--<div class="animated fadeInRight">Repricing - allowing you to stay ahead of the competition.</div>-->
                             <!--<div class="buttons-section"><a href="login.html" class="btn dark-btn large-btn">Login</a></div>-->
-                            <div class="buttons-section"><a href="admin/register.html" class="btn dark-btn large-btn">Create Account</a></div>
+                            <div class="buttons-section"><a href="/register" class="btn dark-btn large-btn">Create Account</a></div>
 
                         </div>
                     </div>
@@ -114,26 +114,26 @@
             <div class="col-md-3">
                 <div class="item">
                     <img style="width: 75px;" src="assets/images/items/invent.png">
-                    <h4>Inventory </h4>
+                    <h4>Register deals </h4>
                     <p>Get the best of services using a specialized inventory structure and platform.</p>
                 </div>
             </div>
             <div class="col-md-3">
                 <div class="item"><img style="width: 75px;" src="assets/images/items/listin.png">
-                    <h4>Auto-Order</h4>
+                    <h4>Manage Deal</h4>
                     <p>Create and maintain orders as you wish</p>
                 </div>
             </div>
             <div class="col-md-3">
                 <div class="item"><img style="width: 75px;" src="assets/images/items/order.png">
-                    <h4>Listing Sensei</h4>
+                    <h4>More</h4>
                     <p>Use the Sensei feature to manage your multiple accounts.</p>
                 </div>
             </div>
             <div class="col-md-3">
                 <div class="item"><img style="width: 75px;" src="assets/images/items/ninja.png">
-                    <h4>Ninja Scanner</h4>
-                    <p>This platform is for you, explore and do more than dropshiping.</p>
+                    <h4>More</h4>
+                    <p>This platform is for you, explore and do more than Business Plan.</p>
                 </div>
             </div>
         </div>
@@ -148,108 +148,14 @@
             <div class="col-md-8 col-md-push-2">
                 <div class="heading-title center">
                     <h2>How it <span>Works</span></h2>
-                    <div class="small-desd">Steps to  <span>a successful Dropshiping</span></div>
-                    <p>Use the following steps to create a perfect dropshiping account</p>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-12" style="margin-bottom: 70px;">
-
-                <div class="item-about">
-
-                    <div class="col-md-6">
-                        <div class="content">
-
-                            <h6  class="sh1 ">
-                                <p class="bigTexts"> <span class="symbols">AUTO-ORDER</span></p>
-                                <p>Rake in more money by tracking your profits and growth by engaging with our auto-ordering feature. Automatically place orders on Amazon as soon as they come in on your eBay store. SellingSumo eradicates the possibility of price or stock changing inbetween the time you receive the order on eBay and places it rapidly on Amazon. Our platform will automatically track the orders for you; uploading all the tracking information for you and the buyer to view. Increase your positive feedback count with our automatic notifications and customer feedback requests. Helping you to reach Top Rated status - quicker.</p> <a href="admin/register.html">Try Free Now</a></h6>
-
-                        </div>
-                    </div>
-
-                    <div class="col-md-6">
-                        <div class="sh2 " style="text-align: center;">
-                            <img style="width: 75%;" src="assets/images/big/Group-13.png">
-                        </div>
-                    </div>
-
+                    <div class="small-desd">Steps to  <span>a successful Business</span></div>
+                    <p>Use the following steps to create a perfect Business Plan </p>
                 </div>
             </div>
         </div>
 
-        <div class="row">
-            <div class="col-md-12" style="margin-bottom: 70px;">
-                <div class="item-about">
-                    <div class="col-md-6">
-                        <div class="sh3" style="text-align: center;">
-
-                            <img style="width: 75%;" src="assets/images/big/Group-13.png">
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-
-                        <h5 class="sh4">
-                            <div class="content">
-                                <p class="bigTexts"><span class="symbols">REPRICING</span></p>
-                                <p>Rely on our state-of-the-art repricer to discover changes in price and availability on Amazon amazingly fast; algorithmically adjusting your listing to ensure that you'll never make a sale at a loss or a sale that you cannot fulfill. Users of SellingSumo can create a specific Profit Range where any items that are listed on eBay using our software can enjoy their desired profit range. We bring products in and out of stock as availability changes on the source, and refill stock levels as you make sales. You also have the ability to automatically take items that are out-of-stock temporarily on account of issues with the source. Inventorying has never been this exhilarating!</p>
-                                <a href="admin/register.html">Try Free Now</a>
-                        </h5>
-                    </div>
-                </div>
-
-
-            </div>
-        </div>
     </div>
 
-
-    </div>
-    <div class="container">
-        <div class="col-md-12" style="margin-bottom: 70px;">
-            <div class="item-about">
-
-                <div class="col-md-6">
-                    <h5 class="sh5">
-                        <div class="content">
-                            <p class="bigTexts"><span class="symbols">VeRO PROTECTION</span></p>
-                            <p>We have an internal VERO database, so every time you upload items to eBay using SellingSumo’s eBay account protection, we will check the brand and keywords of the product to ensure it isn’t part of the eBay VERO program. Also, you can also restrict certain keywords and brand names if you need to!</p><a href="admin/register.html">Try Free Now</a></h5>
-                </div>
-            </div>
-
-            <div class="col-md-6">
-                <div class="sh6" style="text-align: center;"><img style="width: 75%;" src="assets/images/big/Group-13.png"></div>
-            </div>
-
-
-
-
-
-        </div>
-    </div>
-
-    <div class="container">
-        <div class="col-md-12" style="margin-bottom: 70px;">
-            <div class="item-about">
-                <div class="col-md-6">
-                    <div class="sh7" style="text-align: center;"><img style="width: 75%;" src="assets/images/big/Group-13.png"></div>
-                </div>
-                <div class="col-md-6">
-                    <h5 class="sh8">
-                        <div class="content">
-
-                            <p class="bigTexts"><span class="symbols">NINJA SCANNER</span></p>
-                            <p>Another spectacular feature of the SellingSumo software is the Ninja Scanner that allows our users to find hot selling products on eBay that are available on Amazon at lower prices. It scans Amazon for items to list on eBay, which shows a profit after PayPal and eBay fees are deducted.  Users can scan specific category or niches and filter by the number of times items have been sold in the past 30 days. This hassle-free tool will help you reach thousands of listings easily to sell profitably on your store.</p><a href="admin/register.html">Try Free Now</a></h5>
-                </div>
-            </div>
-
-        </div>
-    </div>
-
-    </div>
-
-
-    </div>
 </section>
 
 <!--Section services-->
@@ -281,7 +187,7 @@
         <div class="row">
             <div class="col-md-8 col-md-push-2">
                 <div class="heading-title center">
-                    <h2>Testimonies from Dropshipers</h2>
+                    <h2>Testimonies from Users</h2>
                     <div class="small-desd">We create <span>awesome stuff</span></div>
                     <p>Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium lectorum. Mirum est notare quam littera gothica, quam nunc putamus parum</p>
                 </div>
