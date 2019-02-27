@@ -19,6 +19,9 @@
     <link rel="stylesheet" type="text/css" href="animate.css">
 
     <link rel="stylesheet" type="text/css" href="{{ asset('animate.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/swichTab.css') }}">
+
+
 </head>
 <body class="dark-load">
 <header id="top-nav" class="top-nav page-header">
@@ -211,19 +214,40 @@
 
 </section>
 
+{{--<div class="tabGroup example">--}}
+    {{--<ul class="swichtab-controller">--}}
+        {{--<li data-swichtab="controller"><a href="#tab1">tab1</a></li>--}}
+        {{--<li data-swichtab="controller"><a href="#tab2">tab2</a></li>--}}
+        {{--<li data-swichtab="controller"><a href="#tab3">tab3</a></li>--}}
+    {{--</ul>--}}
+    {{--<div class="swichtab-contents">--}}
+        {{--<div id="tab1" class="swichtab-panel" data-swichtab="target">--}}
+            {{--<p>Tab 1</p>--}}
+        {{--</div>--}}
+
+        {{--<div id="tab2" class="swichtab-panel" data-swichtab="target">--}}
+            {{--<p>Tab 2</p>--}}
+        {{--</div>--}}
+
+        {{--<div id="tab3" class="swichtab-panel" data-swichtab="target">--}}
+            {{--<p>Tab 3</p>--}}
+        {{--</div>--}}
+    {{--</div>--}}
+    {{--<!-- /.swichtab-contents -->--}}
+{{--</div>--}}
+
 <section id="services" class="section-our-services bg-white-section">
-    <div class="container">
+    <div class="container tabGroup b2b" >
         <div class="row">
             <div class="col-md-8 col-md-push-2">
                 <div class="heading-title center">
                     <h2 class="animated fadeInDown" style="opacity: 1;">Our <span>Top Ads</span></h2>
                 </div>
                 <div class="controls-portfolio center">
-                    <ul id="control-portfolio" class="text-center">
-                        <li id="liact" data-filter="*" class="filter select-cat active">All</li>
-                        <li data-filter=".category-2" class="filter">B2B Invests</li>
-                        <li data-filter=".category-3" class="filter">B2B Sale</li>
-                        <li data-filter=".category-4" class="filter">Open Partnership</li>
+                    <ul class="swichtab-controller">
+                        <li data-swichtab="controller"><a href="#tab1">B2B Invests</a></li>
+                        <li data-swichtab="controller"><a href="#tab2">B2B Sale</a></li>
+                        <li data-swichtab="controller"><a href="#tab3">Open Partnership</a></li>
                     </ul>
                 </div>
             </div>
@@ -231,42 +255,127 @@
         <div class="row">
             <div class="">
 
-                <div class="row  portfolio portfolio-item">
-                    <div class="item-service item-portfolio portfolio-item category-3" style=" display: none;">
-                        <div data-image="img/bg4.jpg" class="col-md-3 icon-service bg-mask background-image" style="background-image: url(&quot;img/bg4.jpg&quot;); height: 245px;">
-                            <div class="small-i"><i class="pe-7s-phone"></i></div>
-                            <div class="large-i"><i class="pe-7s-phone"></i></div>
+                <div class="row swichtab-contents">
+                    <div  id="tab1" class="swichtab-pane" data-swichtab="target">
+                        <div class="item-service">
+                            <div data-image="img/bg4.jpg" class="col-md-3 icon-service bg-mask background-image" style="background-image: url(&quot;img/bg4.jpg&quot;); height: 245px;">
+                                <div class="small-i"><i class="pe-7s-phone"></i></div>
+                                <div class="large-i"><i class="pe-7s-phone"></i></div>
+                            </div>
+                            <div class="col-md-9 content-service">
+                                <h2>Project <span>Name</span></h2>
+                                <p>Ads Description Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+                                <hr>
+                                <div class="buttons-section left"><a href="" class="btn white-btn">View Ad</a></div>
+                            </div>
                         </div>
-                        <div class="col-md-9 content-service">
-                            <h2>Project <span>Name</span></h2>
-                            <p>Ads Description Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
-                            <hr>
-                            <div class="buttons-section left"><a href="" class="btn white-btn">View Ad</a></div>
+                        <div class="item-service">
+                            <div data-image="img/bg4.jpg" class="col-md-3 icon-service bg-mask background-image" style="background-image: url(&quot;img/bg4.jpg&quot;); height: 245px;">
+                                <div class="small-i"><i class="pe-7s-phone"></i></div>
+                                <div class="large-i"><i class="pe-7s-phone"></i></div>
+                            </div>
+                            <div class="col-md-9 content-service">
+                                <h2>Project <span>Name</span></h2>
+                                <p>Ads Description Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+                                <hr>
+                                <div class="buttons-section left"><a href="" class="btn white-btn">View Ad</a></div>
+                            </div>
                         </div>
+                        <div class="item-service">
+                            <div data-image="img/bg4.jpg" class="col-md-3 icon-service bg-mask background-image" style="background-image: url(&quot;img/bg4.jpg&quot;); height: 245px;">
+                                <div class="small-i"><i class="pe-7s-phone"></i></div>
+                                <div class="large-i"><i class="pe-7s-phone"></i></div>
+                            </div>
+                            <div class="col-md-9 content-service">
+                                <h2>Project <span>Name</span></h2>
+                                <p>Ads Description Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+                                <hr>
+                                <div class="buttons-section left"><a href="" class="btn white-btn">View Ad</a></div>
+                            </div>
+                        </div>
+                        <div class="item-service">
+                            <div data-image="img/bg4.jpg" class="col-md-3 icon-service bg-mask background-image" style="background-image: url(&quot;img/bg4.jpg&quot;); height: 245px;">
+                                <div class="small-i"><i class="pe-7s-phone"></i></div>
+                                <div class="large-i"><i class="pe-7s-phone"></i></div>
+                            </div>
+                            <div class="col-md-9 content-service">
+                                <h2>Project <span>Name</span></h2>
+                                <p>Ads Description Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+                                <hr>
+                                <div class="buttons-section left"><a href="" class="btn white-btn">View Ad</a></div>
+                            </div>
+                        </div>
+
                     </div>
-                    <div class="item-service">
-                        <div data-image="img/bg4.jpg" class="col-md-3 icon-service bg-mask background-image" style="background-image: url(&quot;img/bg4.jpg&quot;); height: 245px;">
-                            <div class="small-i"><i class="pe-7s-phone"></i></div>
-                            <div class="large-i"><i class="pe-7s-phone"></i></div>
+
+                    <div  id="tab2" class="swichtab-pane" data-swichtab="target">
+                        <div class="item-service">
+                            <div data-image="img/bg4.jpg" class="col-md-3 icon-service bg-mask background-image" style="background-image: url(&quot;img/bg4.jpg&quot;); height: 245px;">
+                                <div class="small-i"><i class="pe-7s-phone"></i></div>
+                                <div class="large-i"><i class="pe-7s-phone"></i></div>
+                            </div>
+                            <div class="col-md-9 content-service">
+                                <h2>Project <span>Name</span></h2>
+                                <p>Ads Description Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+                                <hr>
+                                <div class="buttons-section left"><a href="" class="btn white-btn">View Ad</a></div>
+                            </div>
                         </div>
-                        <div class="col-md-9 content-service">
-                            <h2>Project <span>Name</span></h2>
-                            <p>Ads Description Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
-                            <hr>
-                            <div class="buttons-section left"><a href="" class="btn white-btn">View Ad</a></div>
+                        <div class="item-service">
+                            <div data-image="img/bg4.jpg" class="col-md-3 icon-service bg-mask background-image" style="background-image: url(&quot;img/bg4.jpg&quot;); height: 245px;">
+                                <div class="small-i"><i class="pe-7s-phone"></i></div>
+                                <div class="large-i"><i class="pe-7s-phone"></i></div>
+                            </div>
+                            <div class="col-md-9 content-service">
+                                <h2>Project <span>Name</span></h2>
+                                <p>Ads Description Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+                                <hr>
+                                <div class="buttons-section left"><a href="" class="btn white-btn">View Ad</a></div>
+                            </div>
                         </div>
+                        <div class="item-service">
+                            <div data-image="img/bg4.jpg" class="col-md-3 icon-service bg-mask background-image" style="background-image: url(&quot;img/bg4.jpg&quot;); height: 245px;">
+                                <div class="small-i"><i class="pe-7s-phone"></i></div>
+                                <div class="large-i"><i class="pe-7s-phone"></i></div>
+                            </div>
+                            <div class="col-md-9 content-service">
+                                <h2>Project <span>Name</span></h2>
+                                <p>Ads Description Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+                                <hr>
+                                <div class="buttons-section left"><a href="" class="btn white-btn">View Ad</a></div>
+                            </div>
+                        </div>
+
+
                     </div>
-                    <div class="item-service">
-                        <div data-image="img/bg4.jpg" class="col-md-3 icon-service bg-mask background-image" style="background-image: url(&quot;img/bg4.jpg&quot;); height: 245px;">
-                            <div class="small-i"><i class="pe-7s-phone"></i></div>
-                            <div class="large-i"><i class="pe-7s-phone"></i></div>
+
+                    <div  id="tab3" class="swichtab-pane" data-swichtab="target">
+                        <div class="item-service">
+                            <div data-image="img/bg4.jpg" class="col-md-3 icon-service bg-mask background-image" style="background-image: url(&quot;img/bg4.jpg&quot;); height: 245px;">
+                                <div class="small-i"><i class="pe-7s-phone"></i></div>
+                                <div class="large-i"><i class="pe-7s-phone"></i></div>
+                            </div>
+                            <div class="col-md-9 content-service">
+                                <h2>Project <span>Name</span></h2>
+                                <p>Ads Description Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+                                <hr>
+                                <div class="buttons-section left"><a href="" class="btn white-btn">View Ad</a></div>
+                            </div>
                         </div>
-                        <div class="col-md-9 content-service">
-                            <h2>Project <span>Name</span></h2>
-                            <p>Ads Description Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
-                            <hr>
-                            <div class="buttons-section left"><a href="" class="btn white-btn">View Ad</a></div>
+                        <div class="item-service">
+                            <div data-image="img/bg4.jpg" class="col-md-3 icon-service bg-mask background-image" style="background-image: url(&quot;img/bg4.jpg&quot;); height: 245px;">
+                                <div class="small-i"><i class="pe-7s-phone"></i></div>
+                                <div class="large-i"><i class="pe-7s-phone"></i></div>
+                            </div>
+                            <div class="col-md-9 content-service">
+                                <h2>Project <span>Name</span></h2>
+                                <p>Ads Description Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+                                <hr>
+                                <div class="buttons-section left"><a href="" class="btn white-btn">View Ad</a></div>
+                            </div>
                         </div>
+
+
                     </div>
                 </div>
             </div>
@@ -304,11 +413,11 @@
     </div>
 </section>
 
-<section data-image="img/bg2.jpg" class="section-how-we-work bg-white-section background-image">
+<section data-image="" class="section-how-we-work bg-white-section background-image">
     <div class="container">
         <div class="row">
             <div class="col-md-8 col-md-push-2">
-                <div class="heading-title center">
+                <div class="heading-titl center">
                     <h2>FAQs</h2>
                 </div>
             </div>
@@ -343,6 +452,11 @@
         </div>
     </div>
 </section>
+
+
+
+
+
 
 
 <script src="libs/html5shiv/es5-shim.min.js"></script>
@@ -439,5 +553,14 @@
 <script src="{{ asset('js/wow.js') }}"></script>
 
 <script src="{{ asset('js/range.js') }}"></script>
+
+<script src="{{ asset('js/jquery.swichTab.js') }}"></script>
+<script>
+
+    $('.b2b').swichTab({
+        swiper: true,
+        cahngePanel: 'toggle'
+    });
+</script>
 </body>
 </html>
