@@ -115,25 +115,25 @@
                 <div class="item">
                     <img style="width: 75px;" src="assets/images/items/invent.png">
                     <h4>Register deals </h4>
-                    <p>Get the best of services using a specialized inventory structure and platform.</p>
+                    <p>Manage deals with your team</p>
                 </div>
             </div>
             <div class="col-md-3">
                 <div class="item"><img style="width: 75px;" src="assets/images/items/listin.png">
-                    <h4>Manage Deal</h4>
-                    <p>Create and maintain orders as you wish</p>
+                    <h4>Search deals</h4>
+                    <p>Submit Information Disclosure Requests Paid Function</p>
                 </div>
             </div>
             <div class="col-md-3">
                 <div class="item"><img style="width: 75px;" src="assets/images/items/order.png">
-                    <h4>More</h4>
-                    <p>Use the Sensei feature to manage your multiple accounts.</p>
+                    <h4>Upon Closing the Deal</h4>
+                    <p>For Sellers : Complimentary reward will be paid by Us</p>
                 </div>
             </div>
             <div class="col-md-3">
                 <div class="item"><img style="width: 75px;" src="assets/images/items/ninja.png">
-                    <h4>More</h4>
-                    <p>This platform is for you, explore and do more than Business Plan.</p>
+                    <h4>Upon Closing the Deal</h4>
+                    <p>For Buyers : Commission will be charged</p>
                 </div>
             </div>
         </div>
@@ -149,8 +149,61 @@
                 <div class="heading-title center">
                     <h2>How it <span>Works</span></h2>
                     <div class="small-desd">Steps to  <span>a successful Business</span></div>
-                    <p>Use the following steps to create a perfect Business Plan </p>
+                    <p>This is the steps to create a perfect Business Plan </p>
                 </div>
+
+            </div>
+            <div class="row">
+                <!-- Item-->
+                <div class="col-md-12">
+                    <div class="col-md-6 col-sm-6 col-xs-12">
+                        <h4>For Sellers</h4>
+                        <div class="body">
+                            <h4>What You Can Do</h4>
+                            <ul class="list">
+                                <li>Register deals</li>
+                                <li>Manage deals with your team</li>
+                                <li>Upload /Download related documents</li>
+                                <li>Disclose deal information</li>
+                                <li>Online negotiations via chat</li>
+                                <li>Professional support</li>
+                            </ul>
+                            <h4>Upon Closing the Deal</h4>
+                            <ul class="list">
+                                <li>
+                                    <em>Complimentary reward will be paid by Us</em>
+                                </li>
+                            </ul>
+                            <h4>Usage Fee</h4>
+                            <ul class="list">
+                                <li>
+                                    <em>All free of charge</em>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- Item-->
+                    <div class="col-md-6 col-sm-6 col-xs-12 item-icon">
+                        <h4>For Buyers</h4>
+                        <div class="body">
+                            <h4>What You Can Do</h4>
+                            <ul class="list"><li>Search deals</li><li>Submit Information Disclosure Requests <span>Paid Function</span></li><li>Manage deals with your team</li><li>Upload / Download related documents</li><li>Online negotiations via chat</li><li>Professional support</li></ul>
+                            <h4>Upon Closing the Deal</h4>
+                            <ul class="list">
+                                <li>Commission will be charged</li>
+                            </ul>
+                            <h4>Usage Fee</h4>
+                            <ul class="list">
+                                <li>
+                                    <em>All paid functions are free of charge until the end of June 2019!</em>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- Edn items-->
             </div>
         </div>
 
@@ -158,94 +211,74 @@
 
 </section>
 
-<!--Section services-->
-<h1>Our <span><a name="prices">prices</a></span></h1>
-<!-- horizontal line-->
-<span class="horizontal-line"></span><span></span>
-<!-- description slider-->
-<div class="description">
-    <div class="budget-wrap">
-        <div class="budget">
-            <div class="header">
-                <div class="title clearfix">
-                    Our Price Range! <span class="pull-right">
-
-				</span></div>
+<section data-image="img/bg1.jpg" class="section-work-progress background-image bg-dark-section" style="background-image: url(&quot;img/bg1.jpg&quot;);">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3">
+                <div class="heading-title small-heading text-left">
+                    <h2 class="animated fadeInDown" style="opacity: 1;">Our  <span>Business Ads</span></h2>
+                    <p class="animated fadeInUp" style="opacity: 1;">create posts according to 3 categories such as b2b,b2b invest,open partnership</p>
+                </div>
             </div>
-            <div class="content">
-                <input type="range" min="1" max="100" value="20" data-rangeslider>
-                <p class="pricingValues">Our Values <span class="pull-left"></span></p>
+            <div class="col-md-3 col-sm-4">
+                <div class="icon-progress"><i class="pe-7s-cash"></i>
+                    <p>1. B2B Sales</p>
+                </div>
             </div>
-            <div class="footer clearfix">
-
+            <div class="col-md-3 col-sm-4">
+                <div class="icon-progress"><i class="pe-7s-plug"></i>
+                    <p>2. B2B Invest</p>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-4">
+                <div class="icon-progress"><i class="pe-7s-users"></i>
+                    <p>3. Open Partnership</p>
+                </div>
             </div>
         </div>
-    </div></div>
-<!--Section how we work-->
+    </div>
+</section>
+
 <section data-image="img/bg2.jpg" class="section-how-we-work bg-white-section background-image">
     <div class="container">
         <div class="row">
             <div class="col-md-8 col-md-push-2">
                 <div class="heading-title center">
-                    <h2>Testimonies from Users</h2>
-                    <div class="small-desd">We create <span>awesome stuff</span></div>
-                    <p>Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium lectorum. Mirum est notare quam littera gothica, quam nunc putamus parum</p>
+                    <h2>FAQs</h2>
                 </div>
             </div>
         </div>
         <div class="row">
-            <!-- Item-->
-            <div class="col-md-3 col-sm-6 col-xs-12 item-icon">
-                <div class="icon-container">
-                    <div class="icon icon-circle"><i class="pe-7s-look"></i></div>
+            <div class="col-md-12">
+                <div class="accordion ui-accordion ui-widget ui-helper-reset" role="tablist">
+                    <!--tab-->
+                    <h3 class="ui-accordion-header ui-corner-top ui-state-default ui-accordion-header-active ui-state-active ui-accordion-icons" role="tab" id="ui-id-13" aria-controls="ui-id-14" aria-selected="true" aria-expanded="true" tabindex="0"><span class="ui-accordion-header-icon ui-icon ui-icon-triangle-1-s"></span><i class="fa fa-question"></i>Will I be charged to use The Services</h3>
+                    <div class="ui-accordion-content ui-corner-bottom ui-helper-reset ui-widget-content ui-accordion-content-active" id="ui-id-14" aria-labelledby="ui-id-13" role="tabpanel" aria-hidden="false" style="display: block;">
+                        <p>All services are free of charge up to closing for both sides.
+                            <br>* Buyers will be charged upon closing.
+                            <br>Please contact us for details after user registration.
+
+                            <br>*Information disclosure request function will be free of charge only until the end of June 2019</p>
+                    </div>
+                    <!--tab-->
+                    <h3 class="ui-accordion-header ui-corner-top ui-accordion-header-collapsed ui-corner-all ui-state-default ui-accordion-icons" role="tab" id="ui-id-15" aria-controls="ui-id-16" aria-selected="false" aria-expanded="false" tabindex="-1"><span class="ui-accordion-header-icon ui-icon ui-icon-triangle-1-e"></span><i class="fa fa-question"></i>Who are users of These Service</h3>
+                    <div class="ui-accordion-content ui-corner-bottom ui-helper-reset ui-widget-content" id="ui-id-16" aria-labelledby="ui-id-15" role="tabpanel" aria-hidden="true" style="display: none;">
+                        <p>
+                            Our users include corporates, financial advisors, banks, private equity firms, law firms and accounting firms from over 130 countries..</p>
+                    </div>
+                    <!--tab-->
+                    <h3 class="ui-accordion-header ui-corner-top ui-accordion-header-collapsed ui-corner-all ui-state-default ui-accordion-icons" role="tab" id="ui-id-17" aria-controls="ui-id-18" aria-selected="false" aria-expanded="false" tabindex="-1"><span class="ui-accordion-header-icon ui-icon ui-icon-triangle-1-e"></span><i class="fa fa-question"></i>How will information of registered deals be open to All users?</h3>
+                    <div class="ui-accordion-content ui-corner-bottom ui-helper-reset ui-widget-content" id="ui-id-18" aria-labelledby="ui-id-17" role="tabpanel" aria-hidden="true" style="display: none;">
+                        <p>
+                            Basic information on no name basis is disclosed to Allusers only after review by Our team.
+                            <br>Detailed information on businesses and financials that possibly could lead to identity of the target can only be disclosed after sellers approve information disclosure requests from buyers.</p>
+                    </div>
                 </div>
-                <h3>Awesome</h3>
-                <p>Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium lectorum.</p>
             </div>
-            <!-- Item-->
-            <div class="col-md-3 col-sm-6 col-xs-12 item-icon">
-                <div class="icon-container">
-                    <div class="icon icon-circle"><i class="pe-7s-light"></i></div>
-                </div>
-                <h3>Innovative</h3>
-                <p>Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium lectorum.</p>
-            </div>
-            <!-- Item-->
-            <div class="col-md-3 col-sm-6 col-xs-12 item-icon">
-                <div class="icon-container">
-                    <div class="icon icon-circle"><i class="pe-7s-like2"></i></div>
-                </div>
-                <h3>Creative</h3>
-                <p>Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium lectorum.</p>
-            </div>
-            <!-- Item-->
-            <div class="col-md-3 col-sm-6 col-xs-12 item-icon">
-                <div class="icon-container">
-                    <div class="icon icon-circle"><i class="pe-7s-graph1"></i></div>
-                </div>
-                <h3>EXPERIMENTAL</h3>
-                <p>Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium lectorum.</p>
-            </div>
-            <!-- Edn items-->
         </div>
     </div>
 </section>
-<!--Section work progress-->
-<!--Section our some work-->
-<!--Section trigger-->
-<!--Section we are in numbers-->
-<!--Section our skills-->
-<!--Section carousel trigger-->
-<!--Section our team-->
-<!--Section testimonials-->
-<!--Section why chose us-->
-<!--Section our clients-->
-<!--Section contact with us-->
-<!--Section our location-->
-<!--<div class="map-section">-->
-<!--  <div id="map" data-zoom="13" data-height="400" data-address="Konotop" data-address-details="Our location" class="map-content"></div>-->
-<!--</div>-->
-<!-- Old browsers support--><!--[if lt IE 9]>
+
 <script src="libs/html5shiv/es5-shim.min.js"></script>
 <script src="libs/html5shiv/html5shiv.min.js"></script>
 <script src="libs/html5shiv/html5shiv-printshiv.min.js"></script>
