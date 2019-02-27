@@ -211,6 +211,71 @@
 
 </section>
 
+<section id="services" class="section-our-services bg-white-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 col-md-push-2">
+                <div class="heading-title center">
+                    <h2 class="animated fadeInDown" style="opacity: 1;">Our <span>Top Ads</span></h2>
+                </div>
+                <div class="controls-portfolio center">
+                    <ul id="control-portfolio" class="text-center">
+                        <li id="liact" data-filter="*" class="filter select-cat active">All</li>
+                        <li data-filter=".category-2" class="filter">B2B Invests</li>
+                        <li data-filter=".category-3" class="filter">B2B Sale</li>
+                        <li data-filter=".category-4" class="filter">Open Partnership</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="">
+
+                <div class="row  portfolio portfolio-item">
+                    <div class="item-service item-portfolio portfolio-item category-3" style=" display: none;">
+                        <div data-image="img/bg4.jpg" class="col-md-3 icon-service bg-mask background-image" style="background-image: url(&quot;img/bg4.jpg&quot;); height: 245px;">
+                            <div class="small-i"><i class="pe-7s-phone"></i></div>
+                            <div class="large-i"><i class="pe-7s-phone"></i></div>
+                        </div>
+                        <div class="col-md-9 content-service">
+                            <h2>Project <span>Name</span></h2>
+                            <p>Ads Description Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+                            <hr>
+                            <div class="buttons-section left"><a href="" class="btn white-btn">View Ad</a></div>
+                        </div>
+                    </div>
+                    <div class="item-service">
+                        <div data-image="img/bg4.jpg" class="col-md-3 icon-service bg-mask background-image" style="background-image: url(&quot;img/bg4.jpg&quot;); height: 245px;">
+                            <div class="small-i"><i class="pe-7s-phone"></i></div>
+                            <div class="large-i"><i class="pe-7s-phone"></i></div>
+                        </div>
+                        <div class="col-md-9 content-service">
+                            <h2>Project <span>Name</span></h2>
+                            <p>Ads Description Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+                            <hr>
+                            <div class="buttons-section left"><a href="" class="btn white-btn">View Ad</a></div>
+                        </div>
+                    </div>
+                    <div class="item-service">
+                        <div data-image="img/bg4.jpg" class="col-md-3 icon-service bg-mask background-image" style="background-image: url(&quot;img/bg4.jpg&quot;); height: 245px;">
+                            <div class="small-i"><i class="pe-7s-phone"></i></div>
+                            <div class="large-i"><i class="pe-7s-phone"></i></div>
+                        </div>
+                        <div class="col-md-9 content-service">
+                            <h2>Project <span>Name</span></h2>
+                            <p>Ads Description Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+                            <hr>
+                            <div class="buttons-section left"><a href="" class="btn white-btn">View Ad</a></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+</section>
+
 <section data-image="img/bg1.jpg" class="section-work-progress background-image bg-dark-section" style="background-image: url(&quot;img/bg1.jpg&quot;);">
     <div class="container">
         <div class="row">
@@ -278,6 +343,7 @@
         </div>
     </div>
 </section>
+
 
 <script src="libs/html5shiv/es5-shim.min.js"></script>
 <script src="libs/html5shiv/html5shiv.min.js"></script>
