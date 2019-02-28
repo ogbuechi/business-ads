@@ -15,6 +15,17 @@ Route::get('/', function () {
     return view('home');
 });
 
+Route::get('/b2b_sales', function () {
+    return view('b2b_sales');
+});
+Route::get('/b2b_invests', function () {
+    return view('b2b_invests');
+});
+
+Route::get('/contact', function () {
+    return view('contact-us');
+});
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

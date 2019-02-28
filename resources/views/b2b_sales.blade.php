@@ -69,21 +69,21 @@
     <!-- End full screen top nav-->
     <!-- Start Content section-->
     {{--<section data-image="img/bgn12.jpg" id="top" class="display-page img-parallax bg-mask background-image">--}}
-        {{--<div class="container">--}}
-            {{--<div class="row">--}}
-                {{--<div class="col-md-12">--}}
-                    {{--<div class="content">--}}
-                        {{--<!-- heading title-->--}}
-                        {{--<h1>b2b Sales</h1>--}}
-                        {{--<!-- horizontal line--><span class="horizontal-line"></span><span></span>--}}
-                        {{--<!-- description slider-->--}}
-                        {{--<div class="description">--}}
-                            {{--<p>Here are availabel b2b Sales</p>--}}
-                        {{--</div>--}}
-                    {{--</div>--}}
-                {{--</div>--}}
-            {{--</div>--}}
-        {{--</div>--}}
+    {{--<div class="container">--}}
+    {{--<div class="row">--}}
+    {{--<div class="col-md-12">--}}
+    {{--<div class="content">--}}
+    {{--<!-- heading title-->--}}
+    {{--<h1>b2b Sales</h1>--}}
+    {{--<!-- horizontal line--><span class="horizontal-line"></span><span></span>--}}
+    {{--<!-- description slider-->--}}
+    {{--<div class="description">--}}
+    {{--<p>Here are availabel b2b Sales</p>--}}
+    {{--</div>--}}
+    {{--</div>--}}
+    {{--</div>--}}
+    {{--</div>--}}
+    {{--</div>--}}
     {{--</section>--}}
     <!--Section our services-->
     <section id="services" class="section-our-services bg-white-section">
@@ -91,70 +91,58 @@
             <br>
             <br>
             <br>
-            <div class="row">
-                <div class="col-md-8 col-md-push-2">
-                    <div class="heading-title center">
-                        <h2>b2b <span>Sales</span></h2>
-                        <div class="small-desd">Here <span>are available b2b Sales</span></div>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
+            <div  id="tab1" class="row">
                 <div class="item-service">
-                    <div data-image="img/bg1.jpg" class="col-md-3 icon-service bg-mask background-image">
-                        <div class="small-i"><i class="pe-7s-global"></i></div>
-                        <div class="large-i"><i class="pe-7s-global"></i></div>
-                    </div>
-                    <div class="col-md-9 content-service">
-                        <h2>Web <span>development</span></h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
-                        <hr>
-                        <div class="buttons-section left"><a href="service-single.html" class="btn white-btn">Get started</a></div>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="item-service">
-                    <div data-image="img/bg2.jpg" class="col-md-3 icon-service bg-mask background-image">
-                        <div class="small-i"><i class="pe-7s-graph"></i></div>
-                        <div class="large-i"><i class="pe-7s-graph"></i></div>
-                    </div>
-                    <div class="col-md-9 content-service">
-                        <h2>Branding</h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
-                        <hr>
-                        <div class="buttons-section left"><a href="service-single.html" class="btn white-btn">Get started</a></div>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="item-service">
-                    <div data-image="img/bg3.jpg" class="col-md-3 icon-service bg-mask background-image">
-                        <div class="small-i"><i class="pe-7s-drop"></i></div>
-                        <div class="large-i"><i class="pe-7s-drop"></i></div>
-                    </div>
-                    <div class="col-md-9 content-service">
-                        <h2>Web <span>design</span></h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
-                        <hr>
-                        <div class="buttons-section left"><a href="service-single.html" class="btn white-btn">Get started</a></div>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="item-service">
-                    <div data-image="img/bg4.jpg" class="col-md-3 icon-service bg-mask background-image">
+                    <div data-image="img/bg4.jpg" class="col-md-3 icon-service bg-mask background-image" style="background-image: url(&quot;img/bg4.jpg&quot;); height: 245px;">
                         <div class="small-i"><i class="pe-7s-phone"></i></div>
                         <div class="large-i"><i class="pe-7s-phone"></i></div>
                     </div>
                     <div class="col-md-9 content-service">
-                        <h2>Mobile apps <span>development</span></h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+                        <h2>Project <span>Name</span></h2>
+                        <p>Ads Description Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
                         <hr>
-                        <div class="buttons-section left"><a href="service-single.html" class="btn white-btn large-btn">Get started</a></div>
+                        <div class="buttons-section left"><a href="" class="btn white-btn">View Ad</a></div>
                     </div>
                 </div>
+                <div class="item-service">
+                    <div data-image="img/bg4.jpg" class="col-md-3 icon-service bg-mask background-image" style="background-image: url(&quot;img/bg4.jpg&quot;); height: 245px;">
+                        <div class="small-i"><i class="pe-7s-phone"></i></div>
+                        <div class="large-i"><i class="pe-7s-phone"></i></div>
+                    </div>
+                    <div class="col-md-9 content-service">
+                        <h2>Project <span>Name</span></h2>
+                        <p>Ads Description Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+                        <hr>
+                        <div class="buttons-section left"><a href="" class="btn white-btn">View Ad</a></div>
+                    </div>
+                </div>
+                <div class="item-service">
+                    <div data-image="img/bg4.jpg" class="col-md-3 icon-service bg-mask background-image" style="background-image: url(&quot;img/bg4.jpg&quot;); height: 245px;">
+                        <div class="small-i"><i class="pe-7s-phone"></i></div>
+                        <div class="large-i"><i class="pe-7s-phone"></i></div>
+                    </div>
+                    <div class="col-md-9 content-service">
+                        <h2>Project <span>Name</span></h2>
+                        <p>Ads Description Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+                        <hr>
+                        <div class="buttons-section left"><a href="" class="btn white-btn">View Ad</a></div>
+                    </div>
+                </div>
+                <div class="item-service">
+                    <div data-image="img/bg4.jpg" class="col-md-3 icon-service bg-mask background-image" style="background-image: url(&quot;img/bg4.jpg&quot;); height: 245px;">
+                        <div class="small-i"><i class="pe-7s-phone"></i></div>
+                        <div class="large-i"><i class="pe-7s-phone"></i></div>
+                    </div>
+                    <div class="col-md-9 content-service">
+                        <h2>Project <span>Name</span></h2>
+                        <p>Ads Description Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+                        <hr>
+                        <div class="buttons-section left"><a href="" class="btn white-btn">View Ad</a></div>
+                    </div>
+                </div>
+
             </div>
+
         </div>
     </section>
     <!--Section work progress-->
