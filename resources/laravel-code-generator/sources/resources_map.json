@@ -30,5 +30,13 @@
         "model-name": "Country",
         "resource-file": "countries.json",
         "table-name": "countries"
+    },
+    {
+        "model-name": "Category",
+        "resource-file": "categories.json"
+    },
+    {
+        "model-name": "Invest",
+        "resource-file": "invests.json"
     }
 ]

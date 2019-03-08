@@ -11,10 +11,6 @@
 |
 */
 
-Route::get('/', function () {
-    return view('home');
-});
-
 Route::get('/b2b_sales', function () {
     return view('b2b_sales');
 });
@@ -26,9 +22,15 @@ Route::get('/contact', function () {
     return view('contact-us');
 });
 
+Route::get('/dashboard', function () {
+    return view('dashboard.index');
+});
+
 Auth::routes();
 
+Route::get('/', 'HomeController@index')->name('home');
 Route::get('/home', 'HomeController@index')->name('home');
+
 Route::get('bt-admin', 'AdminController@index')->name('admin.home');
 Route::get('bt-admin/media', 'AdminController@media')->name('admin.media');
 Route::get('bt-admin/profile', 'AdminController@profile')->name('admin.profile');
@@ -207,6 +209,77 @@ Route::group(
 
     Route::delete('/case_note/{caseNote}','CaseNotesController@destroy')
          ->name('case_notes.case_note.destroy')
+         ->where('id', '[0-9]+');
+
+});
+
+Route::group(
+[
+    'prefix' => 'categories',
+], function () {
+
+    Route::get('/', 'CategoriesController@index')
+         ->name('categories.category.index');
+
+    Route::get('/create','CategoriesController@create')
+         ->name('categories.category.create');
+
+    Route::get('/show/{category}','CategoriesController@show')
+         ->name('categories.category.show')
+         ->where('id', '[0-9]+');
+
+    Route::get('/{category}/edit','CategoriesController@edit')
+         ->name('categories.category.edit')
+         ->where('id', '[0-9]+');
+
+    Route::post('/', 'CategoriesController@store')
+         ->name('categories.category.store');
+               
+    Route::put('category/{category}', 'CategoriesController@update')
+         ->name('categories.category.update')
+         ->where('id', '[0-9]+');
+
+    Route::delete('/category/{category}','CategoriesController@destroy')
+         ->name('categories.category.destroy')
+         ->where('id', '[0-9]+');
+
+});
+
+Route::group(
+[
+    'prefix' => 'invests',
+], function () {
+
+    Route::get('/', 'InvestsController@index')
+         ->name('invests.invest.index');
+
+    Route::get('/myads', 'InvestsController@myAds')
+         ->name('invests.invest.myads');
+
+    Route::get('/create','InvestsController@create')
+         ->name('invests.invest.create');
+
+    Route::get('/show/{invest}','InvestsController@show')
+         ->name('invests.invest.show')
+         ->where('id', '[0-9]+');
+
+    Route::get('/my_ad/show/{invest}','InvestsController@showMyAd')
+         ->name('invests.invest.show_my_ad')
+         ->where('id', '[0-9]+');
+
+    Route::get('/{invest}/edit','InvestsController@edit')
+         ->name('invests.invest.edit')
+         ->where('id', '[0-9]+');
+
+    Route::post('/', 'InvestsController@store')
+         ->name('invests.invest.store');
+               
+    Route::put('invest/{invest}', 'InvestsController@update')
+         ->name('invests.invest.update')
+         ->where('id', '[0-9]+');
+
+    Route::delete('/invest/{invest}','InvestsController@destroy')
+         ->name('invests.invest.destroy')
          ->where('id', '[0-9]+');
 
 });

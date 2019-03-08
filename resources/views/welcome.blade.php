@@ -1,344 +1,574 @@
-<!DOCTYPE html>
-<html lang="en" class="no-js">
-<head>
-    <meta charset="utf-8">
-    <title>Business Ad | Business Planing</title>
-    <meta name="description" content="">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <meta property="og:image" content="path/to/image.jpg">
-    <!--Favicon-->
-    <link rel="icon" href="{{ asset('img/favicon/favicon.ico') }}">
-    <!--Libs css-->
-    <link rel="stylesheet" href="{{ asset('css/libs.css') }}">
-    <!--Main css-->
-    <link rel="stylesheet" href="{{ asset('css/main.css') }}">
+@extends('layouts.front-end')
 
+@section('content')
 
-    <link rel="stylesheet" href="{{ asset('css/range.css') }}">
-    <link rel="stylesheet" type="text/css" href="animate.css">
-
-    <link rel="stylesheet" type="text/css" href="{{ asset('animate.css') }}">
-</head>
-<body class="dark-load">
-<header id="top-nav" class="top-nav page-header">
-    <div class="container"><a href="#" class="logo smooth-scroll"><img src="{{ asset('img/mark.png') }}" alt="logo" class="logo-white"><img src="{{ asset('img/mark.png') }}" alt="logo" class="logo-dark"></a>
-        <nav class="top-menu">
-            <ul class="sf-menu">
-                <!--Menu default-->
-                <li><a href="">Home</a>
-
-                </li>
-                <li><a href="">Features</a>
-
-                </li>
-                <li><a href="">Prices</a>
-
-                </li>
-                <li><a href="">Blog</a>
-
-                </li>
-                <li><a href="">Affiliates</a>
-
-                </li>
-                @guest()
-                    <li><a href="{{ url('login') }}">Sign in</a></li>
-                    <li><a href="{{ url('login') }}" class="btn dark-btn large-btn" id="butn">Try Free Today</a></li>
-                @endguest()
-
-
-            </ul>
-
-            <!--&lt;!&ndash; Start toggle menu&ndash;&gt;<a href="#" class="toggle-mnu"><span></span></a>-->
-            <!--&lt;!&ndash; Start toggle menu&ndash;&gt;<a href="#" class="toggle-top"><span></span><span></span><span></span><span></span><span></span></a>-->
-        </nav>
-        <!-- Start mobile menu-->
-        <div id="mobile-menu">
-            <div class="inner-wrap">
-                <nav>
-                    <ul class="nav_menu">
-                        <li class="menu-item-has-children current-menu-item"><a href="#">Home</a>
-
-                        </li>
-
-                        <li><a href="#about" class="smooth-scroll">About</a></li>
-
-                    </ul>
-                </nav>
-            </div>
-        </div>
-        <!-- End mobile menu-->
-    </div>
-</header>
-<div id="top" class="slider">
-
-    <div class="full-slider intro" id="backend">
-        <!-- Start slide-->
-        <div data-image="img/bgn22.jpg" class="slide bg-mask background-image full-vh">
-            <div class="container-slide vertical-align center head-desc">
-                <div class="container">
-                    <div class="row" id="designs">
-                        <div class="col-md-12">
-                            <div class="heading-title-big">Best <span>For Business Ads</span></div>
-
-                            <div id="types">
-                                <div id="typewriters">  </div><div id="cursor"></div></div>
-                            <!--<div class="animated fadeInRight">Repricing - allowing you to stay ahead of the competition.</div>-->
-                            <!--<div class="buttons-section"><a href="login.html" class="btn dark-btn large-btn">Login</a></div>-->
-                            <div class="buttons-section"><a href="/register" class="btn dark-btn large-btn">Create Account</a></div>
-
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div id="particles-js" class="canvas-background"></div>
-        </div>
-    </div>
-    <!--Contol slider-->
-    <div id="dots-control-full-slider" class="dots-control-carousel"></div>
-    <!-- Strat Control carousel-->
-    <div id="control-full-slider" class="prev-next-block-rotate opacity-control">
-        <div class="wrap-prev">
-            <div class="prev"><i aria-hidden="true" class="fa fa-angle-left"></i></div>
-        </div>
-        <div class="wrap-next">
-            <div class="next"><i aria-hidden="true" class="fa fa-angle-right"></i></div>
-        </div>
-    </div><a href="#into" class="smooth-scroll btn-down"><i aria-hidden="true" class="fa fa-angle-down"></i></a>
-</div>
-<!-- End slider section-->
-<!--Start into slider-->
-<div id="into" data-image="img/bgn1.jpg" class="into-slider background-image">
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-md-3">
-                <div class="item">
-                    <img style="width: 75px;" src="assets/images/items/invent.png">
-                    <h4>Register deals </h4>
-                    <p>Get the best of services using a specialized inventory structure and platform.</p>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div class="item"><img style="width: 75px;" src="assets/images/items/listin.png">
-                    <h4>Manage Deal</h4>
-                    <p>Create and maintain orders as you wish</p>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div class="item"><img style="width: 75px;" src="assets/images/items/order.png">
-                    <h4>More</h4>
-                    <p>Use the Sensei feature to manage your multiple accounts.</p>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div class="item"><img style="width: 75px;" src="assets/images/items/ninja.png">
-                    <h4>More</h4>
-                    <p>This platform is for you, explore and do more than Business Plan.</p>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<!--End into slider-->
-<!-- Section about-->
-<section id="about" class="about-us">
-    <div class="container">
-        <div class="row">
-
-            <div class="col-md-8 col-md-push-2">
-                <div class="heading-title center">
-                    <h2>How it <span>Works</span></h2>
-                    <div class="small-desd">Steps to  <span>a successful Business</span></div>
-                    <p>Use the following steps to create a perfect Business Plan </p>
-                </div>
-            </div>
-        </div>
-
-    </div>
-
-</section>
-
-<!--Section services-->
-<h1>Our <span><a name="prices">prices</a></span></h1>
-<!-- horizontal line-->
-<span class="horizontal-line"></span><span></span>
-<!-- description slider-->
-<div class="description">
-    <div class="budget-wrap">
-        <div class="budget">
-            <div class="header">
-                <div class="title clearfix">
-                    Our Price Range! <span class="pull-right">
-
-				</span></div>
-            </div>
-            <div class="content">
-                <input type="range" min="1" max="100" value="20" data-rangeslider>
-                <p class="pricingValues">Our Values <span class="pull-left"></span></p>
-            </div>
-            <div class="footer clearfix">
-
-            </div>
-        </div>
-    </div></div>
-<!--Section how we work-->
-<section data-image="img/bg2.jpg" class="section-how-we-work bg-white-section background-image">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-8 col-md-push-2">
-                <div class="heading-title center">
-                    <h2>Testimonies from Users</h2>
-                    <div class="small-desd">We create <span>awesome stuff</span></div>
-                    <p>Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium lectorum. Mirum est notare quam littera gothica, quam nunc putamus parum</p>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <!-- Item-->
-            <div class="col-md-3 col-sm-6 col-xs-12 item-icon">
-                <div class="icon-container">
-                    <div class="icon icon-circle"><i class="pe-7s-look"></i></div>
-                </div>
-                <h3>Awesome</h3>
-                <p>Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium lectorum.</p>
-            </div>
-            <!-- Item-->
-            <div class="col-md-3 col-sm-6 col-xs-12 item-icon">
-                <div class="icon-container">
-                    <div class="icon icon-circle"><i class="pe-7s-light"></i></div>
-                </div>
-                <h3>Innovative</h3>
-                <p>Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium lectorum.</p>
-            </div>
-            <!-- Item-->
-            <div class="col-md-3 col-sm-6 col-xs-12 item-icon">
-                <div class="icon-container">
-                    <div class="icon icon-circle"><i class="pe-7s-like2"></i></div>
-                </div>
-                <h3>Creative</h3>
-                <p>Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium lectorum.</p>
-            </div>
-            <!-- Item-->
-            <div class="col-md-3 col-sm-6 col-xs-12 item-icon">
-                <div class="icon-container">
-                    <div class="icon icon-circle"><i class="pe-7s-graph1"></i></div>
-                </div>
-                <h3>EXPERIMENTAL</h3>
-                <p>Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium lectorum.</p>
-            </div>
-            <!-- Edn items-->
-        </div>
-    </div>
-</section>
-<!--Section work progress-->
-<!--Section our some work-->
-<!--Section trigger-->
-<!--Section we are in numbers-->
-<!--Section our skills-->
-<!--Section carousel trigger-->
-<!--Section our team-->
-<!--Section testimonials-->
-<!--Section why chose us-->
-<!--Section our clients-->
-<!--Section contact with us-->
-<!--Section our location-->
-<!--<div class="map-section">-->
-<!--  <div id="map" data-zoom="13" data-height="400" data-address="Konotop" data-address-details="Our location" class="map-content"></div>-->
-<!--</div>-->
-<!-- Old browsers support--><!--[if lt IE 9]>
-<script src="libs/html5shiv/es5-shim.min.js"></script>
-<script src="libs/html5shiv/html5shiv.min.js"></script>
-<script src="libs/html5shiv/html5shiv-printshiv.min.js"></script>
-<script src="libs/respond/respond.min.js"></script>
-<![endif]-->
-<![endif]-->
-<footer>
-    <div class="container">
-        <div class="row">
-            <div class="col-md-3">
-                <!--<div class="logo"><img src="img/mark.png" alt="logo" class="logo-white"></div>-->
-                <p>We are a creative agency with a passion for design & developing beautiful creations.</p>
-                <!--Start social links-->
-                <ul class="social-links">
-                    <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                    <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                    <li><a href="#"><i class="fa fa-skype"></i></a></li>
-                    <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-                </ul>
-                <!--End social links-->
-            </div>
-            <div class="col-md-3">
-                <div class="links">
-                    <h5>ADDITIONAL LINKS</h5>
-                    <ul class="list">
-                        <li><a href="">For Freelancer</a></li>
-                        <li><a href="">For Photographs</a></li>
-                        <li><a href="">Contact</a></li>
-                        <li><a href="">FAQ</a></li>
-                        <li><a href="">404 page</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div class="links">
-                    <h5>Pages</h5>
-                    <ul class="list">
-                        <li><a href="">About page</a></li>
-                        <li><a href="">Blog page</a></li>
-                        <li><a href="">Price page</a></li>
-                        <li><a href="">Portfolio page</a></li>
-                        <li><a href="">Portfolio single</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div class="links">
-                    <h5>Info</h5>
-                </div>
-                <div class="linked">
-
-                    <ul class="list">
-                        <li>Phone:  +44 7421 112063</li>
-                        <li>Email:support@sellingsumo.com</li>
-
-                        <li>Skype: live:sellingsumo_1</li></ul>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="down-footer">
+    <!-- start section -->
+    <section class="section light-backgorund">
         <div class="container">
             <div class="row">
-                <div class="col-md-12">
-                    <p>© 2019 Copyright SellingSumo - All Rights Reserved.</p>
-                    <ul class="footer-menu">
-                        <li><a href="{{ url('/') }}">Home</a></li>
-                        <!--<li><a href="about.html" class="smooth-scroll">About</a></li>-->
-                        <!--<li><a href="services" class="smooth-scroll">Services</a></li>-->
-                        <!--<li><a href="#portfolio" class="smooth-scroll">Our works</a></li>-->
-                        <!--<li><a href="#skills" class="smooth-scroll">Skills</a></li>-->
-                        <!--<li> <a href="contact" class="smooth-scroll">Contact</a></li>-->
-                    </ul>
+                <div class="col-sm-4 col-md-3">
+                    <div class="navbar-vertical">
+                        <ul class="nav nav-stacked">
+                            <li class="header">
+                                <h6 class="text-uppercase">Categories <i class="fa fa-navicon pull-right"></i></h6>
+                            </li>
+                            <li>
+                                <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                                    Mens <i class="fa fa-angle-right pull-right"></i>
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="javascript:void(0);">Shirts</a></li>
+                                    <li><a href="javascript:void(0);">Coats & Jackets</a></li>
+                                    <li><a href="javascript:void(0);">Underwear</a></li>
+                                    <li><a href="javascript:void(0);">Sunglasses</a></li>
+                                    <li><a href="javascript:void(0);">Socks</a></li>
+                                    <li><a href="javascript:void(0);">Belts</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                                    Womens <i class="fa fa-angle-right pull-right"></i>
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="javascript:void(0);">Dresses</a></li>
+                                    <li><a href="javascript:void(0);">T-shirts</a></li>
+                                    <li><a href="javascript:void(0);">Skirts</a></li>
+                                    <li><a href="javascript:void(0);">Jeans</a></li>
+                                    <li><a href="javascript:void(0);">Pullover</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="javascript:void(0);">Kids</a></li>
+                            <li><a href="javascript:void(0);">Fashion</a></li>
+                            <li>
+                                <a class="dropdown-toggle" data-toggle="dropdown" href="javascript:void(0);">
+                                    SportWear <i class="fa fa-angle-right pull-right"></i>
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="javascript:void(0);">Shoes</a></li>
+                                    <li><a href="javascript:void(0);">Bags</a></li>
+                                    <li><a href="javascript:void(0);">Pants</a></li>
+                                    <li><a href="javascript:void(0);">Swimwear</a></li>
+                                    <li><a href="javascript:void(0);">Bicycles</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="javascript:void(0);">Bags</a></li>
+                            <li><a href="javascript:void(0);">Shoes</a></li>
+                            <li><a href="javascript:void(0);">HouseHolds</a></li>
+                            <li>
+                                <a class="dropdown-toggle" data-toggle="dropdown" href="javascript:void(0);">
+                                    Technology <i class="fa fa-angle-right pull-right"></i>
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="javascript:void(0);">Television</a></li>
+                                    <li><a href="javascript:void(0);">Camera</a></li>
+                                    <li><a href="javascript:void(0);">Speakers</a></li>
+                                    <li><a href="javascript:void(0);">Mobile</a></li>
+                                    <li><a href="javascript:void(0);">PC</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div><!-- end navbar-vertical -->
+                </div><!-- end col -->
+                <div class="col-sm-8 col-md-9">
+                    <div class="owl-carousel slider owl-theme">
+                        <div class="item">
+                            <figure>
+                                <a href="javascript:void(0);">
+                                    <img src="img/slider/slider_10.jpg" alt=""/>
+                                </a>
+                            </figure>
+                        </div><!-- end item -->
+                        <div class="item">
+                            <figure>
+                                <a href="javascript:void(0);">
+                                    <img src="img/slider/slider_09.jpg" alt=""/>
+                                </a>
+                            </figure>
+                        </div><!-- end item -->
+                        <div class="item">
+                            <figure>
+                                <a href="javascript:void(0);">
+                                    <img src="img/slider/slider_08.jpg" alt=""/>
+                                </a>
+                            </figure>
+                        </div><!-- end item -->
+                    </div><!-- end owl carousel -->
+                </div><!-- end col -->
+            </div><!-- end row -->
+        </div><!-- end container -->
+    </section>
+    <!-- end section -->
+
+
+
+    <!-- start section -->
+    <section class="section white-backgorund">
+
+        <div class="container">
+            <div class="row">
+
+                <div class="col-md-8 col-md-push-2">
+                    <div class="heading-title center">
+                        <h2>How it <span>Works</span></h2>
+                        <div class="small-desd">Steps to  <span>a successful Business</span></div>
+                        <p>This is the steps to create a perfect Business Plan </p>
+                    </div>
+
+                </div>
+                <div class="row">
+                    <!-- Item-->
+                    <div class="col-md-12">
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                            <h4>For Sellers</h4>
+                            <div class="body">
+                                <h4>What You Can Do</h4>
+                                <ul class="list">
+                                    <li>Register deals</li>
+                                    <li>Manage deals with your team</li>
+                                    <li>Upload /Download related documents</li>
+                                    <li>Disclose deal information</li>
+                                    <li>Online negotiations via chat</li>
+                                    <li>Professional support</li>
+                                </ul>
+                                <h4>Upon Closing the Deal</h4>
+                                <ul class="list">
+                                    <li>
+                                        <em>Complimentary reward will be paid by Us</em>
+                                    </li>
+                                </ul>
+                                <h4>Usage Fee</h4>
+                                <ul class="list">
+                                    <li>
+                                        <em>All free of charge</em>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <!-- Item-->
+                        <div class="col-md-6 col-sm-6 col-xs-12 item-icon">
+                            <h4>For Buyers</h4>
+                            <div class="body">
+                                <h4>What You Can Do</h4>
+                                <ul class="list"><li>Search deals</li><li>Submit Information Disclosure Requests <span>Paid Function</span></li><li>Manage deals with your team</li><li>Upload / Download related documents</li><li>Online negotiations via chat</li><li>Professional support</li></ul>
+                                <h4>Upon Closing the Deal</h4>
+                                <ul class="list">
+                                    <li>Commission will be charged</li>
+                                </ul>
+                                <h4>Usage Fee</h4>
+                                <ul class="list">
+                                    <li>
+                                        <em>All paid functions are free of charge until the end of June 2019!</em>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <!-- Edn items-->
                 </div>
             </div>
+
         </div>
-    </div>
-</footer>
-<!--button to top-->
-<div class="top icon-down toTopFromBottom"><a href="#top" class="smooth-scroll"><i class="pe-7s-angle-up"></i></a></div>
-<!--end button to top-->
-<!--Google map-->
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDfIvcRb39yOu1OFOX2G0c4jemKpLgpJl0&amp;sensor=false"></script>
-<!--Libs-->
-<script src="{{ asset('js/libs.js') }}"></script>
-<!--Use scripts-->
-<script src="{{ asset('js/common.js') }}"></script>
-<!--Use scripts-->
-<script src="{{ asset('js/customs.js') }}"></script>
 
-<!--Use scripts-->
-<script src="{{ asset('js/wow.js') }}"></script>
 
-<script src="{{ asset('js/range.js') }}"></script>
-</body>
-</html>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="title-wrap">
+                        <h2 class="title"><span class="text-primary">Featured</span> Ads</h2>
+                    </div>
+                </div><!-- end col -->
+            </div><!-- end row -->
+
+            <div class="row">
+                <div class="col-sm-12">
+                    <div id="owl-demo" class="owl-carousel column-3 owl-theme">
+                        <div class="item">
+                            <div class="thumbnail blog">
+                                <div class="header">
+                                    <figure>
+                                        <img src="img/blog/blog_01.jpg" alt="">
+                                    </figure>
+                                    <div class="meta">
+                                        <span><i class="fa fa-calendar mr-5"></i>Oct 25, 2016</span>
+                                        <span><i class="fa fa-comment mr-5"></i>(15)</span>
+                                        <span><i class="fa fa-heart mr-5"></i>(35)</span>
+                                    </div>
+                                </div>
+                                <div class="caption">
+                                    <h6><a href="blog-article-v1.html">Care & Clean Instructions</a></h6>
+                                    <div class="author-category">
+                                            <span class="author mr-20">
+                                                <i class="fa fa-user mr-5"></i><a href="javascript:void(0);">Joe Doe</a>
+                                            </span>
+                                        <span class="category">
+                                                <a href="javascript:void(0);">Post Formats</a>
+                                            </span>
+                                    </div>
+                                    <p>Aenean semper lacus sed molestie sollicitudin. In semper, tellus id posuere interdum, est justo faucibus quam, sed eleifend arcu nulla id eros.</p>
+                                    <a href="blog-article-v1.html" class="btn btn-default semi-circle btn-sm">Read more</a>
+                                </div><!-- end caption -->
+                            </div><!-- end thumbnail -->
+                        </div><!-- end item -->
+                        <div class="item">
+                            <div class="thumbnail blog">
+                                <div class="header">
+                                    <figure>
+                                        <img src="img/blog/blog_02.jpg" alt="">
+                                    </figure>
+                                    <div class="meta">
+                                        <span><i class="fa fa-calendar mr-5"></i>Oct 25, 2016</span>
+                                        <span><i class="fa fa-comment mr-5"></i>(15)</span>
+                                        <span><i class="fa fa-heart mr-5"></i>(35)</span>
+                                    </div>
+                                </div>
+                                <div class="caption">
+                                    <h6><a href="blog-article-v1.html">Design for Work Place</a></h6>
+                                    <div class="author-category">
+                                            <span class="author mr-20">
+                                                <i class="fa fa-user mr-5"></i><a href="javascript:void(0);">Joe Doe</a>
+                                            </span>
+                                        <span class="category">
+                                                <a href="javascript:void(0);">Post Formats</a>
+                                            </span>
+                                    </div>
+                                    <p>Aenean semper lacus sed molestie sollicitudin. In semper, tellus id posuere interdum, est justo faucibus quam, sed eleifend arcu nulla id eros.</p>
+                                    <a href="blog-article-v1.html" class="btn btn-default semi-circle btn-sm">Read more</a>
+                                </div><!-- end caption -->
+                            </div><!-- end thumbnail -->
+                        </div><!-- end item -->
+                        <div class="item">
+                            <div class="thumbnail blog">
+                                <div class="header">
+                                    <figure>
+                                        <img src="img/blog/blog_03.jpg" alt="">
+                                    </figure>
+                                    <div class="meta">
+                                        <span><i class="fa fa-calendar mr-5"></i>Oct 25, 2016</span>
+                                        <span><i class="fa fa-comment mr-5"></i>(15)</span>
+                                        <span><i class="fa fa-heart mr-5"></i>(35)</span>
+                                    </div>
+                                </div>
+                                <div class="caption">
+                                    <h6><a href="blog-article-v1.html">Style your Bedroom</a></h6>
+                                    <div class="author-category">
+                                            <span class="author mr-20">
+                                                <i class="fa fa-user mr-5"></i><a href="javascript:void(0);">Joe Doe</a>
+                                            </span>
+                                        <span class="category">
+                                                <a href="javascript:void(0);">Post Formats</a>
+                                            </span>
+                                    </div>
+                                    <p>Aenean semper lacus sed molestie sollicitudin. In semper, tellus id posuere interdum, est justo faucibus quam, sed eleifend arcu nulla id eros.</p>
+                                    <a href="blog-article-v1.html" class="btn btn-default semi-circle btn-sm">Read more</a>
+                                </div><!-- end caption -->
+                            </div><!-- end thumbnail -->
+                        </div><!-- end item -->
+                        <div class="item">
+                            <div class="thumbnail blog">
+                                <div class="header">
+                                    <figure>
+                                        <img src="img/blog/blog_04.jpg" alt="">
+                                    </figure>
+                                    <div class="meta">
+                                        <span><i class="fa fa-calendar mr-5"></i>Oct 25, 2016</span>
+                                        <span><i class="fa fa-comment mr-5"></i>(15)</span>
+                                        <span><i class="fa fa-heart mr-5"></i>(35)</span>
+                                    </div>
+                                </div>
+                                <div class="caption">
+                                    <h6><a href="blog-article-v1.html">Decorating Tips</a></h6>
+                                    <div class="author-category">
+                                            <span class="author mr-20">
+                                                <i class="fa fa-user mr-5"></i><a href="javascript:void(0);">Joe Doe</a>
+                                            </span>
+                                        <span class="category">
+                                                <a href="javascript:void(0);">Post Formats</a>
+                                            </span>
+                                    </div>
+                                    <p>Aenean semper lacus sed molestie sollicitudin. In semper, tellus id posuere interdum.</p>
+                                    <a href="blog-article-v1.html" class="btn btn-default semi-circle btn-sm">Read more</a>
+                                </div><!-- end caption -->
+                            </div><!-- end thumbnail -->
+                        </div><!-- end item -->
+                    </div><!-- end owl carousel -->
+                </div><!-- end col -->
+            </div><!-- end row -->
+
+            <hr class="spacer-30 no-border"/>
+
+        </div><!-- end container -->
+
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="title-wrap">
+                        <h2 class="title"><span class="text-primary">Recent </span>B2B Invest Ads</h2>
+                    </div>
+                </div><!-- end col -->
+            </div><!-- end row -->
+
+            <div class="row">
+                <div class="col-sm-12">
+                    <div id="owl-demo" class="owl-carousel column-3 owl-theme">
+                        <div class="item">
+                            <div class="thumbnail blog">
+                                <div class="header">
+                                    <figure>
+                                        <img src="img/blog/blog_01.jpg" alt="">
+                                    </figure>
+                                    <div class="meta">
+                                        <span><i class="fa fa-calendar mr-5"></i>Oct 25, 2016</span>
+                                        <span><i class="fa fa-comment mr-5"></i>(15)</span>
+                                        <span><i class="fa fa-heart mr-5"></i>(35)</span>
+                                    </div>
+                                </div>
+                                <div class="caption">
+                                    <h6><a href="blog-article-v1.html">Care & Clean Instructions</a></h6>
+                                    <div class="author-category">
+                                            <span class="author mr-20">
+                                                <i class="fa fa-user mr-5"></i><a href="javascript:void(0);">Joe Doe</a>
+                                            </span>
+                                        <span class="category">
+                                                <a href="javascript:void(0);">Post Formats</a>
+                                            </span>
+                                    </div>
+                                    <p>Aenean semper lacus sed molestie sollicitudin. In semper, tellus id posuere interdum, est justo faucibus quam, sed eleifend arcu nulla id eros.</p>
+                                    <a href="blog-article-v1.html" class="btn btn-default semi-circle btn-sm">Read more</a>
+                                </div><!-- end caption -->
+                            </div><!-- end thumbnail -->
+                        </div><!-- end item -->
+                        <div class="item">
+                            <div class="thumbnail blog">
+                                <div class="header">
+                                    <figure>
+                                        <img src="img/blog/blog_02.jpg" alt="">
+                                    </figure>
+                                    <div class="meta">
+                                        <span><i class="fa fa-calendar mr-5"></i>Oct 25, 2016</span>
+                                        <span><i class="fa fa-comment mr-5"></i>(15)</span>
+                                        <span><i class="fa fa-heart mr-5"></i>(35)</span>
+                                    </div>
+                                </div>
+                                <div class="caption">
+                                    <h6><a href="blog-article-v1.html">Design for Work Place</a></h6>
+                                    <div class="author-category">
+                                            <span class="author mr-20">
+                                                <i class="fa fa-user mr-5"></i><a href="javascript:void(0);">Joe Doe</a>
+                                            </span>
+                                        <span class="category">
+                                                <a href="javascript:void(0);">Post Formats</a>
+                                            </span>
+                                    </div>
+                                    <p>Aenean semper lacus sed molestie sollicitudin. In semper, tellus id posuere interdum, est justo faucibus quam, sed eleifend arcu nulla id eros.</p>
+                                    <a href="blog-article-v1.html" class="btn btn-default semi-circle btn-sm">Read more</a>
+                                </div><!-- end caption -->
+                            </div><!-- end thumbnail -->
+                        </div><!-- end item -->
+                        <div class="item">
+                            <div class="thumbnail blog">
+                                <div class="header">
+                                    <figure>
+                                        <img src="img/blog/blog_03.jpg" alt="">
+                                    </figure>
+                                    <div class="meta">
+                                        <span><i class="fa fa-calendar mr-5"></i>Oct 25, 2016</span>
+                                        <span><i class="fa fa-comment mr-5"></i>(15)</span>
+                                        <span><i class="fa fa-heart mr-5"></i>(35)</span>
+                                    </div>
+                                </div>
+                                <div class="caption">
+                                    <h6><a href="blog-article-v1.html">Style your Bedroom</a></h6>
+                                    <div class="author-category">
+                                            <span class="author mr-20">
+                                                <i class="fa fa-user mr-5"></i><a href="javascript:void(0);">Joe Doe</a>
+                                            </span>
+                                        <span class="category">
+                                                <a href="javascript:void(0);">Post Formats</a>
+                                            </span>
+                                    </div>
+                                    <p>Aenean semper lacus sed molestie sollicitudin. In semper, tellus id posuere interdum, est justo faucibus quam, sed eleifend arcu nulla id eros.</p>
+                                    <a href="blog-article-v1.html" class="btn btn-default semi-circle btn-sm">Read more</a>
+                                </div><!-- end caption -->
+                            </div><!-- end thumbnail -->
+                        </div><!-- end item -->
+                        <div class="item">
+                            <div class="thumbnail blog">
+                                <div class="header">
+                                    <figure>
+                                        <img src="img/blog/blog_04.jpg" alt="">
+                                    </figure>
+                                    <div class="meta">
+                                        <span><i class="fa fa-calendar mr-5"></i>Oct 25, 2016</span>
+                                        <span><i class="fa fa-comment mr-5"></i>(15)</span>
+                                        <span><i class="fa fa-heart mr-5"></i>(35)</span>
+                                    </div>
+                                </div>
+                                <div class="caption">
+                                    <h6><a href="blog-article-v1.html">Decorating Tips</a></h6>
+                                    <div class="author-category">
+                                            <span class="author mr-20">
+                                                <i class="fa fa-user mr-5"></i><a href="javascript:void(0);">Joe Doe</a>
+                                            </span>
+                                        <span class="category">
+                                                <a href="javascript:void(0);">Post Formats</a>
+                                            </span>
+                                    </div>
+                                    <p>Aenean semper lacus sed molestie sollicitudin. In semper, tellus id posuere interdum.</p>
+                                    <a href="blog-article-v1.html" class="btn btn-default semi-circle btn-sm">Read more</a>
+                                </div><!-- end caption -->
+                            </div><!-- end thumbnail -->
+                        </div><!-- end item -->
+                    </div><!-- end owl carousel -->
+                </div><!-- end col -->
+            </div><!-- end row -->
+
+            <hr class="spacer-30 no-border"/>
+
+        </div><!-- end container -->
+    </section>
+    <!-- end section -->
+
+    <!-- start section -->
+    <section class="section image-background layer-dark" style="background-image: url(img/slider/slider_03.jpg);">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="title-wrap">
+                        <h2 class="title text-white">Our Latest Deals</h2>
+                        {{--<p class="text-white">Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</p>--}}
+                    </div>
+                </div><!-- end col -->
+            </div><!-- end row -->
+
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="owl-carousel column-4 owl-theme">
+                        <div class="cat-item">
+                            <div class="cat-img">
+                                <figure>
+                                    <a href="">
+                                        <img style="height: 256px; width: 274px;" src="/img/blog/blog_02.jpg" />
+                                    </a>
+                                </figure>
+                            </div><!-- end cat-img -->
+                            <div class="cat-title">
+                                <h6><a href="javascript:void(0)">Deal Title, like deal of business</a></h6>
+                            </div><!-- end cat-title -->
+                        </div><!-- end cat-item -->
+                        <div class="cat-item">
+                            <div class="cat-img">
+                                <figure>
+                                    <a href="">
+                                        <img style="height: 256px; width: 274px;" src="/img/blog/blog_02.jpg" />
+                                    </a>
+                                </figure>
+                            </div><!-- end cat-img -->
+                            <div class="cat-title">
+                                <h6><a href="javascript:void(0)">Deal Title, like deal of business</a></h6>
+                            </div><!-- end cat-title -->
+                        </div><!-- end cat-item -->
+                        <div class="cat-item">
+                            <div class="cat-img">
+                                <figure>
+                                    <a href="">
+                                        <img style="height: 256px; width: 274px;" src="/img/blog/blog_02.jpg" />
+                                    </a>
+                                </figure>
+                            </div><!-- end cat-img -->
+                            <div class="cat-title">
+                                <h6><a href="javascript:void(0)">Deal Title, like deal of business</a></h6>
+                            </div><!-- end cat-title -->
+                        </div><!-- end cat-item -->
+                        <div class="cat-item">
+                            <div class="cat-img">
+                                <figure>
+                                    <a href="">
+                                        <img style="height: 256px; width: 274px;" src="/img/blog/blog_02.jpg" />
+                                    </a>
+                                </figure>
+                            </div><!-- end cat-img -->
+                            <div class="cat-title">
+                                <h6><a href="javascript:void(0)">Deal Title, like deal of business</a></h6>
+                            </div><!-- end cat-title -->
+                        </div><!-- end cat-item -->
+
+                    </div><!-- end owl carousel -->
+                </div><!-- end col -->
+            </div><!-- end row -->
+        </div><!-- end container -->
+    </section>
+    <!-- end section -->
+
+    <!-- start section -->
+    <section class="section light-backgorund">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="title-wrap">
+                        <h2 class="title ">Pinned  Deals</h2>
+                        {{--<p class="text-white">Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</p>--}}
+                    </div>
+                </div><!-- end col -->
+            </div><!-- end row -->
+            <div class="row">
+                <div class="col-sm-10 col-sm-offset-1">
+                    <div class="owl-carousel product-showcase owl-theme">
+                        <div class="product">
+                            <div class="row">
+                                <div class="col-sm-4 vertical-align">
+                                    <figure>
+                                        <a href="shop-single-product-v1.html">
+                                            <img alt="img" src="img/blog/blog_02.jpg">
+                                        </a>
+                                    </figure>
+                                </div><!-- end col -->
+                                <div class="col-sm-8 vertical-align">
+                                    <h4><a href="shop-single-product-v1.html">Lorem ipsum dolor sit amet</a></h4>
+
+                                    <p>Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie
+                                        consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan
+                                        et iusto odio dignissim qui blandit praesent luptatum </p>
+
+                                </div><!-- end col -->
+                            </div><!-- end row -->
+                        </div><!-- end product -->
+                        <div class="product">
+                            <div class="row">
+                                <div class="col-sm-4 vertical-align">
+                                    <figure>
+                                        <a href="shop-single-product-v1.html">
+                                            <img alt="img" src="img/blog/blog_02.jpg">
+                                        </a>
+                                    </figure>
+                                </div><!-- end col -->
+                                <div class="col-sm-8 vertical-align">
+                                    <h4><a href="shop-single-product-v1.html">Lorem ipsum dolor sit amet</a></h4>
+
+                                    <p>Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie
+                                        consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan
+                                        et iusto odio dignissim qui blandit praesent luptatum </p>
+
+                                </div><!-- end col -->
+                            </div><!-- end row -->
+                        </div><!-- end product -->
+
+                    </div><!-- end owl carousel -->
+                </div><!-- end col -->
+            </div><!-- end row -->
+        </div><!-- end container -->
+    </section>
+    <!-- end section -->
+
+
+
+
+
+
+@stop
+
+
+
+
+

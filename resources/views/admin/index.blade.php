@@ -10,7 +10,7 @@
                         <i class="feather icon-home bg-c-blue"></i>
                         <div class="d-inline">
                             <h5>Dashboard</h5>
-                            <span>Eli Health Record System for Medical Report </span>
+                            <span>B2B Ads System </span>
                         </div>
                     </div>
                 </div>
@@ -37,7 +37,7 @@
                             <div class="col-md-12 col-xl-4">
                                 <div class="card comp-card">
                                     <div class="card-header">
-                                        <h5>Total Patients</h5>
+                                        <h5>Total Publishers</h5>
                                     </div>
                                     <div class="card-body">
                                         <div class="row align-items-center">
@@ -59,7 +59,7 @@
                             <div class="col-md-12 col-xl-4">
                                 <div class="card comp-card">
                                     <div class="card-header">
-                                        <h5>Total Nurses</h5>
+                                        <h5>Total Ads</h5>
                                     </div>
                                     <div class="card-body">
                                         <div class="row align-items-center">
@@ -80,7 +80,7 @@
                             <div class="col-md-12 col-xl-4">
                                 <div class="card comp-card">
                                     <div class="card-header">
-                                        <h5>Total Doctors</h5>
+                                        <h5>Total Featured Ads</h5>
                                     </div>
                                     <div class="card-body">
                                         <div class="row align-items-center">

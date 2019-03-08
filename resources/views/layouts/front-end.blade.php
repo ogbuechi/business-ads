@@ -1,175 +1,240 @@
 <!DOCTYPE html>
-<html lang="en" class="no-js">
+<html lang="en">
+
 <head>
-    <meta charset="utf-8">
     <title>Business Ad | Business Planing</title>
-    <meta name="description" content="">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <meta property="og:image" content="path/to/image.jpg">
+    <meta charset="utf-8">
+    <meta name="description" content="Plus E-Commerce Template">
+    <meta name="author" content="Diamant Gjota" />
+    <meta name="keywords" content="plus, html5, css3, template, ecommerce, e-commerce, bootstrap, responsive, creative" />
+    <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
     <!--Favicon-->
-    <link rel="icon" href="{{ asset('img/favicon/favicon.ico') }}">
-    <!--Libs css-->
-    <link rel="stylesheet" href="{{ asset('css/libs.css') }}">
-    <!--Main css-->
-    <link rel="stylesheet" href="{{ asset('css/main.css') }}">
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="img/favicon.ico" type="image/x-icon">
 
+    <!-- css files -->
+    <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="/css/font-awesome.min.css" />
+    <link rel="stylesheet" type="text/css" href="/css/owl.carousel.min.css" />
+    <link rel="stylesheet" type="text/css" href="/css/owl.theme.default.min.css" />
+    <link rel="stylesheet" type="text/css" href="/css/animate.css" />
+    <link rel="stylesheet" type="text/css" href="/css/swiper.css" />
 
-    <link rel="stylesheet" href="{{ asset('css/range.css') }}">
-    <link rel="stylesheet" type="text/css" href="animate.css">
+    <!-- this is default skin you can replace that with: dark.css, yellow.css, red.css ect -->
+    <link id="pagestyle" rel="stylesheet" type="text/css" href="css/default.css" />
 
-    <link rel="stylesheet" type="text/css" href="{{ asset('animate.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/swichTab.css') }}">
+    <!-- Google fonts -->
+    <link href="../../../fonts.googleapis.com/css14ba?family=Roboto:300,300i,400,400i,500,500i,700,700i,900,900i&amp;subset=cyrillic,cyrillic-ext,latin-ext" rel="stylesheet">
+    <link href="../../../fonts.googleapis.com/cssecbd.css?family=Roboto+Slab:100,300,400,700" rel="stylesheet">
+    <link href="../../../fonts.googleapis.com/css51e6.css?family=Dosis:200,300,400,500,600,700,800&amp;subset=latin-ext" rel="stylesheet">
 
-
+    <style>
+        .widget .items li .product-details {
+            margin-left: 0;
+            padding: 0;
+        }
+    </style>
 </head>
-<body class="dark-load">
-<header id="top-nav" class="top-nav page-header">
-    <div class="container"><a href="#" class="logo smooth-scroll"><img src="{{ asset('img/mark.png') }}" alt="logo" class="logo-white"><img src="{{ asset('img/mark.png') }}" alt="logo" class="logo-dark"></a>
-        <nav class="top-menu">
-            <ul class="sf-menu">
-                <!--Menu default-->
-                <li><a href="{{ url('/') }}">Home</a></li>
+<body>
+
+
+
+
+<!-- start topBar -->
+<div class="topBar">
+    <div class="container">
+        <ul class="list-inline pull-left hidden-sm hidden-xs">
+            <li><span class="text-primary">Have a question?</span> Call +123 4567 8910</li>
+        </ul>
+
+        <ul class="topBarNav pull-right">
+            <li class="linkdown">
+                <a href="javascript:void(0);">
+                    <i class="fa fa-user mr-5"></i>
+                    <span class="hidden-xs">
+                                My Account
+                                <i class="fa fa-angle-down ml-5"></i>
+                            </span>
+                </a>
+                <ul class="w-150">
+                    @guest()
+                        <li><a href="{{ url('login') }}">Login</a></li>
+                        <li><a href="{{ url('register') }}" >Try Free Today</a></li>
+                    @else
+                        <li><a href="{{ url('dashboard') }}">Dashboard</a></li>
+                    @endguest()
+
+
+                </ul>
+            </li>
+        </ul>
+    </div><!-- end container -->
+</div>
+<!-- end topBar -->
+
+<div class="middleBar">
+    <div class="container">
+        <div class="row display-table">
+            <div class="col-sm-3 vertical-align text-left hidden-xs">
+                <a href="javascript:void(0);">
+                    <img width="160" src="img/logo-big.png" alt="" />
+                </a>
+            </div><!-- end col -->
+            <div class="col-sm-7 vertical-align text-center">
+                <form>
+                    <div class="row grid-space-1">
+                        <div class="col-sm-6">
+                            <input type="text" name="keyword" class="form-control input-lg" placeholder="Search">
+                        </div><!-- end col -->
+                        <div class="col-sm-3">
+                            <select class="form-control input-lg" name="category">
+                                <option value="all">All Categories</option>
+                                @foreach($categories as $item)
+                                    <option value="{{ $item->slug }}">{{ $item->name }} </option>
+                                @endforeach
+
+                            </select>
+                        </div><!-- end col -->
+                        <div class="col-sm-3">
+                            <input type="submit"  class="btn btn-default btn-block btn-lg" value="Search">
+                        </div><!-- end col -->
+                    </div><!-- end row -->
+                </form>
+            </div><!-- end col -->
+        </div><!-- end  row -->
+    </div><!-- end container -->
+</div><!-- end middleBar -->
+
+<!-- start navbar -->
+<div class="navbar yamm navbar-default">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" data-toggle="collapse" data-target="#navbar-collapse-3" class="navbar-toggle">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="javascript:void(0);" class="navbar-brand visible-xs">
+                <img src="/img/logo.png" alt="logo">
+            </a>
+        </div>
+        <div id="navbar-collapse-3" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <!-- Home -->
+                <!-- elements -->
+                <li class="{{ active('/') }}"><a href="{{ url('/') }}">Home</a></li>
                 <li><a href="{{ url('/b2b_sales') }}">B2B Sales</a></li>
                 <li><a href="{{ url('/b2b_invests') }}">B2B Invests</a></li>
                 <li><a href="{{ url('/open_partnership') }}">OPEN PARTNERSHIP</a></li>
-                <li><a href="{{ url('/blog') }}">News</a></li>
-                <li><a href=""></a></li>
-                @guest()
-                    <li><a href="{{ url('login') }}">Sign in</a></li>
-                    <li><a href="{{ url('login') }}" class="btn dark-btn large-btn" id="butn">Try Free Today</a></li>
-                @endguest()
+
+            </ul><!-- end navbar-nav -->
+            <ul class="nav navbar-nav navbar-right">
+                <li class="dropdown right">
+                    <a href="#" data-toggle="dropdown" class="dropdown-toggle">
+                        <span class="hidden-sm">Categories</span><i class="fa fa-bars ml-5"></i>
+                    </a>
+                    <ul class="dropdown-menu">
+                        @foreach($categories as $item)
+                            <li><a class="" href="#">{{ $item->name }}</a></li>
+                        @endforeach
+                    </ul><!-- end ul dropdown-menu -->
+                </li><!-- end dropdown -->
+            </ul><!-- end navbar-right -->
+        </div><!-- end navbar collapse -->
+    </div><!-- end container -->
+</div><!-- end navbar -->
 
 
-            </ul>
 
-            <!--&lt;!&ndash; Start toggle menu&ndash;&gt;<a href="#" class="toggle-mnu"><span></span></a>-->
-            <!--&lt;!&ndash; Start toggle menu&ndash;&gt;<a href="#" class="toggle-top"><span></span><span></span><span></span><span></span><span></span></a>-->
-        </nav>
-        <!-- Start mobile menu-->
-        <div id="mobile-menu">
-            <div class="inner-wrap">
-                <nav>
-                    <ul class="nav_menu">
-                        <li class="menu-item-has-children current-menu-item"><a href="#">Home</a>
 
-                        </li>
-
-                        <li><a href="#about" class="smooth-scroll">About</a></li>
-
-                    </ul>
-                </nav>
-            </div>
-        </div>
-        <!-- End mobile menu-->
-    </div>
-</header>
 
 @yield('content')
 
+<!-- start footer -->
+<footer class="footer">
 
-<script src="libs/html5shiv/es5-shim.min.js"></script>
-<script src="libs/html5shiv/html5shiv.min.js"></script>
-<script src="libs/html5shiv/html5shiv-printshiv.min.js"></script>
-<script src="libs/respond/respond.min.js"></script>
-<![endif]-->
-<![endif]-->
-<footer>
+
+
+
     <div class="container">
+
         <div class="row">
-            <div class="col-md-3">
-                <!--<div class="logo"><img src="img/mark.png" alt="logo" class="logo-white"></div>-->
-                <p>We are a creative agency with a passion for design & developing beautiful creations.</p>
-                <!--Start social links-->
-                <ul class="social-links">
-                    <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                    <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                    <li><a href="#"><i class="fa fa-skype"></i></a></li>
-                    <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+            <div class="col-sm-3">
+                <h5 class="title">Plus</h5>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin suscipit, libero a molestie consectetur, sapien elit lacinia mi.</p>
+
+                <hr class="spacer-10 no-border">
+
+                <ul class="social-icons">
+                    <li class="facebook"><a href="javascript:void(0);"><i class="fa fa-facebook"></i></a></li>
+                    <li class="twitter"><a href="javascript:void(0);"><i class="fa fa-twitter"></i></a></li>
+                    <li class="dribbble"><a href="javascript:void(0);"><i class="fa fa-dribbble"></i></a></li>
+                    <li class="linkedin"><a href="javascript:void(0);"><i class="fa fa-linkedin"></i></a></li>
+                    <li class="youtube"><a href="javascript:void(0);"><i class="fa fa-youtube"></i></a></li>
+                    <li class="behance"><a href="javascript:void(0);"><i class="fa fa-behance"></i></a></li>
                 </ul>
-                <!--End social links-->
-            </div>
-            <div class="col-md-3">
-                <div class="links">
-                    <h5>ADDITIONAL LINKS</h5>
-                    <ul class="list">
-                        <li><a href="">For Freelancer</a></li>
-                        <li><a href="">For Photographs</a></li>
-                        <li><a href="">Contact</a></li>
-                        <li><a href="">FAQ</a></li>
-                        <li><a href="">404 page</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div class="links">
-                    <h5>Pages</h5>
-                    <ul class="list">
-                        <li><a href="">About page</a></li>
-                        <li><a href="">Blog page</a></li>
-                        <li><a href="">Price page</a></li>
-                        <li><a href="">Portfolio page</a></li>
-                        <li><a href="">Portfolio single</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div class="links">
-                    <h5>Info</h5>
-                </div>
-                <div class="linked">
+            </div><!-- end col -->
+            <div class="col-sm-3">
+                <h5 class="title">My Account</h5>
+                <ul class="list alt-list">
+                    <li><a href="my-account.html"><i class="fa fa-angle-right"></i>My Account</a></li>
+                    <li><a href="wishlist.html"><i class="fa fa-angle-right"></i>Wishlist</a></li>
+                    <li><a href="cart.html"><i class="fa fa-angle-right"></i>My Cart</a></li>
+                    <li><a href="checkout.html"><i class="fa fa-angle-right"></i>Checkout</a></li>
+                </ul>
+            </div><!-- end col -->
+            <div class="col-sm-3">
+                <h5 class="title">Information</h5>
+                <ul class="list alt-list">
+                    <li><a href="about-us-v1.html"><i class="fa fa-angle-right"></i>About Us</a></li>
+                    <li><a href="faq.html"><i class="fa fa-angle-right"></i>FAQ</a></li>
+                    <li><a href="privacy-policy.html"><i class="fa fa-angle-right"></i>Privacy Policy</a></li>
+                    <li><a href="contact-v1.html"><i class="fa fa-angle-right"></i>Contact Us</a></li>
+                </ul>
+            </div><!-- end col -->
+            <div class="col-sm-3">
+                <h5 class="title">Payment Methods</h5>
+                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+                <ul class="list list-inline">
+                    <li class="text-white"><i class="fa fa-cc-visa fa-2x"></i></li>
+                    <li class="text-white"><i class="fa fa-cc-paypal fa-2x"></i></li>
+                    <li class="text-white"><i class="fa fa-cc-mastercard fa-2x"></i></li>
+                    <li class="text-white"><i class="fa fa-cc-discover fa-2x"></i></li>
+                </ul>
+            </div><!-- end col -->
+        </div><!-- end row -->
 
-                    <ul class="list">
-                        <li>Phone:  +44 7421 112063</li>
-                        <li>Email:support@sellingsumo.com</li>
+        <hr class="spacer-30">
 
-                        <li>Skype: live:sellingsumo_1</li></ul>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="down-footer">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <p>© 2019 Copyright SellingSumo - All Rights Reserved.</p>
-                    <ul class="footer-menu">
-                        <li><a href="{{ url('/') }}">Home</a></li>
-                        <!--<li><a href="about.html" class="smooth-scroll">About</a></li>-->
-                        <!--<li><a href="services" class="smooth-scroll">Services</a></li>-->
-                        <!--<li><a href="#portfolio" class="smooth-scroll">Our works</a></li>-->
-                        <!--<li><a href="#skills" class="smooth-scroll">Skills</a></li>-->
-                        <!--<li> <a href="contact" class="smooth-scroll">Contact</a></li>-->
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
+        <div class="row text-center">
+            <div class="col-sm-12">
+                <p class="text-sm">&COPY; {{ date('Y') }}. Made with <i class="fa fa-heart text-danger"></i> by <a href="javascript:void(0);">Oxyglobal.</a></p>
+            </div><!-- end col -->
+        </div><!-- end row -->
+    </div><!-- end container -->
 </footer>
-<!--button to top-->
-<div class="top icon-down toTopFromBottom"><a href="#top" class="smooth-scroll"><i class="pe-7s-angle-up"></i></a></div>
-<!--end button to top-->
-<!--Google map-->
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDfIvcRb39yOu1OFOX2G0c4jemKpLgpJl0&amp;sensor=false"></script>
-<!--Libs-->
-<script src="{{ asset('js/libs.js') }}"></script>
-<!--Use scripts-->
-<script src="{{ asset('js/common.js') }}"></script>
-<!--Use scripts-->
-<script src="{{ asset('js/customs.js') }}"></script>
+<!-- end footer -->
 
-<!--Use scripts-->
-<script src="{{ asset('js/wow.js') }}"></script>
 
-<script src="{{ asset('js/range.js') }}"></script>
+<!-- JavaScript Files -->
+<script type="text/javascript" src="/js/jquery-3.1.1.min.js"></script>
+<script type="text/javascript" src="/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="/js/owl.carousel.min.js"></script>
+<script type="text/javascript" src="/js/jquery.downCount.js"></script>
+<script type="text/javascript" src="/js/nouislider.min.js"></script>
+<script type="text/javascript" src="/js/jquery.sticky.js"></script>
+<script type="text/javascript" src="/js/pace.min.js"></script>
+<script type="text/javascript" src="/js/star-rating.min.js"></script>
+<script type="text/javascript" src="/js/wow.min.js"></script>
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js"></script>
+<script type="text/javascript" src="/js/gmaps.js"></script>
+<script type="text/javascript" src="/js/swiper.min.js"></script>
+<script type="text/javascript" src="/js/main.js"></script>
 
-<script src="{{ asset('js/jquery.swichTab.js') }}"></script>
-<script>
-
-    $('.b2b').swichTab({
-        swiper: true,
-        cahngePanel: 'toggle'
-    });
-</script>
 </body>
+
+
 </html>
