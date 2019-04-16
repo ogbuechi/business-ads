@@ -26,20 +26,25 @@ Route::get('/dashboard', function () {
     return view('dashboard.index');
 });
 
+Route::group([ 'prefix' => 'bt-admin','middleware' => ['auth', 'level:1']], function () {});
+
 Auth::routes();
 
 Route::get('/', 'HomeController@index')->name('home');
 Route::get('/home', 'HomeController@index')->name('home');
 
+
+
 Route::get('bt-admin', 'AdminController@index')->name('admin.home');
 Route::get('bt-admin/media', 'AdminController@media')->name('admin.media');
 Route::get('bt-admin/profile', 'AdminController@profile')->name('admin.profile');
 //['middleware' => ['role:admin']],
-Route::group([ 'prefix' => 'bt-admin','middleware' => ['auth', 'level:1']], function () {
+Route::group([ 'prefix' => 'bt_admin','middleware' => ['auth', 'level:1']], function () {
     Route::get('/my_profile', 'ProfilesController@myProfile')->name('profiles.profile.myprofile');
     Route::get('/coming-soon', 'AdminController@soon')->name('coming');
     Route::get('/patient/create', 'ProfilesController@patientCreate')->name('patients.patient.create');
     Route::get('/patient/all', 'UsersController@patients')->name('patients.patient.index');
+    Route::get('/publishers', 'UsersController@publishers')->name('publishers.index');
     Route::get('/patient/show/{patient}','UsersController@show')->name('patients.patient.show')->where('id', '[0-9]+');
     Route::get('/edit_profile', 'ProfilesController@editMyProfile')->name('profiles.profile.edit_my_profile');
     Route::group(['prefix' => 'profiles',], function () {

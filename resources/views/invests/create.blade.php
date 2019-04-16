@@ -1,6 +1,13 @@
 @extends('layouts.master')
 
+@section('css')
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet" />
+@endsection
+@section('js')
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
+@stop
 @section('content')
+
 
     <div class="col-sm-12 col-md-8 col-lg-9">
         <div class="row page-content">
@@ -60,5 +67,13 @@
     </div>
 
 @endsection
-
+@section('script')
+    <script>
+        $(document).ready(function() {
+            $('.select').select2({
+                placeholder: 'Select Business Type'
+            });
+        });
+    </script>
+@stop
 

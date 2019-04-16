@@ -27,11 +27,11 @@ class UsersController extends Controller
         return view('users.index', compact('users'));
     }
 
-    public function patients()
+    public function publishers()
     {
-        $users = Role::where('name', 'patient')->first()->users()->paginate(10);
+        $users = Role::where('name', 'publisher')->first()->users()->paginate(10);
 
-        return view('admin.patient.index', compact('users'));
+        return view('admin.publishers', compact('users'));
     }
 
     /**

@@ -31,6 +31,7 @@
     <link href="../../../fonts.googleapis.com/cssecbd.css?family=Roboto+Slab:100,300,400,700" rel="stylesheet">
     <link href="../../../fonts.googleapis.com/css51e6.css?family=Dosis:200,300,400,500,600,700,800&amp;subset=latin-ext" rel="stylesheet">
 
+    @yield('css')
     <style>
         .widget .items li .product-details {
             margin-left: 0;
@@ -233,6 +234,9 @@
 <script type="text/javascript" src="/js/gmaps.js"></script>
 <script type="text/javascript" src="/js/swiper.min.js"></script>
 <script type="text/javascript" src="/js/main.js"></script>
+
+@yield('js')
+@yield('script')
 
 </body>
 

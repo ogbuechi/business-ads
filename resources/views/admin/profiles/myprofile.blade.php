@@ -2,11 +2,11 @@
 
 @section('content')
 
-    <div class="pcoded-content">
+    <div class="content">
+        <div class="container-fluid">
 
-        <br>
+            <div class="row">
 
-<div class="row col-md-12">
     {{--{{ $user }}--}}
 
     <div class="col-md-3">
@@ -171,5 +171,6 @@
         <!-- /.box -->
     </div>
 </div>
+    </div>
     </div>
     @endsection

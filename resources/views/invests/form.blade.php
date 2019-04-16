@@ -8,12 +8,26 @@
     </div>
 </div>
 
-<div class="form-group {{ $errors->has('business_type') ? 'has-error' : '' }}">
+{{--<div class="form-group {{ $errors->has('business_type') ? 'has-error' : '' }}">--}}
+    {{--<div class="col-md-10">--}}
+        {{--<input class="form-control" name="business_type" type="text" id="business_type" value="{{ old('business_type', optional($invest)->business_type) }}" minlength="1" placeholder="Enter business type here...">--}}
+        {{--{!! $errors->first('business_type', '<p class="help-block">:message</p>') !!}--}}
+    {{--</div>--}}
+{{--</div>--}}
+
+<div class="form-group">
     <label for="business_type" class="col-md-2 control-label">Business Type</label>
-    <div class="col-md-10">
-        <input class="form-control" name="business_type" type="text" id="business_type" value="{{ old('business_type', optional($invest)->business_type) }}" minlength="1" placeholder="Enter business type here...">
-        {!! $errors->first('business_type', '<p class="help-block">:message</p>') !!}
-    </div>
+
+    <select multiple="multiple" name="business_type[]" id="business_type" class="select form-control">
+
+        {{--<option value="all">All</option>--}}
+        @foreach($categories as $item )
+
+            <option value="{{ $item->id }}">{{ $item->name }}</option>
+
+        @endforeach
+    </select>
+
 </div>
 
 <div class="form-group {{ $errors->has('profile_summary') ? 'has-error' : '' }}">

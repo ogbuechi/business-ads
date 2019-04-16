@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
 use App\User;
 use App\Models\Invest;
 use Illuminate\Http\Request;
@@ -37,8 +38,9 @@ class InvestsController extends Controller
     public function create()
     {
         $users = User::pluck('name','id')->all();
-        
-        return view('invests.create', compact('users'));
+        $categories = Category::all();
+
+        return view('invests.create', compact('users','categories'));
     }
 
     /**
