@@ -13,7 +13,7 @@ class AdminController extends Controller
 {
     public function index()
     {
-        $users = Role::where('name', 'Super Admin')->first()->users()->paginate(10);
+        $users = User::with('roles')->paginate(10);
         $invests = Invest::with('user')->orderBy('id','desc')->paginate(10);
         return view('admin.index', compact('users','invests'));
     }
