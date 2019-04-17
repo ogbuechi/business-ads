@@ -22,9 +22,9 @@ Route::get('/contact', function () {
     return view('contact-us');
 });
 
-Route::get('/dashboard', function () {
-    return view('dashboard.index');
-});
+//Route::get('/dashboard', function () {
+//    return view('dashboard.index');
+//});
 
 Route::group([ 'prefix' => 'bt-admin','middleware' => ['auth', 'level:1']], function () {});
 
@@ -35,6 +35,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 
 
+Route::get('dashboard', 'AdminController@index')->name('admin.home');
 Route::get('bt_admin', 'AdminController@index')->name('admin.home');
 Route::get('bt-admin/media', 'AdminController@media')->name('admin.media');
 Route::get('bt-admin/profile', 'AdminController@profile')->name('admin.profile');
