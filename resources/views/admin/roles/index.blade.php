@@ -9,6 +9,16 @@
                 <div class="col-12">
                     <div class="page-title-box">
                         <h4 class="page-title">User Roles</h4>
+                        @if (Auth::user()->level() > 6)
+                        <ol class="breadcrumb p-0 m-0">
+
+                            <li class="breadcrumb-item">
+                                <a href="{{ route('roles.role.create') }}" class="btn btn-success" title="Create New Role">
+                                    <span class="fa fa-plus" aria-hidden="true"></span>
+                                </a>
+                            </li>
+                        </ol>
+                        @endif
                         <div class="clearfix"></div>
                     </div>
                 </div>
@@ -50,8 +60,9 @@
                                     <th>Name</th>
                                     <th>Slug</th>
                                     <th>Level</th>
-
-{{--                                    <th></th>--}}
+                                    @if (Auth::user()->level() > 6)
+                                    <th></th>
+                                        @endif
                                 </tr>
                                 </thead>
                                 <tbody>
@@ -61,25 +72,28 @@
                                         <td>{{ $role->slug }}</td>
                                         <td>{{ $role->level }}</td>
 
-{{--                                        <td>--}}
+                                        @if (Auth::user()->level() > 6)
+                                            <td>
 
-{{--                                            <form accept-charset="UTF-8">--}}
+                                                <form accept-charset="UTF-8">
 
 
-{{--                                                <div class="btn-group btn-group-xs pull-right" role="group">--}}
-{{--                                                   --}}
-{{--                                                    <a href="{{ route('roles.role.edit', $role->id ) }}" class="btn btn-primary" title="Edit Role">--}}
-{{--                                                        <span class="feather icon-edit" aria-hidden="true"></span>--}}
-{{--                                                    </a>--}}
+                                                    <div class="btn-group btn-group-xs pull-right" role="group">
 
-{{--                                                    <button type="submit" class="btn btn-danger" title="Delete Role" onclick="return confirm(&quot;Delete Role?&quot;)">--}}
-{{--                                                        <span class="feather icon-delete" aria-hidden="true"></span>--}}
-{{--                                                    </button>--}}
-{{--                                                </div>--}}
+                                                        <a href="{{ route('roles.role.edit', $role->id ) }}" class="btn btn-primary" title="Edit Role">
+                                                            <span class="fa fa-edit" aria-hidden="true"></span>
+                                                        </a>
 
-{{--                                            </form>--}}
+                                                        <button type="submit" class="btn btn-danger" title="Delete Role" onclick="return confirm(&quot;Delete Role?&quot;)">
+                                                            <span class="fa fa-trash" aria-hidden="true"></span>
+                                                        </button>
+                                                    </div>
 
-{{--                                        </td>--}}
+                                                </form>
+
+                                            </td>
+                                        @endif
+
                                     </tr>
                                 @endforeach
                                 </tbody>

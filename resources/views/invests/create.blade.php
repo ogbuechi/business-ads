@@ -1,79 +1,58 @@
-@extends('layouts.master')
+@extends('layouts.backend')
 
-@section('css')
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet" />
-@endsection
-@section('js')
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
-@stop
 @section('content')
 
+<div class="content">
+    <div class="container-fluid">
+    <div class="row">
+        <div class="col-12">
+            <div class="page-title-box">
+                <h4 class="page-title">Create New Invest</h4>
+                <ol class="breadcrumb p-0 m-0">
+                    <li class="breadcrumb-item">
+                        <a href="{{ route('invests.invest.index') }}" class="btn btn-primary" title="Show All Invest">
+                            <span class="fa fa-list" aria-hidden="true"></span>
+                        </a>
+                    </li>
 
-    <div class="col-sm-12 col-md-8 col-lg-9">
-        <div class="row page-content">
-
-
-
-
-            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-7">
-                <div class="inner-box">
-                    @if(Session::has('success_message'))
-                        <div class="">
-                            <div class="alert alert-success">
-                                <span class="glyphicon glyphicon-ok"></span>
-                                {!! session('success_message') !!}
-
-                                <button type="button" class="close" data-dismiss="alert" aria-label="close">
-                                    <span aria-hidden="true">&times;</span>
-                                </button>
-
-                            </div>
-                        </div>
-                    @endif
-                    <div class="dashboard-box">
-                        <h2 class="dashbord-title">Create B2B Invest Ad</h2>
-                    </div>
-
-                        <div class="row">
-                            <div class="col-md-12 col-xl-12">
-
-            @if ($errors->any())
-                <ul class="alert alert-danger">
-                    @foreach ($errors->all() as $error)
-                        <li>{{ $error }}</li>
-                    @endforeach
-                </ul>
-            @endif
-
-            <form method="POST" action="{{ route('invests.invest.store') }}" accept-charset="UTF-8" id="create_invest_form" name="create_invest_form" class="form-horizontal">
-                {{ csrf_field() }}
-                @include ('invests.form', [
-                                            'invest' => null,
-                                          ])
-
-                <div class="form-group">
-                    <div class="col-md-offset-2 col-md-10">
-                        <input class="btn btn-primary" type="submit" value="Create">
-                    </div>
-                </div>
-
-            </form>
-                            </div>
-                        </div>
-
-                </div>
+                </ol>
+                <div class="clearfix"></div>
             </div>
         </div>
     </div>
 
+
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card-box">
+
+                            @if ($errors->any())
+                            <ul class="alert alert-danger">
+                                @foreach ($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                                @endforeach
+                            </ul>
+                            @endif
+
+                            <form method="POST" action="{{ route('invests.invest.store') }}" accept-charset="UTF-8" id="create_invest_form" name="create_invest_form" class="form-horizontal">
+                                {{ csrf_field() }}
+                                @include ('invests.form', [
+                                'invest' => null,
+                                ])
+
+                                <div class="form-group">
+                                    <div class="col-md-offset-2 col-md-10">
+                                        <input class="btn btn-primary" type="submit" value="Add">
+                                    </div>
+                                </div>
+
+                            </form>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
 @endsection
-@section('script')
-    <script>
-        $(document).ready(function() {
-            $('.select').select2({
-                placeholder: 'Select Business Type'
-            });
-        });
-    </script>
-@stop
+
 

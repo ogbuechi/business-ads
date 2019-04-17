@@ -113,11 +113,15 @@
         {
             "name": "business_type",
             "labels": "Business Type",
-            "html-type": "text",
+            "html-type": "checkbox",
             "css-class": "",
-            "options": {},
+            "options": {
+                "no":"no",
+                "yes": "yes"
+
+            },
             "html-value": null,
-            "validation": "string|min:1",
+            "validation": "array|min:1",
             "is-on-index": true,
             "is-on-show": true,
             "is-on-form": true,
@@ -155,7 +159,7 @@
             "is-on-index": true,
             "is-on-show": true,
             "is-on-form": true,
-            "data-type": "string",
+            "data-type": "text",
             "data-type-params": [],
             "data-value": null,
             "is-index": false,

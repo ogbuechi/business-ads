@@ -35,7 +35,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 
 
-Route::get('bt-admin', 'AdminController@index')->name('admin.home');
+Route::get('bt_admin', 'AdminController@index')->name('admin.home');
 Route::get('bt-admin/media', 'AdminController@media')->name('admin.media');
 Route::get('bt-admin/profile', 'AdminController@profile')->name('admin.profile');
 //['middleware' => ['role:admin']],

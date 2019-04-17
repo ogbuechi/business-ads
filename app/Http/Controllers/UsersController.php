@@ -22,7 +22,7 @@ class UsersController extends Controller
 
     public function index()
     {
-        $users = User::with('roles')->paginate(25);
+        $users = User::with('roles')->paginate(1000);
 
         return view('users.index', compact('users'));
     }
@@ -41,7 +41,7 @@ class UsersController extends Controller
      */
     public function create()
     {
-        $roles = Role::where('slug','!=','admin')->pluck('name','id')->all();
+        $roles = Role::where('level','<','6')->pluck('name','id')->all();
         
         return view('users.create', compact('roles'));
     }
@@ -109,7 +109,7 @@ class UsersController extends Controller
     public function edit($id)
     {
         $user = User::findOrFail($id);
-        $roles = Role::where('slug','!=','admin')->pluck('name','id')->all();
+        $roles = Role::where('level','<','6')->pluck('name','id')->all();
 
         return view('users.edit', compact('user','roles'));
     }

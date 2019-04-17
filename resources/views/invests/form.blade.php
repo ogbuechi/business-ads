@@ -1,4 +1,6 @@
-<input type="hidden" value="{{ Auth::id() }}" name="user_id">
+
+
+<input type="hidden" name="user_id" value="{{ Auth::user()->id }}">
 
 <div class="form-group {{ $errors->has('brand_name') ? 'has-error' : '' }}">
     <label for="brand_name" class="col-md-2 control-label">Brand Name</label>
@@ -8,26 +10,39 @@
     </div>
 </div>
 
-{{--<div class="form-group {{ $errors->has('business_type') ? 'has-error' : '' }}">--}}
-    {{--<div class="col-md-10">--}}
-        {{--<input class="form-control" name="business_type" type="text" id="business_type" value="{{ old('business_type', optional($invest)->business_type) }}" minlength="1" placeholder="Enter business type here...">--}}
-        {{--{!! $errors->first('business_type', '<p class="help-block">:message</p>') !!}--}}
-    {{--</div>--}}
-{{--</div>--}}
-
-<div class="form-group">
+<div class="form-group {{ $errors->has('business_type') ? 'has-error' : '' }}">
     <label for="business_type" class="col-md-2 control-label">Business Type</label>
+    <div class="col-md-10">
+{{--        <div class="checkbox">--}}
+{{--            <label for="business_type_no">--}}
+{{--            	<input id="business_type_no" class="required" name="business_type[]" type="checkbox" value="no" {{ in_array('no', old('business_type', optional($invest)->business_type) ?: []) ? 'checked' : '' }}>--}}
+{{--                no--}}
+{{--            </label>--}}
+{{--        </div>--}}
+{{--        <div class="checkbox">--}}
+{{--            <label for="business_type_yes">--}}
+{{--            	<input id="business_type_yes" class="required" name="business_type[]" type="checkbox" value="yes" {{ in_array('yes', old('business_type', optional($invest)->business_type) ?: []) ? 'checked' : '' }}>--}}
+{{--                yes--}}
+{{--            </label>--}}
+{{--        </div>--}}
 
-    <select multiple="multiple" name="business_type[]" id="business_type" class="select form-control">
-
-        {{--<option value="all">All</option>--}}
         @foreach($categories as $item )
 
-            <option value="{{ $item->id }}">{{ $item->name }}</option>
+{{--            <option value="{{ $item->id }}">{{ $item->name }}</option>--}}
+            <div class="checkbox checkbox-primary">
+                <input value="{{ $item->name }}"  name="business_type[]" id="business_type_{{ $item->id }}" type="checkbox" {{ in_array($item->name, old('business_type', optional($invest)->business_type) ?: []) ? 'checked' : '' }}>
+                <label for="business_type_{{ $item->id }}">
+                    {{ $item->name }}
+                </label>
+            </div>
 
         @endforeach
-    </select>
 
+
+
+
+        {!! $errors->first('business_type', '<p class="help-block">:message</p>') !!}
+    </div>
 </div>
 
 <div class="form-group {{ $errors->has('profile_summary') ? 'has-error' : '' }}">

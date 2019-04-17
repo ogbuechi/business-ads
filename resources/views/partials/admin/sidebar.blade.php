@@ -7,7 +7,7 @@
                 <li class="menu-title">Navigation</li>
 
                 <li>
-                    <a href="/hom" class="waves-effect"><i class="mdi mdi-view-dashboard"></i> <span> Dashboard </span> </a>
+                    <a href="/" class="waves-effect"><i class="mdi mdi-view-dashboard"></i> <span> Dashboard </span> </a>
                 </li>
 
 {{--                <li>--}}
@@ -24,6 +24,9 @@
                     </ul>
                 </li>
 
+
+
+
                 <li class="has_sub">
                     <a href="javascript:void(0);" class="waves-effect {{ active(['profiles.profile.*']) }} {{ active(['profiles.profile.*'], 'subdrop') }}"><i class="fa fa-user"></i><span> Profile </span> <span class="menu-arrow"></span></a>
                     <ul class="list-unstyled">
@@ -34,6 +37,16 @@
 
                 <li>
                     <a href="{{ route('admin.media') }}" class="waves-effect {{ active('admin.media') }}"><i class="mdi mdi-file"></i><span> Media </span></a>
+                </li>
+
+                <li class="has_sub">
+                    <a href="javascript:void(0);" class="waves-effect {{ active(['profiles.profile.*']) }} {{ active(['profiles.profile.*'], 'subdrop') }}"><i class="mdi mdi-pencil-box"></i><span> Post Ads </span> <span class="menu-arrow"></span></a>
+                    <ul class="list-unstyled">
+                        <li><a href="{{ route('profiles.profile.edit_my_profile') }}"  class="{{ active(['profiles.profile.edit_my_profile']) }}"> Business Partnership</a></li>
+
+                        <li><a href="{{ route('invests.invest.index') }}" class="{{ active(['invests.invest.*']) }}">Business Invest</a></li>
+                        <li><a href="{{ route('profiles.profile.edit_my_profile') }}"  class="{{ active(['profiles.profile.edit_my_profile']) }}"> Business Sale</a></li>
+                    </ul>
                 </li>
 
 
@@ -58,6 +71,10 @@
                     <a href="{{ route('settings.setting.index') }}" class="waves-effect {{ active('settings.setting.*') }}"><i class="mdi mdi-cogs"></i><span> Site Config </span></a>
                 </li>
 
+<li>
+                    <a href="{{ route('categories.category.index') }}" class="waves-effect {{ active('categories.category.*') }}"><i class="mdi mdi-calendar-text"></i><span> Categories </span></a>
+                </li>
+
 
 
             </ul>
@@ -67,7 +84,7 @@
 
         <div class="help-box">
             <h5 class="text-muted m-t-0">For Help ?</h5>
-            <p class=""><span class="text-custom">Email:</span> <br/> support@support.com</p>
+            <p class=""><span class="text-custom">Email:</span> <br/> support@gloseed.com</p>
             <p class="m-b-0"><span class="text-custom">Call:</span> <br/> (+123) 123 456 789</p>
         </div>
 

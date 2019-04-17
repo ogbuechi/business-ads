@@ -88,9 +88,9 @@
 
         //creating donut chart
         var $donutData = [
-                {label: "Download Sales", value: 12},
-                {label: "In-Store Sales", value: 30},
-                {label: "Mail-Order Sales", value: 20}
+                {label: "B2B Sales", value: 12},
+                {label: "B2B Invests", value: 30},
+                {label: "Open Partnership", value: 20}
             ];
         this.createDonutChart('morris-donut-example', $donutData, ['#3ac9d6', '#f5707a', "#4bd396"]);
     },

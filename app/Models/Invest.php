@@ -4,22 +4,15 @@ namespace App\Models;
 
 use Cviebrock\EloquentSluggable\Sluggable;
 use Illuminate\Database\Eloquent\Model;
-
 use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Invest extends Model
 {
-    
-    use SoftDeletes;
 
+    use SoftDeletes;
 
     use Sluggable;
 
-    /**
-     * Return the sluggable configuration array for this model.
-     *
-     * @return array
-     */
     public function sluggable()
     {
         return [
@@ -28,8 +21,7 @@ class Invest extends Model
             ]
         ];
     }
-
-
+    
 
     /**
      * The database table used by the model.
@@ -55,7 +47,8 @@ class Invest extends Model
                   'brand_name',
                   'business_type',
                   'profile_summary',
-                  'maximum_capital'
+                  'maximum_capital',
+        'slug'
               ];
 
     /**
@@ -63,9 +56,7 @@ class Invest extends Model
      *
      * @var array
      */
-    protected $dates = [
-               'deleted_at'
-           ];
+    protected $dates = [];
     
     /**
      * The attributes that should be cast to native types.
@@ -82,17 +73,26 @@ class Invest extends Model
         return $this->belongsTo('App\User','user_id');
     }
 
+    /**
+     * Set the business_type.
+     *
+     * @param  string  $value
+     * @return void
+     */
+    public function setBusinessTypeAttribute($value)
+    {
+        $this->attributes['business_type'] = json_encode($value);
+    }
 
     /**
-     * Get deleted_at in array format
+     * Get business_type in array format
      *
      * @param  string  $value
      * @return array
      */
-    public function getDeletedAtAttribute($value)
+    public function getBusinessTypeAttribute($value)
     {
-        return \DateTime::createFromFormat('j/n/Y g:i A', $value);
-
+        return json_decode($value) ?: [];
     }
 
 }

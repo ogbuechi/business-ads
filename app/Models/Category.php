@@ -4,21 +4,14 @@ namespace App\Models;
 
 use Cviebrock\EloquentSluggable\Sluggable;
 use Illuminate\Database\Eloquent\Model;
-
 use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Category extends Model
 {
-    
     use SoftDeletes;
 
     use Sluggable;
 
-    /**
-     * Return the sluggable configuration array for this model.
-     *
-     * @return array
-     */
     public function sluggable()
     {
         return [
@@ -27,13 +20,6 @@ class Category extends Model
             ]
         ];
     }
-
-
-    /**
-     * The database table used by the model.
-     *
-     * @var string
-     */
     protected $table = 'categories';
 
     /**
@@ -49,6 +35,7 @@ class Category extends Model
      * @var array
      */
     protected $fillable = [
+                  'type',
                   'name',
                   'slug'
               ];
@@ -58,9 +45,7 @@ class Category extends Model
      *
      * @var array
      */
-    protected $dates = [
-               'deleted_at'
-           ];
+    protected $dates = [];
     
     /**
      * The attributes that should be cast to native types.
@@ -71,16 +56,5 @@ class Category extends Model
     
 
 
-    /**
-     * Get deleted_at in array format
-     *
-     * @param  string  $value
-     * @return array
-     */
-    public function getDeletedAtAttribute($value)
-    {
-        return \DateTime::createFromFormat('j/n/Y g:i A', $value);
-
-    }
 
 }

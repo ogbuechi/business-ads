@@ -6,6 +6,7 @@ use App\Models\Role;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Exception;
+use Illuminate\Support\Facades\Auth;
 
 class RolesController extends Controller
 {
@@ -17,7 +18,12 @@ class RolesController extends Controller
      */
     public function index()
     {
-        $roles = Role::paginate(25);
+
+        if(Auth::user()->role() == 7){
+            $roles = Role::all();
+        }else {
+            $roles = Role::where('level','!=','7')->get();
+        }
 
         return view('admin.roles.index', compact('roles'));
     }

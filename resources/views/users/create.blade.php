@@ -2,41 +2,30 @@
 
 @section('content')
 
-    <div class="pcoded-content">
 
-        <div class="page-header card">
-            <div class="row">
-                <div class="col-lg-8 col-xs-8">
-                    <div class="page-header-title pull-left">
-                        <i class="feather icon-plus bg-c-blue"></i>
-                        <div class="d-inline">
-                            <h4 class="mt-5 mb-5">Create New User</h4>
+
+        <div class="content">
+            <div class="container-fluid">
+        <div class="row">
+                    <div class="col-12">
+                        <div class="page-title-box">
+                            <h4 class="page-title">Add New User</h4>
+                            <ol class="breadcrumb p-0 m-0">
+                                <li class="breadcrumb-item">
+                                    <a href="{{ route('users.user.index') }}" class="btn btn-primary" title="All Users">
+                                        <span class="fa fa-list" aria-hidden="true"></span>
+                                    </a>
+                                </li>
+
+                            </ol>
+                            <div class="clearfix"></div>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4 col-xs-4">
-                    <div class="page-header-breadcrumb">
-                        <ul class=" breadcrumb breadcrumb-title">
-                            <li class="breadcrumb-item">
-                                <a href="{{ route('users.user.index') }}" class="btn btn-primary" title="Show All User">
-                                    <span class="feather icon-list" aria-hidden="true"></span>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
 
-                </div>
-            </div>
-
-        </div>
-
-        <div class="pcoded-inner-content">
-            <div class="main-body">
-                <div class="page-wrapper">
-                    <div class="page-body">
-
-                        <div class="row">
-                            <div class="col-md-12 col-xl-12">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card-box">
 
             @if ($errors->any())
                 <ul class="alert alert-danger">
@@ -59,13 +48,13 @@
                 </div>
 
             </form>
+
+
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
 
 @endsection
 

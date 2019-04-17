@@ -23,12 +23,6 @@ class InvestsController extends Controller
 
         return view('invests.index', compact('invests'));
     }
-    public function myAds()
-    {
-        $invests = Invest::with('user')->paginate(25);
-
-        return view('dashboard.ads.invest.index', compact('invests'));
-    }
 
     /**
      * Show the form for creating a new invest.
@@ -38,9 +32,11 @@ class InvestsController extends Controller
     public function create()
     {
         $users = User::pluck('name','id')->all();
+
         $categories = Category::all();
 
         return view('invests.create', compact('users','categories'));
+
     }
 
     /**
@@ -52,16 +48,20 @@ class InvestsController extends Controller
      */
     public function store(Request $request)
     {
+//        try {
+            
             $data = $this->getData($request);
+            
+            Invest::create($data);
 
-            $invest = Invest::create($data);
+            return redirect()->route('invests.invest.index')
+                             ->with('success_message', 'Invest was successfully added!');
 
-        $url =  route('invests.invest.show_my_ad', $invest->id );
-
-            return redirect()->back()
-                             ->with('success_message', "B2B Invest Ads was successfully created! <a class='pull-right' href='$url'>View Ad</a>");
-
-
+//        } catch (Exception $exception) {
+//
+//            return back()->withInput()
+//                         ->withErrors(['unexpected_error' => 'Unexpected error occurred while trying to process your request!']);
+//        }
     }
 
     /**
@@ -77,12 +77,6 @@ class InvestsController extends Controller
 
         return view('invests.show', compact('invest'));
     }
-    public function showMyAd($id)
-    {
-        $invest = Invest::with('user')->findOrFail($id);
-
-        return view('dashboard.ads.invest.show', compact('invest'));
-    }
 
     /**
      * Show the form for editing the specified invest.
@@ -95,8 +89,10 @@ class InvestsController extends Controller
     {
         $invest = Invest::findOrFail($id);
         $users = User::pluck('name','id')->all();
+        $categories = Category::all();
 
-        return view('dashboard.ads.invest.edit', compact('invest','users'));
+        return view('invests.edit', compact('invest','users','categories'));
+
     }
 
     /**
@@ -116,8 +112,8 @@ class InvestsController extends Controller
             $invest = Invest::findOrFail($id);
             $invest->update($data);
 
-            return redirect()->route('invests.invest.myads')
-                             ->with('success_message', 'B2B Invest Post Ad was successfully updated!');
+            return redirect()->route('invests.invest.index')
+                             ->with('success_message', 'Invest was successfully updated!');
 
         } catch (Exception $exception) {
 
@@ -139,7 +135,7 @@ class InvestsController extends Controller
             $invest = Invest::findOrFail($id);
             $invest->delete();
 
-            return redirect()->route('invests.invest.myads')
+            return redirect()->route('invests.invest.index')
                              ->with('success_message', 'Invest was successfully deleted!');
 
         } catch (Exception $exception) {
@@ -159,11 +155,11 @@ class InvestsController extends Controller
     protected function getData(Request $request)
     {
         $rules = [
-            'user_id' => 'required|int|nullable',
-            'brand_name' => 'required|string',
-            'business_type' => 'required|string',
-            'profile_summary' => 'required',
-            'maximum_capital' => 'required|int',
+            'user_id' => 'nullable',
+            'brand_name' => 'string|min:1|nullable',
+            'business_type' => 'array|min:1|nullable',
+            'profile_summary' => 'string|min:1|nullable',
+            'maximum_capital' => 'string|min:1|nullable',
      
         ];
         

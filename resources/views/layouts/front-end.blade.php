@@ -24,7 +24,7 @@
     <link rel="stylesheet" type="text/css" href="/css/swiper.css" />
 
     <!-- this is default skin you can replace that with: dark.css, yellow.css, red.css ect -->
-    <link id="pagestyle" rel="stylesheet" type="text/css" href="css/default.css" />
+    <link id="pagestyle" rel="stylesheet" type="text/css" href="/css/default.css" />
 
     <!-- Google fonts -->
     <link href="../../../fonts.googleapis.com/css14ba?family=Roboto:300,300i,400,400i,500,500i,700,700i,900,900i&amp;subset=cyrillic,cyrillic-ext,latin-ext" rel="stylesheet">
@@ -93,9 +93,9 @@
                         <div class="col-sm-3">
                             <select class="form-control input-lg" name="category">
                                 <option value="all">All Categories</option>
-                                @foreach($categories as $item)
-                                    <option value="{{ $item->slug }}">{{ $item->name }} </option>
-                                @endforeach
+{{--                                @foreach($categories as $item)--}}
+{{--                                    <option value="{{ $item->slug }}">{{ $item->name }} </option>--}}
+{{--                                @endforeach--}}
 
                             </select>
                         </div><!-- end col -->
@@ -138,9 +138,9 @@
                         <span class="hidden-sm">Categories</span><i class="fa fa-bars ml-5"></i>
                     </a>
                     <ul class="dropdown-menu">
-                        @foreach($categories as $item)
-                            <li><a class="" href="#">{{ $item->name }}</a></li>
-                        @endforeach
+{{--                        @foreach($categories as $item)--}}
+{{--                            <li><a class="" href="#">{{ $item->name }}</a></li>--}}
+{{--                        @endforeach--}}
                     </ul><!-- end ul dropdown-menu -->
                 </li><!-- end dropdown -->
             </ul><!-- end navbar-right -->

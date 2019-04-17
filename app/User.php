@@ -20,6 +20,7 @@ class User extends Authenticatable
      */
     protected $fillable = ['name', 'email', 'password','status'];
     protected $with = ['roles','profile'];
+    protected $appends = ['role'];
 
 //    protected $appends = ['user_role'];
 
@@ -53,7 +54,10 @@ class User extends Authenticatable
     }
 
         public function role(){
-            return $this->getRoles()->first()->name;
+            return $this->getRoles()->first()->level;
+    }
+    public function getRoleAttribute(){
+        return $this->getRoles()->first()->name;
     }
 
 }

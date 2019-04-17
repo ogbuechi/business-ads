@@ -137,7 +137,7 @@
 
 
             <div class="row">
-                <div class="col-xl-6">
+                <div class="col-xl-12">
                     <div class="card-box">
                         <h4 class="header-title m-t-0 m-b-30">Recent Users</h4>
 
@@ -146,77 +146,28 @@
                                 <thead>
                                 <tr>
                                     <th></th>
-                                    <th>User Name</th>
-                                    <th>Phone</th>
-                                    <th>Location</th>
-                                    <th>Date</th>
+                                    <th>Name</th>
+                                    <th>Email</th>
+                                    <th>Role</th>
+                                    <th>Status</th>
                                 </tr>
                                 </thead>
                                 <tbody>
+                                @foreach($users as $user)
                                 <tr>
                                     <th>
-                                        <img src="/admin/assets/images/users/avatar-1.jpg" alt="user" class="thumb-sm rounded-circle" />
+                                        <img src="{{ $user->avatar }}" alt="{{ $user->name }}" class="thumb-sm rounded-circle" />
                                     </th>
                                     <td>
-                                        <h5 class="m-0">Louis Hansen</h5>
-                                        <p class="m-0 text-muted font-13"><small>Web designer</small></p>
+                                        <h5 class="m-0">{{ $user->name }}</h5>
+{{--                                        <p class="m-0 text-muted font-13"><small>Web designer</small></p>--}}
                                     </td>
-                                    <td>+12 3456 789</td>
-                                    <td>USA</td>
-                                    <td>07/08/2016</td>
+                                    <td>{{ $user->email }}</td>
+                                    <td>{{ $user->role }}</td>
+                                    <td>{{ $user->status }}</td>
                                 </tr>
+                                @endforeach
 
-                                <tr>
-                                    <th>
-                                        <img src="/admin/assets/images/users/avatar-2.jpg" alt="user" class="thumb-sm rounded-circle" />
-                                    </th>
-                                    <td>
-                                        <h5 class="m-0">Craig Hause</h5>
-                                        <p class="m-0 text-muted font-13"><small>Programmer</small></p>
-                                    </td>
-                                    <td>+89 345 6789</td>
-                                    <td>Canada</td>
-                                    <td>29/07/2016</td>
-                                </tr>
-
-                                <tr>
-                                    <th>
-                                        <img src="/admin/assets/images/users/avatar-3.jpg" alt="user" class="thumb-sm rounded-circle" />
-                                    </th>
-                                    <td>
-                                        <h5 class="m-0">Edward Grimes</h5>
-                                        <p class="m-0 text-muted font-13"><small>Founder</small></p>
-                                    </td>
-                                    <td>+12 29856 256</td>
-                                    <td>Brazil</td>
-                                    <td>22/07/2016</td>
-                                </tr>
-
-                                <tr>
-                                    <th>
-                                        <img src="/admin/assets/images/users/avatar-4.jpg" alt="user" class="thumb-sm rounded-circle" />
-                                    </th>
-                                    <td>
-                                        <h5 class="m-0">Bret Weaver</h5>
-                                        <p class="m-0 text-muted font-13"><small>Web designer</small></p>
-                                    </td>
-                                    <td>+00 567 890</td>
-                                    <td>USA</td>
-                                    <td>20/07/2016</td>
-                                </tr>
-
-                                <tr>
-                                    <th>
-                                        <img src="/admin/assets/images/users/avatar-5.jpg" alt="user" class="thumb-sm rounded-circle" />
-                                    </th>
-                                    <td>
-                                        <h5 class="m-0">Mark</h5>
-                                        <p class="m-0 text-muted font-13"><small>Web design</small></p>
-                                    </td>
-                                    <td>+91 123 456</td>
-                                    <td>India</td>
-                                    <td>07/07/2016</td>
-                                </tr>
 
                                 </tbody>
                             </table>
@@ -224,88 +175,40 @@
                         </div> <!-- table-responsive -->
                     </div> <!-- end card -->
                 </div>
-                <!-- end col -->
-
-                <div class="col-xl-6">
+                <div class="col-xl-12">
                     <div class="card-box">
-                        <h4 class="header-title m-t-0 m-b-30">Recent Users</h4>
+                        <h4 class="header-title m-t-0 m-b-30">Recent Business To Business Invest Ads</h4>
 
                         <div class="table-responsive">
                             <table class="table table-hover table-centered m-0">
                                 <thead>
+
                                 <tr>
                                     <th></th>
-                                    <th>User Name</th>
-                                    <th>Phone</th>
-                                    <th>Location</th>
-                                    <th>Date</th>
+                                    <th>Brand Name</th>
+                                    <th>Posted By</th>
+                                    <th>Business Type</th>
+                                    <th>Maximum Capital</th>
+                                    <th>Date Posted</th>
                                 </tr>
                                 </thead>
                                 <tbody>
+                                @foreach($invests as $invest)
                                 <tr>
                                     <th>
-                                        <span class="avatar-sm-box bg-success">L</span>
+                                        <img src="https://via.placeholder.com/100x50.png?text=B2B Invest" alt="{{ $invest->brand_name }}" class="thumb-sm" />
                                     </th>
                                     <td>
-                                        <h5 class="m-0">Louis Hansen</h5>
-                                        <p class="m-0 text-muted font-13"><small>Web designer</small></p>
-                                    </td>
-                                    <td>+12 3456 789</td>
-                                    <td>USA</td>
-                                    <td>07/08/2016</td>
-                                </tr>
+                                        <h5 class="m-0">{{ $invest->brand_name }}</h5>
 
-                                <tr>
-                                    <th>
-                                        <span class="avatar-sm-box bg-primary">C</span>
-                                    </th>
-                                    <td>
-                                        <h5 class="m-0">Craig Hause</h5>
-                                        <p class="m-0 text-muted font-13"><small>Programmer</small></p>
+{{--                                        <p class="m-0 text-muted font-13"><small>Web designer</small></p>--}}
                                     </td>
-                                    <td>+89 345 6789</td>
-                                    <td>Canada</td>
-                                    <td>29/07/2016</td>
+                                    <td>{{ optional($invest->user)->name }}</td>
+                                    <td>{{ implode('; ', $invest->business_type) }}</td>
+                                    <td>{{ $invest->maximum_capital }}</td>
+                                    <td>{{ $invest->created_at }}</td>
                                 </tr>
-
-                                <tr>
-                                    <th>
-                                        <span class="avatar-sm-box bg-brown">E</span>
-                                    </th>
-                                    <td>
-                                        <h5 class="m-0">Edward Grimes</h5>
-                                        <p class="m-0 text-muted font-13"><small>Founder</small></p>
-                                    </td>
-                                    <td>+12 29856 256</td>
-                                    <td>Brazil</td>
-                                    <td>22/07/2016</td>
-                                </tr>
-
-                                <tr>
-                                    <th>
-                                        <span class="avatar-sm-box bg-pink">B</span>
-                                    </th>
-                                    <td>
-                                        <h5 class="m-0">Bret Weaver</h5>
-                                        <p class="m-0 text-muted font-13"><small>Web designer</small></p>
-                                    </td>
-                                    <td>+00 567 890</td>
-                                    <td>USA</td>
-                                    <td>20/07/2016</td>
-                                </tr>
-
-                                <tr>
-                                    <th>
-                                        <span class="avatar-sm-box bg-orange">M</span>
-                                    </th>
-                                    <td>
-                                        <h5 class="m-0">Mark</h5>
-                                        <p class="m-0 text-muted font-13"><small>Web design</small></p>
-                                    </td>
-                                    <td>+91 123 456</td>
-                                    <td>India</td>
-                                    <td>07/07/2016</td>
-                                </tr>
+                                @endforeach
 
                                 </tbody>
                             </table>

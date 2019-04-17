@@ -17,7 +17,7 @@ class CategoriesController extends Controller
      */
     public function index()
     {
-        $categories = Category::paginate(25);
+        $categories = Category::paginate(100);
 
         return view('categories.index', compact('categories'));
     }
@@ -148,7 +148,9 @@ class CategoriesController extends Controller
     protected function getData(Request $request)
     {
         $rules = [
+            'type' => 'string|min:1|nullable',
             'name' => 'string|min:1|max:255|nullable',
+//            'slug' => 'string|min:1|nullable',
      
         ];
         
