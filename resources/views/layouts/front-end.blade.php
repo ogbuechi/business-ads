@@ -66,6 +66,17 @@
                         <li><a href="{{ url('register') }}" >Try Free Today</a></li>
                     @else
                         <li><a href="{{ url('dashboard') }}">Dashboard</a></li>
+                        <li>
+                            <a class="dropdown-item" href="{{ route('logout') }}"
+                               onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();"><i class="ti-power-off m-r-5"></i>
+                                {{ __('Logout') }}
+                            </a>
+
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                @csrf
+                            </form>
+                        </li>
                     @endguest()
 
 
