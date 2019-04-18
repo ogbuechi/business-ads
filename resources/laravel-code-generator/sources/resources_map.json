@@ -50,5 +50,9 @@
     {
         "model-name": "CompanySubCat",
         "resource-file": "company_sub_cats.json"
+    },
+    {
+        "model-name": "Sales",
+        "resource-file": "sales.json"
     }
 ]

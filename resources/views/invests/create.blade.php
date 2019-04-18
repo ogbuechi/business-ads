@@ -55,4 +55,18 @@
 
 @endsection
 
+@section('js')
+    <script src="/admin/assets/pages/jquery.property-add.init.js"></script>
+
+    <!-- dropify js -->
+    <script src="/plugins/dropify/js/dropify.min.js"></script>
+@stop
+
+@section('css')
+
+    <!-- dropify css -->
+    <link rel="stylesheet" type="text/css" href="/plugins/dropify/css/dropify.css" />
+
+@stop
+
 

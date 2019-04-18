@@ -72,13 +72,13 @@
                     <div class="m-t-40 account-pages">
                         <div class="text-center account-logo-box">
                             <div class="m-t-10 m-b-10">
-                                <a href="index.html" class="text-success">
+                                <a href="/" class="text-success">
                                     <span style="font-size: 27px">GloSeed Company Information</span>
                                 </a>
                             </div>
                             <!--<h4 class="text-uppercase font-bold m-b-0">Sign In</h4>-->
                         </div>
-                        <div class="account-content" style="padding: 30px 80px">
+                        <div class="account-content" style="padding: 30px 30px">
                             <div class="card-box">
                                 @if ($errors->any())
                                     <ul class="alert alert-danger">
