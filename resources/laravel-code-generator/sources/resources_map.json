@@ -38,5 +38,17 @@
     {
         "model-name": "Invest",
         "resource-file": "invests.json"
+    },
+    {
+        "model-name": "Company",
+        "resource-file": "companies.json"
+    },
+    {
+        "model-name": "CompanyCat",
+        "resource-file": "company_cats.json"
+    },
+    {
+        "model-name": "CompanySubCat",
+        "resource-file": "company_sub_cats.json"
     }
 ]

@@ -8,7 +8,7 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use jeremykenedy\LaravelRoles\Models\Role;
 use jeremykenedy\LaravelRoles\Traits\HasRoleAndPermission;
 
-class User extends Authenticatable
+class User extends Authenticatable implements MustVerifyEmail
 {
     use Notifiable;
     use HasRoleAndPermission;
@@ -42,6 +42,12 @@ class User extends Authenticatable
     {
 
         return $this->hasOne('App\Models\Profile');
+
+    }
+    public function company()
+    {
+
+        return $this->hasOne('App\Models\Company');
 
     }
 

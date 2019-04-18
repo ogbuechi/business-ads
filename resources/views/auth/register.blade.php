@@ -1,155 +1,179 @@
 <!DOCTYPE html>
 <html lang="en">
+
+<!-- Mirrored from coderthemes.com/zircos/layouts/default/page-register.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 16 Apr 2019 12:50:52 GMT -->
 <head>
-    <title>Gloseed - Business Ads Login</title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!--===============================================================================================-->
-    <link rel="icon" type="image/png" href="/images/icons/favicon.ico"/>
-    <!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href="/vendor/bootstrap/css/bootstrap.min.css">
-    <!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href="/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
-    <!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href="/fonts/iconic/css/material-design-iconic-font.min.css">
-    <!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href="/vendor/animate/animate.css">
-    <!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href="/vendor/css-hamburgers/hamburgers.min.css">
-    <!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href="/vendor/animsition/css/animsition.min.css">
-    <!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href="/vendor/select2/select2.min.css">
-    <!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href="/vendor/daterangepicker/daterangepicker.css">
-    <!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href="/css/util.css">
-    <link rel="stylesheet" type="text/css" href="/css/main.css">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Business Ad">
+    <meta name="author" content="Coderthemes">
 
-    <style>
-        .invalid-feedback {
-            display: block;
-        }
-    </style>
-    <!--===============================================================================================-->
+    <!-- App favicon -->
+    <link rel="shortcut icon"  href="/admin/assets/images/favicon.ico">
+    <!-- App title -->
+    <title>Gloseed - Business Ads</title>
+
+    <!-- App css -->
+    <link rel="stylesheet" type="text/css"  href="/admin/assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css"  href="/admin/assets/css/icons.css" />
+    <link rel="stylesheet" type="text/css"  href="/admin/assets/css/style.css" />
+
+    <script src="/admin/assets/js/modernizr.min.js"></script>
+
 </head>
-<body>
 
-<div class="limiter">
-    <div class="container-login100">
-        <div class="wrap-login100">
-            <form  class="login100-form validate-form" method="POST" action="{{ route('register') }}">
-                @csrf
-                <span class="login100-form-title p-b-26">
-						Welcome
-					</span>
 
-                <div class="wrap-input100">
-                    <input required autofocus value="{{ old('name') }}" class="input100 {{ $errors->has('name') ? ' is-invalid' : '' }}" type="text" name="name">
-                    <span class="focus-input100" data-placeholder="Username"></span>
+<body class="bg-transparent">
 
-                </div>
-                @if ($errors->has('name'))
-                    <span class="invalid-feedback" role="alert">
+<!-- HOME -->
+<section>
+    <div class="container-alt">
+        <div class="row">
+            <div class="col-sm-12">
+
+                <div class="wrapper-page" style="max-width: 720px">
+
+                    <div class="m-t-40 account-pages">
+                        <div class="text-center account-logo-box">
+                            <div class="m-t-10 m-b-10">
+                                <a href="{{ route('/') }}" class="text-success">
+                                    <span style="font-size: 27px;">GloSeed</span>
+{{--                                    <span><img src="/admin/assets/images/logo.png" alt="" height="36"></span>--}}
+                                </a>
+                            </div>
+                            <!--<h4 class="text-uppercase font-bold m-b-0">Sign In</h4>-->
+                        </div>
+                        <div class="account-content">
+                            <form class="form-horizontal" method="POST" action="{{ route('register') }}">
+                                @csrf
+
+                                <div class="form-group row">
+                                    <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Username') }}</label>
+
+                                    <div class="col-md-6">
+                                        <input id="name" type="text" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" name="name" value="{{ old('name') }}" required autofocus>
+
+                                        @if ($errors->has('name'))
+                                            <span class="invalid-feedback" role="alert">
                                         <strong>{{ $errors->first('name') }}</strong>
                                     </span>
-                @endif
+                                        @endif
+                                    </div>
+                                </div>
 
-                <div class="wrap-input100 validate-input" data-validate = "Valid email is: a@b.c">
-                    <input required autofocus value="{{ old('email') }}" class="input100 {{ $errors->has('email') ? ' is-invalid' : '' }}" type="email" name="email">
-                    <span class="focus-input100" data-placeholder="Email"></span>
+                                <div class="form-group row">
+                                    <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
 
-                </div>
-                @if ($errors->has('email'))
-                    <span class="invalid-feedback" role="alert">
+                                    <div class="col-md-6">
+                                        <input id="email" type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" required>
+
+                                        @if ($errors->has('email'))
+                                            <span class="invalid-feedback" role="alert">
                                         <strong>{{ $errors->first('email') }}</strong>
                                     </span>
-                @endif
+                                        @endif
+                                    </div>
+                                </div>
 
+                                <div class="form-group row">
+                                    <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('First Name') }}</label>
 
-                <div class="wrap-input100 validate-input" data-validate="Enter password">
-						<span class="btn-show-pass">
-							<i class="zmdi zmdi-eye"></i>
-						</span>
-                    <input class="input100 {{ $errors->has('password') ? ' is-invalid' : '' }}" type="password" name="password" required>
-                    <span class="focus-input100" data-placeholder="Password"></span>
-                    @if ($errors->has('password'))
-                        <span class="invalid-feedback" role="alert">
+                                    <div class="col-md-6">
+                                        <input id="first_name" type="text" class="form-control{{ $errors->has('first_name') ? ' is-invalid' : '' }}" name="first_name" value="{{ old('first_name') }}" required autofocus>
+
+                                        @if ($errors->has('first_name'))
+                                            <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $errors->first('first_name') }}</strong>
+                                    </span>
+                                        @endif
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Last Name') }}</label>
+
+                                    <div class="col-md-6">
+                                        <input id="last_name" type="text" class="form-control{{ $errors->has('last_name') ? ' is-invalid' : '' }}" name="last_name" value="{{ old('last_name') }}" required autofocus>
+
+                                        @if ($errors->has('last_name'))
+                                            <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $errors->first('last_name') }}</strong>
+                                    </span>
+                                        @endif
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
+
+                                    <div class="col-md-6">
+                                        <input id="password" type="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" required>
+
+                                        @if ($errors->has('password'))
+                                            <span class="invalid-feedback" role="alert">
                                         <strong>{{ $errors->first('password') }}</strong>
                                     </span>
-                    @endif
-                </div>
+                                        @endif
+                                    </div>
+                                </div>
 
-                <div class="wrap-input100 validate-input" data-validate="Confirm password">
-						<span class="btn-show-pass">
-							<i class="zmdi zmdi-eye"></i>
-						</span>
-                    <input class="input100 " type="password" name="password_confirmation" required>
-                    <span class="focus-input100" data-placeholder="Confirm Password"></span>
-                </div>
+                                <div class="form-group row">
+                                    <label for="password-confirm" class="col-md-4 col-form-label text-md-right">{{ __('Confirm Password') }}</label>
 
-                <div class="row {{ $errors->has('role_id') ? 'has-error' : '' }}">
-                    <label for="account_id" class="col-md-4 col-form-label text-md-right">Role</label>
-                    <div class="col-md-6">
-                        <select class="form-control" id="role_id" name="role_id">
-                            {{--<option value="" style="display: none;" disabled selected>Enter account here...</option>--}}
-                            <option value="" style="display: none;" {{ old('role_id' ?: '') == '' ? 'selected' : '' }} disabled selected> Select Role</option>
-                            @foreach ($roles as $key => $role)
-                                <option value="{{ $key }}" {{ old('role_id') == $key ? 'selected' : '' }}>
-                                    {{ $role }}
-                                </option>
-                            @endforeach
-                        </select>
+                                    <div class="col-md-6">
+                                        <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required>
+                                    </div>
+                                </div>
 
-                        {!! $errors->first('role_id', '<p class="help-block">:message</p>') !!}
+
+                                <div class="form-group row mb-0">
+                                    <div class="col-md-6 offset-md-4">
+                                        <button type="submit" class="btn btn-primary">
+                                            {{ __('Continue') }}
+                                        </button>
+                                    </div>
+                                </div>
+                            </form>
+
+                            <div class="clearfix"></div>
+
+                        </div>
                     </div>
-                </div>
+                    <!-- end card-box-->
 
 
-
-                <div class="container-login100-form-btn">
-                    <div class="wrap-login100-form-btn">
-                        <div class="login100-form-bgbtn"></div>
-                        <button type="submit" class="login100-form-btn">
-                            Register
-                        </button>
+                    <div class="row m-t-50">
+                        <div class="col-sm-12 text-center">
+                            <p class="text-muted">Already have account?<a href="{{ route('login') }}" class="text-primary m-l-5"><b>Sign In</b></a></p>
+                        </div>
                     </div>
+
                 </div>
+                <!-- end wrapper -->
 
-
-                <div class="text-center p-t-115">
-						<span class="txt1">
-							Don you have an account?
-						</span>
-
-                    <a class="txt2" href="{{ route('login') }}">
-                        Login
-                    </a>
-                </div>
-            </form>
+            </div>
         </div>
     </div>
-</div>
+</section>
+<!-- END HOME -->
 
+<script>
+    var resizefunc = [];
+</script>
 
-<div id="dropDownSelect1"></div>
+<!-- jQuery  -->
+<script src="/admin/assets/js/jquery.min.js"></script>
+<script src="/admin/assets/js/bootstrap.bundle.min.js"></script>
+<script src="/admin/assets/js/detect.js"></script>
+<script src="/admin/assets/js/fastclick.js"></script>
+<script src="/admin/assets/js/jquery.blockUI.js"></script>
+<script src="/admin/assets/js/waves.js"></script>
+<script src="/admin/assets/js/jquery.slimscroll.js"></script>
+<script src="/admin/assets/js/jquery.scrollTo.min.js"></script>
 
-<!--===============================================================================================-->
-<script src="/vendor/jquery/jquery-3.2.1.min.js"></script>
-<!--===============================================================================================-->
-<script src="/vendor/animsition/js/animsition.min.js"></script>
-<!--===============================================================================================-->
-<script src="/vendor/bootstrap/js/popper.js"></script>
-<script src="/vendor/bootstrap/js/bootstrap.min.js"></script>
-<!--===============================================================================================-->
-<script src="/vendor/select2/select2.min.js"></script>
-<!--===============================================================================================-->
-<script src="/vendor/daterangepicker/moment.min.js"></script>
-<script src="/vendor/daterangepicker/daterangepicker.js"></script>
-<!--===============================================================================================-->
-<script src="/vendor/countdowntime/countdowntime.js"></script>
-<!--===============================================================================================-->
-<script src="/js/main1.js"></script>
+<!-- App js -->
+<script src="/admin/assets/js/jquery.core.js"></script>
+<script src="/admin/assets/js/jquery.app.js"></script>
 
 </body>
+
 </html>

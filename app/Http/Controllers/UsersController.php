@@ -2,10 +2,17 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
+use App\Models\Company;
+use App\Models\CompanyCat;
+use App\Models\CompanySubCat;
+use App\Models\Country;
+use App\Models\State;
 use App\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Exception;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use jeremykenedy\LaravelRoles\Models\Role;
 
@@ -32,6 +39,15 @@ class UsersController extends Controller
         $users = Role::where('name', 'publisher')->first()->users()->paginate(10);
 
         return view('admin.publishers', compact('users'));
+    }
+
+    public function companyReg(){
+        $categories = CompanyCat::all();
+        $sub_categories = CompanySubCat::all();
+        $countries = Country::pluck('name','id')->all();
+        $states = State::pluck('name','id')->all();
+        $company = Company::where('user_id',Auth::user()->id)->get()->first();
+        return view('company',compact('company','countries','states','categories','sub_categories'));
     }
 
     /**

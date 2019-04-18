@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers\Auth;
 
+use App\Models\Company;
+use App\Models\Profile;
 use App\User;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
@@ -35,7 +37,7 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/home';
+    protected $redirectTo = '/complete_registration';
 
     /**
      * Create a new controller instance.
@@ -59,6 +61,8 @@ class RegisterController extends Controller
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:6', 'confirmed'],
+            'first_name' => ['required', 'string'],
+            'last_name' => ['required', 'string'],
         ]);
     }
 
@@ -76,10 +80,18 @@ class RegisterController extends Controller
             'password' => Hash::make($data['password']),
         ]);
 
-        $role = $data['role_id'];
-
-        $role = Role::where('id', '=', $role)->first();  //choose the default role upon user creation.
+        $role = Role::where('id', '=', '2')->first();  //choose the default role upon user creation.
         $user->attachRole($role);
+
+        Company::create([
+            'user_id' => $user->id
+        ]);
+
+        Profile::create([
+            'user_id' => $user->id,
+            'first_name' => $data['first_name'],
+            'last_name' => $data['last_name'],
+        ]);
 
         return $user;
     }

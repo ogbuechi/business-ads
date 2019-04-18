@@ -1,67 +1,155 @@
-@extends('layouts.backend')
+<form method="POST" action="http://business.local/companies" accept-charset="UTF-8" id="create_company_form" name="create_company_form" class="form-horizontal">
+    <input type="hidden" name="_token" value="jHgAo5dvDA1YXDUSfZEJ2A3PvoxoyLOgBopK9qiX">
+    <!--                                            <div class="form-group ">-->
+    <!--                                                <label for="user_id" class="col-md-2 control-label">User</label>-->
+    <!--                                                <div class="col-md-12">-->
+    <!--                                                    <select class="form-control" id="user_id" name="user_id" required="true">-->
+    <!--                                                        <option value="" style="display: none;" selected="" disabled="">Select user</option>-->
+    <!--                                                        <option value="2">-->
+    <!--                                                            Benjamin Chukwudi-->
+    <!--                                                        </option>-->
+    <!--                                                        <option value="3">-->
+    <!--                                                            benny-->
+    <!--                                                        </option>-->
+    <!--                                                    </select>-->
 
-@section('content')
 
+    <!--                                                </div>-->
+    <!--                                            </div>-->
 
-<div class="content">
-    <div class="container-fluid">
+    <div class="form-group ">
+        <label for="name" class="col-md-12 control-label">Company Name</label>
+        <div class="col-md-12">
+            <input class="form-control" name="name" type="text" id="name" value="" minlength="1" maxlength="255" required="true" placeholder="Enter name here...">
 
-        <div class="row">
-            <div class="col-lg-8 col-xs-8">
-                <div class="page-header-title pull-left">
-                    <i class="feather icon-eye bg-c-blue"></i>
-                    <div class="d-inline">
-                        <h4 class="mt-5 mb-5">{{ isset([% model_header %]) ? [% model_header %] : '[% model_name_title %]' }}</h4>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-xs-4">
-                <div class="page-header-breadcrumb">
-                    <ul class=" breadcrumb breadcrumb-title">
-                        <li class="breadcrumb-item">
-                            <a href="{{ route('[% edit_route_name %]', $[% model_name_singular_variable %]->[% primary_key %] ) }}" class="btn btn-primary" title="[% edit_model %]">
-
-                                <span class="fa fa-edit" aria-hidden="true"></span>
-                            </a>
-                        </li>
-                        <li class="breadcrumb-item">
-                            <a href="{{ route('[% index_route_name %]') }}" class="btn btn-primary" title="[% show_all_models %]">
-                                <span class="fa fa-list" aria-hidden="true"></span>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-
-            </div>
         </div>
+    </div>
+
+    <div class="form-group ">
+        <label for="description" class="col-md-12 control-label">Description</label>
+        <div class="col-md-12">
+            <textarea class="form-control" name="description" cols="50" rows="10" id="description"></textarea>
+
+        </div>
+    </div>
+
+    <div class="form-group ">
+        <label for="country" class="col-md-12 control-label">Country</label>
+        <div class="col-md-12">
+            <input class="form-control" name="country" type="text" id="country" value="" placeholder="Enter country here...">
+
+        </div>
+    </div>
+
+    <div class="form-group ">
+        <label for="state" class="col-md-12 control-label">State</label>
+        <div class="col-md-12">
+            <input class="form-control" name="state" type="text" id="state" value="" minlength="1" required="true" placeholder="Enter state here...">
+
+        </div>
+    </div>
+
+    <div class="form-group ">
+        <label for="city" class="col-md-12 control-label">City</label>
+        <div class="col-md-12">
+            <input class="form-control" name="city" type="text" id="city" value="" minlength="1" required="true" placeholder="Enter city here...">
+
+        </div>
+    </div>
+
+    <div class="form-group ">
+        <label for="address" class="col-md-12 control-label">Address</label>
+        <div class="col-md-12">
+            <input class="form-control" name="address" type="text" id="address" value="" minlength="1" required="true" placeholder="Enter address here...">
+
+        </div>
+    </div>
+
+    <div class="form-group ">
+        <label for="rep_phone" class="col-md-12 control-label">Representative Phone Number</label>
+        <div class="col-md-12">
+            <input class="form-control" name="rep_phone" type="text" id="rep_phone" value="" placeholder="Enter rep phone here...">
+
+        </div>
+    </div>
+
+    <div class="form-group ">
+        <label for="rep_name" class="col-md-12 control-label">Representative Name</label>
+        <div class="col-md-12">
+            <input class="form-control" name="rep_name" type="text" id="rep_name" value="" minlength="1" required="true" placeholder="Enter rep name here...">
+
+        </div>
+    </div>
+
+    <div class="form-group ">
+        <label for="website" class="col-md-12 control-label">Website Url</label>
+        <div class="col-md-12">
+            <input class="form-control" name="website" type="text" id="website" value="" placeholder="Enter website here...">
+
+        </div>
+    </div>
+
+    <div class="form-group ">
+        <label for="categories" class="col-md-12 control-label">Categories</label>
+        <div class="col-md-12">
+            <div class="checkbox">
+                <label for="categories_one">
+                    <input id="categories_one" class="required" name="categories[]" type="checkbox" value="one">
+                    1
+                </label>
+            </div>
+            <div class="checkbox">
+                <label for="categories_two">
+                    <input id="categories_two" class="required" name="categories[]" type="checkbox" value="two">
+                    2
+                </label>
+            </div>
+            <div class="checkbox">
+                <label for="categories_thre">
+                    <input id="categories_thre" class="required" name="categories[]" type="checkbox" value="thre">
+                    3
+                </label>
+            </div>
 
 
+        </div>
+    </div>
 
-                    <div class="row">
-                        <div class="col-md-12 col-xl-12">
+    <div class="form-group ">
+        <label for="employees" class="col-md-12 control-label">Employees</label>
+        <div class="col-md-12">
+            <input class="form-control" name="employees" type="number" id="employees" value="" min="-2147483648" max="2147483647" required="true" placeholder="Enter employees here...">
 
-                            <dl class="dl-horizontal">
-                                [% table_rows %]
-                            </dl>
-                            <form method="POST" action="{!! route('[% destroy_route_name %]', $[% model_name_singular_variable %]->[% primary_key %]) !!}" accept-charset="UTF-8">
-                                <input name="_method" value="DELETE" type="hidden">
-                                {{ csrf_field() }}
-                                <div class="btn-group btn-group-sm" role="group">
+        </div>
+    </div>
 
-                                    <a href="{{ route('[% create_route_name %]') }}" class="btn btn-success" title="[% create_model %]">
-                                        <span class="fa fa-plus" aria-hidden="true"></span>
-                                    </a>
-                                    <button type="submit" class="btn btn-danger" title="[% delete_model %]" onclick="return confirm(&quot;[% confirm_delete %]?&quot;)">
-                                        <span class="fa fa-trash" aria-hidden="true"></span>
-                                    </button>
-                                </div>
-                            </form>
+    <div class="form-group ">
+        <label for="years" class="col-md-12 control-label">Years</label>
+        <div class="col-md-12">
+            <input class="form-control" name="years" type="text" id="years" value="" min="-2147483648" max="2147483647" required="true" placeholder="Enter years here...">
 
-                        </div>
-                    </div>
+        </div>
+    </div>
+
+    <!--                                            <div class="form-group ">-->
+    <!--                                                <label for="is_active" class="col-md-12 control-label">Is Active</label>-->
+    <!--                                                <div class="col-md-12">-->
+    <!--                                                    <div class="checkbox">-->
+    <!--                                                        <label for="is_active_1">-->
+    <!--                                                            <input id="is_active_1" class="" name="is_active" type="checkbox" value="1">-->
+    <!--                                                            Yes-->
+    <!--                                                        </label>-->
+    <!--                                                    </div>-->
 
 
-</div>
-</div>
+    <!--                                                </div>-->
+    <!--                                            </div>-->
 
-@endsection
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-12">
+            <input class="btn btn-primary" type="submit" value="Complete Registration">
+        </div>
+    </div>
+
+</form>

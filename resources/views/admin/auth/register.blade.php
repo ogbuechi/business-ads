@@ -31,43 +31,33 @@
         <div class="row">
             <div class="col-sm-12">
 
-                <div class="wrapper-page" style="max-width: 820px">
+                <div class="wrapper-page">
 
                     <div class="m-t-40 account-pages">
                         <div class="text-center account-logo-box">
                             <div class="m-t-10 m-b-10">
-                                <a href="#" class="text-success">
-                                    <span style="font-size: 27px;">GloSeed Account Verification</span>
-                                    {{--                                    <span><img src="/admin/assets/images/logo.png" alt="" height="36"></span>--}}
+                                <a href="index.html" class="text-success">
+                                    <span style="font-size: 27px;">GloSeed</span>
+{{--                                    <span><img src="/admin/assets/images/logo.png" alt="" height="36"></span>--}}
                                 </a>
                             </div>
                             <!--<h4 class="text-uppercase font-bold m-b-0">Sign In</h4>-->
                         </div>
                         <div class="account-content">
-                            <div class="row justify-content-center">
-                                <div class="col-md-8">
-                                    <div class="card">
-                                        <div class="card-header">{{ __('Verify Your Email Address') }}</div>
 
-                                        <div class="card-body">
-                                            @if (session('resent'))
-                                                <div class="alert alert-success" role="alert">
-                                                    {{ __('A fresh verification link has been sent to your email address.') }}
-                                                </div>
-                                            @endif
-
-                                            {{ __('Before proceeding, please check your email for a verification link.') }}
-                                            {{ __('If you did not receive the email') }}, <a href="{{ route('verification.resend') }}">{{ __('click here to request another') }}</a>.
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
 
                             <div class="clearfix"></div>
 
                         </div>
                     </div>
                     <!-- end card-box-->
+
+
+                    <div class="row m-t-50">
+                        <div class="col-sm-12 text-center">
+                            <p class="text-muted">Already have account?<a href="page-login.html" class="text-primary m-l-5"><b>Sign In</b></a></p>
+                        </div>
+                    </div>
 
                 </div>
                 <!-- end wrapper -->

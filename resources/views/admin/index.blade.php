@@ -9,7 +9,7 @@
                         <h4 class="page-title">Dashboard</h4>
                         <ol class="breadcrumb p-0 m-0">
                             <li class="breadcrumb-item">
-                                <a href="#">Zircos</a>
+                                <a href="#">Gloseed Admin</a>
                             </li>
                             <li class="breadcrumb-item">
                                 <a href="#">Dashboard</a>
