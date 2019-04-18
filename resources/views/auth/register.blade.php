@@ -36,7 +36,7 @@
                     <div class="m-t-40 account-pages">
                         <div class="text-center account-logo-box">
                             <div class="m-t-10 m-b-10">
-                                <a href="{{ route('/') }}" class="text-success">
+                                <a href="{{ url('/') }}" class="text-success">
                                     <span style="font-size: 27px;">GloSeed</span>
 {{--                                    <span><img src="/admin/assets/images/logo.png" alt="" height="36"></span>--}}
                                 </a>
