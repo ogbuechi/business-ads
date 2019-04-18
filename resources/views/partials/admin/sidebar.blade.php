@@ -70,11 +70,17 @@
                 <li>
                     <a href="{{ route('settings.setting.index') }}" class="waves-effect {{ active('settings.setting.*') }}"><i class="mdi mdi-cogs"></i><span> Site Config </span></a>
                 </li>
+                <li><a href="{{ route('categories.category.index') }}" class="waves-effect {{ active('categories.category.*') }}"><i class="mdi mdi-calendar-text"></i><span> Categories </span></a></li>
 
-<li>
-                    <a href="{{ route('categories.category.index') }}" class="waves-effect {{ active('categories.category.*') }}"><i class="mdi mdi-calendar-text"></i><span> Categories </span></a>
+
+                <li class="has_sub">
+                    <a href="javascript:void(0);" class="waves-effect {{ active(['company_cats.company_cat.*','company_sub_cats.company_sub_cat.*']) }} {{ active(['company_cats.company_cat.*','company_sub_cats.company_sub_cat.*'],'subdrop') }}"><i class="mdi mdi-file"></i><span> Company Cat(s) </span> <span class="menu-arrow"></span></a>
+                    <ul class="list-unstyled">
+
+                        <li><a href="{{ route('company_cats.company_cat.index') }}" class="waves-effect {{ active('company_cats.company_cat.*') }}"><span>Categories </span></a></li>
+                        <li><a href="{{ route('company_sub_cats.company_sub_cat.index') }}" class="waves-effect {{ active('company_sub_cats.company_sub_cat.*') }}"><span>Sub Categories </span></a></li>
+                    </ul>
                 </li>
-
 
 
             </ul>
