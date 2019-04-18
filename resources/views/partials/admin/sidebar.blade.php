@@ -45,7 +45,7 @@
                         <li><a href="{{ route('profiles.profile.edit_my_profile') }}"  class="{{ active(['profiles.profile.edit_my_profile']) }}"> Business Partnership</a></li>
 
                         <li><a href="{{ route('invests.invest.index') }}" class="{{ active(['invests.invest.*']) }}">Business Invest</a></li>
-                        <li><a href="{{ route('profiles.profile.edit_my_profile') }}"  class="{{ active(['profiles.profile.edit_my_profile']) }}"> Business Sale</a></li>
+                        <li><a href="{{ route('sales.sale.index') }}"  class="{{ active(['sales.sale.*']) }}"> Business Sale</a></li>
                     </ul>
                 </li>
 

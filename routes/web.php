@@ -393,3 +393,35 @@ Route::group(
          ->where('id', '[0-9]+');
 
 });
+
+Route::group(
+[
+    'prefix' => 'sales',
+], function () {
+
+    Route::get('/', 'SalesController@index')
+         ->name('sales.sale.index');
+
+    Route::get('/create','SalesController@create')
+         ->name('sales.sale.create');
+
+    Route::get('/show/{sale}','SalesController@show')
+         ->name('sales.sale.show')
+         ->where('id', '[0-9]+');
+
+    Route::get('/{sale}/edit','SalesController@edit')
+         ->name('sales.sale.edit')
+         ->where('id', '[0-9]+');
+
+    Route::post('/', 'SalesController@store')
+         ->name('sales.sale.store');
+               
+    Route::put('sale/{sale}', 'SalesController@update')
+         ->name('sales.sale.update')
+         ->where('id', '[0-9]+');
+
+    Route::delete('/sale/{sale}','SalesController@destroy')
+         ->name('sales.sale.destroy')
+         ->where('id', '[0-9]+');
+
+});
