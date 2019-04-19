@@ -64,12 +64,10 @@
                                             <h4 class="text-success m-t-0">N{{ $sale->value }}</h4>
                                         </div>
                                         <div class="">
-                                            <h4><a href="#" class="text-dark">{{ $sale->brand_name }}</a></h4>
-                                            <p class="text-muted"><i class="mdi mdi-map-marker-radius m-r-5"></i>{{ $sale->address }},{{ $sale->state }},{{ $sale->country }}</p>
-
+                                            <h4><a href="#" class="text-dark">{{ $sale->name }}</a></h4>
                                             <p class="font-13 text-muted m-b-0">{!! $sale->summary !!}</p>
 
-                                            {{ implode('; ', $sale->business_type) }}
+                                            {{ implode('/ ', $sale->business_type) }}
                                         </div>
 
                                     </div>
@@ -81,7 +79,7 @@
 
 
                                         <div class="float-right">
-                                            <a href="#" class="btn btn-light"><i class="far fa-eye"></i><span>View</span></a>
+                                            <a href="{{ route('sales.sale.show', $sale->id ) }}" class="btn btn-light"><i class="far fa-eye"></i><span>View</span></a>
                                         </div>
                                     </div>
                                     <!-- end. Card actions -->
@@ -94,6 +92,10 @@
                     @endforeach
                     <!-- End property item -->
 
+                        <div>
+                            {!! $sales->render() !!}
+
+                        </div>
                 </div>
                 <!--END MAIN COL-8 -->
 

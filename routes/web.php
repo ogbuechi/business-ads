@@ -33,7 +33,6 @@ Route::get('/dashboard', function () {
 
 Route::get('complete_registration', 'UsersController@companyReg')->name('user.complete.reg')->middleware('verified');
 
-Route::group([ 'prefix' => 'bt-admin','middleware' => ['auth', 'level:1']], function () {});
 
 Auth::routes();
 
@@ -45,7 +44,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('dashboard', 'AdminController@index')->name('admin.home')->middleware('verified');
 
 //['middleware' => ['role:admin']],
-Route::group([ 'prefix' => 'bt_admin','middleware' => ['auth', 'level:1','verified']], function () {
+Route::group([ 'prefix' => 'dashboard','middleware' => ['auth', 'level:1','verified']], function () {
     Route::get('/', 'AdminController@index')->name('admin.home');
     Route::get('/media', 'AdminController@media')->name('admin.media');
     Route::get('/profile', 'AdminController@profile')->name('admin.profile');
@@ -65,6 +64,204 @@ Route::group([ 'prefix' => 'bt_admin','middleware' => ['auth', 'level:1','verifi
     Route::put('profile/{profile}', 'ProfilesController@update')->name('profiles.profile.update')->where('id', '[0-9]+');
     Route::delete('/profile/{profile}','ProfilesController@destroy')->name('profiles.profile.destroy')->where('id', '[0-9]+');
 });
+    Route::group(
+        [
+            'prefix' => 'categories',
+        ], function () {
+
+        Route::get('/', 'CategoriesController@index')
+            ->name('categories.category.index');
+
+        Route::get('/create','CategoriesController@create')
+            ->name('categories.category.create');
+
+        Route::get('/show/{category}','CategoriesController@show')
+            ->name('categories.category.show')
+            ->where('id', '[0-9]+');
+
+        Route::get('/{category}/edit','CategoriesController@edit')
+            ->name('categories.category.edit')
+            ->where('id', '[0-9]+');
+
+        Route::post('/', 'CategoriesController@store')
+            ->name('categories.category.store');
+
+        Route::put('category/{category}', 'CategoriesController@update')
+            ->name('categories.category.update')
+            ->where('id', '[0-9]+');
+
+        Route::delete('/category/{category}','CategoriesController@destroy')
+            ->name('categories.category.destroy')
+            ->where('id', '[0-9]+');
+
+    });
+
+    Route::group(
+        [
+            'prefix' => 'invests',
+        ], function () {
+
+        Route::get('/', 'InvestsController@index')
+            ->name('invests.invest.index');
+
+        Route::get('/myads', 'InvestsController@myAds')
+            ->name('invests.invest.myads');
+
+        Route::get('/create','InvestsController@create')
+            ->name('invests.invest.create');
+
+        Route::get('/show/{invest}','InvestsController@show')
+            ->name('invests.invest.show')
+            ->where('id', '[0-9]+');
+
+        Route::get('/my_ad/show/{invest}','InvestsController@showMyAd')
+            ->name('invests.invest.show_my_ad')
+            ->where('id', '[0-9]+');
+
+        Route::get('/{invest}/edit','InvestsController@edit')
+            ->name('invests.invest.edit')
+            ->where('id', '[0-9]+');
+
+        Route::post('/', 'InvestsController@store')
+            ->name('invests.invest.store');
+
+        Route::put('invest/{invest}', 'InvestsController@update')
+            ->name('invests.invest.update')
+            ->where('id', '[0-9]+');
+
+        Route::delete('/invest/{invest}','InvestsController@destroy')
+            ->name('invests.invest.destroy')
+            ->where('id', '[0-9]+');
+
+    });
+
+    Route::group(
+        [
+            'prefix' => 'companies',
+        ], function () {
+
+        Route::get('/', 'CompaniesController@index')
+            ->name('companies.company.index');
+
+        Route::get('/create','CompaniesController@create')
+            ->name('companies.company.create');
+
+        Route::get('/show/{company}','CompaniesController@show')
+            ->name('companies.company.show')
+            ->where('id', '[0-9]+');
+
+        Route::get('/{company}/edit','CompaniesController@edit')
+            ->name('companies.company.edit')
+            ->where('id', '[0-9]+');
+
+        Route::post('/', 'CompaniesController@store')
+            ->name('companies.company.store');
+
+        Route::put('company/{company}', 'CompaniesController@update')
+            ->name('companies.company.update')
+            ->where('id', '[0-9]+');
+
+        Route::delete('/company/{company}','CompaniesController@destroy')
+            ->name('companies.company.destroy')
+            ->where('id', '[0-9]+');
+
+    });
+
+    Route::group(
+        [
+            'prefix' => 'company_cats',
+        ], function () {
+
+        Route::get('/', 'CompanyCatsController@index')
+            ->name('company_cats.company_cat.index');
+
+        Route::get('/create','CompanyCatsController@create')
+            ->name('company_cats.company_cat.create');
+
+        Route::get('/show/{companyCat}','CompanyCatsController@show')
+            ->name('company_cats.company_cat.show')
+            ->where('id', '[0-9]+');
+
+        Route::get('/{companyCat}/edit','CompanyCatsController@edit')
+            ->name('company_cats.company_cat.edit')
+            ->where('id', '[0-9]+');
+
+        Route::post('/', 'CompanyCatsController@store')
+            ->name('company_cats.company_cat.store');
+
+        Route::put('company_cat/{companyCat}', 'CompanyCatsController@update')
+            ->name('company_cats.company_cat.update')
+            ->where('id', '[0-9]+');
+
+        Route::delete('/company_cat/{companyCat}','CompanyCatsController@destroy')
+            ->name('company_cats.company_cat.destroy')
+            ->where('id', '[0-9]+');
+
+    });
+
+    Route::group(
+        [
+            'prefix' => 'company_sub_cats',
+        ], function () {
+
+        Route::get('/', 'CompanySubCatsController@index')
+            ->name('company_sub_cats.company_sub_cat.index');
+
+        Route::get('/create','CompanySubCatsController@create')
+            ->name('company_sub_cats.company_sub_cat.create');
+
+        Route::get('/show/{companySubCat}','CompanySubCatsController@show')
+            ->name('company_sub_cats.company_sub_cat.show')
+            ->where('id', '[0-9]+');
+
+        Route::get('/{companySubCat}/edit','CompanySubCatsController@edit')
+            ->name('company_sub_cats.company_sub_cat.edit')
+            ->where('id', '[0-9]+');
+
+        Route::post('/', 'CompanySubCatsController@store')
+            ->name('company_sub_cats.company_sub_cat.store');
+
+        Route::put('company_sub_cat/{companySubCat}', 'CompanySubCatsController@update')
+            ->name('company_sub_cats.company_sub_cat.update')
+            ->where('id', '[0-9]+');
+
+        Route::delete('/company_sub_cat/{companySubCat}','CompanySubCatsController@destroy')
+            ->name('company_sub_cats.company_sub_cat.destroy')
+            ->where('id', '[0-9]+');
+
+    });
+
+    Route::group(
+        [
+            'prefix' => 'sales',
+        ], function () {
+
+        Route::get('/', 'SalesController@index')
+            ->name('sales.sale.index');
+
+        Route::get('/create','SalesController@create')
+            ->name('sales.sale.create');
+
+        Route::get('/show/{sale}','SalesController@show')
+            ->name('sales.sale.show')
+            ->where('id', '[0-9]+');
+
+        Route::get('/{sale}/edit','SalesController@edit')
+            ->name('sales.sale.edit')
+            ->where('id', '[0-9]+');
+
+        Route::post('/', 'SalesController@store')
+            ->name('sales.sale.store');
+
+        Route::put('sale/{sale}', 'SalesController@update')
+            ->name('sales.sale.update')
+            ->where('id', '[0-9]+');
+
+        Route::delete('/sale/{sale}','SalesController@destroy')
+            ->name('sales.sale.destroy')
+            ->where('id', '[0-9]+');
+
+    });
 });
 
 Route::group(
@@ -195,233 +392,6 @@ Route::group(
 
 });
 
-Route::group(
-[
-    'prefix' => 'case_notes',
-], function () {
 
-    Route::get('/', 'CaseNotesController@index')
-         ->name('case_notes.case_note.index');
 
-    Route::get('/create','CaseNotesController@create')
-         ->name('case_notes.case_note.create');
 
-    Route::get('/show/{caseNote}','CaseNotesController@show')
-         ->name('case_notes.case_note.show')
-         ->where('id', '[0-9]+');
-
-    Route::get('/{caseNote}/edit','CaseNotesController@edit')
-         ->name('case_notes.case_note.edit')
-         ->where('id', '[0-9]+');
-
-    Route::post('/', 'CaseNotesController@store')
-         ->name('case_notes.case_note.store');
-               
-    Route::put('case_note/{caseNote}', 'CaseNotesController@update')
-         ->name('case_notes.case_note.update')
-         ->where('id', '[0-9]+');
-
-    Route::delete('/case_note/{caseNote}','CaseNotesController@destroy')
-         ->name('case_notes.case_note.destroy')
-         ->where('id', '[0-9]+');
-
-});
-
-Route::group(
-[
-    'prefix' => 'categories',
-], function () {
-
-    Route::get('/', 'CategoriesController@index')
-         ->name('categories.category.index');
-
-    Route::get('/create','CategoriesController@create')
-         ->name('categories.category.create');
-
-    Route::get('/show/{category}','CategoriesController@show')
-         ->name('categories.category.show')
-         ->where('id', '[0-9]+');
-
-    Route::get('/{category}/edit','CategoriesController@edit')
-         ->name('categories.category.edit')
-         ->where('id', '[0-9]+');
-
-    Route::post('/', 'CategoriesController@store')
-         ->name('categories.category.store');
-               
-    Route::put('category/{category}', 'CategoriesController@update')
-         ->name('categories.category.update')
-         ->where('id', '[0-9]+');
-
-    Route::delete('/category/{category}','CategoriesController@destroy')
-         ->name('categories.category.destroy')
-         ->where('id', '[0-9]+');
-
-});
-
-Route::group(
-[
-    'prefix' => 'invests',
-], function () {
-
-    Route::get('/', 'InvestsController@index')
-         ->name('invests.invest.index');
-
-    Route::get('/myads', 'InvestsController@myAds')
-         ->name('invests.invest.myads');
-
-    Route::get('/create','InvestsController@create')
-         ->name('invests.invest.create');
-
-    Route::get('/show/{invest}','InvestsController@show')
-         ->name('invests.invest.show')
-         ->where('id', '[0-9]+');
-
-    Route::get('/my_ad/show/{invest}','InvestsController@showMyAd')
-         ->name('invests.invest.show_my_ad')
-         ->where('id', '[0-9]+');
-
-    Route::get('/{invest}/edit','InvestsController@edit')
-         ->name('invests.invest.edit')
-         ->where('id', '[0-9]+');
-
-    Route::post('/', 'InvestsController@store')
-         ->name('invests.invest.store');
-               
-    Route::put('invest/{invest}', 'InvestsController@update')
-         ->name('invests.invest.update')
-         ->where('id', '[0-9]+');
-
-    Route::delete('/invest/{invest}','InvestsController@destroy')
-         ->name('invests.invest.destroy')
-         ->where('id', '[0-9]+');
-
-});
-
-Route::group(
-[
-    'prefix' => 'companies',
-], function () {
-
-    Route::get('/', 'CompaniesController@index')
-         ->name('companies.company.index');
-
-    Route::get('/create','CompaniesController@create')
-         ->name('companies.company.create');
-
-    Route::get('/show/{company}','CompaniesController@show')
-         ->name('companies.company.show')
-         ->where('id', '[0-9]+');
-
-    Route::get('/{company}/edit','CompaniesController@edit')
-         ->name('companies.company.edit')
-         ->where('id', '[0-9]+');
-
-    Route::post('/', 'CompaniesController@store')
-         ->name('companies.company.store');
-               
-    Route::put('company/{company}', 'CompaniesController@update')
-         ->name('companies.company.update')
-         ->where('id', '[0-9]+');
-
-    Route::delete('/company/{company}','CompaniesController@destroy')
-         ->name('companies.company.destroy')
-         ->where('id', '[0-9]+');
-
-});
-
-Route::group(
-[
-    'prefix' => 'company_cats',
-], function () {
-
-    Route::get('/', 'CompanyCatsController@index')
-         ->name('company_cats.company_cat.index');
-
-    Route::get('/create','CompanyCatsController@create')
-         ->name('company_cats.company_cat.create');
-
-    Route::get('/show/{companyCat}','CompanyCatsController@show')
-         ->name('company_cats.company_cat.show')
-         ->where('id', '[0-9]+');
-
-    Route::get('/{companyCat}/edit','CompanyCatsController@edit')
-         ->name('company_cats.company_cat.edit')
-         ->where('id', '[0-9]+');
-
-    Route::post('/', 'CompanyCatsController@store')
-         ->name('company_cats.company_cat.store');
-               
-    Route::put('company_cat/{companyCat}', 'CompanyCatsController@update')
-         ->name('company_cats.company_cat.update')
-         ->where('id', '[0-9]+');
-
-    Route::delete('/company_cat/{companyCat}','CompanyCatsController@destroy')
-         ->name('company_cats.company_cat.destroy')
-         ->where('id', '[0-9]+');
-
-});
-
-Route::group(
-[
-    'prefix' => 'company_sub_cats',
-], function () {
-
-    Route::get('/', 'CompanySubCatsController@index')
-         ->name('company_sub_cats.company_sub_cat.index');
-
-    Route::get('/create','CompanySubCatsController@create')
-         ->name('company_sub_cats.company_sub_cat.create');
-
-    Route::get('/show/{companySubCat}','CompanySubCatsController@show')
-         ->name('company_sub_cats.company_sub_cat.show')
-         ->where('id', '[0-9]+');
-
-    Route::get('/{companySubCat}/edit','CompanySubCatsController@edit')
-         ->name('company_sub_cats.company_sub_cat.edit')
-         ->where('id', '[0-9]+');
-
-    Route::post('/', 'CompanySubCatsController@store')
-         ->name('company_sub_cats.company_sub_cat.store');
-               
-    Route::put('company_sub_cat/{companySubCat}', 'CompanySubCatsController@update')
-         ->name('company_sub_cats.company_sub_cat.update')
-         ->where('id', '[0-9]+');
-
-    Route::delete('/company_sub_cat/{companySubCat}','CompanySubCatsController@destroy')
-         ->name('company_sub_cats.company_sub_cat.destroy')
-         ->where('id', '[0-9]+');
-
-});
-
-Route::group(
-[
-    'prefix' => 'sales',
-], function () {
-
-    Route::get('/', 'SalesController@index')
-         ->name('sales.sale.index');
-
-    Route::get('/create','SalesController@create')
-         ->name('sales.sale.create');
-
-    Route::get('/show/{sale}','SalesController@show')
-         ->name('sales.sale.show')
-         ->where('id', '[0-9]+');
-
-    Route::get('/{sale}/edit','SalesController@edit')
-         ->name('sales.sale.edit')
-         ->where('id', '[0-9]+');
-
-    Route::post('/', 'SalesController@store')
-         ->name('sales.sale.store');
-               
-    Route::put('sale/{sale}', 'SalesController@update')
-         ->name('sales.sale.update')
-         ->where('id', '[0-9]+');
-
-    Route::delete('/sale/{sale}','SalesController@destroy')
-         ->name('sales.sale.destroy')
-         ->where('id', '[0-9]+');
-
-});

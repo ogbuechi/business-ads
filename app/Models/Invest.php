@@ -95,4 +95,12 @@ class Invest extends Model
         return json_decode($value) ?: [];
     }
 
+
+    public function getImageAttribute($value){
+        if(!$value){
+            return 'https://via.placeholder.com/800x350.png?text=B2B Invest';
+        }else {
+            return url('storage/'.$value);
+        }
+    }
 }

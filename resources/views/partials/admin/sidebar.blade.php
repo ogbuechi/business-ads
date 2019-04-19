@@ -7,7 +7,7 @@
                 <li class="menu-title">Navigation</li>
 
                 <li>
-                    <a href="/" class="waves-effect"><i class="mdi mdi-view-dashboard"></i> <span> Dashboard </span> </a>
+                    <a href="{{ route('admin.home') }}" class="waves-effect"><i class="mdi mdi-view-dashboard"></i> <span> Dashboard </span> </a>
                 </li>
 
 {{--                <li>--}}
@@ -18,8 +18,8 @@
                     <a href="javascript:void(0);" class="waves-effect {{ active(['users.user.*']) }} {{ active(['users.user.*'], 'subdrop') }}"><i class="fa fa-users"></i><span> Users </span> <span class="menu-arrow"></span></a>
                     <ul class="list-unstyled">
                         <li><a href="{{ route('users.user.index') }}" class="{{ active(['users.user.index']) }}"> All Users</a></li>
-                        <li><a href="email-inbox.html"> Publishers</a></li>
-                        <li><a href="email-read.html"> Buyers</a></li>
+                        <li><a href=""> Publishers</a></li>
+                        <li><a href=""> Buyers</a></li>
                         <li><a href="{{ route('users.user.create') }}"  class="{{ active(['users.user.create']) }}"> Add User</a></li>
                     </ul>
                 </li>
@@ -40,7 +40,7 @@
                 </li>
 
                 <li class="has_sub">
-                    <a href="javascript:void(0);" class="waves-effect {{ active(['profiles.profile.*']) }} {{ active(['profiles.profile.*'], 'subdrop') }}"><i class="mdi mdi-pencil-box"></i><span> Post Ads </span> <span class="menu-arrow"></span></a>
+                    <a href="javascript:void(0);" class="waves-effect {{ active(['profiles.profile.*']) }} {{ active(['profiles.profile.*'], 'subdrop') }}"><i class="mdi mdi-pencil-box"></i><span> Business Ads </span> <span class="menu-arrow"></span></a>
                     <ul class="list-unstyled">
                         <li><a href="{{ route('profiles.profile.edit_my_profile') }}"  class="{{ active(['profiles.profile.edit_my_profile']) }}"> Business Partnership</a></li>
 

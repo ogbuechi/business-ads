@@ -94,11 +94,12 @@ class Sale extends Model
 
     public function getImageAttribute($value){
         if(!$value){
-            return 'https://via.placeholder.com/100x50.png?text=B2B Sale';
+            return 'https://via.placeholder.com/800x350.png?text=B2B Sale';
         }else {
             return url('storage/'.$value);
         }
     }
+
 
     /**
      * Get deleted_at in array format

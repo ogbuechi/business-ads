@@ -19,7 +19,7 @@ class SalesController extends Controller
      */
     public function index()
     {
-        $sales = Sale::with('user')->paginate(25);
+        $sales = Sale::with('user')->paginate(30);
 
         return view('sales.index', compact('sales'));
     }
@@ -72,6 +72,8 @@ class SalesController extends Controller
     public function show($id)
     {
         $sale = Sale::with('user')->findOrFail($id);
+
+//        return $sale->business_type;
 
         return view('sales.show', compact('sale'));
     }
