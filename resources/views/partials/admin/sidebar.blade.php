@@ -42,7 +42,7 @@
                 <li class="has_sub">
                     <a href="javascript:void(0);" class="waves-effect {{ active(['profiles.profile.*']) }} {{ active(['profiles.profile.*'], 'subdrop') }}"><i class="mdi mdi-pencil-box"></i><span> Business Ads </span> <span class="menu-arrow"></span></a>
                     <ul class="list-unstyled">
-                        <li><a href="{{ route('profiles.profile.edit_my_profile') }}"  class="{{ active(['profiles.profile.edit_my_profile']) }}"> Business Partnership</a></li>
+                        <li><a href="{{ route('partnerships.partnership.index') }}"  class="{{ active(['partnerships.partnership.*']) }}"> Business Partnership</a></li>
 
                         <li><a href="{{ route('invests.invest.index') }}" class="{{ active(['invests.invest.*']) }}">Business Invest</a></li>
                         <li><a href="{{ route('sales.sale.index') }}"  class="{{ active(['sales.sale.*']) }}"> Business Sale</a></li>

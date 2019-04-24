@@ -395,3 +395,35 @@ Route::group(
 
 
 
+
+Route::group(
+[
+    'prefix' => 'partnerships',
+], function () {
+
+    Route::get('/', 'PartnershipsController@index')
+         ->name('partnerships.partnership.index');
+
+    Route::get('/create','PartnershipsController@create')
+         ->name('partnerships.partnership.create');
+
+    Route::get('/show/{partnership}','PartnershipsController@show')
+         ->name('partnerships.partnership.show')
+         ->where('id', '[0-9]+');
+
+    Route::get('/{partnership}/edit','PartnershipsController@edit')
+         ->name('partnerships.partnership.edit')
+         ->where('id', '[0-9]+');
+
+    Route::post('/', 'PartnershipsController@store')
+         ->name('partnerships.partnership.store');
+               
+    Route::put('partnership/{partnership}', 'PartnershipsController@update')
+         ->name('partnerships.partnership.update')
+         ->where('id', '[0-9]+');
+
+    Route::delete('/partnership/{partnership}','PartnershipsController@destroy')
+         ->name('partnerships.partnership.destroy')
+         ->where('id', '[0-9]+');
+
+});
