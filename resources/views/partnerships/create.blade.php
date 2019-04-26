@@ -34,7 +34,7 @@
                             </ul>
                             @endif
 
-                            <form method="POST" action="{{ route('partnerships.partnership.store') }}" accept-charset="UTF-8" id="create_partnership_form" name="create_partnership_form" class="form-horizontal" enctype="multipart/form-data">
+                            <form method="POST" action="{{ route('partnerships.partnership.store') }}" accept-charset="UTF-8" name="create_partnership_form" class=" form-horizontal" enctype="multipart/form-data">
                                 {{ csrf_field() }}
                                 @include ('partnerships.form', [
                                 'partnership' => null,
@@ -63,6 +63,7 @@
 
     <!-- dropify js -->
     <script src="/plugins/dropify/js/dropify.min.js"></script>
+
 @stop
 
 @section('css')

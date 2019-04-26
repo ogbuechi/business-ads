@@ -43,9 +43,12 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('dashboard', 'AdminController@index')->name('admin.home')->middleware('verified');
 
+Route::post('multifileupload', 'HomeController@store')->name('multifileupload');
+
 //['middleware' => ['role:admin']],
 Route::group([ 'prefix' => 'dashboard','middleware' => ['auth', 'level:1','verified']], function () {
     Route::get('/', 'AdminController@index')->name('admin.home');
+    Route::get('/upgrade_account', 'AdminController@upgrade_account')->name('admin.account.upgrade');
     Route::get('/media', 'AdminController@media')->name('admin.media');
     Route::get('/profile', 'AdminController@profile')->name('admin.profile');
     Route::get('/my_profile', 'ProfilesController@myProfile')->name('profiles.profile.myprofile');
@@ -424,6 +427,70 @@ Route::group(
 
     Route::delete('/partnership/{partnership}','PartnershipsController@destroy')
          ->name('partnerships.partnership.destroy')
+         ->where('id', '[0-9]+');
+
+});
+
+Route::group(
+[
+    'prefix' => 'plans',
+], function () {
+
+    Route::get('/', 'PlansController@index')
+         ->name('plans.plan.index');
+
+    Route::get('/create','PlansController@create')
+         ->name('plans.plan.create');
+
+    Route::get('/show/{plan}','PlansController@show')
+         ->name('plans.plan.show')
+         ->where('id', '[0-9]+');
+
+    Route::get('/{plan}/edit','PlansController@edit')
+         ->name('plans.plan.edit')
+         ->where('id', '[0-9]+');
+
+    Route::post('/', 'PlansController@store')
+         ->name('plans.plan.store');
+               
+    Route::put('plan/{plan}', 'PlansController@update')
+         ->name('plans.plan.update')
+         ->where('id', '[0-9]+');
+
+    Route::delete('/plan/{plan}','PlansController@destroy')
+         ->name('plans.plan.destroy')
+         ->where('id', '[0-9]+');
+
+});
+
+Route::group(
+[
+    'prefix' => 'sale_bids',
+], function () {
+
+    Route::get('/', 'SaleBidsController@index')
+         ->name('sale_bids.sale_bid.index');
+
+    Route::get('/create','SaleBidsController@create')
+         ->name('sale_bids.sale_bid.create');
+
+    Route::get('/show/{saleBid}','SaleBidsController@show')
+         ->name('sale_bids.sale_bid.show')
+         ->where('id', '[0-9]+');
+
+    Route::get('/{saleBid}/edit','SaleBidsController@edit')
+         ->name('sale_bids.sale_bid.edit')
+         ->where('id', '[0-9]+');
+
+    Route::post('/', 'SaleBidsController@store')
+         ->name('sale_bids.sale_bid.store');
+               
+    Route::put('sale_bid/{saleBid}', 'SaleBidsController@update')
+         ->name('sale_bids.sale_bid.update')
+         ->where('id', '[0-9]+');
+
+    Route::delete('/sale_bid/{saleBid}','SaleBidsController@destroy')
+         ->name('sale_bids.sale_bid.destroy')
          ->where('id', '[0-9]+');
 
 });

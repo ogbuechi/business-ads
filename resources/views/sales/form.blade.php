@@ -11,14 +11,12 @@
 
 <div class="form-group {{ $errors->has('summary') ? 'has-error' : '' }}">
     <label for="summary" class="">Summary Of Deal</label>
-
         <textarea class="form-control" name="summary" cols="50" rows="3" id="summary" placeholder="Enter summary here...">{{ old('summary', optional($sale)->summary) }}</textarea>
         {!! $errors->first('summary', '<p class="help-block">:message</p>') !!}
-
 </div>
 
 <div class="form-group {{ $errors->has('business_type') ? 'has-error' : '' }}">
-    <label for="business_type" class="">Business Type</label>
+    <label for="business_type" class="">Business Categories</label>
 
     @foreach($categories as $item )
 
@@ -71,8 +69,12 @@
 
 </div>
 
+
+
+
 <div class="form-group {{ $errors->has('listed') ? 'has-error' : '' }}">
-    <label for="listed" class="">Listed</label>
+    <label for="listed" class="">Listed on NSE(Nigerian stock exchange)</label>
+
 
         <div class="radi">
             <label for="listed_listed">
@@ -152,6 +154,15 @@
         </div>
     </div>
 </div>
+
+
+{{--<div id="fileupload" class="dropzone form-group {{ $errors->has('listed') ? 'has-error' : '' }}">--}}
+{{--    <label for="listed" class="">Upload Business Images (At least 5)</label>--}}
+{{--    <div class="fallback">--}}
+{{--        <input name="file" type="files" multiple accept="image/jpeg, image/png, image/jpg" />--}}
+{{--    </div>--}}
+{{--</div>--}}
+
 
 
 

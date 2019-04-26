@@ -7,10 +7,10 @@
     <div class="row">
         <div class="col-12">
             <div class="page-title-box">
-                <h4 class="page-title">Create New Sale</h4>
+                <h4 class="page-title">Create New Plan</h4>
                 <ol class="breadcrumb p-0 m-0">
                     <li class="breadcrumb-item">
-                        <a href="{{ route('sales.sale.index') }}" class="btn btn-primary" title="Show All Sale">
+                        <a href="{{ route('plans.plan.index') }}" class="btn btn-primary" title="Show All Plan">
                             <span class="fa fa-list" aria-hidden="true"></span>
                         </a>
                     </li>
@@ -34,15 +34,15 @@
                             </ul>
                             @endif
 
-                            <form method="POST" action="{{ route('sales.sale.store') }}" accept-charset="UTF-8" name="create_sale_form" class="form-horizontal" enctype="multipart/form-data">
+                            <form method="POST" action="{{ route('plans.plan.store') }}" accept-charset="UTF-8" id="create_plan_form" name="create_plan_form" class="form-horizontal">
                                 {{ csrf_field() }}
-                                @include ('sales.form', [
-                                'sale' => null,
+                                @include ('plans.form', [
+                                'plan' => null,
                                 ])
 
                                 <div class="form-group">
                                     <div class="col-md-offset-2 col-md-10">
-                                        <input class="btn btn-primary" type="submit" value="Register Deal">
+                                        <input class="btn btn-primary" type="submit" value="Add">
                                     </div>
                                 </div>
 
@@ -54,20 +54,5 @@
 </div>
 
 @endsection
-
-
-@section('js')
-    <script src="/admin/assets/pages/jquery.property-add.init.js"></script>
-
-    <!-- dropify js -->
-    <script src="/plugins/dropify/js/dropify.min.js"></script>
-@stop
-
-@section('css')
-
-    <!-- dropify css -->
-    <link rel="stylesheet" type="text/css" href="/plugins/dropify/css/dropify.css" />
-
-@stop
 
 

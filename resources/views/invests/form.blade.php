@@ -27,13 +27,36 @@
         {!! $errors->first('maximum_capital', '<p class="help-block">:message</p>') !!}
     </div>
 </div>
+
+            <div class="form-group {{ $errors->has('maximum_capital') ? 'has-error' : '' }}">
+                <label for="maximum_capital" class="">Shareholders</label>
+
+                <select required class="form-control" id="maximum_capital" name="maximum_capital">
+                    <option value="" style="display: none;" {{ old('maximum_capital', optional($invest)->maximum_capital ?: '') == '' ? 'selected' : '' }} disabled selected>Enter maximum_capital here...</option>
+                    @foreach (['1-10' => '1-10',
+        '10000-100000' => '10,000-100,000',
+        '100000-1000000' => '100,000-1,000,000',
+        '1000000-10000000' => '1,000,000-10,000,000',
+        '10000000-100000000' => '10,000,000-100,000,000',
+        '100000000-1000000000' => '100,000,000-1,000,000,000',
+        'over 1000000000' => 'Over 1,000,000,000'] as $key => $text)
+                        <option value="{{ $key }}" {{ old('maximum_capital', optional($invest)->maximum_capital) == $key ? 'selected' : '' }}>
+                            {{ $text }}
+                        </option>
+                    @endforeach
+                </select>
+
+                {!! $errors->first('maximum_capital', '<p class="help-block">:message</p>') !!}
+
+            </div>
+
         </div>
     </div>
 
     <div class="col-md-6">
         <div class="p-20">
             <div class="form-group m-b-20 {{ $errors->has('business_type') ? 'has-error' : '' }}">
-                <label for="business_type" class="">Business Type</label>
+                <label for="business_type" class="">Business Categories</label>
                 <div class="">
                     {{--        <div class="checkbox">--}}
                     {{--            <label for="business_type_no">--}}

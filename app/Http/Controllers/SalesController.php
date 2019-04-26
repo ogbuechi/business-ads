@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Category;
+use App\Models\SaleBid;
 use App\User;
 use App\Models\Sale;
 use Illuminate\Http\Request;
@@ -75,7 +76,9 @@ class SalesController extends Controller
 
 //        return $sale->business_type;
 
-        return view('sales.show', compact('sale'));
+        $bids = SaleBid::whereSaleId($sale->id)->get();
+
+        return view('sales.show', compact('sale','bids'));
     }
 
     /**

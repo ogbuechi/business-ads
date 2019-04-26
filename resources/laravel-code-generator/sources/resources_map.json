@@ -58,5 +58,13 @@
     {
         "model-name": "Partnership",
         "resource-file": "partnerships.json"
+    },
+    {
+        "model-name": "Plan",
+        "resource-file": "plans.json"
+    },
+    {
+        "model-name": "SaleBid",
+        "resource-file": "sale_bids.json"
     }
 ]

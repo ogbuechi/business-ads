@@ -11,6 +11,9 @@ use jeremykenedy\LaravelRoles\Models\Role;
 
 class AdminController extends Controller
 {
+    public function upgrade_account(){
+        return view('admin.upgrade');
+    }
     public function index()
     {
         if(!Auth::user()->company->name){

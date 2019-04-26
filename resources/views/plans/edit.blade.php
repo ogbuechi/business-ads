@@ -7,11 +7,16 @@
     <div class="row">
         <div class="col-12">
             <div class="page-title-box">
-                <h4 class="page-title">Create New Sale</h4>
+                <h4 class="page-title">{{ !empty($plan->name) ? $plan->name : 'Plan' }}</h4>
                 <ol class="breadcrumb p-0 m-0">
                     <li class="breadcrumb-item">
-                        <a href="{{ route('sales.sale.index') }}" class="btn btn-primary" title="Show All Sale">
+                        <a href="{{ route('plans.plan.index') }}" class="btn btn-primary" title="Show All Plan">
                             <span class="fa fa-list" aria-hidden="true"></span>
+                        </a>
+                    </li>
+                    <li class="breadcrumb-item">
+                        <a href="{{ route('plans.plan.create') }}" class="btn btn-primary" title="Create New Plan">
+                            <span class="fa fa-plus" aria-hidden="true"></span>
                         </a>
                     </li>
 
@@ -25,7 +30,6 @@
     <div class="row">
         <div class="col-md-12">
             <div class="card-box">
-
                             @if ($errors->any())
                             <ul class="alert alert-danger">
                                 @foreach ($errors->all() as $error)
@@ -34,19 +38,21 @@
                             </ul>
                             @endif
 
-                            <form method="POST" action="{{ route('sales.sale.store') }}" accept-charset="UTF-8" name="create_sale_form" class="form-horizontal" enctype="multipart/form-data">
+                            <form method="POST" action="{{ route('plans.plan.update', $plan->id) }}" id="edit_plan_form" name="edit_plan_form" accept-charset="UTF-8" class="form-horizontal">
                                 {{ csrf_field() }}
-                                @include ('sales.form', [
-                                'sale' => null,
+                                <input name="_method" type="hidden" value="PUT">
+                                @include ('plans.form', [
+                                'plan' => $plan,
                                 ])
 
                                 <div class="form-group">
                                     <div class="col-md-offset-2 col-md-10">
-                                        <input class="btn btn-primary" type="submit" value="Register Deal">
+                                        <input class="btn btn-primary" type="submit" value="Update">
                                     </div>
                                 </div>
-
                             </form>
+
+
             </div>
         </div>
     </div>
@@ -54,20 +60,3 @@
 </div>
 
 @endsection
-
-
-@section('js')
-    <script src="/admin/assets/pages/jquery.property-add.init.js"></script>
-
-    <!-- dropify js -->
-    <script src="/plugins/dropify/js/dropify.min.js"></script>
-@stop
-
-@section('css')
-
-    <!-- dropify css -->
-    <link rel="stylesheet" type="text/css" href="/plugins/dropify/css/dropify.css" />
-
-@stop
-
-

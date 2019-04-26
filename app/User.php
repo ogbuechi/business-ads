@@ -19,7 +19,7 @@ class User extends Authenticatable implements MustVerifyEmail
      * @var array
      */
     protected $fillable = ['name', 'email', 'password','status'];
-    protected $with = ['roles','profile'];
+    protected $with = ['roles','profile','plan'];
     protected $appends = ['role'];
 
 //    protected $appends = ['user_role'];
@@ -43,6 +43,10 @@ class User extends Authenticatable implements MustVerifyEmail
 
         return $this->hasOne('App\Models\Profile');
 
+    }
+    public function plan()
+    {
+        return $this->belongsTo('App\Models\Plan','plan_id');
     }
     public function company()
     {
