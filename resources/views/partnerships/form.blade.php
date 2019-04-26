@@ -10,7 +10,12 @@
 <div class="form-group {{ $errors->has('summary') ? 'has-error' : '' }}">
     <label for="summary" class="">Summary</label>
 
-        <textarea class="form-control" name="summary" cols="50" rows="10" id="summary" minlength="1" required="true" placeholder="Enter summary here...">{{ old('summary', optional($partnership)->summary) }}</textarea>
+        <textarea class="form-contro" name="summary" cols="50" rows="10" id="summary" minlength="1" required="true" placeholder="Please include contents below:
+- Business Segment/Trade Volume
+- Company History (Year of Establishment)
+- Target Market
+- Unique Characteristic/Strength
+- Financial Outlook (Revenue etc.)">{{ old('summary', optional($partnership)->summary) }}</textarea>
         {!! $errors->first('summary', '<p class="help-block">:message</p>') !!}
 
 </div>

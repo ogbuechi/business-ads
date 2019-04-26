@@ -12,13 +12,24 @@
 </div>
 
 
-<div class="form-group m-b-20 {{ $errors->has('profile_summary') ? 'has-error' : '' }}">
-    <label for="profile_summary" class="">Profile Summary</label>
-    <div class="">
-        <input class="form-control" name="profile_summary" type="text" id="profile_summary" value="{{ old('profile_summary', optional($invest)->profile_summary) }}" minlength="1" placeholder="Enter profile summary here...">
-        {!! $errors->first('profile_summary', '<p class="help-block">:message</p>') !!}
-    </div>
-</div>
+{{--<div class="form-group m-b-20 {{ $errors->has('profile_summary') ? 'has-error' : '' }}">--}}
+{{--    <label for="profile_summary" class="">Profile Summary</label>--}}
+{{--    <div class="">--}}
+{{--        <input class="form-control" name="profile_summary" type="text" id="profile_summary" value="{{ old('profile_summary', optional($invest)->profile_summary) }}" minlength="1" placeholder="Enter profile summary here...">--}}
+{{--        {!! $errors->first('profile_summary', '<p class="help-block">:message</p>') !!}--}}
+{{--    </div>--}}
+{{--</div>--}}
+
+            <div class="form-group {{ $errors->has('profile_summary') ? 'has-error' : '' }}">
+                <label for="profile_summary" class="">Summary Of Deal</label>
+                <textarea class="form-contro" name="profile_summary" cols="50" rows="5" id="profile_summary" placeholder="Please include contents below:
+- Business Segment/Trade Volume
+- Company History (Year of Establishment)
+- Target Market
+- Unique Characteristic/Strength
+- Financial Outlook (Revenue etc.)">{{ old('profile_summary', optional($invest)->profile_summary) }}</textarea>
+                {!! $errors->first('profile_summary', '<p class="help-block">:message</p>') !!}
+            </div>
 
 <div class="form-group m-b-20 {{ $errors->has('maximum_capital') ? 'has-error' : '' }}">
     <label for="maximum_capital" class="">Maximum Capital</label>

@@ -42,6 +42,18 @@
             background-position-x:center;
 
         }
+      textarea {
+            background: #ebebeb;
+            border-radius: 2px;
+            padding: 14px 12px 8px;
+            box-sizing: border-box;
+            border: solid 1px #ebebeb;
+            width: 100%;
+            /*height: 134px;*/
+            font-size: 14px;
+            /*resize: none;*/
+            display: block;
+        }
         .dropzone .dz-default.dz-message span {
             display: block;
             margin-top: 145px;
@@ -309,7 +321,7 @@
 
     jQuery(document).ready(function(){
 
-        $('textarea').summernote({
+        $('.textarea').summernote({
             height: 250,                 // set editor height
             minHeight: null,             // set minimum height of editor
             maxHeight: null,             // set maximum height of editor

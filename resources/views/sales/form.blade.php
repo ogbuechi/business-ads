@@ -11,7 +11,12 @@
 
 <div class="form-group {{ $errors->has('summary') ? 'has-error' : '' }}">
     <label for="summary" class="">Summary Of Deal</label>
-        <textarea class="form-control" name="summary" cols="50" rows="3" id="summary" placeholder="Enter summary here...">{{ old('summary', optional($sale)->summary) }}</textarea>
+        <textarea class="form-contro" name="summary" cols="50" rows="3" id="summary" placeholder="Please include contents below:
+- Business Segment/Trade Volume
+- Company History (Year of Establishment)
+- Target Market
+- Unique Characteristic/Strength
+- Financial Outlook (Revenue etc.)">{{ old('summary', optional($sale)->summary) }}</textarea>
         {!! $errors->first('summary', '<p class="help-block">:message</p>') !!}
 </div>
 
@@ -43,6 +48,7 @@
 '51-100' => '51-100',
 'Less than 1000' => 'Less Than 1000',
 'over 1000' => 'Over 1000'] as $key => $text)
+			    <option value="{{ $key }}" {{ old('shareholders', optional($sale)->shareholders) == $key ? 'selected' : '' }}>
 			    <option value="{{ $key }}" {{ old('shareholders', optional($sale)->shareholders) == $key ? 'selected' : '' }}>
 			    	{{ $text }}
 			    </option>
