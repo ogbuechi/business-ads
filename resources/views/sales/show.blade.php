@@ -214,6 +214,25 @@
                             </div>
                         </div>
                     </article>
+                    @if(count($bids) == 0)
+                        <article class="timeline-item" style="" id="bid">
+                            <div class="timeline-desk">
+                                <div class="panel">
+                                    <div class="timeline-box">
+                                        <span class="arrow"></span>
+                                        <span class="timeline-icon"><i class="mdi mdi-checkbox-blank-circle-outline"></i></span>
+                            <div class="panel-body text-center">
+                                <p class="h3">No Bids Available Yet!</p>
+                                @if($sale->user_id != Auth::user()->id)
+                                <p class="m-t-5">Be the first to place a bid</p>
+                                    @endif
+                            </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                        </div>
+                    @else
                     @foreach($bids as $bid)
                     <article class="timeline-item">
                         <div class="timeline-desk">
@@ -229,6 +248,7 @@
                         </div>
                     </article>
                     @endforeach
+                    @endif
 {{--                    <article class="timeline-item ">--}}
 {{--                        <div class="timeline-desk">--}}
 {{--                            <div class="panel">--}}
