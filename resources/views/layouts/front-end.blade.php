@@ -138,9 +138,9 @@
                 <!-- Home -->
                 <!-- elements -->
                 <li class="{{ active('/') }}"><a href="{{ url('/') }}">Home</a></li>
-                <li><a href="{{ url('/b2b_sales') }}">B2B Sales</a></li>
-                <li><a href="{{ url('/b2b_invests') }}">B2B Invests</a></li>
-                <li><a href="{{ url('/open_partnership') }}">OPEN PARTNERSHIP</a></li>
+                <li><a href="{{ url('/b2b_sales') }}">Business Sales</a></li>
+                <li><a href="{{ url('/b2b_invests') }}">Investors</a></li>
+                <li><a href="{{ url('/open_partnership') }}">Open Partnerships</a></li>
 
             </ul><!-- end navbar-nav -->
             <ul class="nav navbar-nav navbar-right">

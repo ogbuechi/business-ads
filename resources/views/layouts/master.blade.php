@@ -53,23 +53,23 @@
                     <span class="lni-menu"></span>
                     <span class="lni-menu"></span>
                 </button>
-                <a href="{{ route('home') }}" class="navbar-brand">B2B Ads</a>
+                <a href="{{ route('home') }}" class="navbar-brand">Business Ads</a>
             </div>
             <div class="collapse navbar-collapse" id="main-navbar">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item">
                         <a class="nav-link" href="">
-                            B2B Invest
+                            Investors
                         </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="">
-                            B2B Sales
+                            Business Sales
                         </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="">
-                            B2B Open Partnership
+                            Open Partnership
                         </a>
                     </li>
 
@@ -94,7 +94,7 @@
                         </div>
                     </li>
                 </ul>
-                <a class="tg-btn" href="">
+                <a class="tg-btn" href="{{ route('admin.index') }}">
                     <i class="lni-pencil-alt"></i> Post An Ad
                 </a>
             </div>
