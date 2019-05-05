@@ -111,7 +111,7 @@ class CompaniesController extends Controller
             $company = Company::findOrFail($id);
             $company->update($data);
 
-            return redirect()->route('companies.company.index')
+            return redirect()->route('profiles.profile.myprofile')
                              ->with('success_message', 'Company was successfully updated!');
 
 //        } catch (Exception $exception) {

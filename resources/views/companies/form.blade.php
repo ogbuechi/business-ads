@@ -110,7 +110,7 @@
 
 
 <div class="form-group {{ $errors->has('employees') ? 'has-error' : '' }}">
-    <label for="employees" class="col-md-12 control-label">Employees</label>
+    <label for="employees" class="col-md-12 control-label">Number of Employees</label>
     <div class="col-md-12">
         <input class="form-control" name="employees" type="number" id="employees" value="{{ old('employees', optional($company)->employees) }}" min="-2147483648" max="2147483647" required="true" placeholder="Enter employees here...">
         {!! $errors->first('employees', '<p class="help-block">:message</p>') !!}
@@ -118,7 +118,7 @@
 </div>
 
 <div class="form-group {{ $errors->has('years') ? 'has-error' : '' }}">
-    <label for="years" class="col-md-12 control-label">Years</label>
+    <label for="years" class="col-md-12 control-label">Years of existence</label>
     <div class="col-md-12">
         <input class="form-control" name="years" type="text" id="years" value="{{ old('years', optional($company)->years) }}" min="-2147483648" max="2147483647" required="true" placeholder="Enter years here...">
         {!! $errors->first('years', '<p class="help-block">:message</p>') !!}
