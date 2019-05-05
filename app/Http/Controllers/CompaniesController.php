@@ -156,7 +156,7 @@ class CompaniesController extends Controller
         $rules = [
             'user_id' => 'required',
             'name' => 'string|required|max:255|min:1',
-            'description' => 'text|nullable',
+            'description' => 'string|nullable',
             'country' => 'string|required',
 //            'state' => 'string|required|nullable|min:1',
 //            'city' => 'string|required|nullable|min:1',
