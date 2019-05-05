@@ -94,7 +94,7 @@
                         </div>
                     </li>
                 </ul>
-                <a class="tg-btn" href="{{ route('admin.index') }}">
+                <a class="tg-btn" href="{{ route('admin.home') }}">
                     <i class="lni-pencil-alt"></i> Post An Ad
                 </a>
             </div>
