@@ -32,29 +32,29 @@
     </div>
 </div>
 
-<div class="form-group {{ $errors->has('state') ? 'has-error' : '' }}">
-    <label for="state" class="col-md-12 control-label">State</label>
-    <div class="col-md-12">
-        <select required class="form-control" id="state" name="state">
-            <option value="" style="display: none;" {{ old('state') == '' ? 'selected' : '' }} disabled selected>Select State</option>
-            @foreach ($states as $key => $state)
-                <option value="{{ $state }}" {{ old('state') == $state ? 'selected' : '' }}>
-                    {{ $state }}
-                </option>
-            @endforeach
-        </select>
+{{--<div class="form-group {{ $errors->has('state') ? 'has-error' : '' }}">--}}
+{{--    <label for="state" class="col-md-12 control-label">State</label>--}}
+{{--    <div class="col-md-12">--}}
+{{--        <select required class="form-control" id="state" name="state">--}}
+{{--            <option value="" style="display: none;" {{ old('state') == '' ? 'selected' : '' }} disabled selected>Select State</option>--}}
+{{--            @foreach ($states as $key => $state)--}}
+{{--                <option value="{{ $state }}" {{ old('state') == $state ? 'selected' : '' }}>--}}
+{{--                    {{ $state }}--}}
+{{--                </option>--}}
+{{--            @endforeach--}}
+{{--        </select>--}}
 
-        {!! $errors->first('country', '<p class="help-block">:message</p>') !!}
-    </div>
-</div>
+{{--        {!! $errors->first('country', '<p class="help-block">:message</p>') !!}--}}
+{{--    </div>--}}
+{{--</div>--}}
 
-<div class="form-group {{ $errors->has('city') ? 'has-error' : '' }}">
-    <label for="city" class="col-md-12 control-label">City</label>
-    <div class="col-md-12">
-        <input class="form-control" name="city" type="text" id="city" value="{{ old('city', optional($company)->city) }}" minlength="1" required="true" placeholder="Enter city here...">
-        {!! $errors->first('city', '<p class="help-block">:message</p>') !!}
-    </div>
-</div>
+{{--<div class="form-group {{ $errors->has('city') ? 'has-error' : '' }}">--}}
+{{--    <label for="city" class="col-md-12 control-label">City</label>--}}
+{{--    <div class="col-md-12">--}}
+{{--        <input class="form-control" name="city" type="text" id="city" value="{{ old('city', optional($company)->city) }}" minlength="1" required="true" placeholder="Enter city here...">--}}
+{{--        {!! $errors->first('city', '<p class="help-block">:message</p>') !!}--}}
+{{--    </div>--}}
+{{--</div>--}}
 
 <div class="form-group {{ $errors->has('address') ? 'has-error' : '' }}">
     <label for="address" class="col-md-12 control-label">Address</label>

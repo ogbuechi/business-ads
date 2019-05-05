@@ -66,5 +66,9 @@
     {
         "model-name": "SaleBid",
         "resource-file": "sale_bids.json"
+    },
+    {
+        "model-name": "Message",
+        "resource-file": "messages.json"
     }
 ]

@@ -14,16 +14,22 @@
 {{--                    <a href="calendar.html" class="waves-effect active"><i class="mdi mdi-calendar"></i><span> Calendar </span></a>--}}
 {{--                </li>--}}
 
+                @if (Auth::check() && Auth::user()->hasRole(['admin','super']))
+
                 <li class="has_sub">
                     <a href="javascript:void(0);" class="waves-effect {{ active(['users.user.*']) }} {{ active(['users.user.*'], 'subdrop') }}"><i class="fa fa-users"></i><span> Users </span> <span class="menu-arrow"></span></a>
                     <ul class="list-unstyled">
                         <li><a href="{{ route('users.user.index') }}" class="{{ active(['users.user.index']) }}"> All Users</a></li>
-                        <li><a href=""> Publishers</a></li>
-                        <li><a href=""> Buyers</a></li>
+{{--                        <li><a href=""> Publishers</a></li>--}}
+{{--                        <li><a href=""> Buyers</a></li>--}}
                         <li><a href="{{ route('users.user.create') }}"  class="{{ active(['users.user.create']) }}"> Add User</a></li>
                     </ul>
                 </li>
 
+                    <li>
+                        <a href="{{ route('admin.media') }}" class="waves-effect {{ active('admin.media') }}"><i class="mdi mdi-file"></i><span> Media </span></a>
+                    </li>
+@endif
 
 
 
@@ -35,12 +41,14 @@
                     </ul>
                 </li>
 
+
+
                 <li>
-                    <a href="{{ route('admin.media') }}" class="waves-effect {{ active('admin.media') }}"><i class="mdi mdi-file"></i><span> Media </span></a>
+                    <a href="{{ route('chat.index') }}" class="waves-effect {{ active('chat.index') }}"><i class="mdi mdi-chat"></i><span> Chat </span></a>
                 </li>
 
                 <li class="has_sub">
-                    <a href="javascript:void(0);" class="waves-effect {{ active(['profiles.profile.*']) }} {{ active(['profiles.profile.*'], 'subdrop') }}"><i class="mdi mdi-pencil-box"></i><span> Business Ads </span> <span class="menu-arrow"></span></a>
+                    <a href="javascript:void(0);" class="waves-effect {{ active(['partnerships.partnership.*','invests.invest.*','sales.sale.*']) }} {{ active(['partnerships.partnership.*','invests.invest.*','sales.sale.*'], 'subdrop') }}"><i class="mdi mdi-pencil-box"></i><span> Business Ads </span> <span class="menu-arrow"></span></a>
                     <ul class="list-unstyled">
                         <li><a href="{{ route('partnerships.partnership.index') }}"  class="{{ active(['partnerships.partnership.*']) }}"> Business Partnership</a></li>
 
@@ -49,7 +57,7 @@
                     </ul>
                 </li>
 
-
+                @if (Auth::check() && Auth::user()->hasRole(['admin','super']))
                 <li class="menu-title">Settings</li>
 
                 <li class="has_sub">
@@ -81,6 +89,8 @@
                         <li><a href="{{ route('company_sub_cats.company_sub_cat.index') }}" class="waves-effect {{ active('company_sub_cats.company_sub_cat.*') }}"><span>Sub Categories </span></a></li>
                     </ul>
                 </li>
+
+                    @endif
 
 
             </ul>

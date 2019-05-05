@@ -5,7 +5,7 @@
         <div class="page-content">
             <div class="inner-box">
                 <div class="dashboard-box">
-                    <h2 class="dashbord-title">Dashboard</h2>
+                    <h2 class="dashbord-title">Dashboards</h2>
                 </div>
                 <div class="dashboard-wrapper">
                     <div class="dashboard-sections">

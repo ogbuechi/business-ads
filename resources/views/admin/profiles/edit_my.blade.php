@@ -2,10 +2,12 @@
 
 @section('content')
 
-    <div class="pcoded-content">
+    <div class="content">
+        <div class="container-fluid">
 
-        <div class="page-header card">
-            <div class="row align-items-end">
+            <div class="row">
+                <div class="col-12">
+                    <div class="page-title-box">
                 @if(Session::has('success_message'))
                     <div class="col-md-12">
                         <div class="alert alert-success">
@@ -36,14 +38,11 @@
                 </div>
             </div>
         </div>
+            </div>
 
-        <div class="pcoded-inner-content">
-            <div class="main-body">
-                <div class="page-wrapper">
-
-                    <div class="page-body">
-                        <div class="row">
-                            <div class="col-sm-12">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="card-box">
 
 
                                 <div class="card">
@@ -51,15 +50,16 @@
                                         <h5>Profile Edit</h5>
 
                                     </div>
+
                                     <div class="card-block">
-                                        <div class="row">
+                                        <div class="">
                                             <div class="col-md-12">
                                                 <div id="wizarda">
                                                     <section>
                                                         <form method="POST" class="wizard-form" id="basic-forms" action="{{ route('profiles.profile.update', $user->profile->id) }}">
                                                             {{ csrf_field() }}
                                                             <input name="_method" type="hidden" value="PUT">
-                                                            <h3> Account Details </h3>
+{{--                                                            <h3> Account Details </h3>--}}
                                                             <fieldset>
                                                                 <div class="form-group row">
                                                                     <div class="col-sm-12">
@@ -120,20 +120,20 @@
                                                                         <label for="date" class="block">Date Of Birth</label>
                                                                     </div>
                                                                     <div class="col-sm-12">
-                                                                        <input id="date" name="Date Of Birth" type="text" class="form-control date-control">
+                                                                        <input id="date" value="{{ old('date_of_birth', optional($user)->profile->date_of_birth ) }}" name="Date Of Birth" type="text" class="form-control date-control">
                                                                     </div>
                                                                 </div>
                                                                 <div class="form-group row">
                                                                     <div class="col-sm-12">
-                                                                        Select Country</div>
+                                                                        Nationality</div>
                                                                     <div class="col-sm-12">
-                                                                        <select class="form-control required">
-                                                                            <option>Select State</option>
-                                                                            <option>Gujarat</option>
-                                                                            <option>Kerala</option>
-                                                                            <option>Manipur</option>
-                                                                            <option>Tripura</option>
-                                                                            <option>Sikkim</option>
+                                                                        <select required class="form-control" id="country" name="country">
+{{--                                                                            <option value="" style="display: none;" {{ old('country') == '' ? 'selected' : '' }} disabled selected>Select Country</option>--}}
+                                                                            @foreach ($countries as $key => $country)
+                                                                                <option value="{{ $country }}" {{ old('country', optional($user->profile->country)) == $country ? 'selected' : '' }}>
+                                                                                    {{ $country }}
+                                                                                </option>
+                                                                            @endforeach
                                                                         </select>
                                                                     </div>
                                                                 </div>
@@ -158,41 +158,9 @@
                                                                         {!! $errors->first('residential_address', '<p class="help-block">:message</p>') !!}
                                                                     </div>
                                                                 </div>
-                                                                <div class="form-group row">
-                                                                    <div class="col-sm-12">
-                                                                        <label for="Degreelevel-2" class="block">State </label>
-                                                                    </div>
-                                                                    <div class="col-sm-12">
-                                                                        <input id="Degreelevel-2a" name="Degree level" type="text" class="form-control required phone">
-                                                                    </div>
-                                                                </div>
-                                                                <div class="form-group row">
-                                                                    <div class="col-sm-12">
-                                                                        <label for="datejoin" class="block">City</label>
-                                                                    </div>
-                                                                    <div class="col-sm-12">
-                                                                        <input id="datejoina" name="Date Of Birth" type="text" class="form-control required">
-                                                                    </div>
-                                                                </div>
                                                             </fieldset>
-                                                            <h3> Other Details </h3>
+
                                                             <fieldset>
-                                                                <div class="form-group row">
-                                                                    <div class="col-sm-12">
-                                                                        <label for="Company-2" class="block">Gender:</label>
-                                                                    </div>
-                                                                    <div class="col-sm-12">
-                                                                        <input id="Company-2a" name="Company:" type="text" class="form-control required">
-                                                                    </div>
-                                                                </div>
-                                                                <div class="form-group row">
-                                                                    <div class="col-sm-12">
-                                                                        <label for="CountryW-2" class="block">Marital Status</label>
-                                                                    </div>
-                                                                    <div class="col-sm-12">
-                                                                        <input id="CountryW-2a" name="Country" type="text" class="form-control required">
-                                                                    </div>
-                                                                </div>
 
                                                                 <div class="form-group row">
                                                                     <div class="col-md-offset-2 col-md-10">
@@ -209,17 +177,12 @@
                                         </div>
                                     </div>
                                 </div>
-
-
-
-
-                            </div>
-                        </div>
                     </div>
-
                 </div>
             </div>
-        </div>
+
+
+    </div>
     </div>
 
 @endsection

@@ -11,6 +11,11 @@
 |
 */
 
+Route::get('/chat/conversation/{id}','MessagesController@getMessagesFor')
+    ->name('chat.get.messages')
+    ->where('id', '[0-9]+');
+
+Route::post('/chat/conversation/send', 'MessagesController@send');
 
 Auth::routes(['verify' => true]);
 
@@ -27,9 +32,9 @@ Route::get('/contact', function () {
     return view('contact-us');
 });
 
-Route::get('/dashboard', function () {
-    return view('dashboard.index');
-});
+//Route::get('/dashboard', function () {
+//    return view('dashboard.index');
+//});
 
 Route::get('complete_registration', 'UsersController@companyReg')->name('user.complete.reg')->middleware('verified');
 
@@ -40,8 +45,8 @@ Route::get('/', 'HomeController@index')->name('home');
 Route::get('/home', 'HomeController@index')->name('home');
 
 
-
-Route::get('dashboard', 'AdminController@index')->name('admin.home')->middleware('verified');
+//
+//Route::get('dashboard', 'AdminController@index')->name('admin.home')->middleware('verified');
 
 Route::post('multifileupload', 'HomeController@store')->name('multifileupload');
 
@@ -52,6 +57,11 @@ Route::group([ 'prefix' => 'dashboard','middleware' => ['auth', 'level:1','verif
     Route::get('/media', 'AdminController@media')->name('admin.media');
     Route::get('/profile', 'AdminController@profile')->name('admin.profile');
     Route::get('/my_profile', 'ProfilesController@myProfile')->name('profiles.profile.myprofile');
+    Route::get('/chat', 'ChatController@index')->name('chat.index');
+    Route::get('/chat/{id}','ChatController@inbox')
+        ->name('chat.inbox')
+        ->where('id', '[0-9]+');
+    Route::get('/user/{id}','ProfilesController@profile')->name('user.show')->where('id', '[0-9]+');
     Route::get('/coming-soon', 'AdminController@soon')->name('coming');
     Route::get('/patient/create', 'ProfilesController@patientCreate')->name('patients.patient.create');
     Route::get('/patient/all', 'UsersController@patients')->name('patients.patient.index');
@@ -265,6 +275,167 @@ Route::group([ 'prefix' => 'dashboard','middleware' => ['auth', 'level:1','verif
             ->where('id', '[0-9]+');
 
     });
+
+    Route::group(
+        [
+            'prefix' => 'partnerships',
+        ], function () {
+
+        Route::get('/', 'PartnershipsController@index')
+            ->name('partnerships.partnership.index');
+
+        Route::get('/create','PartnershipsController@create')
+            ->name('partnerships.partnership.create');
+
+        Route::get('/show/{partnership}','PartnershipsController@show')
+            ->name('partnerships.partnership.show')
+            ->where('id', '[0-9]+');
+
+        Route::get('/{partnership}/edit','PartnershipsController@edit')
+            ->name('partnerships.partnership.edit')
+            ->where('id', '[0-9]+');
+
+        Route::post('/', 'PartnershipsController@store')
+            ->name('partnerships.partnership.store');
+
+        Route::put('partnership/{partnership}', 'PartnershipsController@update')
+            ->name('partnerships.partnership.update')
+            ->where('id', '[0-9]+');
+
+        Route::delete('/partnership/{partnership}','PartnershipsController@destroy')
+            ->name('partnerships.partnership.destroy')
+            ->where('id', '[0-9]+');
+
+    });
+
+    Route::group(
+        [
+            'prefix' => 'plans',
+        ], function () {
+
+        Route::get('/', 'PlansController@index')
+            ->name('plans.plan.index');
+
+        Route::get('/create','PlansController@create')
+            ->name('plans.plan.create');
+
+        Route::get('/show/{plan}','PlansController@show')
+            ->name('plans.plan.show')
+            ->where('id', '[0-9]+');
+
+        Route::get('/{plan}/edit','PlansController@edit')
+            ->name('plans.plan.edit')
+            ->where('id', '[0-9]+');
+
+        Route::post('/', 'PlansController@store')
+            ->name('plans.plan.store');
+
+        Route::put('plan/{plan}', 'PlansController@update')
+            ->name('plans.plan.update')
+            ->where('id', '[0-9]+');
+
+        Route::delete('/plan/{plan}','PlansController@destroy')
+            ->name('plans.plan.destroy')
+            ->where('id', '[0-9]+');
+
+    });
+
+    Route::group(
+        [
+            'prefix' => 'sale_bids',
+        ], function () {
+
+        Route::get('/', 'SaleBidsController@index')
+            ->name('sale_bids.sale_bid.index');
+
+        Route::get('/create','SaleBidsController@create')
+            ->name('sale_bids.sale_bid.create');
+
+        Route::get('/show/{saleBid}','SaleBidsController@show')
+            ->name('sale_bids.sale_bid.show')
+            ->where('id', '[0-9]+');
+
+        Route::get('/{saleBid}/edit','SaleBidsController@edit')
+            ->name('sale_bids.sale_bid.edit')
+            ->where('id', '[0-9]+');
+
+        Route::post('/', 'SaleBidsController@store')
+            ->name('sale_bids.sale_bid.store');
+
+        Route::put('sale_bid/{saleBid}', 'SaleBidsController@update')
+            ->name('sale_bids.sale_bid.update')
+            ->where('id', '[0-9]+');
+
+        Route::delete('/sale_bid/{saleBid}','SaleBidsController@destroy')
+            ->name('sale_bids.sale_bid.destroy')
+            ->where('id', '[0-9]+');
+
+    });
+
+    Route::group(
+        [
+            'prefix' => 'messages',
+        ], function () {
+
+        Route::get('/', 'MessagesController@index')
+            ->name('messages.message.index');
+
+        Route::get('/create','MessagesController@create')
+            ->name('messages.message.create');
+
+        Route::get('/show/{message}','MessagesController@show')
+            ->name('messages.message.show')
+            ->where('id', '[0-9]+');
+
+        Route::get('/{message}/edit','MessagesController@edit')
+            ->name('messages.message.edit')
+            ->where('id', '[0-9]+');
+
+        Route::post('/', 'MessagesController@store')
+            ->name('messages.message.store');
+
+        Route::put('message/{message}', 'MessagesController@update')
+            ->name('messages.message.update')
+            ->where('id', '[0-9]+');
+
+        Route::delete('/message/{message}','MessagesController@destroy')
+            ->name('messages.message.destroy')
+            ->where('id', '[0-9]+');
+
+    });
+
+    Route::group(
+        [
+            'prefix' => 'users',
+        ], function () {
+
+        Route::get('/', 'UsersController@index')
+            ->name('users.user.index');
+
+        Route::get('/create','UsersController@create')
+            ->name('users.user.create');
+
+        Route::get('/show/{user}','UsersController@show')
+            ->name('users.user.show')
+            ->where('id', '[0-9]+');
+
+        Route::get('/{user}/edit','UsersController@edit')
+            ->name('users.user.edit')
+            ->where('id', '[0-9]+');
+
+        Route::post('/', 'UsersController@store')
+            ->name('users.user.store');
+
+        Route::put('user/{user}', 'UsersController@update')
+            ->name('users.user.update')
+            ->where('id', '[0-9]+');
+
+        Route::delete('/user/{user}','UsersController@destroy')
+            ->name('users.user.destroy')
+            ->where('id', '[0-9]+');
+
+    });
+
 });
 
 Route::group(
@@ -288,7 +459,7 @@ Route::group(
 
     Route::post('/', 'SlidersController@store')
          ->name('sliders.slider.store');
-               
+
     Route::put('slider/{slider}', 'SlidersController@update')
          ->name('sliders.slider.update')
          ->where('id', '[0-9]+');
@@ -298,6 +469,8 @@ Route::group(
          ->where('id', '[0-9]+');
 
 });
+
+
 
 Route::group(
 [
@@ -320,7 +493,7 @@ Route::group(
 
     Route::post('/', 'SettingsController@store')
          ->name('settings.setting.store');
-               
+
     Route::put('setting/{setting}', 'SettingsController@update')
          ->name('settings.setting.update')
          ->where('id', '[0-9]+');
@@ -363,134 +536,10 @@ Route::group(
 
 });
 
-Route::group(
-[
-    'prefix' => 'users',
-], function () {
-
-    Route::get('/', 'UsersController@index')
-         ->name('users.user.index');
-
-    Route::get('/create','UsersController@create')
-         ->name('users.user.create');
-
-    Route::get('/show/{user}','UsersController@show')
-         ->name('users.user.show')
-         ->where('id', '[0-9]+');
-
-    Route::get('/{user}/edit','UsersController@edit')
-         ->name('users.user.edit')
-         ->where('id', '[0-9]+');
-
-    Route::post('/', 'UsersController@store')
-         ->name('users.user.store');
-               
-    Route::put('user/{user}', 'UsersController@update')
-         ->name('users.user.update')
-         ->where('id', '[0-9]+');
-
-    Route::delete('/user/{user}','UsersController@destroy')
-         ->name('users.user.destroy')
-         ->where('id', '[0-9]+');
-
-});
 
 
 
 
 
-Route::group(
-[
-    'prefix' => 'partnerships',
-], function () {
 
-    Route::get('/', 'PartnershipsController@index')
-         ->name('partnerships.partnership.index');
 
-    Route::get('/create','PartnershipsController@create')
-         ->name('partnerships.partnership.create');
-
-    Route::get('/show/{partnership}','PartnershipsController@show')
-         ->name('partnerships.partnership.show')
-         ->where('id', '[0-9]+');
-
-    Route::get('/{partnership}/edit','PartnershipsController@edit')
-         ->name('partnerships.partnership.edit')
-         ->where('id', '[0-9]+');
-
-    Route::post('/', 'PartnershipsController@store')
-         ->name('partnerships.partnership.store');
-               
-    Route::put('partnership/{partnership}', 'PartnershipsController@update')
-         ->name('partnerships.partnership.update')
-         ->where('id', '[0-9]+');
-
-    Route::delete('/partnership/{partnership}','PartnershipsController@destroy')
-         ->name('partnerships.partnership.destroy')
-         ->where('id', '[0-9]+');
-
-});
-
-Route::group(
-[
-    'prefix' => 'plans',
-], function () {
-
-    Route::get('/', 'PlansController@index')
-         ->name('plans.plan.index');
-
-    Route::get('/create','PlansController@create')
-         ->name('plans.plan.create');
-
-    Route::get('/show/{plan}','PlansController@show')
-         ->name('plans.plan.show')
-         ->where('id', '[0-9]+');
-
-    Route::get('/{plan}/edit','PlansController@edit')
-         ->name('plans.plan.edit')
-         ->where('id', '[0-9]+');
-
-    Route::post('/', 'PlansController@store')
-         ->name('plans.plan.store');
-               
-    Route::put('plan/{plan}', 'PlansController@update')
-         ->name('plans.plan.update')
-         ->where('id', '[0-9]+');
-
-    Route::delete('/plan/{plan}','PlansController@destroy')
-         ->name('plans.plan.destroy')
-         ->where('id', '[0-9]+');
-
-});
-
-Route::group(
-[
-    'prefix' => 'sale_bids',
-], function () {
-
-    Route::get('/', 'SaleBidsController@index')
-         ->name('sale_bids.sale_bid.index');
-
-    Route::get('/create','SaleBidsController@create')
-         ->name('sale_bids.sale_bid.create');
-
-    Route::get('/show/{saleBid}','SaleBidsController@show')
-         ->name('sale_bids.sale_bid.show')
-         ->where('id', '[0-9]+');
-
-    Route::get('/{saleBid}/edit','SaleBidsController@edit')
-         ->name('sale_bids.sale_bid.edit')
-         ->where('id', '[0-9]+');
-
-    Route::post('/', 'SaleBidsController@store')
-         ->name('sale_bids.sale_bid.store');
-               
-    Route::put('sale_bid/{saleBid}', 'SaleBidsController@update')
-         ->name('sale_bids.sale_bid.update')
-         ->where('id', '[0-9]+');
-
-    Route::delete('/sale_bid/{saleBid}','SaleBidsController@destroy')
-         ->name('sale_bids.sale_bid.destroy')
-         ->where('id', '[0-9]+');
-
-});

@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Country;
+use App\Models\Invest;
+use App\Models\Partnership;
+use App\Models\Sale;
 use App\User;
 use App\Models\Profile;
 use Illuminate\Http\Request;
@@ -29,7 +32,10 @@ class ProfilesController extends Controller
 
     public function myProfile(){
         $user = User::with('profile')->whereId(Auth::id())->first();
-        return view('admin.profiles.myprofile', compact('user'));
+        $sales = count(Sale::whereUserId($user->id)->get());
+        $invests = count(Invest::whereUserId($user->id)->get());
+        $partnerships = count(Partnership::whereUserId($user->id)->get());
+        return view('admin.profiles.myprofile', compact('user','sales','invests','partnerships'));
     }
 
     /**
@@ -106,6 +112,17 @@ class ProfilesController extends Controller
         return view('admin.profiles.show', compact('profile'));
     }
 
+    public function profile($id){
+        if(Auth::id() == $id){
+            return redirect()->route('profiles.profile.myprofile');
+        }
+        $user = User::with('profile')->whereId($id)->first();
+        $sales = count(Sale::whereUserId($user->id)->get());
+        $invests = count(Invest::whereUserId($user->id)->get());
+        $partnerships = count(Partnership::whereUserId($user->id)->get());
+        return view('admin.profiles.profile', compact('user','sales','invests','partnerships'));
+    }
+
     /**
      * Show the form for editing the specified profile.
      *
@@ -124,9 +141,10 @@ class ProfilesController extends Controller
 
     public function editMyProfile()
     {
+        $countries = Country::pluck('name','id')->all();
         $user = User::with('profile')->whereId(Auth::id())->first();
 
-        return view('admin.profiles.edit_my', compact('user'));
+        return view('admin.profiles.edit_my', compact('user','countries'));
     }
 
     /**
