@@ -29,7 +29,7 @@
 </div>
 
 <div class="form-group {{ $errors->has('expected_profit') ? 'has-error' : '' }}">
-    <label for="expected_profit" class="">Expected Profit</label>
+    <label for="expected_profit" class="">Minimum expected monthly profit</label>
 
         <input class="form-control" name="expected_profit" type="number" id="expected_profit" value="{{ old('expected_profit', optional($partnership)->expected_profit) }}" min="1" max="2147483647" required="true" placeholder="Enter expected profit here...">
         {!! $errors->first('expected_profit', '<p class="help-block">:message</p>') !!}
@@ -74,7 +74,7 @@
         <div >
             <label for="company_type_individual_company">
             	<input id="company_type_individual_company" class="" name="company_type" type="radio" value="individual company" required="true" {{ old('company_type', optional($partnership)->company_type) == 'individual company' ? 'checked' : '' }}>
-                Individual Company
+                Individual
             </label>
         </div>
 
