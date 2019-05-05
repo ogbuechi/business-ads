@@ -100,7 +100,7 @@
 
 {{--                                <button type="button" class="btn btn-brown btn-rounded waves-effect m-b-10 waves-light">View Profile</button>--}}
 
-                                <a href="{{ route('user.show',$partnership->user->id) }}" class="btn btn-brown btn-rounded waves-effect m-b-10 waves-light">View Profile</a>
+                                <a href="{{ route('user.show',$invest->user->id) }}" class="btn btn-brown btn-rounded waves-effect m-b-10 waves-light">View Profile</a>
 
                             </div> <!-- end membar card -->
                         </div> <!-- end card-box -->
