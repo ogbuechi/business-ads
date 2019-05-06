@@ -3,39 +3,40 @@
 namespace App\Http\Controllers;
 
 use App\Models\Category;
+use App\Models\SubCategory;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Exception;
 
-class CategoriesController extends Controller
+class SubCategoriesController extends Controller
 {
 
     /**
-     * Display a listing of the categories.
+     * Display a listing of the sub categories.
      *
      * @return Illuminate\View\View
      */
     public function index()
     {
-        $categories = Category::paginate(25);
+        $subCategories = SubCategory::with('category')->paginate(25);
 
-        return view('categories.index', compact('categories'));
+        return view('sub_categories.index', compact('subCategories'));
     }
 
     /**
-     * Show the form for creating a new category.
+     * Show the form for creating a new sub category.
      *
      * @return Illuminate\View\View
      */
     public function create()
     {
+        $categories = Category::pluck('name','id')->all();
         
-        
-        return view('categories.create');
+        return view('sub_categories.create', compact('categories'));
     }
 
     /**
-     * Store a new category in the storage.
+     * Store a new sub category in the storage.
      *
      * @param Illuminate\Http\Request $request
      *
@@ -47,10 +48,10 @@ class CategoriesController extends Controller
             
             $data = $this->getData($request);
             
-            Category::create($data);
+            SubCategory::create($data);
 
-            return redirect()->route('categories.category.index')
-                             ->with('success_message', 'Category was successfully added!');
+            return redirect()->route('sub_categories.sub_category.index')
+                             ->with('success_message', 'Sub Category was successfully added!');
 
         } catch (Exception $exception) {
 
@@ -60,7 +61,7 @@ class CategoriesController extends Controller
     }
 
     /**
-     * Display the specified category.
+     * Display the specified sub category.
      *
      * @param int $id
      *
@@ -68,13 +69,13 @@ class CategoriesController extends Controller
      */
     public function show($id)
     {
-        $category = Category::findOrFail($id);
+        $subCategory = SubCategory::with('category')->findOrFail($id);
 
-        return view('categories.show', compact('category'));
+        return view('sub_categories.show', compact('subCategory'));
     }
 
     /**
-     * Show the form for editing the specified category.
+     * Show the form for editing the specified sub category.
      *
      * @param int $id
      *
@@ -82,14 +83,14 @@ class CategoriesController extends Controller
      */
     public function edit($id)
     {
-        $category = Category::findOrFail($id);
-        
+        $subCategory = SubCategory::findOrFail($id);
+        $categories = Category::pluck('name','id')->all();
 
-        return view('categories.edit', compact('category'));
+        return view('sub_categories.edit', compact('subCategory','categories'));
     }
 
     /**
-     * Update the specified category in the storage.
+     * Update the specified sub category in the storage.
      *
      * @param  int $id
      * @param Illuminate\Http\Request $request
@@ -102,11 +103,11 @@ class CategoriesController extends Controller
             
             $data = $this->getData($request);
             
-            $category = Category::findOrFail($id);
-            $category->update($data);
+            $subCategory = SubCategory::findOrFail($id);
+            $subCategory->update($data);
 
-            return redirect()->route('categories.category.index')
-                             ->with('success_message', 'Category was successfully updated!');
+            return redirect()->route('sub_categories.sub_category.index')
+                             ->with('success_message', 'Sub Category was successfully updated!');
 
         } catch (Exception $exception) {
 
@@ -116,7 +117,7 @@ class CategoriesController extends Controller
     }
 
     /**
-     * Remove the specified category from the storage.
+     * Remove the specified sub category from the storage.
      *
      * @param  int $id
      *
@@ -125,11 +126,11 @@ class CategoriesController extends Controller
     public function destroy($id)
     {
         try {
-            $category = Category::findOrFail($id);
-            $category->delete();
+            $subCategory = SubCategory::findOrFail($id);
+            $subCategory->delete();
 
-            return redirect()->route('categories.category.index')
-                             ->with('success_message', 'Category was successfully deleted!');
+            return redirect()->route('sub_categories.sub_category.index')
+                             ->with('success_message', 'Sub Category was successfully deleted!');
 
         } catch (Exception $exception) {
 
@@ -148,8 +149,8 @@ class CategoriesController extends Controller
     protected function getData(Request $request)
     {
         $rules = [
-            'name' => 'string|min:1|max:255|nullable',
-            'slug' => 'string|min:1|nullable',
+            'name' => 'required|string|min:1|max:255|nullable',
+            'category_id' => 'nullable',
      
         ];
         

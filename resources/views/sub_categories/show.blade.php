@@ -11,7 +11,7 @@
                 <div class="page-header-title pull-left">
                     <i class="feather icon-eye bg-c-blue"></i>
                     <div class="d-inline">
-                        <h4 class="mt-5 mb-5">{{ isset($partnership->name) ? $partnership->name : 'Partnership' }}</h4>
+                        <h4 class="mt-5 mb-5">{{ isset($subCategory->name) ? $subCategory->name : 'Sub Category' }}</h4>
                     </div>
                 </div>
             </div>
@@ -19,13 +19,13 @@
                 <div class="page-header-breadcrumb">
                     <ul class=" breadcrumb breadcrumb-title">
                         <li class="breadcrumb-item">
-                            <a href="{{ route('partnerships.partnership.edit', $partnership->id ) }}" class="btn btn-primary" title="Edit Partnership">
+                            <a href="{{ route('sub_categories.sub_category.edit', $subCategory->id ) }}" class="btn btn-primary" title="Edit Sub Category">
 
                                 <span class="fa fa-edit" aria-hidden="true"></span>
                             </a>
                         </li>
                         <li class="breadcrumb-item">
-                            <a href="{{ route('partnerships.partnership.index') }}" class="btn btn-primary" title="Show All Partnership">
+                            <a href="{{ route('sub_categories.sub_category.index') }}" class="btn btn-primary" title="Show All Sub Category">
                                 <span class="fa fa-list" aria-hidden="true"></span>
                             </a>
                         </li>
@@ -41,31 +41,23 @@
                         <div class="col-md-12 col-xl-12">
 
                             <dl class="dl-horizontal">
-                                            <dt>Name of project</dt>
-            <dd>{{ $partnership->name }}</dd>
-            <dt>Summary</dt>
-            <dd>{{ $partnership->summary }}</dd>
-            <dt>Type of Partnership Expected</dt>
-            <dd>{{ $partnership->partnership }}</dd>
-            <dt>Expected Profit</dt>
-            <dd>{{ $partnership->expected_profit }}</dd>
-            <dt>Project Stage</dt>
-            <dd>{{ $partnership->project_stage }}</dd>
-            <dt>Company Type</dt>
-            <dd>{{ $partnership->company_type }}</dd>
-            <dt>Image</dt>
-            <dd>{{ asset('storage/' . $partnership->image) }}</dd>
+                                            <dt>Name</dt>
+            <dd>{{ $subCategory->name }}</dd>
+            <dt>Slug</dt>
+            <dd>{{ $subCategory->slug }}</dd>
+            <dt>Category</dt>
+            <dd>{{ optional($subCategory->category)->name }}</dd>
 
                             </dl>
-                            <form method="POST" action="{!! route('partnerships.partnership.destroy', $partnership->id) !!}" accept-charset="UTF-8">
+                            <form method="POST" action="{!! route('sub_categories.sub_category.destroy', $subCategory->id) !!}" accept-charset="UTF-8">
                                 <input name="_method" value="DELETE" type="hidden">
                                 {{ csrf_field() }}
                                 <div class="btn-group btn-group-sm" role="group">
 
-                                    <a href="{{ route('partnerships.partnership.create') }}" class="btn btn-success" title="Create New Partnership">
+                                    <a href="{{ route('sub_categories.sub_category.create') }}" class="btn btn-success" title="Create New Sub Category">
                                         <span class="fa fa-plus" aria-hidden="true"></span>
                                     </a>
-                                    <button type="submit" class="btn btn-danger" title="Delete Partnership" onclick="return confirm(&quot;Delete Partnership??&quot;)">
+                                    <button type="submit" class="btn btn-danger" title="Delete Sub Category" onclick="return confirm(&quot;Delete Sub Category??&quot;)">
                                         <span class="fa fa-trash" aria-hidden="true"></span>
                                     </button>
                                 </div>

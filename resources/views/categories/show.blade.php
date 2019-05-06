@@ -41,9 +41,7 @@
                         <div class="col-md-12 col-xl-12">
 
                             <dl class="dl-horizontal">
-                                            <dt>Business Type</dt>
-            <dd>{{ $category->type }}</dd>
-            <dt>Name</dt>
+                                            <dt>Name</dt>
             <dd>{{ $category->name }}</dd>
             <dt>Slug</dt>
             <dd>{{ $category->slug }}</dd>

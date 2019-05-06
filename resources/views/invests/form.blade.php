@@ -68,6 +68,9 @@
         <div class="p-20">
             <div class="form-group m-b-20 {{ $errors->has('business_type') ? 'has-error' : '' }}">
                 <label for="business_type" class="">Business Categories</label>
+
+
+
                 <div class="">
                     {{--        <div class="checkbox">--}}
                     {{--            <label for="business_type_no">--}}

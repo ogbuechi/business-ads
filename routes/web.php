@@ -436,6 +436,38 @@ Route::group([ 'prefix' => 'dashboard','middleware' => ['auth', 'level:1','verif
 
     });
 
+    Route::group(
+        [
+            'prefix' => 'sub_categories',
+        ], function () {
+
+        Route::get('/', 'SubCategoriesController@index')
+            ->name('sub_categories.sub_category.index');
+
+        Route::get('/create','SubCategoriesController@create')
+            ->name('sub_categories.sub_category.create');
+
+        Route::get('/show/{subCategory}','SubCategoriesController@show')
+            ->name('sub_categories.sub_category.show')
+            ->where('id', '[0-9]+');
+
+        Route::get('/{subCategory}/edit','SubCategoriesController@edit')
+            ->name('sub_categories.sub_category.edit')
+            ->where('id', '[0-9]+');
+
+        Route::post('/', 'SubCategoriesController@store')
+            ->name('sub_categories.sub_category.store');
+
+        Route::put('sub_category/{subCategory}', 'SubCategoriesController@update')
+            ->name('sub_categories.sub_category.update')
+            ->where('id', '[0-9]+');
+
+        Route::delete('/sub_category/{subCategory}','SubCategoriesController@destroy')
+            ->name('sub_categories.sub_category.destroy')
+            ->where('id', '[0-9]+');
+
+    });
+
 });
 
 Route::group(
@@ -535,11 +567,3 @@ Route::group(
          ->where('id', '[0-9]+');
 
 });
-
-
-
-
-
-
-
-

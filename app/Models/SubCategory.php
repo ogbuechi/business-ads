@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class Category extends Model
+class SubCategory extends Model
 {
     
     use SoftDeletes;
@@ -23,13 +23,12 @@ class Category extends Model
         ];
     }
 
-
     /**
      * The database table used by the model.
      *
      * @var string
      */
-    protected $table = 'categories';
+    protected $table = 'sub_categories';
 
     /**
     * The database primary key value.
@@ -45,7 +44,7 @@ class Category extends Model
      */
     protected $fillable = [
                   'name',
-                  'slug'
+                  'category_id'
               ];
 
     /**
@@ -64,6 +63,17 @@ class Category extends Model
      */
     protected $casts = [];
     
+    /**
+     * Get the category for this model.
+     */
+    public function category()
+    {
+        return $this->belongsTo('App\Models\Category','category_id');
+    }
+
+    public function getNameAttribute($value){
+        return ucfirst($value);
+    }
 
 
     /**

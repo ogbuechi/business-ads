@@ -7,11 +7,11 @@
     <div class="row">
         <div class="col-12">
             <div class="page-title-box">
-                <h4 class="page-title">Partnerships </h4>
+                <h4 class="page-title">Sub Categories </h4>
                 <ol class="breadcrumb p-0 m-0">
 
                     <li class="breadcrumb-item">
-                        <a href="{{ route('partnerships.partnership.create') }}" class="btn btn-success" title="Create New Partnership">
+                        <a href="{{ route('sub_categories.sub_category.create') }}" class="btn btn-success" title="Create New Sub Category">
                             <span class="fa fa-plus" aria-hidden="true"></span>
                         </a>
                     </li>
@@ -43,9 +43,9 @@
 
 
         <div class="col-md-12">
-            @if(count($partnerships) == 0)
+            @if(count($subCategories) == 0)
             <div class="panel-body text-center">
-                <h4>No Partnerships Available!</h4>
+                <h4>No Sub Categories Available!</h4>
             </div>
             @else
             <div class="card-box table-responsive">
@@ -54,41 +54,35 @@
 
                     <thead>
                     <tr>
-                                                    <th>Name of project</th>
-                            <th>Summary</th>
-                            <th>Type of Partnership Expected</th>
-                            <th>Expected Profit</th>
-                            <th>Project Stage</th>
-                            <th>Company Type</th>
+                                                    <th>Name</th>
+                            <th>Slug</th>
+                            <th>Category</th>
 
                         <th></th>
                     </tr>
                     </thead>
                     <tbody>
-                    @foreach($partnerships as $partnership)
+                    @foreach($subCategories as $subCategory)
                     <tr>
-                                                    <td>{{ $partnership->name }}</td>
-                            <td>{{ $partnership->summary }}</td>
-                            <td>{{ $partnership->partnership }}</td>
-                            <td>{{ $partnership->expected_profit }}</td>
-                            <td>{{ $partnership->project_stage }}</td>
-                            <td>{{ $partnership->company_type }}</td>
+                                                    <td>{{ $subCategory->name }}</td>
+                            <td>{{ $subCategory->slug }}</td>
+                            <td>{{ optional($subCategory->category)->name }}</td>
 
                         <td>
 
-                            <form method="POST" action="{!! route('partnerships.partnership.destroy', $partnership->id) !!}" accept-charset="UTF-8">
+                            <form method="POST" action="{!! route('sub_categories.sub_category.destroy', $subCategory->id) !!}" accept-charset="UTF-8">
                                 <input name="_method" value="DELETE" type="hidden">
                                 {{ csrf_field() }}
 
                                 <div class="btn-group btn-group-xs pull-right" role="group">
-                                    <a href="{{ route('partnerships.partnership.show', $partnership->id ) }}" class="btn btn-info" title="Show Partnership">
+                                    <a href="{{ route('sub_categories.sub_category.show', $subCategory->id ) }}" class="btn btn-info" title="Show Sub Category">
                                         <span class="fa fa-eye" aria-hidden="true"></span>
                                     </a>
-                                    <a href="{{ route('partnerships.partnership.edit', $partnership->id ) }}" class="btn btn-primary" title="Edit Partnership">
+                                    <a href="{{ route('sub_categories.sub_category.edit', $subCategory->id ) }}" class="btn btn-primary" title="Edit Sub Category">
                                         <span class="fa fa-edit" aria-hidden="true"></span>
                                     </a>
 
-                                    <button type="submit" class="btn btn-danger" title="Delete Partnership" onclick="return confirm(&quot;Delete Partnership?&quot;)">
+                                    <button type="submit" class="btn btn-danger" title="Delete Sub Category" onclick="return confirm(&quot;Delete Sub Category?&quot;)">
                                         <span class="fa fa-trash" aria-hidden="true"></span>
                                     </button>
                                 </div>
@@ -105,7 +99,7 @@
             </div>
 
             <div class="panel-footer">
-                {!! $partnerships->render() !!}
+                {!! $subCategories->render() !!}
             </div>
 
             @endif

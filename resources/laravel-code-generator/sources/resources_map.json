@@ -70,5 +70,9 @@
     {
         "model-name": "Message",
         "resource-file": "messages.json"
+    },
+    {
+        "model-name": "SubCategory",
+        "resource-file": "sub_categories.json"
     }
 ]

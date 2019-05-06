@@ -80,8 +80,10 @@
                 </li>
                 <li><a href="{{ route('categories.category.index') }}" class="waves-effect {{ active('categories.category.*') }}"><i class="mdi mdi-calendar-text"></i><span> Categories </span></a></li>
 
+                    <li><a href="{{ route('sub_categories.sub_category.index') }}" class="waves-effect {{ active('sub_categories.sub_category.*') }}"><i class="mdi mdi-view-list"></i><span> Sub Categories </span></a></li>
 
-                <li class="has_sub">
+
+                    <li class="has_sub">
                     <a href="javascript:void(0);" class="waves-effect {{ active(['company_cats.company_cat.*','company_sub_cats.company_sub_cat.*']) }} {{ active(['company_cats.company_cat.*','company_sub_cats.company_sub_cat.*'],'subdrop') }}"><i class="mdi mdi-file"></i><span> Company Cat(s) </span> <span class="menu-arrow"></span></a>
                     <ul class="list-unstyled">
 

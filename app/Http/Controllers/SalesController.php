@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Category;
 use App\Models\SaleBid;
+use App\Models\SubCategory;
 use App\User;
 use App\Models\Sale;
 use Illuminate\Http\Request;
@@ -34,8 +35,9 @@ class SalesController extends Controller
     {
         $users = User::pluck('name','id')->all();
         $categories = Category::all();
-        
-        return view('sales.create', compact('users','categories'));
+        $sub_categories = SubCategory::all();
+
+        return view('sales.create', compact('users','categories','sub_categories'));
     }
 
     /**

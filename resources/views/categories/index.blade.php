@@ -54,9 +54,7 @@
 
                     <thead>
                     <tr>
-                        <th>Name</th>
-                                                    <th>Business Type</th>
-
+                                                    <th>Name</th>
                             <th>Slug</th>
 
                         <th></th>
@@ -65,9 +63,7 @@
                     <tbody>
                     @foreach($categories as $category)
                     <tr>
-                        <td>{{ $category->name }}</td>
-                                                    <td>{{ $category->type }}</td>
-
+                                                    <td>{{ $category->name }}</td>
                             <td>{{ $category->slug }}</td>
 
                         <td>
@@ -124,7 +120,7 @@
 <script src="/plugins/datatables/dataTables.responsive.min.js"></script>
 
 <!-- init -->
-<script src="/admin/assets/pages/jquery.datatables.init.js"></script>
+<script src="/assets/pages/jquery.datatables.init.js"></script>
 <script>
     $(document).ready(function () {
         $('#datatable').dataTable();
