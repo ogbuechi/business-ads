@@ -72,33 +72,7 @@
 
 
                 <div class="">
-                    {{--        <div class="checkbox">--}}
-                    {{--            <label for="business_type_no">--}}
-                    {{--            	<input id="business_type_no" class="required" name="business_type[]" type="checkbox" value="no" {{ in_array('no', old('business_type', optional($invest)->business_type) ?: []) ? 'checked' : '' }}>--}}
-                    {{--                no--}}
-                    {{--            </label>--}}
-                    {{--        </div>--}}
-                    {{--        <div class="checkbox">--}}
-                    {{--            <label for="business_type_yes">--}}
-                    {{--            	<input id="business_type_yes" class="required" name="business_type[]" type="checkbox" value="yes" {{ in_array('yes', old('business_type', optional($invest)->business_type) ?: []) ? 'checked' : '' }}>--}}
-                    {{--                yes--}}
-                    {{--            </label>--}}
-                    {{--        </div>--}}
-
-                    @foreach($categories as $item )
-
-                        {{--            <option value="{{ $item->id }}">{{ $item->name }}</option>--}}
-                        <div class="checkbox checkbox-primary">
-                            <input value="{{ $item->name }}"  name="business_type[]" id="business_type_{{ $item->id }}" type="checkbox" {{ in_array($item->name, old('business_type', optional($invest)->business_type) ?: []) ? 'checked' : '' }}>
-                            <label for="business_type_{{ $item->id }}">
-                                {{ $item->name }}
-                            </label>
-                        </div>
-
-                    @endforeach
-
-
-
+                    @include('partials.admin.categories', ['data' => $invest])
 
                     {!! $errors->first('business_type', '<p class="help-block">:message</p>') !!}
                 </div>

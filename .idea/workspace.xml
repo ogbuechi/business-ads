@@ -3,21 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="7861fb1a-2fb1-484c-8386-186c13a6677e" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/CategoriesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/CategoriesController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/InvestsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/InvestsController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/SalesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/SalesController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Category.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/laravel-code-generator/sources/categories.json" beforeDir="false" afterPath="$PROJECT_DIR$/resources/laravel-code-generator/sources/categories.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/laravel-code-generator/sources/resources_map.json" beforeDir="false" afterPath="$PROJECT_DIR$/resources/laravel-code-generator/sources/resources_map.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/laravel-code-generator/system/migration_tracker.json" beforeDir="false" afterPath="$PROJECT_DIR$/resources/laravel-code-generator/system/migration_tracker.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/categories/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/categories/create.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/categories/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/categories/edit.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/categories/form.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/categories/form.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/categories/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/categories/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/categories/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/categories/show.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/invests/form.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/invests/form.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/partials/admin/sidebar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/partials/admin/sidebar.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/sales/form.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/sales/form.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -45,22 +34,10 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Models/Category.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="115">
-              <caret line="14" selection-start-line="14" selection-end-line="23" selection-end-column="5" />
-              <folding>
-                <element signature="e#30#72#0#PHP" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Models/SubCategory.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="344">
-              <caret line="23" column="5" selection-start-line="23" selection-start-column="5" selection-end-line="23" selection-end-column="5" />
+            <state relative-caret-position="1315">
+              <caret line="74" column="31" selection-start-line="74" selection-start-column="31" selection-end-line="74" selection-end-column="31" />
               <folding>
                 <element signature="e#30#72#0#PHP" expanded="true" />
               </folding>
@@ -89,8 +66,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/invests/form.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-77">
-              <caret line="70" selection-start-line="70" selection-end-line="70" />
+            <state relative-caret-position="22">
+              <caret line="74" column="76" selection-start-line="74" selection-start-column="76" selection-end-line="74" selection-end-column="76" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/InvestsController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="338">
+              <caret line="97" column="89" selection-start-line="97" selection-start-column="89" selection-end-line="97" selection-end-column="89" />
             </state>
           </provider>
         </entry>
@@ -103,22 +89,22 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/sales/form.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="228">
-              <caret line="29" column="49" selection-start-line="29" selection-start-column="24" selection-end-line="29" selection-end-column="49" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/SalesController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="214">
-              <caret line="39" column="80" selection-start-line="39" selection-start-column="80" selection-end-line="39" selection-end-column="80" />
+            <state relative-caret-position="140">
+              <caret line="25" column="60" selection-start-line="25" selection-start-column="60" selection-end-line="25" selection-end-column="60" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/SalesController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="218">
+              <caret line="99" column="85" selection-start-line="99" selection-start-column="85" selection-end-line="99" selection-end-column="85" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/partials/admin/categories.blade.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="154">
@@ -223,7 +209,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/database/migrations/2019_04_25_093807_add_plan_to_users_table.php" />
         <option value="$PROJECT_DIR$/resources/laravel-code-generator/sources/sale_bids.json" />
         <option value="$PROJECT_DIR$/database/migrations/2019_04_25_110529_create_sale_bids_table.php" />
         <option value="$PROJECT_DIR$/resources/views/plans/create.blade.php" />
@@ -268,12 +253,13 @@
         <option value="$PROJECT_DIR$/app/Models/Category.php" />
         <option value="$PROJECT_DIR$/database/migrations/2019_05_06_074810_create_sub_categories_table.php" />
         <option value="$PROJECT_DIR$/routes/web.php" />
-        <option value="$PROJECT_DIR$/app/Models/SubCategory.php" />
         <option value="$PROJECT_DIR$/resources/views/partials/admin/sidebar.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/invests/form.blade.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/SalesController.php" />
-        <option value="$PROJECT_DIR$/resources/views/sales/form.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/partials/admin/categories.blade.php" />
+        <option value="$PROJECT_DIR$/app/Models/SubCategory.php" />
+        <option value="$PROJECT_DIR$/resources/views/sales/form.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/invests/form.blade.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/InvestsController.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/SalesController.php" />
       </list>
     </option>
   </component>
@@ -415,17 +401,6 @@
               <item name="~/Link to htdocs/business_ads" type="442cc68d:ScopeViewTreeModel$RootNode" />
               <item name="app" type="9f88c78c:ScopeViewTreeModel$FileNode" />
               <item name="Models" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-            </path>
-            <path>
-              <item name="business_ads" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="~/Link to htdocs/business_ads" type="442cc68d:ScopeViewTreeModel$RootNode" />
-              <item name="database" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-            </path>
-            <path>
-              <item name="business_ads" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="~/Link to htdocs/business_ads" type="442cc68d:ScopeViewTreeModel$RootNode" />
-              <item name="database" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="migrations" type="9f88c78c:ScopeViewTreeModel$FileNode" />
             </path>
             <path>
               <item name="business_ads" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
@@ -693,12 +668,12 @@
       <workItem from="1556875059917" duration="17192000" />
       <workItem from="1556981179057" duration="578000" />
       <workItem from="1557001325729" duration="5616000" />
-      <workItem from="1557118717018" duration="11686000" />
+      <workItem from="1557118717018" duration="12223000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="435218000" />
+    <option name="totallyTimeSpent" value="435755000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="-4" width="1366" height="772" extended-state="6" />
@@ -730,13 +705,6 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/database/migrations/2019_05_02_094400_create_messages_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="506">
-          <caret line="24" column="5" selection-start-line="24" selection-start-column="5" selection-end-line="24" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/css/app.css">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -1018,16 +986,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Models/SubCategory.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="344">
-          <caret line="23" column="5" selection-start-line="23" selection-start-column="5" selection-end-line="23" selection-end-column="5" />
-          <folding>
-            <element signature="e#30#72#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/database/migrations/2019_05_06_075738_alter_sub_categories_table_1.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="88">
@@ -1059,30 +1017,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/SalesController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="214">
-          <caret line="39" column="80" selection-start-line="39" selection-start-column="80" selection-end-line="39" selection-end-column="80" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/invests/form.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-77">
-          <caret line="70" selection-start-line="70" selection-end-line="70" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/sales/form.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="228">
-          <caret line="29" column="49" selection-start-line="29" selection-start-column="24" selection-end-line="29" selection-end-column="49" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/partnerships/form.blade.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/partials/admin/categories.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="154">
@@ -1090,6 +1024,47 @@
           <folding>
             <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Models/SubCategory.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1315">
+          <caret line="74" column="31" selection-start-line="74" selection-start-column="31" selection-end-line="74" selection-end-column="31" />
+          <folding>
+            <element signature="e#30#72#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/sales/form.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="140">
+          <caret line="25" column="60" selection-start-line="25" selection-start-column="60" selection-end-line="25" selection-end-column="60" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/partnerships/form.blade.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/invests/form.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="22">
+          <caret line="74" column="76" selection-start-line="74" selection-start-column="76" selection-end-line="74" selection-end-column="76" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/InvestsController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="338">
+          <caret line="97" column="89" selection-start-line="97" selection-start-column="89" selection-end-line="97" selection-end-column="89" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/SalesController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="218">
+          <caret line="99" column="85" selection-start-line="99" selection-start-column="85" selection-end-line="99" selection-end-column="85" />
         </state>
       </provider>
     </entry>

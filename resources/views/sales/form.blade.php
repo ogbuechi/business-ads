@@ -25,17 +25,6 @@
 
     @include('partials.admin.categories', ['data' => $sale])
 
-{{--    @foreach($categories as $item )--}}
-
-{{--        <div class="checkbox checkbox-primary">--}}
-{{--            <input value="{{ $item->name }}"  name="business_type[]" id="business_type_{{ $item->id }}" type="checkbox" {{ in_array($item->name, old('business_type', optional($sale)->business_type) ?: []) ? 'checked' : '' }}>--}}
-{{--            <label for="business_type_{{ $item->id }}">--}}
-{{--                {{ $item->name }}--}}
-{{--            </label>--}}
-{{--        </div>--}}
-
-{{--    @endforeach--}}
-
         {!! $errors->first('business_type', '<p class="help-block">:message</p>') !!}
 
 </div>

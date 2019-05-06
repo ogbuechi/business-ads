@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Category;
+use App\Models\SubCategory;
 use App\User;
 use App\Models\Invest;
 use Illuminate\Http\Request;
@@ -34,8 +35,9 @@ class InvestsController extends Controller
         $users = User::pluck('name','id')->all();
 
         $categories = Category::all();
+        $sub_categories = SubCategory::all();
 
-        return view('invests.create', compact('users','categories'));
+        return view('invests.create', compact('users','categories','sub_categories'));
 
     }
 
@@ -91,7 +93,9 @@ class InvestsController extends Controller
         $users = User::pluck('name','id')->all();
         $categories = Category::all();
 
-        return view('invests.edit', compact('invest','users','categories'));
+        $sub_categories = SubCategory::all();
+
+        return view('invests.edit', compact('invest','users','categories','sub_categories'));
 
     }
 

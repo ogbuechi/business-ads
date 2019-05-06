@@ -95,8 +95,9 @@ class SalesController extends Controller
         $sale = Sale::findOrFail($id);
         $users = User::pluck('name','id')->all();
         $categories = Category::all();
+        $sub_categories = SubCategory::all();
 
-        return view('sales.edit', compact('sale','users','categories'));
+        return view('sales.edit', compact('sale','users','categories','sub_categories'));
     }
 
     /**
