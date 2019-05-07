@@ -30,6 +30,8 @@ class Invest extends Model
      */
     protected $table = 'invests';
 
+    protected $appends = ['image','type','summary'];
+
     /**
     * The database primary key value.
     *
@@ -93,6 +95,13 @@ class Invest extends Model
     public function getBusinessTypeAttribute($value)
     {
         return json_decode($value) ?: [];
+    }
+
+    public function getTypeAttribute(){
+        return 'Investors';
+    }
+    public function getSummaryAttribute(){
+        return $this->profile_summary;
     }
 
 

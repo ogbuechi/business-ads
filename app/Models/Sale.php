@@ -19,6 +19,8 @@ class Sale extends Model
      */
     protected $table = 'sales';
 
+    protected $appends = ['type'];
+
     /**
     * The database primary key value.
     *
@@ -68,6 +70,10 @@ class Sale extends Model
     public function user()
     {
         return $this->belongsTo('App\User','user_id');
+    }
+
+    public function getTypeAttribute(){
+        return 'Sales';
     }
 
     /**

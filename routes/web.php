@@ -53,6 +53,7 @@ Route::post('multifileupload', 'HomeController@store')->name('multifileupload');
 //['middleware' => ['role:admin']],
 Route::group([ 'prefix' => 'dashboard','middleware' => ['auth', 'level:1','verified']], function () {
     Route::get('/', 'AdminController@index')->name('admin.home');
+    Route::get('/moderation', 'AdminController@moderation')->name('admin.moderation');
     Route::get('/upgrade_account', 'AdminController@upgrade_account')->name('admin.account.upgrade');
     Route::get('/media', 'AdminController@media')->name('admin.media');
     Route::get('/profile', 'AdminController@profile')->name('admin.profile');
@@ -68,6 +69,14 @@ Route::group([ 'prefix' => 'dashboard','middleware' => ['auth', 'level:1','verif
     Route::get('/publishers', 'UsersController@publishers')->name('publishers.index');
     Route::get('/patient/show/{patient}','UsersController@show')->name('patients.patient.show')->where('id', '[0-9]+');
     Route::get('/edit_profile', 'ProfilesController@editMyProfile')->name('profiles.profile.edit_my_profile');
+
+    Route::get('/invest/under_review', 'InvestsController@awaitingReview')->name('invests.invest.awaiting');
+    Route::get('/partnership/under_review', 'PartnershipsController@awaitingReview')->name('partnerships.partnership.awaiting');
+    Route::get('/sale/under_review', 'SalesController@awaitingReview')->name('sales.sale.awaiting');
+    Route::get('/partnership/my_ads', 'PartnershipsController@myAds')->name('partnerships.partnership.my_ads');
+    Route::get('/invest/my_ads', 'InvestsController@myAds')->name('invests.invest.my_ads');
+    Route::get('/sale/my_ads', 'SalesController@myAds')->name('sales.sale.my_ads');
+
     Route::group(['prefix' => 'profiles',], function () {
     Route::get('/', 'ProfilesController@index')->name('profiles.profile.index');
     Route::get('/create','ProfilesController@create')->name('profiles.profile.create');

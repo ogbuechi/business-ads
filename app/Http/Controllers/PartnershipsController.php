@@ -7,6 +7,7 @@ use App\Models\Partnership;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Exception;
+use Illuminate\Support\Facades\Auth;
 
 class PartnershipsController extends Controller
 {
@@ -16,11 +17,51 @@ class PartnershipsController extends Controller
      *
      * @return Illuminate\View\View
      */
+//    public function index()
+//    {
+//        $partnerships = Partnership::with('user')->paginate(25);
+//
+//        return view('partnerships.index', compact('partnerships'));
+//    }
+
     public function index()
     {
-        $partnerships = Partnership::with('user')->paginate(25);
+        if(Auth::user()->hasRole(['admin','super'])){
+            $partnerships = Partnership::with('user')->orderBy('status','DESC')->paginate(30);
+            $title = 'All Partnerships Ads';
+        }else{
+            $partnerships = Partnership::with('user')
+                ->whereStatus('1')->paginate(20);
+            $title = 'Your Approved Partnerships Ads';
+        }
+        return view('partnerships.index', compact('partnerships','title'));
+    }
+    public function awaitingReview()
+    {
+        if(Auth::user()->hasRole(['admin','super'])){
+            $partnerships = Partnership::with('user')->orderBy('status','ASC')
+                ->whereStatus('0')->paginate(30);
+            $title = 'All Partnerships Ads Awaiting Approval';
+        }else{
+            $partnerships = Partnership::with('user')
+                ->whereStatus('0')
+                ->whereUserId(Auth::id())
+                ->orderBy('status','ASC')->paginate(20);
+            $title = 'Your Partnerships Ads Awaiting Approval';
+        }
 
-        return view('partnerships.index', compact('partnerships'));
+        return view('partnerships.index', compact('partnerships','title'));
+    }
+    public function myAds()
+    {
+
+        $partnerships = Partnership::with('user')
+            ->whereUserId(Auth::id())->paginate(20);
+
+        $title = 'Your Available Business Partnership Ads';
+
+        return view('partnerships.index', compact('partnerships','title'));
+
     }
 
     /**

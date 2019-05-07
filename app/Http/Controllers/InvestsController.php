@@ -9,6 +9,7 @@ use App\Models\Invest;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Exception;
+use Illuminate\Support\Facades\Auth;
 
 class InvestsController extends Controller
 {
@@ -18,18 +19,47 @@ class InvestsController extends Controller
      *
      * @return Illuminate\View\View
      */
+
     public function index()
     {
-        $invests = Invest::with('user')->paginate(25);
+        if(Auth::user()->hasRole(['admin','super'])){
+            $invests = Invest::with('user')->orderBy('status','DESC')->paginate(30);
+            $title = 'All Sales Ads';
+        }else{
+            $invests = Invest::with('user')
+                ->whereStatus('1')->paginate(2);
+            $title = 'Your Approved Sales Ads';
+        }
+        return view('invests.index', compact('invests','title'));
+    }
+    public function awaitingReview()
+    {
+        if(Auth::user()->hasRole(['admin','super'])){
+            $invests = Invest::with('user')->orderBy('status','ASC')
+                ->whereStatus('0')->paginate(30);
+            $title = 'All Sales Ads Awaiting Approval';
+        }else{
+            $invests = Invest::with('user')
+                ->whereStatus('0')
+                ->whereUserId(Auth::id())
+                ->orderBy('status','ASC')->paginate(20);
+            $title = 'Your Sales Ads Awaiting Approval';
+        }
 
-        return view('invests.index', compact('invests'));
+        return view('invests.index', compact('invests','title'));
+    }
+    public function myAds()
+    {
+
+        $invests = Invest::with('user')
+            ->whereUserId(Auth::id())->paginate(20);
+
+        $title = 'Your Available Business Investor Ads';
+
+        return view('invests.index', compact('invests','title'));
+
     }
 
-    /**
-     * Show the form for creating a new invest.
-     *
-     * @return Illuminate\View\View
-     */
     public function create()
     {
         $users = User::pluck('name','id')->all();
@@ -41,13 +71,6 @@ class InvestsController extends Controller
 
     }
 
-    /**
-     * Store a new invest in the storage.
-     *
-     * @param Illuminate\Http\Request $request
-     *
-     * @return Illuminate\Http\RedirectResponse | Illuminate\Routing\Redirector
-     */
     public function store(Request $request)
     {
 //        try {
@@ -57,7 +80,7 @@ class InvestsController extends Controller
             Invest::create($data);
 
             return redirect()->route('invests.invest.index')
-                             ->with('success_message', 'Invest was successfully added!');
+                             ->with('success_message', 'Invest Ads was successfully posted and undergoing review, you will be notified once approved!');
 
 //        } catch (Exception $exception) {
 //
@@ -66,13 +89,6 @@ class InvestsController extends Controller
 //        }
     }
 
-    /**
-     * Display the specified invest.
-     *
-     * @param int $id
-     *
-     * @return Illuminate\View\View
-     */
     public function show($id)
     {
         $invest = Invest::with('user')->findOrFail($id);
@@ -80,13 +96,6 @@ class InvestsController extends Controller
         return view('invests.show', compact('invest'));
     }
 
-    /**
-     * Show the form for editing the specified invest.
-     *
-     * @param int $id
-     *
-     * @return Illuminate\View\View
-     */
     public function edit($id)
     {
         $invest = Invest::findOrFail($id);
@@ -107,6 +116,17 @@ class InvestsController extends Controller
      *
      * @return Illuminate\Http\RedirectResponse | Illuminate\Routing\Redirector
      */
+    public function approveAd($id){
+        $invest = Invest::findOrFail($id);
+        $invest->update([
+            'status'    => true
+            ]
+        );
+
+        return redirect()->back()
+            ->with('success_message', 'Invest Ad successfully approved');
+
+    }
     public function update($id, Request $request)
     {
         try {

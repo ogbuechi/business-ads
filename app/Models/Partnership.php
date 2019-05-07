@@ -19,11 +19,23 @@ class Partnership extends Model
      */
     protected $table = 'partnerships';
 
-    /**
-    * The database primary key value.
-    *
-    * @var string
-    */
+    protected $appends = ['type','business_type '];
+
+    public function getTypeAttribute(){
+        return 'Open Partnership';
+    }
+
+    public function setBusinessTypeAttribute($value)
+    {
+        $this->attributes['business_type'] = json_encode($value);
+    }
+
+    public function getBusinessTypeAttribute(){
+        $type = 'partnership';
+
+        return json_decode($type) ?: [];
+//        return $type;
+    }
     protected $primaryKey = 'id';
 
     /**

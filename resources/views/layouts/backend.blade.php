@@ -57,6 +57,28 @@
             /*resize: none;*/
             display: block;
         }
+        .property-card.property-horizontal .property-content .listingInfo {
+            padding-bottom: 50px;
+        }
+        .property-card.property-horizontal .property-content {
+            width: 100%;
+            height: 100%;
+        }
+        @media (max-width: 419px){
+            .page-title-box .breadcrumb {
+                display: flex;
+            }
+            .page-title-box .page-title {
+                margin-bottom: 15px;
+            }
+            .property-card.property-horizontal .property-content .listingInfo {
+                padding-bottom: 50px;
+            }
+            .property-card.property-horizontal .property-content {
+                width: 100%;
+                 height: 100%;
+            }
+        }
         .dropzone .dz-default.dz-message span {
             display: block;
             margin-top: 145px;

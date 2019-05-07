@@ -7,9 +7,21 @@
             <div class="row">
                 <div class="col-12">
                     <div class="page-title-box">
-                        <h4 class="page-title">Your Business 2 Business invests Ads</h4>
+                        <h4 class="page-title">{{ $title }}</h4>
                         <ol class="breadcrumb p-0 m-0">
 
+                            <li class="breadcrumb-item">
+                                <a href="{{ route('invests.invest.awaiting') }}" class="btn  btn-success" title="Create New invest">
+{{--                                    <span class="fa fa-eye" aria-hidden="true"></span>--}}
+                                    Awaiting Reviews
+                                </a>
+                            </li>
+                            <li class="breadcrumb-item">
+                                <a href="{{ route('invests.invest.my_ads') }}" class="btn  btn-success" title="Create New invest">
+{{--                                    <span class="fa fa-list" aria-hidden="true"></span> --}}
+                                    My Ads
+                                </a>
+                            </li>
                             <li class="breadcrumb-item">
                                 <a href="{{ route('invests.invest.create') }}" class="btn btn-success" title="Create New invest">
                                     <span class="fa fa-plus" aria-hidden="true"></span>
@@ -20,6 +32,7 @@
                     </div>
                 </div>
             </div>
+
 
 
 
@@ -47,17 +60,19 @@
                         </div>
                     </div>
                 @else
-                    <div class="col-lg-8">
+                    <div class="col-lg-12">
+                            <div class="row">
                         @foreach($invests as $invest)
-                            <div class="property-card property-horizontal bg-white">
+                                    <div class="col-sm-6">
+                            <div class="property-card property-horizontal bg-white" style="border: {{ !$invest->status ? '1px solid red' : '' }}">
                                 <div class="row">
-                                    <div class="col-sm-4">
+                                    <div class="col-sm-6">
                                         <div class="property-image" style="background: url('{{ $invest->image }}') center center / cover no-repeat;">
                                             <span class="property-label badge badge-danger">{{ $invest->listed }}</span>
                                         </div>
                                     </div>
                                     <!-- /col 4 -->
-                                    <div class="col-sm-8">
+                                    <div class="col-sm-6">
                                         <div class="property-content">
                                             <div class="listingInfo">
                                                 <div class="">
@@ -97,7 +112,9 @@
                                 </div>
                                 <!-- /inner row -->
                             </div>
-                    @endforeach
+                                    </div>
+                                        @endforeach
+                            </div>
                     <!-- End property item -->
 
                             <div>

@@ -30,7 +30,7 @@
                     <div class="card-box widget-box-one">
                         <i class="mdi mdi-chart-areaspline widget-one-icon"></i>
                         <div class="wigdet-one-content">
-                            <p class="m-0 text-uppercase font-600 font-secondary text-overflow" title="Active Business Investors Ads">Active Business Investors Ads</p>
+                            <p class="m-0 text-uppercase font-600 font-secondary text-overflow" title="Total Business Investors Ads">Total Business Investors Ads</p>
                             <h2>{{ $count['invest'] }} <small><i class="mdi mdi-arrow-up text-success"></i></small></h2>
                             @if ($count['invest'] > 1)
                                 <p class="text-muted m-0"><b><a href="{{ route('invests.invest.index') }}">View Ads</a> </b> </p>
@@ -45,7 +45,7 @@
                     <div class="card-box widget-box-one">
                         <i class="mdi mdi-account-convert widget-one-icon"></i>
                         <div class="wigdet-one-content">
-                            <p class="m-0 text-uppercase font-600 font-secondary text-overflow" title="Your Active Open Partnership Ads">Your Active Open Partnership Ads</p>
+                            <p class="m-0 text-uppercase font-600 font-secondary text-overflow" title="Your Total Open Partnership Ads">Your Total Open Partnership Ads</p>
                             <h2> {{ $count['partnership'] }}<small><i class="mdi mdi-arrow-right text-success"></i></small></h2>
                             @if ($count['partnership'] > 1)
                                 <p class="text-muted m-0"><b><a href="{{ route('partnerships.partnership.index') }}">View Ads</a> </b> </p>
@@ -60,7 +60,7 @@
                     <div class="card-box widget-box-one">
                         <i class="mdi mdi-layers widget-one-icon"></i>
                         <div class="wigdet-one-content">
-                            <p class="m-0 text-uppercase font-600 font-secondary text-overflow" title="Your Active Sales Ads">Your Active Business Sales Ads</p>
+                            <p class="m-0 text-uppercase font-600 font-secondary text-overflow" title="Your Total Sales Ads">Your Total Business Sales Ads</p>
                             <h2>{{ $count['sales'] }}<small><i class="mdi mdi-arrow-up text-success"></i></small></h2>
                             @if ($count['sales'] > 1)
                                 <p class="text-muted m-0"><b><a href="{{ route('sales.sale.index') }}">View Ads</a> </b> </p>
@@ -82,27 +82,23 @@
 
                 <div class="col-xl-12">
                     <div class="card-box">
-                        <h4 class="header-title m-t-0 m-b-30">All Active Ads
+                        <h4 class="header-title m-t-0 m-b-30">Ads Under Moderation
 
-                        <ol style="float: right" class="breadcrumb p-0 m-0">
+                            <ol style="float: right" class="breadcrumb p-0 m-0">
 
-                            <li class="breadcrumb-item">
-                                <a href="{{ route('admin.moderation') }}" class="btn  btn-success" title="Moderation">
-                                    Moderation
-                                </a>
-                            </li>
-                            <li class="breadcrumb-item">
-                                <a href="" class="btn  btn-success" title="list view">
-                                    {{--                                    <span class="fa fa-list" aria-hidden="true"></span> --}}
-                                    List View
-                                </a>
-                            </li>
-{{--                            <li class="breadcrumb-item">--}}
-{{--                                <a href="{{ route('invests.invest.create') }}" class="btn btn-success" title="Create New invest">--}}
-{{--                                    <span class="fa fa-plus" aria-hidden="true"></span>--}}
-{{--                                </a>--}}
-{{--                            </li>--}}
-                        </ol>
+                                <li class="breadcrumb-item">
+                                    <a href="{{ route('admin.home') }}" class="btn  btn-success" title="Moderation">
+                                        Active Ads
+                                    </a>
+                                </li>
+                                <li class="breadcrumb-item">
+                                    <a href="" class="btn  btn-success" title="Create New invest">
+                                        {{--                                    <span class="fa fa-list" aria-hidden="true"></span> --}}
+                                        List View
+                                    </a>
+                                </li>
+
+                            </ol>
 
                         </h4>
 
@@ -113,7 +109,7 @@
                                         <div class="row">
                                             <div class="col-sm-6">
                                                 <div class="property-image" style="background: url('{{ $sale['image'] }}') center center / cover no-repeat;">
-{{--                                                    <span class="property-label badge badge-danger">{{ $sale->listed }}</span>--}}
+                                                    {{--                                                    <span class="property-label badge badge-danger">{{ $sale->listed }}</span>--}}
                                                 </div>
                                             </div>
                                             <!-- /col 4 -->
@@ -121,13 +117,13 @@
                                                 <div class="property-content">
                                                     <div class="listingInfo">
                                                         <div class="">
-{{--                                                            <h4 class="text-success m-t-0">N{{ $sale['value'] }}</h4>--}}
+                                                            {{--                                                            <h4 class="text-success m-t-0">N{{ $sale['value'] }}</h4>--}}
                                                         </div>
                                                         <div class="">
                                                             <h4><a href="#" class="text-dark">
                                                                     @if($sale['type'] == 'Investors')
-                                                                    {{ $sale['brand_name'] }}
-                                                                        @else
+                                                                        {{ $sale['brand_name'] }}
+                                                                    @else
                                                                         {{ $sale['name'] }}
                                                                     @endif
                                                                 </a></h4>
@@ -135,8 +131,8 @@
 
                                                             @if ($sale['type'] != 'Open Partnership')
                                                                 {{ implode('/ ', $sale['business_type']) }}
-                                                                {{--                                                            @else--}}
-                                                                {{--                                                                {{ implode('/ ', $sale['business_type']) }}--}}
+{{--                                                            @else--}}
+{{--                                                                {{ implode('/ ', $sale['business_type']) }}--}}
                                                             @endif
                                                         </div>
 
@@ -177,22 +173,22 @@
 {{--                                </tr>--}}
 {{--                                </thead>--}}
 {{--                                <tbody>--}}
-{{--                                @foreach($invests as $invest)--}}
-{{--                                <tr>--}}
-{{--                                    <th>--}}
-{{--                                        <img src="https://via.placeholder.com/100x50.png?text=B2B Invest" alt="{{ $invest->brand_name }}" class="thumb-sm" />--}}
-{{--                                    </th>--}}
-{{--                                    <td>--}}
-{{--                                        <h5 class="m-0">{{ $invest->brand_name }}</h5>--}}
+{{--                                --}}{{--                                @foreach($invests as $invest)--}}
+{{--                                --}}{{--                                <tr>--}}
+{{--                                --}}{{--                                    <th>--}}
+{{--                                --}}{{--                                        <img src="https://via.placeholder.com/100x50.png?text=B2B Invest" alt="{{ $invest->brand_name }}" class="thumb-sm" />--}}
+{{--                                --}}{{--                                    </th>--}}
+{{--                                --}}{{--                                    <td>--}}
+{{--                                --}}{{--                                        <h5 class="m-0">{{ $invest->brand_name }}</h5>--}}
 
-{{--                                        <p class="m-0 text-muted font-13"><small>Web designer</small></p>--}}
-{{--                                    </td>--}}
-{{--                                    <td>{{ optional($invest->user)->name }}</td>--}}
-{{--                                    <td>{{ implode('; ', $invest->business_type) }}</td>--}}
-{{--                                    <td>{{ $invest->maximum_capital }}</td>--}}
-{{--                                    <td>{{ $invest->created_at }}</td>--}}
-{{--                                </tr>--}}
-{{--                                @endforeach--}}
+{{--                                --}}{{--                                        <p class="m-0 text-muted font-13"><small>Web designer</small></p>--}}
+{{--                                --}}{{--                                    </td>--}}
+{{--                                --}}{{--                                    <td>{{ optional($invest->user)->name }}</td>--}}
+{{--                                --}}{{--                                    <td>{{ implode('; ', $invest->business_type) }}</td>--}}
+{{--                                --}}{{--                                    <td>{{ $invest->maximum_capital }}</td>--}}
+{{--                                --}}{{--                                    <td>{{ $invest->created_at }}</td>--}}
+{{--                                --}}{{--                                </tr>--}}
+{{--                                --}}{{--                                @endforeach--}}
 
 {{--                                </tbody>--}}
 {{--                            </table>--}}

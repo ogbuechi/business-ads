@@ -10,6 +10,7 @@ use App\Models\Sale;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Exception;
+use Illuminate\Support\Facades\Auth;
 
 class SalesController extends Controller
 {
@@ -19,11 +20,45 @@ class SalesController extends Controller
      *
      * @return Illuminate\View\View
      */
+
     public function index()
     {
-        $sales = Sale::with('user')->paginate(30);
+        if(Auth::user()->hasRole(['admin','super'])){
+            $sales = Sale::with('user')->orderBy('status','DESC')->paginate(30);
+            $title = 'All Sales Ads';
+        }else{
+            $sales = Sale::with('user')
+                ->whereStatus('1')->paginate(2);
+            $title = 'Your Approved Sales Ads';
+        }
+        return view('sales.index', compact('sales','title'));
+    }
+    public function awaitingReview()
+    {
+        if(Auth::user()->hasRole(['admin','super'])){
+            $sales = Sale::with('user')->orderBy('status','ASC')
+                ->whereStatus('0')->paginate(30);
+            $title = 'All Sales Ads Awaiting Approval';
+        }else{
+            $sales = Sale::with('user')
+                ->whereStatus('0')
+                ->whereUserId(Auth::id())
+                ->orderBy('status','ASC')->paginate(20);
+            $title = 'Your Sales Ads Awaiting Approval';
+        }
 
-        return view('sales.index', compact('sales'));
+        return view('sales.index', compact('sales','title'));
+    }
+    public function myAds()
+    {
+
+        $sales = Sale::with('user')
+            ->whereUserId(Auth::id())->paginate(20);
+
+        $title = 'Your Available Business Sale Ads';
+
+        return view('sales.index', compact('sales','title'));
+
     }
 
     /**
