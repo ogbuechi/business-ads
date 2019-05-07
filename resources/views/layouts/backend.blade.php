@@ -522,6 +522,7 @@
     $(document).ready(function () {
         $("#showPost").click(function () {
             $("#post").toggle("slow");
+            $("#noAd").toggle("slow");
         });
     });
 </script>

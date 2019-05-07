@@ -27,7 +27,7 @@
             <!-- end row -->
 
             @if(count($ads) < 1)
-            <div class="row">
+            <div id="noAd" class="row">
                 <div class="col-xl-4 col-lg-4"></div>
                 <div class="col-xl-4 col-lg-4">
                     <div class="card-box widget-box-one">
