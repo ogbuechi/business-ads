@@ -25,7 +25,7 @@ class AdminController extends Controller
     }
         $users = User::with('roles')->paginate(10);
         $invests = Invest::with('user')->orderBy('id','desc')->paginate(10);
-        if(Auth::user()->roles->first()->level < 15){
+        if(Auth::user()->roles->first()->level < 5){
             $sales = Sale::with('user')
                 ->whereStatus('1')
                 ->whereUserId(Auth::id())
