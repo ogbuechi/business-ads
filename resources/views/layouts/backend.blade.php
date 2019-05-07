@@ -11,6 +11,7 @@
     <!-- App title -->
     <title>GloSeed - Business Ads</title>
 
+    <link href="/plugins/custombox/css/custombox.min.css" rel="stylesheet">
     <!--Morris Chart CSS -->
     <link rel="stylesheet" href="/plugins/morris/morris.css">
 
@@ -252,6 +253,8 @@
 
     @yield('extra')
 
+
+
     <!-- Right Sidebar -->
         <div class="side-bar right-bar">
             <a href="javascript:void(0);" class="right-bar-toggle">
@@ -315,6 +318,54 @@
     var resizefunc = [];
 </script>
 
+<div id="custom-modal" class="modal-demo">
+    <button type="button" class="close" onclick="Custombox.close();">
+        <span>&times;</span><span class="sr-only">Close</span>
+    </button>
+    <h4 class="custom-modal-title">Post Ads</h4>
+    <div class="custom-modal-text">
+        <div class="row">
+
+            <div class="col-xl-4 col-lg-4 col-sm-6">
+                <div class="card-box widget-box-one">
+                    <i class="mdi mdi-chart-areaspline widget-one-icon"></i>
+                    <div class="wigdet-one-content">
+                        <p class="m-0 text-uppercase font-600 font-secondary text-overflow" title="Active Business Investors Ads">Business Investors Ads</p>
+{{--                        <h2>{{ $count['invest'] }} <small><i class="mdi mdi-arrow-up text-success"></i></small></h2>--}}
+                        <i class="fa fa-plus fa-2x"></i><br>
+                            <p class="text-muted m-0"><b><a href="{{ route('invests.invest.create') }}">Post Ad</a> </b> </p>
+                    </div>
+                </div>
+            </div><!-- end col -->
+
+            <div class="col-xl-4 col-lg-4 col-sm-6">
+                <div class="card-box widget-box-one">
+                    <i class="mdi mdi-account-convert widget-one-icon"></i>
+                    <div class="wigdet-one-content">
+                        <p class="m-0 text-uppercase font-600 font-secondary text-overflow" title="Your Active Open Partnership Ads">Open Partnership Ads</p>
+                        <i class="fa fa-plus fa-2x"></i><br>
+                            <p class="text-muted m-0"><b><a href="{{ route('partnerships.partnership.create') }}">Post Ad</a> </b> </p>
+
+                    </div>
+                </div>
+            </div><!-- end col -->
+
+            <div class="col-xl-4 col-lg-4 col-sm-6">
+                <div class="card-box widget-box-one">
+                    <i class="mdi mdi-layers widget-one-icon"></i>
+                    <div class="wigdet-one-content">
+                        <p class="m-0 text-uppercase font-600 font-secondary text-overflow" title="Your Active Sales Ads"> Business Sales Ads</p>
+                        <i class="fa fa-plus fa-2x"></i><br>
+                        <p class="text-muted m-0"><b><a href="{{ route('sales.sale.create') }}">Post Ad</a> </b> </p>
+                    </div>
+                </div>
+            </div><!-- end col -->
+
+
+        </div>
+    </div>
+</div>
+
 <!-- jQuery  -->
 <script src="/admin/assets/js/jquery.min.js"></script>
 
@@ -329,6 +380,9 @@
 <script src="/admin/assets/js/jquery.scrollTo.min.js"></script>
 
 <script src="/plugins/switchery/switchery.min.js"></script>
+
+<script src="/plugins/custombox/js/custombox.min.js"></script>
+<script src="/plugins/custombox/js/legacy.min.js"></script>
 
 {{--<!-- Counter js  -->--}}
 {{--<script src="../plugins/waypoints/jquery.waypoints.min.js"></script>--}}
@@ -464,6 +518,13 @@
 <script src="/admin/assets/js/jquery.core.js"></script>
 <script src="/admin/assets/js/jquery.app.js"></script>
 
+<script>
+    $(document).ready(function () {
+        $("#showPost").click(function () {
+            $("#post").toggle("slow");
+        });
+    });
+</script>
 
 
 

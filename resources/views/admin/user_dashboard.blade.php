@@ -6,7 +6,9 @@
             <div class="row">
                 <div class="col-12">
                     <div class="page-title-box">
-                        <h4 class="page-title">Dashboard</h4>
+                        <h4 class="page-title">Dashboard
+                        <button id="showPost" class="btn btn-success btm-sm">Post Ad</button>
+                        </h4>
                         <ol class="breadcrumb p-0 m-0">
                             <li class="breadcrumb-item">
                                 <a href="#">Gloseed Admin</a>
@@ -23,6 +25,56 @@
                 </div>
             </div>
             <!-- end row -->
+
+            @if(count($ads) < 1)
+            <div class="row">
+                <div class="col-xl-4 col-lg-4"></div>
+                <div class="col-xl-4 col-lg-4">
+                    <div class="card-box widget-box-one">
+                        <i class="mdi mdi-chart-areaspline widget-one-icon"></i>
+                        <div class="wigdet-one-content">
+                            <p class="m-0 text-uppercase font-600 font-secondary text-overflow" title="Post Ad">You Dont Have Any Active Ads Yet</p>
+                            <div class="text-center m-t-30">
+                                <i class="fa fa-plus fa-2x"></i><br>
+                                <a href="#custom-modal" class="m-t-5 btn btn-primary waves-effect waves-light m-r-5 m-b-10" data-animation="door" data-plugin="custommodal"
+                                   data-overlaySpeed="100" data-overlayColor="#36404a">Post New Ad</a>
+                            </div>
+
+{{--                            <h2>{{ $count['invest'] }} <small><i class="mdi mdi-arrow-up text-success"></i></small></h2>--}}
+{{--                            @if ($count['invest'] > 1)--}}
+{{--                                <p class="text-muted m-0"><b><a href="{{ route('invests.invest.index') }}">View Ads</a> </b> </p>--}}
+{{--                            @else--}}
+{{--                                <p class="text-muted m-0"><b><a href="{{ route('invests.invest.create') }}">Post Your First Ad</a> </b> </p>--}}
+{{--                            @endif--}}
+                        </div>
+                    </div>
+                </div><!-- end col -->
+            </div>
+            @endif
+
+            <div id="post" style="display: none" class="row">
+                <div class="col-xl-4 col-lg-4"></div>
+                <div class="col-xl-4 col-lg-4">
+                    <div class="card-box widget-box-one">
+                        <i class="mdi mdi-chart-areaspline widget-one-icon"></i>
+                        <div class="wigdet-one-content">
+                            <p class="m-0 text-uppercase font-600 font-secondary text-overflow" title="Post Ad">You Dont Have Any Active Ads Yet</p>
+                            <div class="text-center m-t-30">
+                                <i class="fa fa-plus fa-2x"></i><br>
+                                <a href="#custom-modal" class="m-t-5 btn btn-primary waves-effect waves-light m-r-5 m-b-10" data-animation="door" data-plugin="custommodal"
+                                   data-overlaySpeed="100" data-overlayColor="#36404a">Post New Ad</a>
+                            </div>
+
+                            {{--                            <h2>{{ $count['invest'] }} <small><i class="mdi mdi-arrow-up text-success"></i></small></h2>--}}
+                            {{--                            @if ($count['invest'] > 1)--}}
+                            {{--                                <p class="text-muted m-0"><b><a href="{{ route('invests.invest.index') }}">View Ads</a> </b> </p>--}}
+                            {{--                            @else--}}
+                            {{--                                <p class="text-muted m-0"><b><a href="{{ route('invests.invest.create') }}">Post Your First Ad</a> </b> </p>--}}
+                            {{--                            @endif--}}
+                        </div>
+                    </div>
+                </div><!-- end col -->
+            </div>
 
             <div class="row">
 
