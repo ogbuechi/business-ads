@@ -1,4 +1,4 @@
-@extends('layouts.front-end')
+@extends('layouts.master')
 <!-- Start full screen top nav-->
 @section('content')
     <div data-image="img/bg1.jpg" class="fullscreen-topnav rotate background-image">
