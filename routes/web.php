@@ -28,6 +28,10 @@ Route::get('/b2b_invests', function () {
     return view('b2b_invests');
 });
 
+Route::get('/business_investors', 'HomeController@investors')->name('business.investors');
+Route::get('/business_sales', 'HomeController@sales')->name('business.sales');
+Route::get('/business_partnerships', 'HomeController@partnerships')->name('business.partnerships');
+
 Route::get('/contact', function () {
     return view('contact-us');
 });
@@ -43,6 +47,9 @@ Auth::routes();
 
 Route::get('/', 'HomeController@index')->name('home');
 Route::get('/home', 'HomeController@index')->name('home');
+Route::group([ 'prefix' => 'api/v1'], function () {
+    Route::get('/featured', 'HomeController@featured')->name('featured');
+});
 
 
 //

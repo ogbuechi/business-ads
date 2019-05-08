@@ -1,129 +1,152 @@
-@extends('layouts.front-end')
+@extends('layouts.master')
 <!-- Start full screen top nav-->
-@section('content')
-    <div class="breadcrumbs">
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-12">
-                    <ul>
-                        <li><a href="/">Home</a></li>
 
-                        <li class="active">Business To Business Investment Ads</li>
-                    </ul><!-- end breadcrumb -->
-                </div><!-- end col -->
-            </div><!-- end row -->
-        </div><!-- end container -->
-    </div>
-    <section class="section white-backgorund">
+
+@section('content')
+    <div class="page-header" style="background: url(assets/img/banner1.jpg);">
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
-                    <div class="col-md-4">
-                        <div class="thumbnail blog">
-                            <div class="header">
-                                <figure class="height:250px">
-                                    <img height="200" src="https://via.placeholder.com/350x200.png?text=Business To Business Investment" alt="">
-                                </figure>
-                                <div class="meta">
-                                    <span><i class="fa fa-calendar mr-5"></i>Oct 25, 2016</span>
-                                    <span><i class="fa fa-comment mr-5"></i>(15)</span>
-                                    <span><i class="fa fa-heart mr-5"></i>(35)</span>
-                                </div>
+                    <div class="breadcrumb-wrapper">
+                        <h2 class="product-title">Business Investors Listings</h2>
+                        <ol class="breadcrumb">
+                            <li><a href="{{ route('home') }}">Home /</a></li>
+                            <li class="current">Business Investors Listings</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="main-container section-padding">
+        <div class="container">
+            <div class="row">
+
+                @include('partials.sidebar')
+
+
+                @if(count($invests) < 1)
+                    <div class="col-lg-9 col-md-12 col-xs-12 page-content">
+                        <div class="adds-wrapper jumbotron text-center">
+                            <div class="tab-content">
+                                <h3>No Business Investors Ads Available</h3>
                             </div>
-                            <div class="caption">
-                                <h6><a href="blog-article-v1.html">Care & Clean Instructions</a></h6>
-                                <div class="author-category">
-                                            <span class="author mr-20">
-                                                <i class="fa fa-user mr-5"></i><a href="javascript:void(0);">Joe Doe</a>
-                                            </span>
-                                    <span class="category">
-                                                <a href="javascript:void(0);">Post Formats</a>
-                                            </span>
-                                </div>
-                                <p>Aenean semper lacus sed molestie sollicitudin. In semper, tellus id posuere interdum, est justo faucibus quam, sed eleifend arcu nulla id eros.</p>
-                                <a href="blog-article-v1.html" class="btn btn-default semi-circle btn-sm">Read more</a>
-                            </div><!-- end caption -->
                         </div>
                     </div>
-                    <div class="col-md-4">
-                        <div class="thumbnail blog">
-                            <div class="header">
-                                <figure class="height:250px">
-                                    <img height="200" src="https://via.placeholder.com/350x200.png?text=Business To Business Investment" alt="">
-                                </figure>
-                                <div class="meta">
-                                    <span><i class="fa fa-calendar mr-5"></i>Oct 25, 2016</span>
-                                    <span><i class="fa fa-comment mr-5"></i>(15)</span>
-                                    <span><i class="fa fa-heart mr-5"></i>(35)</span>
+                    @else
+                <div class="col-lg-9 col-md-12 col-xs-12 page-content">
+
+                    <div class="product-filter">
+                        <div class="short-name">
+                            <span>Showing (1 - {{ count($invests) }} Investors Ads of {{ $count }} Investors Ads)</span>
+                        </div>
+
+                        <ul class="nav nav-tabs">
+                            <li class="nav-item">
+                                <a class="nav-link active" data-toggle="tab" href="#grid-view"><i class="lni-grid"></i></a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" data-toggle="tab" href="#list-view"><i class="lni-list"></i></a>
+                            </li>
+                        </ul>
+                    </div>
+
+
+                    <div class="adds-wrapper">
+                        <div class="tab-content">
+                            <div id="grid-view" class="tab-pane fade active show">
+                                <div class="row">
+                                    @foreach($invests as $item)
+                                    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                                        <div class="featured-box">
+                                            <figure>
+                                                <div class="icon">
+                                                    @if($item->featured)
+                                                        <i class="">Featured</i>
+                                                        @endif
+
+                                                </div>
+                                                <a href="#"><img class="img-fluid" src="{{ $item->image }}" alt=""></a>
+                                            </figure>
+                                            <div class="feature-content">
+                                                <div class="product">
+                                                    <a href="#"><i class="lni-user"></i>{{ $item->user->name }} </a>
+                                                </div>
+                                                <h4><a href="ads-details.html">{{ $item->name }}</a></h4>
+                                                <span>Last Updated: {{ $item->created_at->diffForhumans() }}</span>
+                                                <ul class="address">
+                                                    @foreach($item->business_type as $key)
+                                                        <li>
+                                                            <i class="mdi mdi-check-circle-outline text-success m-r-5"></i>
+                                                            {{ $key }}
+                                                        </li>
+                                                    @endforeach
+
+                                                </ul>
+                                                <div class="listing-bottom">
+                                                    <h5 class=" float-left">{{ $item->amount }}</h5>
+{{--                                                    <a href="account-myads.html" class="btn-verified float-right"><i class="lni-check-box"></i> Verified Ad</a>--}}
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    @endforeach
                                 </div>
                             </div>
-                            <div class="caption">
-                                <h6><a href="blog-article-v1.html">Care & Clean Instructions</a></h6>
-                                <div class="author-category">
-                                            <span class="author mr-20">
-                                                <i class="fa fa-user mr-5"></i><a href="javascript:void(0);">Joe Doe</a>
-                                            </span>
-                                    <span class="category">
-                                                <a href="javascript:void(0);">Post Formats</a>
-                                            </span>
+                            <div id="list-view" class="tab-pane fade">
+                                <div class="row">
+                                    @foreach($invests as $item)
+                                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                                        <div class="featured-box">
+                                            <figure>
+                                                <div class="icon">
+                                                    @if($item->featured)
+                                                        <i class="">Featured</i>
+                                                    @endif
+                                                </div>
+                                                <a href="#"><img class="img-fluid" src="{{ $item->image }}" alt="{{ $item->name }}"></a>
+                                            </figure>
+                                            <div class="feature-content">
+                                                <div class="product">
+                                                    <a href="#"><i class="lni-folder"></i> Apple</a>
+                                                </div>
+                                                <h4><a href="ads-details.html">{{ $item->name }}</a></h4>
+                                                <span>Last Updated: {{ $item->created_at->diffForhumans() }}</span>
+                                                <ul class="address">
+                                                    @foreach($item->business_type as $key)
+                                                        <li>
+                                                            <i class="lni-package"></i>
+                                                            {{ $key }}
+                                                        </li>
+                                                    @endforeach
+
+                                                </ul>
+                                                <div class="listing-bottom">
+                                                    <h3 class="price float-left">{{ $item->amount }}</h3>
+{{--                                                    <a href="account-myads.html" class="btn-verified float-right"><i class="lni-check-box"></i> Verified Ad</a>--}}
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    @endforeach
                                 </div>
-                                <p>Aenean semper lacus sed molestie sollicitudin. In semper, tellus id posuere interdum, est justo faucibus quam, sed eleifend arcu nulla id eros.</p>
-                                <a href="blog-article-v1.html" class="btn btn-default semi-circle btn-sm">Read more</a>
-                            </div><!-- end caption -->
+                            </div>
                         </div>
                     </div>
-                    <div class="col-md-4">
-                        <div class="thumbnail blog">
-                            <div class="header">
-                                <figure class="height:250px">
-                                    <img height="200" src="https://via.placeholder.com/350x200.png?text=Business To Business Investment" alt="">
-                                </figure>
-                                <div class="meta">
-                                    <span><i class="fa fa-calendar mr-5"></i>Oct 25, 2016</span>
-                                    <span><i class="fa fa-comment mr-5"></i>(15)</span>
-                                    <span><i class="fa fa-heart mr-5"></i>(35)</span>
-                                </div>
-                            </div>
-                            <div class="caption">
-                                <h6><a href="blog-article-v1.html">Care & Clean Instructions</a></h6>
-                                <div class="author-category">
-                                            <span class="author mr-20">
-                                                <i class="fa fa-user mr-5"></i><a href="javascript:void(0);">Joe Doe</a>
-                                            </span>
-                                    <span class="category">
-                                                <a href="javascript:void(0);">Post Formats</a>
-                                            </span>
-                                </div>
-                                <p>Aenean semper lacus sed molestie sollicitudin. In semper, tellus id posuere interdum, est justo faucibus quam, sed eleifend arcu nulla id eros.</p>
-                                <a href="blog-article-v1.html" class="btn btn-default semi-circle btn-sm">Read more</a>
-                            </div><!-- end caption -->
-                        </div>
+
+
+                    <div class="pagination-bar text-center">
+                        {!! $invests->render() !!}
                     </div>
 
                 </div>
-
+                    @endif
             </div>
         </div>
-    </section>
-
-    <section class="primary-background">
-        <div class="container">
-            <div class="box-banner-wide primary-background">
-                <div class="row">
-                    <div class="col-sm-4 vertical-align">
-                        <h2 class="alt-font text-uppercase text-white">
-                            Free <span class="regular">Delivery days!</span>
-                        </h2>
-                    </div><!-- end col -->
-                    <div class="col-sm-4 vertical-align">
-                        <p class="mt-20">Typi non habent claritatem insitam, est usus legentis in iis qui facit eorum claritatem.</p>
-                    </div><!-- end col -->
-                    <div class="col-sm-4 vertical-align text-right">
-                        <a target="_blank" href="https://wrapbootstrap.com/theme/plus-responsive-e-commerce-template-WB0R2CN86" class="btn btn-light semi-circle btn-md">Purchase</a>
-                    </div><!-- end col -->
-                </div><!-- end row -->
-            </div><!-- end box-banner-wide -->
-        </div><!-- end container -->
-    </section>
+        @include('partials.featured_ads', ['data' => $invests])
+    </div>
 @stop
+
 

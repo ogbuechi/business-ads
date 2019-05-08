@@ -19,7 +19,7 @@ class Sale extends Model
      */
     protected $table = 'sales';
 
-    protected $appends = ['type'];
+    protected $appends = ['type','short_desc','amount'];
 
     /**
     * The database primary key value.
@@ -63,6 +63,14 @@ class Sale extends Model
      * @var array
      */
     protected $casts = [];
+
+    public function getShortDescAttribute(){
+        return substr($this->summary,0,random_int(60,150))."...";
+    }
+
+    public function getAmountAttribute(){
+        return 'Value: ₦'.$this->value;
+    }
     
     /**
      * Get the user for this model.

@@ -1,526 +1,367 @@
-@extends('layouts.front-end')
+@extends('layouts.master')
 
 @section('content')
 
-    <!-- start section -->
-    <section class="section light-backgorund">
+    <section class="categories-icon section-padding bg-drack">
         <div class="container">
             <div class="row">
-                <div class="col-sm-4 col-md-3">
-                    <div class="navbar-vertical">
-                        <ul class="nav nav-stacked">
-                            <li class="header">
-                                <h6 class="text-uppercase">Categories <i class="fa fa-navicon pull-right"></i></h6>
-                            </li>
-                            @foreach($categories as $item)
-                                <li><a class="" href="#">{{ $item->name }}</a></li>
-                            @endforeach
-                        </ul>
-                    </div><!-- end navbar-vertical -->
-                </div><!-- end col -->
-                <div class="col-sm-8 col-md-9">
-                    <div class="owl-carousel slider owl-theme">
-                        <div class="item">
-                            <figure>
-                                <a href="javascript:void(0);">
-                                    <img src="img/slider/slider_10.jpg" alt=""/>
-                                </a>
-                            </figure>
-                        </div><!-- end item -->
-                        <div class="item">
-                            <figure>
-                                <a href="javascript:void(0);">
-                                    <img src="img/slider/slider_09.jpg" alt=""/>
-                                </a>
-                            </figure>
-                        </div><!-- end item -->
-                        <div class="item">
-                            <figure>
-                                <a href="javascript:void(0);">
-                                    <img src="img/slider/slider_08.jpg" alt=""/>
-                                </a>
-                            </figure>
-                        </div><!-- end item -->
-                    </div><!-- end owl carousel -->
-                </div><!-- end col -->
-            </div><!-- end row -->
-        </div><!-- end container -->
-    </section>
-    <!-- end section -->
+                @foreach($subcats as $item)
 
-
-
-    <!-- start section -->
-
-        <section class="section white-backgorund">
-
-
-
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-12">
-
-                    <div class="title-wrap">
-                        <h2 class="title"><span class="text-primary">Featured</span> Ads</h2>
+                    <div class="col-lg-2 col-md-6 col-sm-6 col-xs-12">
+                        <a href="category.html">
+                            <div class="icon-box">
+                                <div class="icon">
+                                    <i class="lni-list"></i>
+                                </div>
+                                <h4> {{ $item->name }}</h4>
+                            </div>
+                        </a>
                     </div>
-                </div><!-- end col -->
-            </div><!-- end row -->
+                @endforeach
 
-            <div class="row">
-                <div class="col-sm-12">
-                    <div id="owl-demo" class="owl-carousel column-3 owl-theme">
-                        <div class="item">
-                            <div class="thumbnail blog">
-                                <div class="header">
-                                    <figure>
-                                        <img src="img/blog/blog_01.jpg" alt="">
-                                    </figure>
-                                    <div class="meta">
-                                        <span><i class="fa fa-calendar mr-5"></i>Oct 25, 2016</span>
-                                        <span><i class="fa fa-comment mr-5"></i>(15)</span>
-                                        <span><i class="fa fa-heart mr-5"></i>(35)</span>
-                                    </div>
-                                </div>
-                                <div class="caption">
-                                    <h6><a href="blog-article-v1.html">Care & Clean Instructions</a></h6>
-                                    <div class="author-category">
-                                            <span class="author mr-20">
-                                                <i class="fa fa-user mr-5"></i><a href="javascript:void(0);">Joe Doe</a>
-                                            </span>
-                                        <span class="category">
-                                                <a href="javascript:void(0);">Post Formats</a>
-                                            </span>
-                                    </div>
-                                    <p>Aenean semper lacus sed molestie sollicitudin. In semper, tellus id posuere interdum, est justo faucibus quam, sed eleifend arcu nulla id eros.</p>
-                                    <a href="blog-article-v1.html" class="btn btn-default semi-circle btn-sm">Read more</a>
-                                </div><!-- end caption -->
-                            </div><!-- end thumbnail -->
-                        </div><!-- end item -->
-                        <div class="item">
-                            <div class="thumbnail blog">
-                                <div class="header">
-                                    <figure>
-                                        <img src="img/blog/blog_02.jpg" alt="">
-                                    </figure>
-                                    <div class="meta">
-                                        <span><i class="fa fa-calendar mr-5"></i>Oct 25, 2016</span>
-                                        <span><i class="fa fa-comment mr-5"></i>(15)</span>
-                                        <span><i class="fa fa-heart mr-5"></i>(35)</span>
-                                    </div>
-                                </div>
-                                <div class="caption">
-                                    <h6><a href="blog-article-v1.html">Design for Work Place</a></h6>
-                                    <div class="author-category">
-                                            <span class="author mr-20">
-                                                <i class="fa fa-user mr-5"></i><a href="javascript:void(0);">Joe Doe</a>
-                                            </span>
-                                        <span class="category">
-                                                <a href="javascript:void(0);">Post Formats</a>
-                                            </span>
-                                    </div>
-                                    <p>Aenean semper lacus sed molestie sollicitudin. In semper, tellus id posuere interdum, est justo faucibus quam, sed eleifend arcu nulla id eros.</p>
-                                    <a href="blog-article-v1.html" class="btn btn-default semi-circle btn-sm">Read more</a>
-                                </div><!-- end caption -->
-                            </div><!-- end thumbnail -->
-                        </div><!-- end item -->
-                        <div class="item">
-                            <div class="thumbnail blog">
-                                <div class="header">
-                                    <figure>
-                                        <img src="img/blog/blog_03.jpg" alt="">
-                                    </figure>
-                                    <div class="meta">
-                                        <span><i class="fa fa-calendar mr-5"></i>Oct 25, 2016</span>
-                                        <span><i class="fa fa-comment mr-5"></i>(15)</span>
-                                        <span><i class="fa fa-heart mr-5"></i>(35)</span>
-                                    </div>
-                                </div>
-                                <div class="caption">
-                                    <h6><a href="blog-article-v1.html">Style your Bedroom</a></h6>
-                                    <div class="author-category">
-                                            <span class="author mr-20">
-                                                <i class="fa fa-user mr-5"></i><a href="javascript:void(0);">Joe Doe</a>
-                                            </span>
-                                        <span class="category">
-                                                <a href="javascript:void(0);">Post Formats</a>
-                                            </span>
-                                    </div>
-                                    <p>Aenean semper lacus sed molestie sollicitudin. In semper, tellus id posuere interdum, est justo faucibus quam, sed eleifend arcu nulla id eros.</p>
-                                    <a href="blog-article-v1.html" class="btn btn-default semi-circle btn-sm">Read more</a>
-                                </div><!-- end caption -->
-                            </div><!-- end thumbnail -->
-                        </div><!-- end item -->
-                        <div class="item">
-                            <div class="thumbnail blog">
-                                <div class="header">
-                                    <figure>
-                                        <img src="img/blog/blog_04.jpg" alt="">
-                                    </figure>
-                                    <div class="meta">
-                                        <span><i class="fa fa-calendar mr-5"></i>Oct 25, 2016</span>
-                                        <span><i class="fa fa-comment mr-5"></i>(15)</span>
-                                        <span><i class="fa fa-heart mr-5"></i>(35)</span>
-                                    </div>
-                                </div>
-                                <div class="caption">
-                                    <h6><a href="blog-article-v1.html">Decorating Tips</a></h6>
-                                    <div class="author-category">
-                                            <span class="author mr-20">
-                                                <i class="fa fa-user mr-5"></i><a href="javascript:void(0);">Joe Doe</a>
-                                            </span>
-                                        <span class="category">
-                                                <a href="javascript:void(0);">Post Formats</a>
-                                            </span>
-                                    </div>
-                                    <p>Aenean semper lacus sed molestie sollicitudin. In semper, tellus id posuere interdum.</p>
-                                    <a href="blog-article-v1.html" class="btn btn-default semi-circle btn-sm">Read more</a>
-                                </div><!-- end caption -->
-                            </div><!-- end thumbnail -->
-                        </div><!-- end item -->
-                    </div><!-- end owl carousel -->
-                </div><!-- end col -->
-            </div><!-- end row -->
-
-            <hr class="spacer-30 no-border"/>
-
-        </div><!-- end container -->
+            </div>
+        </div>
     </section>
 
-    <section class="section light-backgorund">
+
+    <section class="featured section-padding">
+        <div class="container">
+            <h1 class="section-title">Trending Business Ads in Nigeria</h1>
+            <div class="row">
+                @foreach($ads as $item)
+                <div class="col-xs-6 col-sm-6 col-md-6 col-lg-4">
+                    <div class="featured-box">
+                        <figure>
+                            <div class="icon">
+                                <i class="lni-heart"></i>
+                            </div>
+                            <a href="#"><img class="img-fluid" src="{{ $item['image'] }}" alt=""></a>
+                        </figure>
+                        <div class="feature-content">
+                            <div class="product">
+                                <a href="#"><i class="lni-folder"></i> {{ $item['type'] }}</a>
+                            </div>
+                            <h4><a href="ads-details.html">
+
+                                        {{ $item['name'] }}
+                                </a></h4>
+                            <span>Last Updated: {{ $item['created_at'] }}</span>
+                            <p>{{ $item['short_desc'] }}</p>
+                            <div class="listing-bottom">
+                                <h3 class="price float-left">{{ $item['amount'] }}</h3>
+                                <a href="#" class="btn-verified float-right"><i class="lni-check-box"></i> Verified Ad</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                @endforeach
+            </div>
+        </div>
+    </section>
+
+
+    @include('partials.featured_ads', ['data' => $ads])
+
+    <div class="faq section-padding">
         <div class="container">
             <div class="row">
-
-                <div class="col-md-4 col-md-offset-4">
-                    <div class="heading-title center">
-                        <h2>How it <span>Works</span></h2>
+                <div class="col-md-12">
+                    <div class="head-faq text-center">
+                        <h2 class="section-title">How It Works</h2>
                         <div class="small-desd">Steps to  <span>a successful Business</span></div>
                         <p>This is the steps to create a perfect Business Plan </p>
                     </div>
 
-                </div>
-                <div class="row">
-                    <!-- Item-->
-                    <div class="col-md-8 col-md-offset-2">
-                        <div class="col-md-6 col-sm-6 col-xs-12">
-                            <h4>For Sellers</h4>
-                            <div class="body">
-                                <h4>What You Can Do</h4>
-                                <ul class="list">
-                                    <li>Register deals</li>
-                                    <li>Manage deals with your team</li>
-                                    <li>Upload /Download related documents</li>
-                                    <li>Disclose deal information</li>
-                                    <li>Online negotiations via chat</li>
-                                    <li>Professional support</li>
-                                </ul>
-                                <h4>Upon Closing the Deal</h4>
-                                <ul class="list">
-                                    <li>
-                                        <em>Complimentary reward will be paid by Us</em>
-                                    </li>
-                                </ul>
-                                <h4>Usage Fee</h4>
-                                <ul class="list">
-                                    <li>
-                                        <em>All free of charge</em>
-                                    </li>
-                                </ul>
+                    <div class="panel-group" id="accordion">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h4 class="panel-title">
+                                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
+                                        For Sellers
+                                    </a>
+                                </h4>
+                            </div>
+                            <div id="collapseOne" class="panel-collapse collapse show">
+                                <div class="panel-body">
+                                    <div class="">
+                                        <h4>What You Can Do</h4>
+                                        <ul class="list">
+                                            <li>Register deals</li>
+                                            <li>Manage deals with your team</li>
+                                            <li>Upload /Download related documents</li>
+                                            <li>Disclose deal information</li>
+                                            <li>Online negotiations via chat</li>
+                                            <li>Professional support</li>
+                                        </ul>
+                                        <h4>Upon Closing the Deal</h4>
+                                        <ul class="list">
+                                            <li>
+                                                <em>Complimentary reward will be paid by Us</em>
+                                            </li>
+                                        </ul>
+                                        <h4>Usage Fee</h4>
+                                        <ul class="list">
+                                            <li>
+                                                <em>All free of charge</em>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                        <!-- Item-->
-                        <div class="col-md-6 col-sm-6 col-xs-12 item-icon">
-                            <h4>For Buyers</h4>
-                            <div class="body">
-                                <h4>What You Can Do</h4>
-                                <ul class="list"><li>Search deals</li><li>Submit Information Disclosure Requests <span>Paid Function</span></li><li>Manage deals with your team</li><li>Upload / Download related documents</li><li>Online negotiations via chat</li><li>Professional support</li></ul>
-                                <h4>Upon Closing the Deal</h4>
-                                <ul class="list">
-                                    <li>Commission will be charged</li>
-                                </ul>
-                                <h4>Usage Fee</h4>
-                                <ul class="list">
-                                    <li>
-                                        <em>All paid functions are free of charge until the end of June 2019!</em>
-                                    </li>
-                                </ul>
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h4 class="panel-title">
+                                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
+                                        For Buyers
+                                    </a>
+                                </h4>
+                            </div>
+                            <div id="collapseTwo" class="panel-collapse collapse">
+                                <div class="panel-body">
+                                    <h4>What You Can Do</h4>
+                                    <ul class="list"><li>Search deals</li><li>Submit Information Disclosure Requests <span>Paid Function</span></li><li>Manage deals with your team</li><li>Upload / Download related documents</li><li>Online negotiations via chat</li><li>Professional support</li></ul>
+                                    <h4>Upon Closing the Deal</h4>
+                                    <ul class="list">
+                                        <li>Commission will be charged</li>
+                                    </ul>
+                                    <h4>Usage Fee</h4>
+                                    <ul class="list">
+                                        <li>
+                                            <em>All paid functions are free of charge until the end of June 2019!</em>
+                                        </li>
+                                    </ul>
+                                </div>
                             </div>
                         </div>
                     </div>
 
-
-                    <!-- Edn items-->
                 </div>
             </div>
+        </div>
+    </div>
 
+    <section class="counter-section section-padding">
+        <div class="container">
+            <div class="row">
+
+                <div class="col-md-3 col-sm-6 work-counter-widget text-center">
+                    <div class="counter">
+                        <div class="icon"><i class="lni-layers"></i></div>
+                        <h2 class="counterUp">12090</h2>
+                        <p>Regular Ads</p>
+                    </div>
+                </div>
+
+                <div class="col-md-3 col-sm-6 work-counter-widget text-center">
+                    <div class="counter">
+                        <div class="icon"><i class="lni-map"></i></div>
+                        <h2 class="counterUp">350</h2>
+                        <p>Locations</p>
+                    </div>
+                </div>
+
+                <div class="col-md-3 col-sm-6 work-counter-widget text-center">
+                    <div class="counter">
+                        <div class="icon"><i class="lni-user"></i></div>
+                        <h2 class="counterUp">23453</h2>
+                        <p>Reguler Members</p>
+                    </div>
+                </div>
+
+                <div class="col-md-3 col-sm-6 work-counter-widget text-center">
+                    <div class="counter">
+                        <div class="icon"><i class="lni-briefcase"></i></div>
+                        <h2 class="counterUp">250</h2>
+                        <p>Premium Ads</p>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
-    <section class="section white-backgorund">
 
+
+    <section id="pricing-table" class="section-padding">
+        <div class="container">
+            <div class="row p-10">
+                <div class="col-md-12">
+                    <div class="mainHeading">
+                        <h2 class="section-title">Package</h2>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6 col-xs-12">
+                    <div class="table">
+                        <div class="icon">
+                            <i class="lni-user"></i>
+                        </div>
+                        <div class="title">
+                            <h3>Free Account</h3>
+                        </div>
+                        <div class="pricing-header">
+                            <p class="price-value">No Charges</p>
+                        </div>
+                        <ul class="description package">
+                            <li><strong>View</strong> Listed Ads</li>
+                            <li class="line"><strong>Business</strong> Ad posting</li>
+                            <li class="line"><strong>View</strong> Poster Details</li>
+                            <li class="line"><strong>View </strong> Ads Details</li>
+                            <li class="line"><strong>View </strong> Company Details</li>
+                            <li class="line"><strong>Live Chat</strong> with Ad poster!</li>
+                        </ul>
+
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6 col-xs-12">
+                    <div class="table" id="active-tb">
+                        <div class="icon">
+                            <i class="lni-user"></i>
+                        </div>
+                        <div class="title">
+                            <h3>Premium User</h3>
+                        </div>
+                        <div class="pricing-header">
+                            <p class="price-value">₦20,000</p>
+                        </div>
+                        <ul class="description package">
+                            <li><strong>View</strong> Listed Ads</li>
+                            <li><strong>Business</strong> Ad posting</li>
+                            <li><strong>View</strong> Poster Details</li>
+                            <li><strong>View </strong> Ads Details</li>
+                            <li><strong>View </strong> Company Details</li>
+                            <li><strong>Live Chat</strong> with Ad poster!</li>
+                        </ul>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="testimonial section-padding">
         <div class="container">
             <div class="row">
-                <div class="col-sm-12">
-                    <div class="title-wrap">
-                        <h2 class="title"><span class="text-primary">Recent </span>B2B Invest Ads</h2>
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div id="testimonials" class="owl-carousel">
+                        <div class="item">
+                            <div class="testimonial-item">
+                                <div class="img-thumb">
+                                    <img src="assets/img/testimonial/img1.png" alt="">
+                                </div>
+                                <div class="content">
+                                    <h2><a href="#">John Doe</a></h2>
+                                    <p class="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo quidem, excepturi facere magnam illum, at accusantium doloremque odio.</p>
+                                    <h3>Developer at of <a href="#">xyz company</a></h3>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="testimonial-item">
+                                <div class="img-thumb">
+                                    <img src="assets/img/testimonial/img2.png" alt="">
+                                </div>
+                                <div class="content">
+                                    <h2><a href="#">Jessica</a></h2>
+                                    <p class="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo quidem, excepturi facere magnam illum, at accusantium doloremque odio.</p>
+                                    <h3>Developer at of <a href="#">xyz company</a></h3>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="testimonial-item">
+                                <div class="img-thumb">
+                                    <img src="assets/img/testimonial/img3.png" alt="">
+                                </div>
+                                <div class="content">
+                                    <h2><a href="#">Johnny Zeigler</a></h2>
+                                    <p class="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo quidem, excepturi facere magnam illum, at accusantium doloremque odio.</p>
+                                    <h3>Developer at of <a href="#">xyz company</a></h3>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="testimonial-item">
+                                <div class="img-thumb">
+                                    <img src="assets/img/testimonial/img1.png" alt="">
+                                </div>
+                                <div class="content">
+                                    <h2><a href="#">John Doe</a></h2>
+                                    <p class="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo quidem, excepturi facere magnam illum, at accusantium doloremque odio.</p>
+                                    <h3>Developer at of <a href="#">xyz company</a></h3>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="testimonial-item">
+                                <div class="img-thumb">
+                                    <img src="assets/img/testimonial/img2.png" alt="">
+                                </div>
+                                <div class="content">
+                                    <h2><a href="#">Jessica</a></h2>
+                                    <p class="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo quidem, excepturi facere magnam illum, at accusantium doloremque odio.</p>
+                                    <h3>Developer at of <a href="#">xyz company</a></h3>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                </div><!-- end col -->
-            </div><!-- end row -->
-
-            <div class="row">
-                <div class="col-sm-12">
-                    <div id="owl-demo" class="owl-carousel column-3 owl-theme">
-                        <div class="item">
-                            <div class="thumbnail blog">
-                                <div class="header">
-                                    <figure>
-                                        <img src="img/blog/blog_01.jpg" alt="">
-                                    </figure>
-                                    <div class="meta">
-                                        <span><i class="fa fa-calendar mr-5"></i>Oct 25, 2016</span>
-                                        <span><i class="fa fa-comment mr-5"></i>(15)</span>
-                                        <span><i class="fa fa-heart mr-5"></i>(35)</span>
-                                    </div>
-                                </div>
-                                <div class="caption">
-                                    <h6><a href="blog-article-v1.html">Care & Clean Instructions</a></h6>
-                                    <div class="author-category">
-                                            <span class="author mr-20">
-                                                <i class="fa fa-user mr-5"></i><a href="javascript:void(0);">Joe Doe</a>
-                                            </span>
-                                        <span class="category">
-                                                <a href="javascript:void(0);">Post Formats</a>
-                                            </span>
-                                    </div>
-                                    <p>Aenean semper lacus sed molestie sollicitudin. In semper, tellus id posuere interdum, est justo faucibus quam, sed eleifend arcu nulla id eros.</p>
-                                    <a href="blog-article-v1.html" class="btn btn-default semi-circle btn-sm">Read more</a>
-                                </div><!-- end caption -->
-                            </div><!-- end thumbnail -->
-                        </div><!-- end item -->
-                        <div class="item">
-                            <div class="thumbnail blog">
-                                <div class="header">
-                                    <figure>
-                                        <img src="img/blog/blog_02.jpg" alt="">
-                                    </figure>
-                                    <div class="meta">
-                                        <span><i class="fa fa-calendar mr-5"></i>Oct 25, 2016</span>
-                                        <span><i class="fa fa-comment mr-5"></i>(15)</span>
-                                        <span><i class="fa fa-heart mr-5"></i>(35)</span>
-                                    </div>
-                                </div>
-                                <div class="caption">
-                                    <h6><a href="blog-article-v1.html">Design for Work Place</a></h6>
-                                    <div class="author-category">
-                                            <span class="author mr-20">
-                                                <i class="fa fa-user mr-5"></i><a href="javascript:void(0);">Joe Doe</a>
-                                            </span>
-                                        <span class="category">
-                                                <a href="javascript:void(0);">Post Formats</a>
-                                            </span>
-                                    </div>
-                                    <p>Aenean semper lacus sed molestie sollicitudin. In semper, tellus id posuere interdum, est justo faucibus quam, sed eleifend arcu nulla id eros.</p>
-                                    <a href="blog-article-v1.html" class="btn btn-default semi-circle btn-sm">Read more</a>
-                                </div><!-- end caption -->
-                            </div><!-- end thumbnail -->
-                        </div><!-- end item -->
-                        <div class="item">
-                            <div class="thumbnail blog">
-                                <div class="header">
-                                    <figure>
-                                        <img src="img/blog/blog_03.jpg" alt="">
-                                    </figure>
-                                    <div class="meta">
-                                        <span><i class="fa fa-calendar mr-5"></i>Oct 25, 2016</span>
-                                        <span><i class="fa fa-comment mr-5"></i>(15)</span>
-                                        <span><i class="fa fa-heart mr-5"></i>(35)</span>
-                                    </div>
-                                </div>
-                                <div class="caption">
-                                    <h6><a href="blog-article-v1.html">Style your Bedroom</a></h6>
-                                    <div class="author-category">
-                                            <span class="author mr-20">
-                                                <i class="fa fa-user mr-5"></i><a href="javascript:void(0);">Joe Doe</a>
-                                            </span>
-                                        <span class="category">
-                                                <a href="javascript:void(0);">Post Formats</a>
-                                            </span>
-                                    </div>
-                                    <p>Aenean semper lacus sed molestie sollicitudin. In semper, tellus id posuere interdum, est justo faucibus quam, sed eleifend arcu nulla id eros.</p>
-                                    <a href="blog-article-v1.html" class="btn btn-default semi-circle btn-sm">Read more</a>
-                                </div><!-- end caption -->
-                            </div><!-- end thumbnail -->
-                        </div><!-- end item -->
-                        <div class="item">
-                            <div class="thumbnail blog">
-                                <div class="header">
-                                    <figure>
-                                        <img src="img/blog/blog_04.jpg" alt="">
-                                    </figure>
-                                    <div class="meta">
-                                        <span><i class="fa fa-calendar mr-5"></i>Oct 25, 2016</span>
-                                        <span><i class="fa fa-comment mr-5"></i>(15)</span>
-                                        <span><i class="fa fa-heart mr-5"></i>(35)</span>
-                                    </div>
-                                </div>
-                                <div class="caption">
-                                    <h6><a href="blog-article-v1.html">Decorating Tips</a></h6>
-                                    <div class="author-category">
-                                            <span class="author mr-20">
-                                                <i class="fa fa-user mr-5"></i><a href="javascript:void(0);">Joe Doe</a>
-                                            </span>
-                                        <span class="category">
-                                                <a href="javascript:void(0);">Post Formats</a>
-                                            </span>
-                                    </div>
-                                    <p>Aenean semper lacus sed molestie sollicitudin. In semper, tellus id posuere interdum.</p>
-                                    <a href="blog-article-v1.html" class="btn btn-default semi-circle btn-sm">Read more</a>
-                                </div><!-- end caption -->
-                            </div><!-- end thumbnail -->
-                        </div><!-- end item -->
-                    </div><!-- end owl carousel -->
-                </div><!-- end col -->
-            </div><!-- end row -->
-
-            <hr class="spacer-30 no-border"/>
-
-        </div><!-- end container -->
+                </div>
+            </div>
+        </div>
     </section>
-    <!-- end section -->
-
-    <!-- start section -->
-    <section class="section image-background layer-dark" style="background-image: url(img/slider/slider_03.jpg);">
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-12">
-                    <div class="title-wrap">
-                        <h2 class="title text-white">Our Latest Deals</h2>
-                        {{--<p class="text-white">Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</p>--}}
-                    </div>
-                </div><!-- end col -->
-            </div><!-- end row -->
-
-            <div class="row">
-                <div class="col-sm-12">
-                    <div class="owl-carousel column-4 owl-theme">
-                        <div class="cat-item">
-                            <div class="cat-img">
-                                <figure>
-                                    <a href="">
-                                        <img style="height: 256px; width: 274px;" src="/img/blog/blog_02.jpg" />
-                                    </a>
-                                </figure>
-                            </div><!-- end cat-img -->
-                            <div class="cat-title">
-                                <h6><a href="javascript:void(0)">Deal Title, like deal of business</a></h6>
-                            </div><!-- end cat-title -->
-                        </div><!-- end cat-item -->
-                        <div class="cat-item">
-                            <div class="cat-img">
-                                <figure>
-                                    <a href="">
-                                        <img style="height: 256px; width: 274px;" src="/img/blog/blog_02.jpg" />
-                                    </a>
-                                </figure>
-                            </div><!-- end cat-img -->
-                            <div class="cat-title">
-                                <h6><a href="javascript:void(0)">Deal Title, like deal of business</a></h6>
-                            </div><!-- end cat-title -->
-                        </div><!-- end cat-item -->
-                        <div class="cat-item">
-                            <div class="cat-img">
-                                <figure>
-                                    <a href="">
-                                        <img style="height: 256px; width: 274px;" src="/img/blog/blog_02.jpg" />
-                                    </a>
-                                </figure>
-                            </div><!-- end cat-img -->
-                            <div class="cat-title">
-                                <h6><a href="javascript:void(0)">Deal Title, like deal of business</a></h6>
-                            </div><!-- end cat-title -->
-                        </div><!-- end cat-item -->
-                        <div class="cat-item">
-                            <div class="cat-img">
-                                <figure>
-                                    <a href="">
-                                        <img style="height: 256px; width: 274px;" src="/img/blog/blog_02.jpg" />
-                                    </a>
-                                </figure>
-                            </div><!-- end cat-img -->
-                            <div class="cat-title">
-                                <h6><a href="javascript:void(0)">Deal Title, like deal of business</a></h6>
-                            </div><!-- end cat-title -->
-                        </div><!-- end cat-item -->
-
-                    </div><!-- end owl carousel -->
-                </div><!-- end col -->
-            </div><!-- end row -->
-        </div><!-- end container -->
-    </section>
-    <!-- end section -->
-
-    <!-- start section -->
-    <section class="section light-backgorund">
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-12">
-                    <div class="title-wrap">
-                        <h2 class="title ">Pinned  Deals</h2>
-                        {{--<p class="text-white">Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</p>--}}
-                    </div>
-                </div><!-- end col -->
-            </div><!-- end row -->
-            <div class="row">
-                <div class="col-sm-10 col-sm-offset-1">
-                    <div class="owl-carousel product-showcase owl-theme">
-                        <div class="product">
-                            <div class="row">
-                                <div class="col-sm-4 vertical-align">
-                                    <figure>
-                                        <a href="shop-single-product-v1.html">
-                                            <img alt="img" src="img/blog/blog_02.jpg">
-                                        </a>
-                                    </figure>
-                                </div><!-- end col -->
-                                <div class="col-sm-8 vertical-align">
-                                    <h4><a href="shop-single-product-v1.html">Lorem ipsum dolor sit amet</a></h4>
-
-                                    <p>Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie
-                                        consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan
-                                        et iusto odio dignissim qui blandit praesent luptatum </p>
-
-                                </div><!-- end col -->
-                            </div><!-- end row -->
-                        </div><!-- end product -->
-                        <div class="product">
-                            <div class="row">
-                                <div class="col-sm-4 vertical-align">
-                                    <figure>
-                                        <a href="shop-single-product-v1.html">
-                                            <img alt="img" src="img/blog/blog_02.jpg">
-                                        </a>
-                                    </figure>
-                                </div><!-- end col -->
-                                <div class="col-sm-8 vertical-align">
-                                    <h4><a href="shop-single-product-v1.html">Lorem ipsum dolor sit amet</a></h4>
-
-                                    <p>Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie
-                                        consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan
-                                        et iusto odio dignissim qui blandit praesent luptatum </p>
-
-                                </div><!-- end col -->
-                            </div><!-- end row -->
-                        </div><!-- end product -->
-
-                    </div><!-- end owl carousel -->
-                </div><!-- end col -->
-            </div><!-- end row -->
-        </div><!-- end container -->
-    </section>
-    <!-- end section -->
 
 
+{{--    <section class="subscribes section-padding">--}}
+{{--        <div class="container">--}}
+{{--            <div class="row wrapper-sub">--}}
+{{--                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">--}}
+{{--                    <p>Join our 10,000+ subscribers and get access to the latest templates, freebies, announcements and resources!</p>--}}
+{{--                </div>--}}
+{{--                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">--}}
+{{--                    <form>--}}
+{{--                        <div class="subscribe">--}}
+{{--                            <input class="form-control" name="EMAIL" placeholder="Your email here" required="" type="email">--}}
+{{--                            <button class="btn btn-common" type="submit">Subscribe</button>--}}
+{{--                        </div>--}}
+{{--                    </form>--}}
+{{--                </div>--}}
+{{--            </div>--}}
+{{--        </div>--}}
+{{--    </section>--}}
 
 
-
+{{--    <section class="cta section-padding">--}}
+{{--        <div class="container">--}}
+{{--            <div class="row">--}}
+{{--                <div class="col-xs-12 col-md-6 col-lg-4">--}}
+{{--                    <div class="single-cta">--}}
+{{--                        <div class="cta-icon">--}}
+{{--                            <i class="lni-grid"></i>--}}
+{{--                        </div>--}}
+{{--                        <h4>Refreshing Design</h4>--}}
+{{--                        <p>Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie</p>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--                <div class="col-xs-12 col-md-6 col-lg-4">--}}
+{{--                    <div class="single-cta">--}}
+{{--                        <div class="cta-icon">--}}
+{{--                            <i class="lni-brush"></i>--}}
+{{--                        </div>--}}
+{{--                        <h4>Easy to Customize</h4>--}}
+{{--                        <p>Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie</p>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--                <div class="col-xs-12 col-md-6 col-lg-4">--}}
+{{--                    <div class="single-cta">--}}
+{{--                        <div class="cta-icon">--}}
+{{--                            <i class="lni-headphone-alt"></i>--}}
+{{--                        </div>--}}
+{{--                        <h4>24/7 Support</h4>--}}
+{{--                        <p>Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie</p>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--            </div>--}}
+{{--        </div>--}}
+{{--    </section>--}}
 
 @stop
 

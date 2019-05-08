@@ -1,152 +1,152 @@
 @extends('layouts.master')
 <!-- Start full screen top nav-->
+
+
 @section('content')
-    <div data-image="img/bg1.jpg" class="fullscreen-topnav rotate background-image">
-        <!-- Start container-->
-        <div class="container-fluid height-half">
-            <div class="row height-full no-padding-bottom">
-                <div class="items height-full"><a href="faq.html" class="col-lg-3 col-md-6 col-sm-6 col-xs-12 height-full link">
-                        <div class="item table">
-                            <div class="content-nav table-cell">
-                                <p>FAQ - page</p>
-                                <h2>Need help ?</h2>
-                            </div>
-                        </div></a><a href="services.html" class="col-lg-3 col-md-6 col-sm-6 col-xs-12 col-lg-push-6 height-full link ">
-                        <div class="item table">
-                            <div class="content-nav table-cell">
-                                <p>All services</p>
-                                <h2>Our services</h2>
-                            </div>
-                        </div></a>
-                    <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12 col-lg-pull-3 height-full text-item">
-                        <div class="item table">
-                            <div class="content-nav table-cell">
-                                <h3>Fact about us:</h3>
-                                <p>In 2018 we are Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Start container-->
-        <div class="container-fluid height-half-60">
-            <div class="row no-padding-bottom height-full">
-                <div class="items height-full">
-                    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 video-play height-full">
-                        <div class="video-section table">
-                            <div class="table-cell"><a href="https://www.youtube.com/watch?v=lm4OJxGQm_E" class="icon-play anim-shadow"><i class="pe-7s-play"></i></a>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 form-full-screen height-full">
-                        <div class="content table">
-                            <div class="table-cell">
-                                <h3>Start project:</h3>
-                                <form class="contact-form-sub">
-                                    <input type="text" name="Name" placeholder="Your Name">
-                                    <input type="text" name="Email" placeholder="Email *">
-                                    <select name="Servises" id="selectize" class="demo-default">
-                                        <option value="">Choose service:</option>
-                                        <option value="Services">Services 1</option>
-                                        <option value="Services 2">Services 2</option>
-                                        <option value="Services 3">Services 3</option>
-                                    </select>
-                                    <textarea name="Message" placeholder="Message *" cols="3" rows="5"></textarea>
-                                    <p class="success-msg hidden notify">Your order has been send</p>
-                                    <p class="success-msg hidden notify">Error sending order</p>
-                                    <input type="submit" value="Send message" class="btn">
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- End container-->
-    </div>
-    <!-- End full screen top nav-->
-    <!-- Start Content section-->
-    {{--<section data-image="img/bgn12.jpg" id="top" class="display-page img-parallax bg-mask background-image">--}}
-    {{--<div class="container">--}}
-    {{--<div class="row">--}}
-    {{--<div class="col-md-12">--}}
-    {{--<div class="content">--}}
-    {{--<!-- heading title-->--}}
-    {{--<h1>b2b Sales</h1>--}}
-    {{--<!-- horizontal line--><span class="horizontal-line"></span><span></span>--}}
-    {{--<!-- description slider-->--}}
-    {{--<div class="description">--}}
-    {{--<p>Here are availabel b2b Sales</p>--}}
-    {{--</div>--}}
-    {{--</div>--}}
-    {{--</div>--}}
-    {{--</div>--}}
-    {{--</div>--}}
-    {{--</section>--}}
-    <!--Section our services-->
-    <section id="services" class="section-our-services bg-white-section">
+    <div class="page-header" style="background: url(assets/img/banner1.jpg);">
         <div class="container">
-            <br>
-            <br>
-            <br>
-            <div  id="tab1" class="row">
-                <div class="item-service">
-                    <div data-image="img/bg4.jpg" class="col-md-3 icon-service bg-mask background-image" style="background-image: url(&quot;img/bg4.jpg&quot;); height: 245px;">
-                        <div class="small-i"><i class="pe-7s-phone"></i></div>
-                        <div class="large-i"><i class="pe-7s-phone"></i></div>
-                    </div>
-                    <div class="col-md-9 content-service">
-                        <h2>Project <span>Name</span></h2>
-                        <p>Ads Description Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
-                        <hr>
-                        <div class="buttons-section left"><a href="" class="btn white-btn">View Ad</a></div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="breadcrumb-wrapper">
+                        <h2 class="product-title">Business Sales Listings</h2>
+                        <ol class="breadcrumb">
+                            <li><a href="{{ route('home') }}">Home /</a></li>
+                            <li class="current">Business Sales Listings</li>
+                        </ol>
                     </div>
                 </div>
-                <div class="item-service">
-                    <div data-image="img/bg4.jpg" class="col-md-3 icon-service bg-mask background-image" style="background-image: url(&quot;img/bg4.jpg&quot;); height: 245px;">
-                        <div class="small-i"><i class="pe-7s-phone"></i></div>
-                        <div class="large-i"><i class="pe-7s-phone"></i></div>
-                    </div>
-                    <div class="col-md-9 content-service">
-                        <h2>Project <span>Name</span></h2>
-                        <p>Ads Description Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
-                        <hr>
-                        <div class="buttons-section left"><a href="" class="btn white-btn">View Ad</a></div>
-                    </div>
-                </div>
-                <div class="item-service">
-                    <div data-image="img/bg4.jpg" class="col-md-3 icon-service bg-mask background-image" style="background-image: url(&quot;img/bg4.jpg&quot;); height: 245px;">
-                        <div class="small-i"><i class="pe-7s-phone"></i></div>
-                        <div class="large-i"><i class="pe-7s-phone"></i></div>
-                    </div>
-                    <div class="col-md-9 content-service">
-                        <h2>Project <span>Name</span></h2>
-                        <p>Ads Description Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
-                        <hr>
-                        <div class="buttons-section left"><a href="" class="btn white-btn">View Ad</a></div>
-                    </div>
-                </div>
-                <div class="item-service">
-                    <div data-image="img/bg4.jpg" class="col-md-3 icon-service bg-mask background-image" style="background-image: url(&quot;img/bg4.jpg&quot;); height: 245px;">
-                        <div class="small-i"><i class="pe-7s-phone"></i></div>
-                        <div class="large-i"><i class="pe-7s-phone"></i></div>
-                    </div>
-                    <div class="col-md-9 content-service">
-                        <h2>Project <span>Name</span></h2>
-                        <p>Ads Description Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
-                        <hr>
-                        <div class="buttons-section left"><a href="" class="btn white-btn">View Ad</a></div>
-                    </div>
-                </div>
-
             </div>
-
         </div>
-    </section>
-    <!--Section work progress-->
+    </div>
 
 
+    <div class="main-container section-padding">
+        <div class="container">
+            <div class="row">
+
+                @include('partials.sidebar')
+
+
+                @if(count($invests) < 1)
+                    <div class="col-lg-9 col-md-12 col-xs-12 page-content">
+                        <div class="adds-wrapper jumbotron text-center">
+                            <div class="tab-content">
+                                <h3>No Business Sales Ads Available</h3>
+                            </div>
+                        </div>
+                    </div>
+                @else
+                    <div class="col-lg-9 col-md-12 col-xs-12 page-content">
+
+                        <div class="product-filter">
+                            <div class="short-name">
+                                <span>Showing (1 - {{ count($invests) }} Sales Ads of {{ $count }} Sales Ads)</span>
+                            </div>
+
+                            <ul class="nav nav-tabs">
+                                <li class="nav-item">
+                                    <a class="nav-link active" data-toggle="tab" href="#grid-view"><i class="lni-grid"></i></a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" data-toggle="tab" href="#list-view"><i class="lni-list"></i></a>
+                                </li>
+                            </ul>
+                        </div>
+
+
+                        <div class="adds-wrapper">
+                            <div class="tab-content">
+                                <div id="grid-view" class="tab-pane fade active show">
+                                    <div class="row">
+                                        @foreach($invests as $item)
+                                            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                                                <div class="featured-box">
+                                                    <figure>
+                                                        <div class="icon">
+                                                            @if($item->featured)
+                                                                <i class="">Featured</i>
+                                                            @endif
+
+                                                        </div>
+                                                        <a href="#"><img class="img-fluid" src="{{ $item->image }}" alt=""></a>
+                                                    </figure>
+                                                    <div class="feature-content">
+                                                        <div class="product">
+                                                            <a href="#"><i class="lni-user"></i>{{ $item->user->name }} </a>
+                                                        </div>
+                                                        <h4><a href="ads-details.html">{{ $item->name }}</a></h4>
+                                                        <span>Last Updated: {{ $item->created_at->diffForhumans() }}</span>
+                                                        <ul class="address">
+                                                            @foreach($item->business_type as $key)
+                                                                <li>
+                                                                    <i class="mdi mdi-check-circle-outline text-success m-r-5"></i>
+                                                                    {{ $key }}
+                                                                </li>
+                                                            @endforeach
+
+                                                        </ul>
+                                                        <div class="listing-bottom">
+                                                            <h5 class=" float-left">{{ $item->amount }}</h5>
+                                                            {{--                                                    <a href="account-myads.html" class="btn-verified float-right"><i class="lni-check-box"></i> Verified Ad</a>--}}
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        @endforeach
+                                    </div>
+                                </div>
+                                <div id="list-view" class="tab-pane fade">
+                                    <div class="row">
+                                        @foreach($invests as $item)
+                                            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                                                <div class="featured-box">
+                                                    <figure>
+                                                        <div class="icon">
+                                                            @if($item->featured)
+                                                                <i class="">Featured</i>
+                                                            @endif
+                                                        </div>
+                                                        <a href="#"><img class="img-fluid" src="{{ $item->image }}" alt="{{ $item->name }}"></a>
+                                                    </figure>
+                                                    <div class="feature-content">
+                                                        <div class="product">
+                                                            <a href="#"><i class="lni-folder"></i> Apple</a>
+                                                        </div>
+                                                        <h4><a href="ads-details.html">{{ $item->name }}</a></h4>
+                                                        <span>Last Updated: {{ $item->created_at->diffForhumans() }}</span>
+                                                        <ul class="address">
+                                                            @foreach($item->business_type as $key)
+                                                                <li>
+                                                                    <i class="lni-package"></i>
+                                                                    {{ $key }}
+                                                                </li>
+                                                            @endforeach
+
+                                                        </ul>
+                                                        <div class="listing-bottom">
+                                                            <h3 class="price float-left">{{ $item->amount }}</h3>
+                                                            {{--                                                    <a href="account-myads.html" class="btn-verified float-right"><i class="lni-check-box"></i> Verified Ad</a>--}}
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        @endforeach
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="pagination-bar text-center">
+                            {!! $invests->render() !!}
+                        </div>
+
+                    </div>
+                @endif
+            </div>
+        </div>
+        @include('partials.featured_ads', ['data' => $invests])
+    </div>
 @stop
+
 

@@ -30,7 +30,7 @@ class Invest extends Model
      */
     protected $table = 'invests';
 
-    protected $appends = ['image','type','summary'];
+    protected $appends = ['image','type','summary','short_desc','amount','name'];
 
     /**
     * The database primary key value.
@@ -58,7 +58,12 @@ class Invest extends Model
      *
      * @var array
      */
-    protected $dates = [];
+
+    public function getAmountAttribute(){
+        return 'Maximum Capital : ₦'.$this->maximum_capital;
+    }
+
+    protected $dates = ['created_at'];
     
     /**
      * The attributes that should be cast to native types.
@@ -96,9 +101,20 @@ class Invest extends Model
     {
         return json_decode($value) ?: [];
     }
+//    public function getCreatedAtAttribute($value)
+//    {
+//        return $value->diffForHumans();
+//    }
 
     public function getTypeAttribute(){
         return 'Investors';
+    }
+
+    public function getNameAttribute(){
+        return $this->brand_name;
+    }
+    public function getShortDescAttribute(){
+        return substr($this->profile_summary,0,random_int(60,150))."...";
     }
     public function getSummaryAttribute(){
         return $this->profile_summary;

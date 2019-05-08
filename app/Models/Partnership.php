@@ -19,7 +19,7 @@ class Partnership extends Model
      */
     protected $table = 'partnerships';
 
-    protected $appends = ['type','business_type '];
+    protected $appends = ['type','business_type','short_desc','amount'];
 
     public function getTypeAttribute(){
         return 'Open Partnership';
@@ -28,6 +28,14 @@ class Partnership extends Model
     public function setBusinessTypeAttribute($value)
     {
         $this->attributes['business_type'] = json_encode($value);
+    }
+
+    public function getShortDescAttribute(){
+        return substr($this->summary,0,random_int(60,150))."...";
+    }
+
+    public function getAmountAttribute(){
+        return 'Expected Profit : ₦'.$this->expected_profit;
     }
 
     public function getBusinessTypeAttribute(){

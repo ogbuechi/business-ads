@@ -37,6 +37,18 @@
         .form-group .has-error select {
             border-color: red;
         }
+        .package .line{
+            text-decoration-line: line-through
+        }
+        .search-bar .form-group {
+            margin: 5px;
+            float: left;
+            width: 40%;
+        }
+        .featured-box .feature-content ul.address li {
+             width: 100%;
+
+        }
     </style>
 </head>
 <body>
@@ -58,23 +70,23 @@
             <div class="collapse navbar-collapse" id="main-navbar">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="">
-                            Investors
+                        <a class="nav-link" href="{{ route('business.investors') }}">
+                            Business Investors
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="">
+                        <a class="nav-link" href="{{ route('business.sales') }}">
                             Business Sales
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="">
+                        <a class="nav-link" href="{{ route('business.partnerships') }}">
                             Open Partnership
                         </a>
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" href="contact.html">
+                        <a class="nav-link" href="#">
                             Contact
                         </a>
                     </li>
@@ -83,14 +95,23 @@
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="lni-user"></i> My Account</a>
                         <div class="dropdown-menu">
-                            <a class="dropdown-item" href="account-profile-setting.html"><i class="lni-home"></i> Account Home</a>
-                            <a class="dropdown-item" href="account-myads.html"><i class="lni-wallet"></i> My Ads</a>
-                            <a class="dropdown-item" href="account-favourite-ads.html"><i class="lni-heart"></i> Favourite ads</a>
-                            <a class="dropdown-item" href="account-archived-ads.html"><i class="lni-folder"></i> Archived</a>
-                            <a class="dropdown-item" href="login.html"><i class="lni-lock"></i> Log In</a>
-                            <a class="dropdown-item" href="signup.html"><i class="lni-user"></i> Signup</a>
-                            <a class="dropdown-item" href="forgot-password.html"><i class="lni-reload"></i> Forgot Password</a>
-                            <a class="dropdown-item" href="account-close.html"><i class="lni-close"></i>Account close</a>
+                           @guest()
+                            <a class="dropdown-item" href="{{ url('/login') }}"><i class="lni-lock"></i> Log In</a>
+                            <a class="dropdown-item" href="{{ url('/register') }}"><i class="lni-user"></i> Signup</a>
+                            @else
+                                <a class="dropdown-item" href="{{ route('admin.home') }}"><i class="lni-lock"></i> Dashboard</a>
+                    <a class="dropdown-item">
+                        <a class="dropdown-item" href="{{ route('logout') }}"
+                           onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();"><i class="ti-power-off m-r-5"></i>
+                            {{ __('Logout') }}
+                        </a>
+
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                            @csrf
+                        </form>
+                    </a>
+                            @endguest
                         </div>
                     </li>
                 </ul>
@@ -166,114 +187,115 @@
 
     </nav>
 
+    @if (is_active('home'))
+        @include('partials.hero_area')
+    @endif
+
 </header>
 
 
-<div class="page-header" style="background: url(assets/img/banner1.jpg); padding-bottom: 7px">
+@yield('content')
 
-</div>
+{{--<div id="content" class="section-padding">--}}
+{{--    <div class="container">--}}
+{{--        <div class="row">--}}
+{{--            <div class="col-sm-12 col-md-4 col-lg-3 page-sidebar">--}}
+{{--                <aside class="stick-me">--}}
+{{--                    <div class="sidebar-box">--}}
+{{--                        <div class="user">--}}
+{{--                            <figure>--}}
+{{--                                <a href="#"><img src="assets/img/author/img1.jpg" alt=""></a>--}}
+{{--                            </figure>--}}
+{{--                            <div class="usercontent">--}}
+{{--                                <h3>{{ Auth::user()->name }}</h3>--}}
+{{--                                <h4>Publisher</h4>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                        <nav class="navdashboard">--}}
+{{--                            <ul>--}}
+{{--                                <li>--}}
+{{--                                    <a class="{{ active('dashboard') }}" href="{{ url('dashboard') }}">--}}
+{{--                                        <i class="lni-dashboard"></i>--}}
+{{--                                        <span>Dashboard</span>--}}
+{{--                                    </a>--}}
+{{--                                </li>--}}
+{{--                                <li>--}}
+{{--                                    <a href="account-profile-setting.html">--}}
+{{--                                        <i class="lni-cog"></i>--}}
+{{--                                        <span>Profile Settings</span>--}}
+{{--                                    </a>--}}
+{{--                                </li>--}}
+{{--                                <li>--}}
+{{--                                    <a href="{{ route('coming') }}">--}}
+{{--                                        <i class="lni-wallet"></i>--}}
+{{--                                        <span>My Sales Ads</span>--}}
+{{--                                    </a>--}}
+{{--                                </li>--}}
+{{--                                <li>--}}
+{{--                                    <a class="{{ active('invests.invest.*') }}" href="{{ route('invests.invest.myads') }}">--}}
+{{--                                        <i class="lni-pulse"></i>--}}
+{{--                                        <span>My Invests Ads</span>--}}
+{{--                                    </a>--}}
+{{--                                </li>--}}
 
+{{--                                <li>--}}
+{{--                                    <a href="{{ route('coming') }}">--}}
+{{--                                        <i class="lni-users"></i>--}}
+{{--                                        <span>My Open Partnership Ads</span>--}}
+{{--                                    </a>--}}
+{{--                                </li>--}}
 
-<div id="content" class="section-padding">
-    <div class="container">
-        <div class="row">
-            <div class="col-sm-12 col-md-4 col-lg-3 page-sidebar">
-                <aside class="stick-me">
-                    <div class="sidebar-box">
-                        <div class="user">
-                            <figure>
-                                <a href="#"><img src="assets/img/author/img1.jpg" alt=""></a>
-                            </figure>
-                            <div class="usercontent">
-                                <h3>{{ Auth::user()->name }}</h3>
-                                <h4>Publisher</h4>
-                            </div>
-                        </div>
-                        <nav class="navdashboard">
-                            <ul>
-                                <li>
-                                    <a class="{{ active('dashboard') }}" href="{{ url('dashboard') }}">
-                                        <i class="lni-dashboard"></i>
-                                        <span>Dashboard</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="account-profile-setting.html">
-                                        <i class="lni-cog"></i>
-                                        <span>Profile Settings</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="{{ route('coming') }}">
-                                        <i class="lni-wallet"></i>
-                                        <span>My Sales Ads</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a class="{{ active('invests.invest.*') }}" href="{{ route('invests.invest.myads') }}">
-                                        <i class="lni-pulse"></i>
-                                        <span>My Invests Ads</span>
-                                    </a>
-                                </li>
-
-                                <li>
-                                    <a href="{{ route('coming') }}">
-                                        <i class="lni-users"></i>
-                                        <span>My Open Partnership Ads</span>
-                                    </a>
-                                </li>
-
-                                <li>
-                                    <a href="offermessages.html">
-                                        <i class="lni-envelope"></i>
-                                        <span>Offers/Messages</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="payments.html">
-                                        <i class="lni-wallet"></i>
-                                        <span>Payments</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="account-favourite-ads.html">
-                                        <i class="lni-heart"></i>
-                                        <span>My Favourites</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="privacy-setting.html">
-                                        <i class="lni-star"></i>
-                                        <span>Privacy Settings</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <i class="lni-enter"></i>
-                                        <span>Logout</span>
-                                    </a>
-                                </li>
-                            </ul>
-                        </nav>
-                    </div>
-                    <div class="widget">
-                        <h4 class="widget-title">Advertisement</h4>
-                        <div class="add-box">
-                            <img class="img-fluid" src="assets/img/img1.jpg" alt="">
-                        </div>
-                    </div>
-                </aside>
-            </div>
+{{--                                <li>--}}
+{{--                                    <a href="offermessages.html">--}}
+{{--                                        <i class="lni-envelope"></i>--}}
+{{--                                        <span>Offers/Messages</span>--}}
+{{--                                    </a>--}}
+{{--                                </li>--}}
+{{--                                <li>--}}
+{{--                                    <a href="payments.html">--}}
+{{--                                        <i class="lni-wallet"></i>--}}
+{{--                                        <span>Payments</span>--}}
+{{--                                    </a>--}}
+{{--                                </li>--}}
+{{--                                <li>--}}
+{{--                                    <a href="account-favourite-ads.html">--}}
+{{--                                        <i class="lni-heart"></i>--}}
+{{--                                        <span>My Favourites</span>--}}
+{{--                                    </a>--}}
+{{--                                </li>--}}
+{{--                                <li>--}}
+{{--                                    <a href="privacy-setting.html">--}}
+{{--                                        <i class="lni-star"></i>--}}
+{{--                                        <span>Privacy Settings</span>--}}
+{{--                                    </a>--}}
+{{--                                </li>--}}
+{{--                                <li>--}}
+{{--                                    <a href="#">--}}
+{{--                                        <i class="lni-enter"></i>--}}
+{{--                                        <span>Logout</span>--}}
+{{--                                    </a>--}}
+{{--                                </li>--}}
+{{--                            </ul>--}}
+{{--                        </nav>--}}
+{{--                    </div>--}}
+{{--                    <div class="widget">--}}
+{{--                        <h4 class="widget-title">Advertisement</h4>--}}
+{{--                        <div class="add-box">--}}
+{{--                            <img class="img-fluid" src="assets/img/img1.jpg" alt="">--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                </aside>--}}
+{{--            </div>--}}
 
 
 
-            @yield('content')
+{{--            @yield('content')--}}
 
 
 
-        </div>
-    </div>
-</div>
+{{--        </div>--}}
+{{--    </div>--}}
+{{--</div>--}}
 
 
 <footer>
@@ -391,9 +413,9 @@
     <i class="lni-chevron-up"></i>
 </a>
 
-<div id="preloader">
-    <div class="loader" id="loader-1"></div>
-</div>
+{{--<div id="preloader">--}}
+{{--    <div class="loader" id="loader-1"></div>--}}
+{{--</div>--}}
 
 
 <script src="/assets/js/jquery-min.js"></script>
