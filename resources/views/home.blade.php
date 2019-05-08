@@ -2,26 +2,40 @@
 
 @section('content')
 
-    <section class="categories-icon section-padding bg-drack">
+
+    <section id="categories" class="section-padding bg-drack">
         <div class="container">
             <div class="row">
-                @foreach($subcats as $item)
-
-                    <div class="col-lg-2 col-md-6 col-sm-6 col-xs-12">
-                        <a href="category.html">
-                            <div class="icon-box">
-                                <div class="icon">
-                                    <i class="lni-list"></i>
-                                </div>
-                                <h4> {{ $item->name }}</h4>
-                            </div>
-                        </a>
+                @foreach($cats as $cat)
+                <div class="col-lg-3 col-md-6 col-xs-12">
+                    <div class="category-box">
+                        <div class="icon">
+                            <i class="lni-list"></i>
+                        </div>
+                        <div class="category-header">
+                            <a href="#"><h4>{{ $cat->name }}</h4></a>
+                        </div>
+                        <div class="category-content">
+                            <ul>
+                                @foreach($subCats as $item)
+                                    @if($item->category_id == $cat->id)
+                                <li>
+                                    <a href="">
+                                        <span>{{ $item->name }}</span>
+                                    </a>
+                                </li>
+                                    @endif
+                                    @endforeach
+                            </ul>
+                        </div>
                     </div>
-                @endforeach
+                </div>
+                    @endforeach
 
             </div>
         </div>
     </section>
+
 
 
     <section class="featured section-padding">
