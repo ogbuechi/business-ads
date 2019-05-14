@@ -23,6 +23,7 @@
     <link rel="stylesheet" type="text/css" href="/assets/css/owl.carousel.css">
 
     <link rel="stylesheet" type="text/css" href="/assets/css/main.css">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <link rel="stylesheet" type="text/css" href="/assets/css/responsive.css">
 
