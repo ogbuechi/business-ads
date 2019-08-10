@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Partnership extends Model
 {
-    
+
     use SoftDeletes;
 
 
@@ -19,7 +19,7 @@ class Partnership extends Model
      */
     protected $table = 'partnerships';
 
-    protected $appends = ['type','business_type','short_desc','amount'];
+    protected $appends = ['type','business_type','short_desc','amount','link'];
 
     public function getTypeAttribute(){
         return 'Open Partnership';
@@ -28,6 +28,11 @@ class Partnership extends Model
     public function setBusinessTypeAttribute($value)
     {
         $this->attributes['business_type'] = json_encode($value);
+    }
+
+    public function getLinkAttribute(){
+        $link = route('partnerships.partnership.show',$this->id);
+        return $link;
     }
 
     public function getShortDescAttribute(){
@@ -70,14 +75,14 @@ class Partnership extends Model
     protected $dates = [
                'deleted_at'
            ];
-    
+
     /**
      * The attributes that should be cast to native types.
      *
      * @var array
      */
     protected $casts = [];
-    
+
     /**
      * Get the user for this model.
      */

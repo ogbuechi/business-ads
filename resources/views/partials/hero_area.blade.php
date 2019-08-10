@@ -5,27 +5,17 @@
             <div class="col-md-12 col-lg-12 col-xs-12 text-center">
                 <div class="contents">
                     <h1 class="head-title">Welcome to <span class="year">Gloseed</span></h1>
-                    <p>Buy And Sell Any Business, Partner with Open Partnership Projects, <br> Or Search For Investors, Open Partnership Projects And More</p>
+                    <p>Buy And Sell Any Business, Partner with Open Partnership Projects, <br>
+                        Or Search For Investors, Open Partnership Projects And More
+                    </p>
                     <div class="search-bar">
                         <div class="search-inner">
-                            <form class="search-form">
+                            <form action="/search" method="get" class="search-form search-box">
                                 <div class="form-group inputwithicon" >
-                                    <i class="lni-tag"></i>
-                                    <input type="text" name="customword" class="form-control" placeholder="Enter Product Keyword">
-                                </div>
-                                <div class="form-group inputwithicon">
                                     <i class="lni-menu"></i>
-                                    <div class="select">
-                                        <select>
-                                            <option value="none">Business Type</option>
-                                            <option value="none">Open Partnership</option>
-                                            <option value="none">Business Investors</option>
-                                            <option value="none">Business Sales</option>
-
-                                        </select>
-                                    </div>
+                                    <input type="text" name="keyword" class="form-control" placeholder="Search For Business">
+                                    <button type="submit" class="btn btn-search d-none d-md-block"><i class="lni-search"></i></button>
                                 </div>
-                                <button class="btn btn-common" type="button"><i class="lni-search"></i> Search Now</button>
                             </form>
                         </div>
                     </div>

@@ -2,42 +2,6 @@
 
 @section('content')
 
-
-    <section id="categories" class="section-padding bg-drack">
-        <div class="container">
-            <div class="row">
-                @foreach($cats as $cat)
-                <div class="col-lg-3 col-md-6 col-xs-12">
-                    <div class="category-box">
-                        <div class="icon">
-                            <i class="lni-list"></i>
-                        </div>
-                        <div class="category-header">
-                            <a href="#"><h4>{{ $cat->name }}</h4></a>
-                        </div>
-                        <div class="category-content">
-                            <ul>
-                                @foreach($subCats as $item)
-                                    @if($item->category_id == $cat->id)
-                                <li>
-                                    <a href="">
-                                        <span>{{ $item->name }}</span>
-                                    </a>
-                                </li>
-                                    @endif
-                                    @endforeach
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                    @endforeach
-
-            </div>
-        </div>
-    </section>
-
-
-
     <section class="featured section-padding">
         <div class="container">
             <h1 class="section-title">Trending Business Ads in Nigeria</h1>
@@ -49,20 +13,21 @@
                             <div class="icon">
                                 <i class="lni-heart"></i>
                             </div>
-                            <a href="#"><img class="img-fluid" src="{{ $item['image'] }}" alt=""></a>
+                            <a href="{{ $item->link }}"><img class="img-fluid" src="{{ $item['image'] }}" alt=""></a>
                         </figure>
                         <div class="feature-content">
                             <div class="product">
                                 <a href="#"><i class="lni-folder"></i> {{ $item['type'] }}</a>
                             </div>
-                            <h4><a href="ads-details.html">
+                            <h4><a target="_blank" href="{{ $item->link }}">
 
                                         {{ $item['name'] }}
+
                                 </a></h4>
-                            <span>Last Updated: {{ $item['created_at'] }}</span>
+                            <span>Posted: {{ $item->created_at->diffForHumans() }}</span>
                             <p>{{ $item['short_desc'] }}</p>
                             <div class="listing-bottom">
-                                <h3 class="price float-left">{{ $item['amount'] }}</h3>
+                                <h3 class="price float-left h6">{{ $item['amount'] }}</h3>
                                 <a href="#" class="btn-verified float-right"><i class="lni-check-box"></i> Verified Ad</a>
                             </div>
                         </div>
@@ -252,76 +217,76 @@
     </section>
 
 
-    <section class="testimonial section-padding">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                    <div id="testimonials" class="owl-carousel">
-                        <div class="item">
-                            <div class="testimonial-item">
-                                <div class="img-thumb">
-                                    <img src="assets/img/testimonial/img1.png" alt="">
-                                </div>
-                                <div class="content">
-                                    <h2><a href="#">John Doe</a></h2>
-                                    <p class="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo quidem, excepturi facere magnam illum, at accusantium doloremque odio.</p>
-                                    <h3>Developer at of <a href="#">xyz company</a></h3>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="testimonial-item">
-                                <div class="img-thumb">
-                                    <img src="assets/img/testimonial/img2.png" alt="">
-                                </div>
-                                <div class="content">
-                                    <h2><a href="#">Jessica</a></h2>
-                                    <p class="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo quidem, excepturi facere magnam illum, at accusantium doloremque odio.</p>
-                                    <h3>Developer at of <a href="#">xyz company</a></h3>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="testimonial-item">
-                                <div class="img-thumb">
-                                    <img src="assets/img/testimonial/img3.png" alt="">
-                                </div>
-                                <div class="content">
-                                    <h2><a href="#">Johnny Zeigler</a></h2>
-                                    <p class="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo quidem, excepturi facere magnam illum, at accusantium doloremque odio.</p>
-                                    <h3>Developer at of <a href="#">xyz company</a></h3>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="testimonial-item">
-                                <div class="img-thumb">
-                                    <img src="assets/img/testimonial/img1.png" alt="">
-                                </div>
-                                <div class="content">
-                                    <h2><a href="#">John Doe</a></h2>
-                                    <p class="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo quidem, excepturi facere magnam illum, at accusantium doloremque odio.</p>
-                                    <h3>Developer at of <a href="#">xyz company</a></h3>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="testimonial-item">
-                                <div class="img-thumb">
-                                    <img src="assets/img/testimonial/img2.png" alt="">
-                                </div>
-                                <div class="content">
-                                    <h2><a href="#">Jessica</a></h2>
-                                    <p class="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo quidem, excepturi facere magnam illum, at accusantium doloremque odio.</p>
-                                    <h3>Developer at of <a href="#">xyz company</a></h3>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+{{--    <section class="testimonial section-padding">--}}
+{{--        <div class="container">--}}
+{{--            <div class="row">--}}
+{{--                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">--}}
+{{--                    <div id="testimonials" class="owl-carousel">--}}
+{{--                        <div class="item">--}}
+{{--                            <div class="testimonial-item">--}}
+{{--                                <div class="img-thumb">--}}
+{{--                                    <img src="assets/img/testimonial/img1.png" alt="">--}}
+{{--                                </div>--}}
+{{--                                <div class="content">--}}
+{{--                                    <h2><a href="#">John Doe</a></h2>--}}
+{{--                                    <p class="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo quidem, excepturi facere magnam illum, at accusantium doloremque odio.</p>--}}
+{{--                                    <h3>Developer at of <a href="#">xyz company</a></h3>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                        <div class="item">--}}
+{{--                            <div class="testimonial-item">--}}
+{{--                                <div class="img-thumb">--}}
+{{--                                    <img src="assets/img/testimonial/img2.png" alt="">--}}
+{{--                                </div>--}}
+{{--                                <div class="content">--}}
+{{--                                    <h2><a href="#">Jessica</a></h2>--}}
+{{--                                    <p class="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo quidem, excepturi facere magnam illum, at accusantium doloremque odio.</p>--}}
+{{--                                    <h3>Developer at of <a href="#">xyz company</a></h3>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                        <div class="item">--}}
+{{--                            <div class="testimonial-item">--}}
+{{--                                <div class="img-thumb">--}}
+{{--                                    <img src="assets/img/testimonial/img3.png" alt="">--}}
+{{--                                </div>--}}
+{{--                                <div class="content">--}}
+{{--                                    <h2><a href="#">Johnny Zeigler</a></h2>--}}
+{{--                                    <p class="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo quidem, excepturi facere magnam illum, at accusantium doloremque odio.</p>--}}
+{{--                                    <h3>Developer at of <a href="#">xyz company</a></h3>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                        <div class="item">--}}
+{{--                            <div class="testimonial-item">--}}
+{{--                                <div class="img-thumb">--}}
+{{--                                    <img src="assets/img/testimonial/img1.png" alt="">--}}
+{{--                                </div>--}}
+{{--                                <div class="content">--}}
+{{--                                    <h2><a href="#">John Doe</a></h2>--}}
+{{--                                    <p class="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo quidem, excepturi facere magnam illum, at accusantium doloremque odio.</p>--}}
+{{--                                    <h3>Developer at of <a href="#">xyz company</a></h3>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                        <div class="item">--}}
+{{--                            <div class="testimonial-item">--}}
+{{--                                <div class="img-thumb">--}}
+{{--                                    <img src="assets/img/testimonial/img2.png" alt="">--}}
+{{--                                </div>--}}
+{{--                                <div class="content">--}}
+{{--                                    <h2><a href="#">Jessica</a></h2>--}}
+{{--                                    <p class="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo quidem, excepturi facere magnam illum, at accusantium doloremque odio.</p>--}}
+{{--                                    <h3>Developer at of <a href="#">xyz company</a></h3>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--            </div>--}}
+{{--        </div>--}}
+{{--    </section>--}}
 
 
 {{--    <section class="subscribes section-padding">--}}

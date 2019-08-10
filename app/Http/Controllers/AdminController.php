@@ -16,6 +16,9 @@ class AdminController extends Controller
     public function upgrade_account(){
         return view('admin.upgrade');
     }
+    public function plans(){
+        return view('admin.plans');
+    }
     public function index()
     {
 //        return Auth::user()->roles->first()->level;

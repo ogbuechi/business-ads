@@ -10,6 +10,9 @@ use Illuminate\Support\Facades\Auth;
 class ChatController extends Controller
 {
     public function index(){
+        if(Auth::user()->plan->level == 0){
+            return redirect()->route('admin.account.upgrade');
+        }
         $messengers = Message::select('sender_id')->whereReceiverId(Auth::id())->distinct()->get();
         $messages = $messengers->load('sender');
         $user = User::with('profile')->whereId(Auth::id())->first();
@@ -20,6 +23,9 @@ class ChatController extends Controller
 
     public function inbox($id)
     {
+        if(Auth::user()->plan->level == 0){
+            return redirect()->route('admin.account.upgrade');
+        }
         $messengers = Message::select('sender_id')->whereReceiverId(Auth::id())->distinct()->get();
         $users = $messengers->load('sender');
 

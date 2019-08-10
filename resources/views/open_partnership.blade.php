@@ -68,13 +68,13 @@
                                                             @endif
 
                                                         </div>
-                                                        <a href="#"><img class="img-fluid" src="{{ $item->image }}" alt=""></a>
+                                                        <a href="{{ $item->link }}"><img class="img-fluid" src="{{ $item->image }}" alt=""></a>
                                                     </figure>
                                                     <div class="feature-content">
                                                         <div class="product">
                                                             <a href="#"><i class="lni-user"></i>{{ $item->user->name }} </a>
                                                         </div>
-                                                        <h4><a href="ads-details.html">{{ $item->name }}</a></h4>
+                                                        <h4><a href="{{ $item->link }}">{{ $item->name }}</a></h4>
                                                         <span>Last Updated: {{ $item->created_at->diffForhumans() }}</span>
                                                         <ul class="address">
                                                             @foreach($item->business_type as $key)

@@ -10,11 +10,10 @@ use Exception;
 class PlansController extends Controller
 {
 
-    /**
-     * Display a listing of the plans.
-     *
-     * @return Illuminate\View\View
-     */
+    public function __construct()
+    {
+        $this->middleware('level:5')->except('show');
+    }
     public function index()
     {
         $plans = Plan::paginate(25);
@@ -29,8 +28,8 @@ class PlansController extends Controller
      */
     public function create()
     {
-        
-        
+
+
         return view('plans.create');
     }
 
@@ -44,9 +43,9 @@ class PlansController extends Controller
     public function store(Request $request)
     {
         try {
-            
+
             $data = $this->getData($request);
-            
+
             Plan::create($data);
 
             return redirect()->route('plans.plan.index')
@@ -83,7 +82,7 @@ class PlansController extends Controller
     public function edit($id)
     {
         $plan = Plan::findOrFail($id);
-        
+
 
         return view('plans.edit', compact('plan'));
     }
@@ -99,9 +98,9 @@ class PlansController extends Controller
     public function update($id, Request $request)
     {
         try {
-            
+
             $data = $this->getData($request);
-            
+
             $plan = Plan::findOrFail($id);
             $plan->update($data);
 
@@ -112,7 +111,7 @@ class PlansController extends Controller
 
             return back()->withInput()
                          ->withErrors(['unexpected_error' => 'Unexpected error occurred while trying to process your request!']);
-        }        
+        }
     }
 
     /**
@@ -138,11 +137,11 @@ class PlansController extends Controller
         }
     }
 
-    
+
     /**
      * Get the request's data from the request.
      *
-     * @param Illuminate\Http\Request\Request $request 
+     * @param Illuminate\Http\Request\Request $request
      * @return array
      */
     protected function getData(Request $request)
@@ -151,9 +150,9 @@ class PlansController extends Controller
             'name' => 'string|min:1|max:255|nullable',
             'price' => 'string|required|numeric',
             'level' => 'string|required|numeric|max:2147483647',
-     
+
         ];
-        
+
         $data = $request->validate($rules);
 
 

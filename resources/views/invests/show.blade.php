@@ -11,12 +11,14 @@
                     <div class="page-title-box">
                         <h4 class="page-title">{{ isset($invest->brand_name) ? $invest->brand_name : 'invest' }}</h4>
                         <ol class="breadcrumb p-0 m-0">
+                            @if($invest->user_id == Auth::id())
                             <li class="breadcrumb-item">
                                 <a href="{{ route('invests.invest.edit', $invest->id ) }}" class="btn btn-primary" title="Edit invest">
 
                                     <span class="fa fa-edit" aria-hidden="true"></span>
                                 </a>
                             </li>
+                            @endif
                             <li class="breadcrumb-item">
                                 <a href="{{ route('invests.invest.index') }}" class="btn btn-primary" title="Show All invest">
                                     <span class="fa fa-list" aria-hidden="true"></span>
@@ -133,9 +135,8 @@
                 </div> <!-- end row -->
             </div>
 
+            @if($invest->user_id == Auth::id())
             <div class="row">
-
-
                 <div class="row">
                     <div class="col-md-12 col-xl-12">
 
@@ -156,8 +157,9 @@
 
                     </div>
                 </div>
-
             </div>
+
+                @endif
 
 
         </div>

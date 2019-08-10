@@ -9,8 +9,12 @@
                     <div class="page-title-box">
                         <h4 class="page-title">{{ $title }}</h4>
                         <ol class="breadcrumb p-0 m-0">
-
-                            <li class="breadcrumb-item">
+                            <li class="breadcrumb-item mb-2">
+                                <a href="{{ route('partnerships.partnership.index') }}" class="btn  btn-success" title="Create New partnership">
+                                    All Ads
+                                </a>
+                            </li>
+                            <li class="breadcrumb-item mb-2">
                                 <a href="{{ route('partnerships.partnership.awaiting') }}" class="btn  btn-success" title="Create New partnership">
                                     {{--                                    <span class="fa fa-eye" aria-hidden="true"></span>--}}
                                     Awaiting Reviews
@@ -53,10 +57,24 @@
 
             <div class="row">
                 @if(count($partnerships) == 0)
-                    <div class="">
-                        <div class="panel-body text-center">
-                            <h4>No Partnerships Available!</h4>
+                    <div id="noAd" class="col-md-12">
+                        <div class="row">
+                            <div class="col-xl-4 col-lg-4"></div>
+                            <div class="col-xl-4 col-lg-4">
+                                <div class="card-box widget-box-one">
+                                    <i class="mdi mdi-chart-areaspline widget-one-icon"></i>
+                                    <div class="wigdet-one-content">
+                                        <p class="m-0 text-uppercase font-600 font-secondary text-overflow" title="Post Ad">You Dont Have Any Active Partnership Ads Yet</p>
+                                        <div class="text-center m-t-30">
+                                            <i class="fa fa-plus fa-2x"></i><br>
+                                            <a href="#custom-modal" class="m-t-5 btn btn-primary waves-effect waves-light m-r-5 m-b-10" data-animation="door" data-plugin="custommodal"
+                                               data-overlaySpeed="100" data-overlayColor="#36404a">Post New Ad</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div><!-- end col -->
                         </div>
+
                     </div>
                 @else
                     <div class="col-lg-12">
@@ -88,7 +106,9 @@
                                                     </div>
                                                     <div class="property-action">
 
-                                                        <a href="{{ route('partnerships.partnership.edit', $partnership->id ) }}"  data-toggle="tooltip" data-placement="top" title="" data-original-title="280 square feet"><i class="fa fa-edit"></i><span>Edit</span></a>
+                                                        @if($partnership->user_id == Auth::id())
+                                                        <a href="{{ route('partnerships.partnership.edit', $partnership->id ) }}"  data-toggle="tooltip" data-placement="top" title="" data-original-title="Edit Partnership"><i class="fa fa-edit"></i><span>Edit</span></a>
+                                                        @endif
 
                                                         {{--                                        <a href="#" target="new_blank" data-toggle="tooltip" data-placement="top" title="" data-original-title="24h Electricity"><i class="mdi mdi-battery-charging-80"></i><span> 24H</span></a>--}}
 

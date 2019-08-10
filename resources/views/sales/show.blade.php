@@ -11,12 +11,14 @@
                 <div class="page-title-box">
                     <h4 class="page-title">{{ isset($sale->name) ? $sale->name : 'Sale' }}</h4>
                     <ol class="breadcrumb p-0 m-0">
+                        @if($sale->user_id == Auth::id())
                         <li class="breadcrumb-item">
                             <a href="{{ route('sales.sale.edit', $sale->id ) }}" class="btn btn-primary" title="Edit Sale">
 
                                 <span class="fa fa-edit" aria-hidden="true"></span>
                             </a>
                         </li>
+                        @endif
                         <li class="breadcrumb-item">
                             <a href="{{ route('sales.sale.index') }}" class="btn btn-primary" title="Show All Sale">
                                 <span class="fa fa-list" aria-hidden="true"></span>
@@ -181,10 +183,15 @@
                         <div class="text-left">
                             <div class="time-show first">
                                 <a href="#" class="btn btn-danger w-lg">Available Bids </a>
-                                <button type="button" id="showBid" class="pull-right btn btn-success w-lg">Bid On This Project </button>
+                                @if(Auth::user()->plan->level == 0)
+                                    <a href="{{ route('admin.account.plans') }}" class="pull-right btn btn-success w-lg">Upgrade to bid </a>
+                                @else
+                                    <button type="button" id="showBid" class="pull-right btn btn-success w-lg">Bid On This Project </button>
+                                @endif
                             </div>
                         </div>
                     </article>
+                    @if(Auth::user()->plan->level > 0)
                     <article class="timeline-item" style="display: none" id="bid">
                         <div class="timeline-desk">
                             <div class="panel">
@@ -216,6 +223,7 @@
                             </div>
                         </div>
                     </article>
+                    @endif
                     @if(count($bids) == 0)
                         <article class="timeline-item" style="" id="bid">
                             <div class="timeline-desk">

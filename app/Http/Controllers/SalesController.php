@@ -29,7 +29,7 @@ class SalesController extends Controller
         }else{
             $sales = Sale::with('user')
                 ->whereStatus('1')->paginate(2);
-            $title = 'Your Approved Sales Ads';
+            $title = 'Available Sales Ads';
         }
         return view('sales.index', compact('sales','title'));
     }
@@ -68,6 +68,9 @@ class SalesController extends Controller
      */
     public function create()
     {
+        if(Auth::user()->plan->level == 0){
+            return redirect()->route('admin.account.upgrade');
+        }
         $users = User::pluck('name','id')->all();
         $categories = Category::all();
         $sub_categories = SubCategory::all();
@@ -85,9 +88,9 @@ class SalesController extends Controller
     public function store(Request $request)
     {
 //        try {
-            
+
             $data = $this->getData($request);
-            
+
             Sale::create($data);
 
             return redirect()->route('sales.sale.index')
@@ -127,7 +130,15 @@ class SalesController extends Controller
      */
     public function edit($id)
     {
+        if(Auth::user()->plan->level == 0){
+            return redirect()->route('admin.account.upgrade');
+        }
         $sale = Sale::findOrFail($id);
+
+        if($sale->user_id != Auth::id()){
+            return redirect()->back();
+        }
+
         $users = User::pluck('name','id')->all();
         $categories = Category::all();
         $sub_categories = SubCategory::all();
@@ -146,9 +157,9 @@ class SalesController extends Controller
     public function update($id, Request $request)
     {
         try {
-            
+
             $data = $this->getData($request);
-            
+
             $sale = Sale::findOrFail($id);
             $sale->update($data);
 
@@ -159,7 +170,7 @@ class SalesController extends Controller
 
             return back()->withInput()
                          ->withErrors(['unexpected_error' => 'Unexpected error occurred while trying to process your request!']);
-        }        
+        }
     }
 
     /**
@@ -185,11 +196,11 @@ class SalesController extends Controller
         }
     }
 
-    
+
     /**
      * Get the request's data from the request.
      *
-     * @param Illuminate\Http\Request\Request $request 
+     * @param Illuminate\Http\Request\Request $request
      * @return array
      */
     protected function getData(Request $request)
@@ -207,9 +218,9 @@ class SalesController extends Controller
             'sales_authorization' => 'string|min:1|required',
             'image' => ['image','nullable','file'],
             'user_id' => 'required',
-     
+
         ];
-        
+
         $data = $request->validate($rules);
         if ($request->has('custom_delete_image')) {
             $data['image'] = null;
@@ -220,7 +231,7 @@ class SalesController extends Controller
 
         return $data;
     }
-  
+
     /**
      * Moves the attached file to the server.
      *
@@ -233,7 +244,7 @@ class SalesController extends Controller
         if (!$file->isValid()) {
             return '';
         }
-        
+
         $path = 'uploads/sales';
         $saved = $file->store('public/' . $path, config('filesystems.default'));
 

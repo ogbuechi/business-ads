@@ -21,7 +21,7 @@ class Invest extends Model
             ]
         ];
     }
-    
+
 
     /**
      * The database table used by the model.
@@ -30,7 +30,7 @@ class Invest extends Model
      */
     protected $table = 'invests';
 
-    protected $appends = ['image','type','summary','short_desc','amount','name'];
+    protected $appends = ['image','type','summary','short_desc','amount','name','link'];
 
     /**
     * The database primary key value.
@@ -63,15 +63,20 @@ class Invest extends Model
         return 'Maximum Capital : ₦'.$this->maximum_capital;
     }
 
+    public function getLinkAttribute(){
+        $link = route('invests.invest.show',$this->id);
+        return $link;
+    }
+
     protected $dates = ['created_at'];
-    
+
     /**
      * The attributes that should be cast to native types.
      *
      * @var array
      */
     protected $casts = [];
-    
+
     /**
      * Get the user for this model.
      */

@@ -16,7 +16,7 @@
                                     </div>
                                 </div>
                                 <div class="product-content">
-                                    <h3 class="product-title"><a href="ads-details.html">{{ $item['name'] }}</a></h3>
+                                    <h3 class="product-title"><a href="{{ $item->link }}">{{ $item['name'] }}</a></h3>
                                     <p>{{ $item['short_desc'] }}</p>
 
                                     <div class="meta">
@@ -29,7 +29,7 @@
                                         </div>
                                         <div class="float-right">
                                             <div class="icon">
-                                                <a href="#">
+                                                <a href="{{ $item->link }}">
                                                     <i class="lni-eye"></i>
                                                 </a>
                                             </div>

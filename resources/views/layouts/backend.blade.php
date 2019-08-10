@@ -44,7 +44,9 @@
             background-size: 132px 132px;
             margin-top: -101.5px;
             background-position-x:center;
-
+        }
+        .plan-stats .line {
+            text-decoration-line: line-through;
         }
       textarea {
             background: #ebebeb;
@@ -202,6 +204,7 @@
                                         <h5>Hi, {{ Auth::user()->name }}</h5>
                                     </li>
                                     <li><a href="{{ route('profiles.profile.myprofile') }}" class="dropdown-item"><i class="ti-user m-r-5"></i> Profile</a></li>
+                                    <li><a href="{{ route('user.complete.reg') }}" class="dropdown-item"><i class="ti-user m-r-5"></i> Update Company</a></li>
                                     <li>
                                         <a class="dropdown-item" href="{{ route('logout') }}"
                                            onclick="event.preventDefault();

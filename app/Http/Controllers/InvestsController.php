@@ -27,8 +27,8 @@ class InvestsController extends Controller
             $title = 'All Sales Ads';
         }else{
             $invests = Invest::with('user')
-                ->whereStatus('1')->paginate(2);
-            $title = 'Your Approved Sales Ads';
+                ->whereStatus('1')->paginate(10);
+            $title = 'Available Business Invest Ads';
         }
         return view('invests.index', compact('invests','title'));
     }
@@ -37,13 +37,13 @@ class InvestsController extends Controller
         if(Auth::user()->hasRole(['admin','super'])){
             $invests = Invest::with('user')->orderBy('status','ASC')
                 ->whereStatus('0')->paginate(30);
-            $title = 'All Sales Ads Awaiting Approval';
+            $title = 'All Business Invest Ads Awaiting Approval';
         }else{
             $invests = Invest::with('user')
                 ->whereStatus('0')
                 ->whereUserId(Auth::id())
                 ->orderBy('status','ASC')->paginate(20);
-            $title = 'Your Sales Ads Awaiting Approval';
+            $title = 'Your Invests Ads Awaiting Approval';
         }
 
         return view('invests.index', compact('invests','title'));
@@ -62,6 +62,9 @@ class InvestsController extends Controller
 
     public function create()
     {
+        if(Auth::user()->plan->level == 0){
+            return redirect()->route('admin.account.upgrade');
+        }
         $users = User::pluck('name','id')->all();
 
         $categories = Category::all();
@@ -74,9 +77,9 @@ class InvestsController extends Controller
     public function store(Request $request)
     {
 //        try {
-            
+
             $data = $this->getData($request);
-            
+
             Invest::create($data);
 
             return redirect()->route('invests.invest.index')
@@ -98,7 +101,14 @@ class InvestsController extends Controller
 
     public function edit($id)
     {
+        if(Auth::user()->plan->level == 0){
+            return redirect()->route('admin.account.upgrade');
+        }
         $invest = Invest::findOrFail($id);
+
+        if($invest->user_id != Auth::id()){
+            return redirect()->back();
+        }
         $users = User::pluck('name','id')->all();
         $categories = Category::all();
 
@@ -130,9 +140,9 @@ class InvestsController extends Controller
     public function update($id, Request $request)
     {
         try {
-            
+
             $data = $this->getData($request);
-            
+
             $invest = Invest::findOrFail($id);
             $invest->update($data);
 
@@ -143,7 +153,7 @@ class InvestsController extends Controller
 
             return back()->withInput()
                          ->withErrors(['unexpected_error' => 'Unexpected error occurred while trying to process your request!']);
-        }        
+        }
     }
 
     /**
@@ -169,11 +179,11 @@ class InvestsController extends Controller
         }
     }
 
-    
+
     /**
      * Get the request's data from the request.
      *
-     * @param Illuminate\Http\Request\Request $request 
+     * @param Illuminate\Http\Request\Request $request
      * @return array
      */
     protected function getData(Request $request)
@@ -184,9 +194,9 @@ class InvestsController extends Controller
             'business_type' => 'array|min:1|nullable',
             'profile_summary' => 'string|min:1|nullable',
             'maximum_capital' => 'string|min:1|nullable',
-     
+
         ];
-        
+
         $data = $request->validate($rules);
 
 

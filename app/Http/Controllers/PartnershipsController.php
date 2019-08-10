@@ -12,11 +12,6 @@ use Illuminate\Support\Facades\Auth;
 class PartnershipsController extends Controller
 {
 
-    /**
-     * Display a listing of the partnerships.
-     *
-     * @return Illuminate\View\View
-     */
 //    public function index()
 //    {
 //        $partnerships = Partnership::with('user')->paginate(25);
@@ -32,7 +27,7 @@ class PartnershipsController extends Controller
         }else{
             $partnerships = Partnership::with('user')
                 ->whereStatus('1')->paginate(20);
-            $title = 'Your Approved Partnerships Ads';
+            $title = 'Available Partnerships Ads';
         }
         return view('partnerships.index', compact('partnerships','title'));
     }
@@ -72,7 +67,7 @@ class PartnershipsController extends Controller
     public function create()
     {
         $users = User::pluck('name','id')->all();
-        
+
         return view('partnerships.create', compact('users'));
     }
 
@@ -86,9 +81,9 @@ class PartnershipsController extends Controller
     public function store(Request $request)
     {
         try {
-            
+
             $data = $this->getData($request);
-            
+
             Partnership::create($data);
 
             return redirect()->route('partnerships.partnership.index')
@@ -124,7 +119,15 @@ class PartnershipsController extends Controller
      */
     public function edit($id)
     {
+        if(Auth::user()->plan->level == 0){
+            return redirect()->route('admin.account.upgrade');
+        }
         $partnership = Partnership::findOrFail($id);
+
+        if($partnership->user_id != Auth::id()){
+            return redirect()->back();
+        }
+
         $users = User::pluck('name','id')->all();
 
         return view('partnerships.edit', compact('partnership','users'));
@@ -141,9 +144,9 @@ class PartnershipsController extends Controller
     public function update($id, Request $request)
     {
         try {
-            
+
             $data = $this->getData($request);
-            
+
             $partnership = Partnership::findOrFail($id);
             $partnership->update($data);
 
@@ -154,7 +157,7 @@ class PartnershipsController extends Controller
 
             return back()->withInput()
                          ->withErrors(['unexpected_error' => 'Unexpected error occurred while trying to process your request!']);
-        }        
+        }
     }
 
     /**
@@ -180,11 +183,11 @@ class PartnershipsController extends Controller
         }
     }
 
-    
+
     /**
      * Get the request's data from the request.
      *
-     * @param Illuminate\Http\Request\Request $request 
+     * @param Illuminate\Http\Request\Request $request
      * @return array
      */
     protected function getData(Request $request)
@@ -198,9 +201,9 @@ class PartnershipsController extends Controller
             'company_type' => 'required|nullable',
             'image' => ['image','nullable','file'],
             'user_id' => 'nullable',
-     
+
         ];
-        
+
         $data = $request->validate($rules);
         if ($request->has('custom_delete_image')) {
             $data['image'] = null;
@@ -211,7 +214,7 @@ class PartnershipsController extends Controller
 
         return $data;
     }
-  
+
     /**
      * Moves the attached file to the server.
      *
@@ -224,7 +227,7 @@ class PartnershipsController extends Controller
         if (!$file->isValid()) {
             return '';
         }
-        
+
         $path = config('codegenerator.files_upload_path', 'uploads');
         $saved = $file->store('public/' . $path, config('filesystems.default'));
 

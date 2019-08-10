@@ -27,8 +27,8 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    public function index()
-    {
+
+    public function searchResult(){
         $categories = Category::all();
         $subcats = SubCategory::all();
         $sales = Sale::with('user')
@@ -45,7 +45,50 @@ class HomeController extends Controller
             ->orderBy('status','ASC')->get()->toArray();
         $all = array_merge($partnerships,$sales);
         $ads = array_merge($all,$invests);
-        return view('home', compact('categories','subcats','ads'));
+
+        return view('search_result', compact('categories','subcats','ads'));
+    }
+
+    public function search(Request $request){
+        $result = $request->keyword;
+        $sales = Sale::with('user')
+            ->whereStatus('1')
+            ->where('name', 'LIKE', "%{$result}%")
+            ->orderBy('status','ASC')->get();
+        $invests = Invest::with('user')
+            ->whereStatus('1')
+            ->where('brand_name', 'LIKE', "%{$result}%")
+            ->orderBy('status','ASC')->get();
+        $partnerships = Partnership::with('user')
+            ->whereStatus('1')
+            ->where('name', 'LIKE', "%{$result}%")
+            ->orderBy('status','ASC')->get();
+//        $all = array_merge($partnerships,$sales);
+        $all = $partnerships->merge($sales);
+        $ads = $all->merge($invests)->paginate('2');
+//        $ads = array_merge($all,$invests)->paginate('2');
+        return view('search_result', compact('ads','result'));
+    }
+
+    public function index()
+    {
+//        $categories = Category::all();
+//        $subcats = SubCategory::all();
+        $sales = Sale::with('user')
+            ->whereStatus('1')
+//            ->whereUserId(Auth::id())
+            ->orderBy('status','ASC')->latest()->get();
+        $invests = Invest::with('user')
+            ->whereStatus('1')
+//            ->whereUserId(Auth::id())
+            ->orderBy('status','ASC')->latest()->get();
+        $partnerships = Partnership::with('user')
+            ->whereStatus('1')
+//            ->whereUserId(Auth::id())
+            ->orderBy('status','ASC')->latest()->get();
+        $all = $partnerships->merge($sales);
+        $ads = $all->merge($invests)->paginate('9');
+        return view('home', compact('ads'));
     }
 
     public function featured()

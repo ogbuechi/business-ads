@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Sale extends Model
 {
-    
+
     use SoftDeletes;
 
 
@@ -19,7 +19,7 @@ class Sale extends Model
      */
     protected $table = 'sales';
 
-    protected $appends = ['type','short_desc','amount'];
+    protected $appends = ['type','short_desc','amount','link'];
 
     /**
     * The database primary key value.
@@ -56,12 +56,11 @@ class Sale extends Model
     protected $dates = [
                'deleted_at'
            ];
-    
-    /**
-     * The attributes that should be cast to native types.
-     *
-     * @var array
-     */
+
+    public function getLinkAttribute(){
+        $link = route('sales.sale.show',$this->id);
+        return $link;
+    }
     protected $casts = [];
 
     public function getShortDescAttribute(){
@@ -71,7 +70,7 @@ class Sale extends Model
     public function getAmountAttribute(){
         return 'Value: ₦'.$this->value;
     }
-    
+
     /**
      * Get the user for this model.
      */

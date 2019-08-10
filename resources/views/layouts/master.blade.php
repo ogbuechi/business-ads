@@ -1,7 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<!-- Mirrored from preview.uideck.com/items/classixer-1.1/dashboard.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 27 Feb 2019 09:01:52 GMT -->
 <head>
 
     <meta charset="utf-8">
@@ -38,13 +36,43 @@
         .form-group .has-error select {
             border-color: red;
         }
+        .search-box .btn-search {
+            position: absolute;
+            top: 3px;
+            right: 3px;
+            background-color: transparent !important;
+            border: none !important;
+            font-size: 16px;
+            -webkit-box-shadow: none !important;
+            box-shadow: none !important;
+            outline: none !important;
+            color: #98a6ad;
+        }
         .package .line{
             text-decoration-line: line-through
         }
         .search-bar .form-group {
             margin: 5px;
             float: left;
-            width: 40%;
+            width: 100%;
+        }
+        .featured-box figure .icon i {
+            border-radius: 0;
+        }
+
+        .search-bar .search-inner {
+            margin: auto;
+            border: 0;
+            padding: 10px;
+            width: 51%;
+            float: none;
+            position: relative;
+            background: rgba(128,128,128,.5);
+        }
+        @media (max-width: 767px){
+            .search-bar .search-inner {
+                width: 100%;
+            }
         }
         .featured-box .feature-content ul.address li {
              width: 100%;
@@ -66,7 +94,7 @@
                     <span class="lni-menu"></span>
                     <span class="lni-menu"></span>
                 </button>
-                <a href="{{ route('home') }}" class="navbar-brand">Business Ads</a>
+                <a href="{{ route('home') }}" class="navbar-brand">Gloseed </a>
             </div>
             <div class="collapse navbar-collapse" id="main-navbar">
                 <ul class="navbar-nav mr-auto">
@@ -124,64 +152,45 @@
 
         <ul class="mobile-menu">
             <li>
-                <a href="#">
+                <a href="{{ route('home') }}">
                     Home
                 </a>
-                <ul class="dropdown">
-                    <li><a href="index-2.html">Home 1</a></li>
-                    <li><a href="index-3.html">Home 2</a></li>
-                    <li><a href="index-4.html">Home 2</a></li>
-                </ul>
             </li>
             <li>
-                <a href="category.html">Categories</a>
-            </li>
-            <li>
-                <a href="#">
-                    Listings
+                <a href="{{ route('business.investors') }}">
+                    Business Investors
                 </a>
-                <ul class="dropdown">
-                    <li><a href="adlistinggrid.html">Ad Grid</a></li>
-                    <li><a href="adlistinglist.html">Ad Listing</a></li>
-                    <li><a href="ads-details.html">Listing Detail</a></li>
-                </ul>
             </li>
             <li>
-                <a href="#">Pages</a>
-                <ul class="dropdown">
-                    <li><a href="about.html">About Us</a></li>
-                    <li><a href="services.html">Services</a></li>
-                    <li><a href="ads-details.html">Ads Details</a></li>
-                    <li><a href="post-ads.html">Ads Post</a></li>
-                    <li><a href="pricing.html">Packages</a></li>
-                    <li><a href="testimonial.html">Testimonial</a></li>
-                    <li><a href="faq.html">FAQ</a></li>
-                    <li><a href="404.html">404</a></li>
-                </ul>
+                <a href="{{ route('business.sales') }}">
+                    Business Sales
+                </a>
             </li>
             <li>
-                <a href="#">Blog</a>
-                <ul class="dropdown">
-                    <li><a href="blog.html">Blog - Right Sidebar</a></li>
-                    <li><a href="blog-left-sidebar.html">Blog - Left Sidebar</a></li>
-                    <li><a href="blog-grid-full-width.html"> Blog full width </a></li>
-                    <li><a href="single-post.html">Blog Details</a></li>
-                </ul>
-            </li>
-            <li>
-                <a href="contact.html">Contact Us</a>
+                <a href="{{ route('business.partnerships') }}">
+                    Open Partnership
+                </a>
             </li>
             <li>
                 <a>My Account</a>
                 <ul class="dropdown">
-                    <li><a href="account-profile-setting.html"><i class="lni-home"></i> Account Home</a></li>
-                    <li><a href="account-myads.html"><i class="lni-wallet"></i> My Ads</a></li>
-                    <li><a href="account-favourite-ads.html"><i class="lni-heart"></i> Favourite ads</a></li>
-                    <li><a href="account-archived-ads.html"><i class="lni-folder"></i> Archived</a></li>
-                    <li><a href="login.html"><i class="lni-lock"></i> Log In</a></li>
-                    <li><a href="signup.html"><i class="lni-user"></i> Signup</a></li>
-                    <li><a href="forgot-password.html"><i class="lni-reload"></i> Forgot Password</a></li>
-                    <li><a href="account-close.html"><i class="lni-close"></i>Account close</a></li>
+                    @guest()
+                        <li><a href="{{ url('/login') }}"><i class="lni-lock"></i> Log In</a></li>
+                        <li><a href="{{ url('/register') }}"><i class="lni-user"></i> Signup</a></li>
+                    @else
+                        <li><a href="{{ route('admin.home') }}"><i class="lni-lock"></i> Dashboard</a></li>
+                        <li><a>
+                            <a class="dropdown-item" href="{{ route('logout') }}"
+                               onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();"><i class="ti-power-off m-r-5"></i>
+                                {{ __('Logout') }}
+                            </a>
+
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                @csrf
+                            </form>
+                        </a></li>
+                    @endguest
                 </ul>
             </li>
         </ul>

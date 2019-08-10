@@ -31,10 +31,15 @@ Route::get('/b2b_invests', function () {
 Route::get('/business_investors', 'HomeController@investors')->name('business.investors');
 Route::get('/business_sales', 'HomeController@sales')->name('business.sales');
 Route::get('/business_partnerships', 'HomeController@partnerships')->name('business.partnerships');
+Route::get('/result', 'HomeController@searchResult')->name('search.result');
+
+Route::get('/search/{param?}', 'HomeController@search');
+
 
 Route::get('/contact', function () {
     return view('contact-us');
 });
+
 
 //Route::get('/dashboard', function () {
 //    return view('dashboard.index');
@@ -59,9 +64,13 @@ Route::post('multifileupload', 'HomeController@store')->name('multifileupload');
 
 //['middleware' => ['role:admin']],
 Route::group([ 'prefix' => 'dashboard','middleware' => ['auth', 'level:1','verified']], function () {
+
+    Route::get('/account/plans', 'AdminController@plans')->name('admin.account.plans');
+
     Route::get('/', 'AdminController@index')->name('admin.home');
     Route::get('/moderation', 'AdminController@moderation')->name('admin.moderation');
     Route::get('/upgrade_account', 'AdminController@upgrade_account')->name('admin.account.upgrade');
+
     Route::get('/media', 'AdminController@media')->name('admin.media');
     Route::get('/profile', 'AdminController@profile')->name('admin.profile');
     Route::get('/my_profile', 'ProfilesController@myProfile')->name('profiles.profile.myprofile');
@@ -573,7 +582,7 @@ Route::group(
 
     Route::post('/', 'RolesController@store')
          ->name('roles.role.store');
-               
+
     Route::put('role/{role}', 'RolesController@update')
          ->name('roles.role.update')
          ->where('id', '[0-9]+');
