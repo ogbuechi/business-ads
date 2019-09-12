@@ -17,7 +17,8 @@ class AdminController extends Controller
         return view('admin.upgrade');
     }
     public function plans(){
-        return view('admin.plans');
+        $user = Auth::user();
+        return view('admin.plans', compact('user'));
     }
     public function index()
     {

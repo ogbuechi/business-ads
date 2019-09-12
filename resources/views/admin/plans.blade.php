@@ -67,33 +67,46 @@
 
 
                         <!--Pricing Column-->
-                        <div class="pricing-column col-lg-6">
-                            <div class="inner-box card-box">
-                                <div class="plan-header text-center">
-                                    <h3 class="plan-title">Premium Plan</h3>
-                                    <h2 class="plan-price">₦20,000</h2>
-                                    <div class="plan-duration">Per Month</div>
-                                </div>
-                                <ul class="plan-stats list-unstyled text-center">
-                                    <li><strong>View</strong> Listed Ads</li>
-                                    <li><strong>Business</strong> Ad posting</li>
-                                    <li><strong>View</strong> Poster Details</li>
-                                    <li><strong>View </strong> Ads Details</li>
-                                    <li><strong>View </strong> Company Details</li>
-                                    <li><strong>Live Chat</strong> with Ad poster!</li>
-                                    <li>Email Support</li>
-                                    <li>24x7 Support</li>
-                                </ul>
 
-                                <div class="text-center">
-                                    @if (Auth::user()->plan->level == 0)
-                                    <a href="#" class="btn btn-success btn-bordred btn-rounded waves-effect waves-light">Activate Plan</a>
+                            <div class="pricing-column col-lg-6">
+                                <form onsubmit="makePayment()" id="payment-form">
+                                    <input type="hidden" value="{{ $user->profile->first_name }}" id="js-firstName" name="firstName" class="field-divided" >
+                                    <input type="hidden" id="js-lastName" value="{{ $user->profile->last_name }}" name="lastName" class="field-divided"/>
+                                    <input type="hidden" id="js-email" value="{{ $user->email }}" name="email"/>
+                                    <input type="hidden" id="js-narration" value="Upgrade Account" name="narration"/>
+                                    <input type="hidden" value="{{ $premium }}" id="js-amount" name="amount"/>
+                                <div class="inner-box card-box">
+                                    <div class="plan-header text-center">
+                                        <h3 class="plan-title">Premium Plan</h3>
+                                        <h2 class="plan-price">₦{{ $premium }}</h2>
+                                        <div class="plan-duration">Per Month</div>
+                                    </div>
+                                    <ul class="plan-stats list-unstyled text-center">
+                                        <li><strong>View</strong> Listed Ads</li>
+                                        <li><strong>Business</strong> Ad posting</li>
+                                        <li><strong>View</strong> Poster Details</li>
+                                        <li><strong>View </strong> Ads Details</li>
+                                        <li><strong>View </strong> Company Details</li>
+                                        <li><strong>Live Chat</strong> with Ad poster!</li>
+                                        <li>Email Support</li>
+                                        <li>24x7 Support</li>
+                                    </ul>
+
+                                    <div class="text-center">
+                                        @if (Auth::user()->plan->level == 0)
+                                            <button class="btn btn-success btn-bordered btn-rounded waves-effect waves-light" type="button" onclick="makePayment()">Activate Plan</button>
+
+{{--                                            <a href="#" class="btn btn-success btn-bordred btn-rounded waves-effect waves-light">Activate Plan</a>--}}
                                         @else
-                                        <a href="#" class="btn btn-primary btn-bordred btn-rounded waves-effect waves-light">Active Plan</a>
-                                    @endif
+                                            <a href="#" class="btn btn-primary btn-bordred btn-rounded waves-effect waves-light">Active Plan</a>
+                                        @endif
+                                    </div>
                                 </div>
+                                </form>
                             </div>
-                        </div>
+
+
+
 
                     </div>
                 </div><!-- end col -->
@@ -106,4 +119,45 @@
     </div>
 
 @endsection
+
+@section('js')
+    <script>
+        // function setDemoData() {
+        //     var obj = {
+        //         firstName: "Mike",
+        //         lastName: "Oshadami",
+        //         email: "oshadami@specs.com",
+        //         narration: "Test Payment",
+        //         amount: "19999"
+        //     };
+        //     for (var propName in obj) {
+        //         document.querySelector('#js-' + propName).setAttribute('value', obj[propName]);
+        //     }
+        // }
+        function makePayment() {
+            var form = document.querySelector("#payment-form");
+            var paymentEngine = RmPaymentEngine.init({
+                key: 'SlVERU98NDIzNzMwNDZ8N2QyOWNmZmZlNTdmMTA5MTYwYjFkYzAyYTM4ZDljYzljNzZkYWFmMjdhY2UyMDhjOGE2NTgwZDkyNDMzOGZjNzJlMTZkZGE3M2NhYjZjYWE2NDIzMGE2YzMzNWE4OTM4YWFlZGIxYmQ3NmEyNjk5NDVjM2Q4ODkyMTExODlhNWY=',
+                customerId: form.querySelector('input[name="email"]').value,
+                firstName: form.querySelector('input[name="firstName"]').value,
+                lastName: form.querySelector('input[name="lastName"]').value,
+                email: form.querySelector('input[name="email"]').value,
+                amount: form.querySelector('input[name="amount"]').value,
+                narration: form.querySelector('input[name="narration"]').value,
+                onSuccess: function (response) {
+                    console.log('callback Successful Response', response);
+                },
+                onError: function (response) {
+                    console.log('callback Error Response', response);
+                },
+                onClose: function () {
+                    console.log("closed");
+                }
+            });
+            paymentEngine.showPaymentWidget();
+        }
+    </script>
+    <script type="text/javascript" src="https://remitademo.net/payment/v1/remita-pay-inline.bundle.js"></script>
+@stop
+
 

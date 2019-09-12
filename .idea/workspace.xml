@@ -4,32 +4,10 @@
     <list default="true" id="7861fb1a-2fb1-484c-8386-186c13a6677e" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/AdminController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/AdminController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ChatController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ChatController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/InvestsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/InvestsController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/PartnershipsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/PartnershipsController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/PlansController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/PlansController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/SalesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/SalesController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Invest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Invest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Partnership.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Partnership.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Sale.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Sale.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Providers/AppServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/AppServiceProvider.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sass/app.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/app.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/upgrade.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/upgrade.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/b2b_invests.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/b2b_invests.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/b2b_sales.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/b2b_sales.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/home.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/invests/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/invests/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/invests/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/invests/show.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/backend.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/backend.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/master.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/master.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/open_partnership.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/open_partnership.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/partials/featured_ads.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/partials/featured_ads.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/partials/hero_area.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/partials/hero_area.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/partnerships/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/partnerships/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/partnerships/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/partnerships/show.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/sales/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/sales/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/sales/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/sales/show.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/laravel-code-generator/sources/resources_map.json" beforeDir="false" afterPath="$PROJECT_DIR$/resources/laravel-code-generator/sources/resources_map.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/laravel-code-generator/system/migration_tracker.json" beforeDir="false" afterPath="$PROJECT_DIR$/resources/laravel-code-generator/system/migration_tracker.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/plans.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/plans.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -327,7 +305,7 @@
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/public/images" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../school-admin-master" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -424,7 +402,11 @@
       <workItem from="1565366940773" duration="396000" />
       <workItem from="1565429930716" duration="14553000" />
       <workItem from="1565463925829" duration="2182000" />
-      <workItem from="1565473610797" duration="5399000" />
+      <workItem from="1565473610797" duration="6126000" />
+      <workItem from="1566804550864" duration="2642000" />
+      <workItem from="1568018932568" duration="1073000" />
+      <workItem from="1568213466136" duration="4236000" />
+      <workItem from="1568303013851" duration="1330000" />
     </task>
     <servers />
   </component>

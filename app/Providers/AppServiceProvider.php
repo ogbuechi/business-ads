@@ -22,6 +22,7 @@ class AppServiceProvider extends ServiceProvider
         Schema::defaultStringLength(191);
 
         View::share('cats', Category::orderBy('name', 'asc')->get());
+        View::share('premium', 20000);
         View::share('subCats', SubCategory::orderBy('name', 'asc')->get());
 
     }

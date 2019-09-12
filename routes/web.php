@@ -592,3 +592,35 @@ Route::group(
          ->where('id', '[0-9]+');
 
 });
+
+Route::group(
+[
+    'prefix' => 'payments',
+], function () {
+
+    Route::get('/', 'PaymentsController@index')
+         ->name('payments.payment.index');
+
+    Route::get('/create','PaymentsController@create')
+         ->name('payments.payment.create');
+
+    Route::get('/show/{payment}','PaymentsController@show')
+         ->name('payments.payment.show')
+         ->where('id', '[0-9]+');
+
+    Route::get('/{payment}/edit','PaymentsController@edit')
+         ->name('payments.payment.edit')
+         ->where('id', '[0-9]+');
+
+    Route::post('/', 'PaymentsController@store')
+         ->name('payments.payment.store');
+               
+    Route::put('payment/{payment}', 'PaymentsController@update')
+         ->name('payments.payment.update')
+         ->where('id', '[0-9]+');
+
+    Route::delete('/payment/{payment}','PaymentsController@destroy')
+         ->name('payments.payment.destroy')
+         ->where('id', '[0-9]+');
+
+});
