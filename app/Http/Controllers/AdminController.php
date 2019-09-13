@@ -20,6 +20,15 @@ class AdminController extends Controller
         $user = Auth::user();
         return view('admin.plans', compact('user'));
     }
+    public function payment(){
+        $user = Auth::user();
+        $data = [
+            'one'     =>  25000,
+            'two'     =>  18000 * 6,
+            'twelve'     =>  12000 * 12,
+        ];
+        return view('admin.make_payment', compact('data','user'));
+    }
     public function index()
     {
 //        return Auth::user()->roles->first()->level;

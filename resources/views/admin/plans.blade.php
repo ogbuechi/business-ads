@@ -94,9 +94,9 @@
 
                                     <div class="text-center">
                                         @if (Auth::user()->plan->level == 0)
-                                            <button class="btn btn-success btn-bordered btn-rounded waves-effect waves-light" type="button" onclick="makePayment()">Activate Plan</button>
+{{--                                            <button class="btn btn-success btn-bordered btn-rounded waves-effect waves-light" type="button" onclick="makePayment()">Activate Plan</button>--}}
 
-{{--                                            <a href="#" class="btn btn-success btn-bordred btn-rounded waves-effect waves-light">Activate Plan</a>--}}
+                                            <a href="{{ route('admin.account.payment') }}" class="btn btn-success btn-bordred btn-rounded waves-effect waves-light">Activate Plan</a>
                                         @else
                                             <a href="#" class="btn btn-primary btn-bordred btn-rounded waves-effect waves-light">Active Plan</a>
                                         @endif
@@ -122,18 +122,6 @@
 
 @section('js')
     <script>
-        // function setDemoData() {
-        //     var obj = {
-        //         firstName: "Mike",
-        //         lastName: "Oshadami",
-        //         email: "oshadami@specs.com",
-        //         narration: "Test Payment",
-        //         amount: "19999"
-        //     };
-        //     for (var propName in obj) {
-        //         document.querySelector('#js-' + propName).setAttribute('value', obj[propName]);
-        //     }
-        // }
         function makePayment() {
             var form = document.querySelector("#payment-form");
             var paymentEngine = RmPaymentEngine.init({

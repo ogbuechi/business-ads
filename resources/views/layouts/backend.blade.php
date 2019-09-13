@@ -45,6 +45,28 @@
             margin-top: -101.5px;
             background-position-x:center;
         }
+        .one, .two, .twelve {
+
+            width:100px;
+            padding-top: 15px;
+            /*background-color:red;*/
+            cursor:pointer;
+
+        }
+
+        .hli {
+
+            border:2px solid blue;
+
+        }
+        .payment .wigdet-one-content p {
+            color: blue;
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+        .payment .radio {
+            position:fixed;opacity:0
+        }
         .plan-stats .line {
             text-decoration-line: line-through;
         }
@@ -92,6 +114,7 @@
             font-size: 26px;
             font-weight: 600;
         }
+
     </style>
 
 
@@ -512,7 +535,6 @@
 
 
 
-@yield('js')
 
 <script src="/js/app.js"></script>
 
@@ -530,6 +552,7 @@
     });
 </script>
 
+@yield('js')
 
 
 </body>

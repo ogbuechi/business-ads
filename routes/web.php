@@ -67,6 +67,8 @@ Route::group([ 'prefix' => 'dashboard','middleware' => ['auth', 'level:1','verif
 
     Route::get('/account/plans', 'AdminController@plans')->name('admin.account.plans');
 
+    Route::get('/account/make/payment', 'AdminController@payment')->name('admin.account.payment');
+
     Route::get('/', 'AdminController@index')->name('admin.home');
     Route::get('/moderation', 'AdminController@moderation')->name('admin.moderation');
     Route::get('/upgrade_account', 'AdminController@upgrade_account')->name('admin.account.upgrade');
@@ -614,7 +616,7 @@ Route::group(
 
     Route::post('/', 'PaymentsController@store')
          ->name('payments.payment.store');
-               
+
     Route::put('payment/{payment}', 'PaymentsController@update')
          ->name('payments.payment.update')
          ->where('id', '[0-9]+');
