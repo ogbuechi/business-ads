@@ -19,6 +19,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
+
         Schema::defaultStringLength(191);
 
         View::share('cats', Category::orderBy('name', 'asc')->get());

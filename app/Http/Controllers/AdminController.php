@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Invest;
 use App\Models\Partnership;
+use App\Models\Plan;
 use App\Models\Sale;
 use App\User;
 use Illuminate\Http\Request;
@@ -18,7 +19,8 @@ class AdminController extends Controller
     }
     public function plans(){
         $user = Auth::user();
-        return view('admin.plans', compact('user'));
+        $amount = Plan::whereLevel(2)->firstOrFail()->price;
+        return view('admin.plans', compact('user','amount'));
     }
     public function payment(){
         $user = Auth::user();

@@ -78,7 +78,7 @@
                                 <div class="inner-box card-box">
                                     <div class="plan-header text-center">
                                         <h3 class="plan-title">Premium Plan</h3>
-                                        <h2 class="plan-price">₦{{ $premium }}</h2>
+                                        <h2 class="plan-price">₦{{ $amount }}</h2>
                                         <div class="plan-duration">Per Month</div>
                                     </div>
                                     <ul class="plan-stats list-unstyled text-center">
