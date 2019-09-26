@@ -47,7 +47,7 @@
         }
         .one, .two, .twelve {
 
-            width:100px;
+            /*width:100px;*/
             padding-top: 15px;
             /*background-color:red;*/
             cursor:pointer;
@@ -57,6 +57,7 @@
         .hli {
 
             border:2px solid blue;
+            transform: scale(1.05);
 
         }
         .payment .wigdet-one-content p {

@@ -39,6 +39,9 @@ class AdminController extends Controller
             'one'     =>  25000,
             'two'     =>  18000 * 6,
             'twelve'     =>  12000 * 12,
+            'one_d'     =>  68,
+            'two_d'     =>  295,
+            'twelve_d'     =>  393,
         ];
         return view('admin.make_payment', compact('data','user'));
     }
