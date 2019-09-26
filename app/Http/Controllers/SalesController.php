@@ -114,20 +114,15 @@ class SalesController extends Controller
     {
         $sale = Sale::with('user')->findOrFail($id);
 
-//        return $sale->business_type;
+        if($sale->user_id != Auth::id() && Auth::user()->plan->level == 0){
+            return redirect()->route('admin.account.upgrade');
+        }
 
         $bids = SaleBid::whereSaleId($sale->id)->get();
 
         return view('sales.show', compact('sale','bids'));
     }
 
-    /**
-     * Show the form for editing the specified sale.
-     *
-     * @param int $id
-     *
-     * @return Illuminate\View\View
-     */
     public function edit($id)
     {
         if(Auth::user()->plan->level == 0){

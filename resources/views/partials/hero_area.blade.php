@@ -12,7 +12,6 @@
                         <div class="search-inner">
                             <form action="/search" method="get" class="search-form search-box">
                                 <div class="form-group inputwithicon" >
-                                    <i class="lni-menu"></i>
                                     <input type="text" name="keyword" class="form-control" placeholder="Search For Business">
                                     <button type="submit" class="btn btn-search d-none d-md-block"><i class="lni-search"></i></button>
                                 </div>

@@ -72,6 +72,7 @@ class HomeController extends Controller
 
     public function index()
     {
+        $can_view = $this->checkUser();
 //        $categories = Category::all();
 //        $subcats = SubCategory::all();
         $sales = Sale::with('user')
@@ -88,7 +89,7 @@ class HomeController extends Controller
             ->orderBy('status','ASC')->latest()->get();
         $all = $partnerships->merge($sales);
         $ads = $all->merge($invests)->paginate('9');
-        return view('home', compact('ads'));
+        return view('home', compact('ads','can_view'));
     }
 
     public function featured()

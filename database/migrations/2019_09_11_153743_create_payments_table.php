@@ -16,11 +16,15 @@ class CreatePaymentsTable extends Migration
         {
             $table->increments('id');
             $table->integer('user_id')->unsigned()->index();
-            $table->integer('plan_level');
+            $table->integer('plan_level')->default(2);
             $table->date('valid_till');
             $table->string('amount');
+            $table->string('month');
             $table->string('rrr');
             $table->timestamps();
+            $table->foreign('user_id')
+                ->references('id')->on('users')
+                ->onDelete('cascade');
         });
     }
 

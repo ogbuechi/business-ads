@@ -67,6 +67,9 @@ Route::group([ 'prefix' => 'dashboard','middleware' => ['auth', 'level:1','verif
 
     Route::get('/account/plans', 'AdminController@plans')->name('admin.account.plans');
 
+    Route::get('/payments', 'AdminController@payments')->name('admin.payments');
+    Route::get('/my/payments', 'AdminController@myPayments')->name('admin.my_payments');
+
     Route::get('/account/make/payment', 'AdminController@payment')->name('admin.account.payment');
 
     Route::get('/', 'AdminController@index')->name('admin.home');
@@ -80,7 +83,7 @@ Route::group([ 'prefix' => 'dashboard','middleware' => ['auth', 'level:1','verif
     Route::get('/chat/{id}','ChatController@inbox')
         ->name('chat.inbox')
         ->where('id', '[0-9]+');
-    Route::get('/user/{id}','ProfilesController@profile')->name('user.show')->where('id', '[0-9]+');
+    Route::get('/user/{id}','ProfilesController@profile')->name('user.show');
     Route::get('/coming-soon', 'AdminController@soon')->name('coming');
     Route::get('/patient/create', 'ProfilesController@patientCreate')->name('patients.patient.create');
     Route::get('/patient/all', 'UsersController@patients')->name('patients.patient.index');

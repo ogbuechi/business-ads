@@ -133,7 +133,7 @@
 
             <!-- LOGO -->
             <div class="topbar-left">
-                <a href="{{ route('admin.home') }}" class="logo"><span>Glo<span>Seed</span></span><i class="mdi mdi-layers"></i></a>
+                <a href="{{ url('/') }}" class="logo"><span>Glo<span>Seed</span></span><i class="mdi mdi-layers"></i></a>
             </div>
 
             <!-- Button mobile view to collapse sidebar menu -->

@@ -5,9 +5,11 @@ namespace App\Http\Controllers;
 
 use App\Models\Invest;
 use App\Models\Partnership;
+use App\Models\Payment;
 use App\Models\Plan;
 use App\Models\Sale;
 use App\User;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use jeremykenedy\LaravelRoles\Models\Role;
@@ -16,6 +18,15 @@ class AdminController extends Controller
 {
     public function upgrade_account(){
         return view('admin.upgrade');
+    }
+    public function payments(){
+
+        $payments = Payment::all();
+        return view('admin.payment', compact('payments'));
+    }
+    public function myPayments(){
+        $payments = Payment::whereUserId(Auth::id())->get();
+        return view('admin.payment', compact('payments'));
     }
     public function plans(){
         $user = Auth::user();
@@ -41,6 +52,11 @@ class AdminController extends Controller
         $users = User::with('roles')->paginate(10);
         $invests = Invest::with('user')->orderBy('id','desc')->paginate(10);
         if(Auth::user()->roles->first()->level < 5){
+            $payment  = Payment::whereUserId(Auth::id())
+                ->where('valid_till','>', Carbon::now())->latest()->first();
+            if($payment == null){
+                $this->makeFree();
+            }
             $sales = Sale::with('user')
                 ->whereStatus('1')
                 ->whereUserId(Auth::id())

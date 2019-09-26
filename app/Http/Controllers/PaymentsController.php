@@ -4,18 +4,15 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use App\Models\Payment;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Exception;
+use Illuminate\Support\Facades\Auth;
 
 class PaymentsController extends Controller
 {
 
-    /**
-     * Display a listing of the payments.
-     *
-     * @return Illuminate\View\View
-     */
     public function index()
     {
         $payments = Payment::with('user')->paginate(25);
@@ -23,11 +20,6 @@ class PaymentsController extends Controller
         return view('payments.index', compact('payments'));
     }
 
-    /**
-     * Show the form for creating a new payment.
-     *
-     * @return Illuminate\View\View
-     */
     public function create()
     {
         $users = User::pluck('name','id')->all();
@@ -46,11 +38,34 @@ class PaymentsController extends Controller
     {
             $data = $this->getData($request);
 
-            Payment::create($data);
+            $dt = Carbon::now();
 
-            return redirect()->route('payments.payment.index')
-                             ->with('success_message', 'Payment was successfully added!');
+            $payment  = Payment::whereUserId(Auth::id())
+                ->where('valid_till','>', Carbon::now())->latest()->first();
 
+            if($payment == null){
+
+                $data['valid_till'] = $dt->addMonths($data['month']);
+
+                Payment::create($data);
+
+                return $this->makePremium();
+            }else{
+                $month = $payment->month + $data['month'];
+                $date = $payment->created_at;
+                $valid_till = $date->addMonths($month);
+                $payment->update([
+                    'valid_till'    =>  $valid_till,
+                    'month'         =>  $payment->month + $data['month'],
+                    'amount'        =>  $payment->amount + $data['amount'],
+                    'rrr'           =>  $data['rrr']
+                ]);
+                return $this->makePremium();
+            }
+
+
+//            return redirect()->route('payments.payment.index')
+//                             ->with('success_message', 'Payment was successfully added!');
 
     }
 
@@ -144,11 +159,10 @@ class PaymentsController extends Controller
     {
         $rules = [
             'user_id' => 'required',
-            'plan_level' => 'string|min:1|required',
-            'valid_till' => 'string|min:1|required',
+            'valid_till' => 'nullable',
             'amount' => 'string|min:1|required',
             'rrr' => 'string|min:1|required',
-
+            'month' => 'integer',
         ];
 
         $data = $request->validate($rules);

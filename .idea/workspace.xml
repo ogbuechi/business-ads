@@ -4,7 +4,27 @@
     <list default="true" id="7861fb1a-2fb1-484c-8386-186c13a6677e" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/AdminController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/AdminController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Controller.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Controller.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/InvestsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/InvestsController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/PaymentsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/PaymentsController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ProfilesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ProfilesController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/SalesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/SalesController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Payment.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Payment.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Providers/AppServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/AppServiceProvider.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2019_09_11_153743_create_payments_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_09_11_153743_create_payments_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/make_payment.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/make_payment.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/upgrade.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/upgrade.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/home.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/backend.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/backend.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/front-end.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/front-end.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/master.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/master.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/partials/admin/nav.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/partials/admin/nav.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/partials/admin/sidebar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/partials/admin/sidebar.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/partials/featured_ads.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/partials/featured_ads.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/partials/hero_area.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/partials/hero_area.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -301,7 +321,7 @@
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/admin" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/public/css" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -314,15 +334,15 @@
     <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/public/js" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/public/css" />
+      <recent name="$PROJECT_DIR$/public/js" />
       <recent name="$PROJECT_DIR$/resources/views/admin" />
       <recent name="$PROJECT_DIR$/public/images" />
       <recent name="$PROJECT_DIR$/resources/views" />
-      <recent name="$PROJECT_DIR$/public" />
-      <recent name="$PROJECT_DIR$/public/css" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/public/js" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -402,7 +422,13 @@
       <workItem from="1566804550864" duration="2642000" />
       <workItem from="1568018932568" duration="1073000" />
       <workItem from="1568213466136" duration="4236000" />
-      <workItem from="1568303013851" duration="15014000" />
+      <workItem from="1568303013851" duration="15680000" />
+      <workItem from="1568390065683" duration="726000" />
+      <workItem from="1568459293400" duration="50000" />
+      <workItem from="1568878329169" duration="24733000" />
+      <workItem from="1568965205175" duration="585000" />
+      <workItem from="1569014886954" duration="1694000" />
+      <workItem from="1569480300075" duration="11474000" />
     </task>
     <servers />
   </component>

@@ -107,6 +107,9 @@ class ProfilesController extends Controller
      */
     public function show($id)
     {
+        if($id != Auth::id() && Auth::user()->plan->level == 0){
+            return redirect()->route('admin.account.upgrade');
+        }
         $profile = Profile::with('user')->findOrFail($id);
 
         return view('admin.profiles.show', compact('profile'));
@@ -158,9 +161,9 @@ class ProfilesController extends Controller
     public function update($id, Request $request)
     {
         try {
-            
+
             $data = $this->getData($request);
-            
+
             $profile = Profile::findOrFail($id);
             $user = User::findOrFail($profile->user_id);
             $profile->update($data);
@@ -173,7 +176,7 @@ class ProfilesController extends Controller
 
             return back()->withInput()
                          ->withErrors(['unexpected_error' => 'Unexpected error occurred while trying to process your request!']);
-        }        
+        }
     }
 
     /**
@@ -199,11 +202,11 @@ class ProfilesController extends Controller
         }
     }
 
-    
+
     /**
      * Get the request's data from the request.
      *
-     * @param Illuminate\Http\Request\Request $request 
+     * @param Illuminate\Http\Request\Request $request
      * @return array
      */
     protected function getData(Request $request)
@@ -224,9 +227,9 @@ class ProfilesController extends Controller
             'marital_status' => 'string|min:1|nullable',
             'sex' => 'string|min:1|nullable',
             'date_of_birth' => 'date_format:j/n/Y|nullable',
-     
+
         ];
-        
+
         $data = $request->validate($rules);
 
 

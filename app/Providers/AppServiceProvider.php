@@ -3,6 +3,7 @@
 namespace App\Providers;
 
 use App\Models\Category;
+use App\Models\Plan;
 use App\Models\SubCategory;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\Facades\View;
@@ -23,7 +24,7 @@ class AppServiceProvider extends ServiceProvider
         Schema::defaultStringLength(191);
 
         View::share('cats', Category::orderBy('name', 'asc')->get());
-        View::share('premium', 20000);
+        View::share('premium', Plan::whereLevel(2)->firstOrFail()->dollar);
         View::share('subCats', SubCategory::orderBy('name', 'asc')->get());
 
     }

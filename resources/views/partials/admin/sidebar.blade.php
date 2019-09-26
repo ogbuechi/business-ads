@@ -26,9 +26,12 @@
                     </ul>
                 </li>
 
-                    <li>
-                        <a href="{{ route('admin.media') }}" class="waves-effect {{ active('admin.media') }}"><i class="mdi mdi-file"></i><span> Media </span></a>
-                    </li>
+                    <li><a href="{{ route('admin.media') }}" class="waves-effect {{ active('admin.media') }}"><i class="mdi mdi-file"></i><span> Media </span></a></li>
+
+                    <li><a href="{{ route('admin.payments') }}" class="waves-effect {{ active('admin.payments') }}"><i class="mdi mdi-file"></i><span> Payments </span></a></li>
+@else
+
+                <li><a href="{{ route('admin.my_payments') }}" class="waves-effect {{ active('admin.my_payments') }}"><i class="mdi mdi-file"></i><span> Payments </span></a></li>
 @endif
 
 

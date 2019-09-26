@@ -1,7 +1,7 @@
 <nav class="navbar header-navbar pcoded-header">
     <div class="navbar-wrapper">
         <div class="navbar-logo">
-            <a href="#">
+            <a href="{{ url('/') }}">
                 <img class="img-fluid" src="{{ asset(Setting::get('admin_logo', 'admin/files/assets/images/logo.png')) }}" alt="{{ Auth::user()->name }}" />
             </a>
             <a class="mobile-menu" id="mobile-collapse" href="#!">

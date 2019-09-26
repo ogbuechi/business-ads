@@ -20,7 +20,7 @@
                                     <p>{{ $item['short_desc'] }}</p>
 
                                     <div class="meta">
-                                        <span style="color: green; font-size: 1.3em; font-weight: bold" class="pric">{{ $item['amount'] }}</span>
+                                        <span style="color: green; font-size: 1.1em; font-weight: bold" class="pric">{{ $item['amount'] }}</span>
                                     </div>
                                     <div class="card-text">
                                         <div class="float-left">

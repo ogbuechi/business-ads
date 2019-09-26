@@ -75,6 +75,11 @@
 
 @section('js')
     <script>
+        let url = "{{ route('payments.payment.store') }}";
+        let CSRF_TOKEN = $('meta[name="csrf-token"]').attr('content');
+        let user_id = "{{ Auth::user()->id }}";
+        let second = "{{ $data['two'] }}";
+        let third = "{{ $data['twelve'] }}";
         $(document).ready(function () {
 
             $('.one').click(function() {
@@ -96,6 +101,43 @@
         });
         function makePayment() {
             var form = document.querySelector("#payment-form");
+            let amount = form.querySelector('input[name="amount"]:checked').value;
+            var month;
+            let rrr = '2100-1000-2231-2211';
+            if(amount == second){ month = 6; }
+            else if(amount == third){ month = 13 }else{
+                month = 1
+            }
+
+            $.ajax({
+                url : url,
+                type : "POST",
+                data : {_token: CSRF_TOKEN, user_id:user_id, amount:amount, rrr:rrr, month:month},
+                // data : {user_id:user_id, amount:amount, rrr:response.paymentReference, month:month},
+                success : function(data) {
+                    new Noty({
+                        type: 'success',
+                        layout: 'bottomRight',
+                        theme: 'metroui',
+                        text: data.message,
+                        timeout: 8000,
+                        progressBar: true,
+//                            closeWith: ['click', 'button'],
+                        animation: {
+                            open: 'noty_effects_open',
+                            close: 'noty_effects_close'
+                        },
+                        id: false,
+                        force: false,
+                        killer: false,
+                        queue: 'global',
+                        container: false,
+
+                        modal: false
+                    }).show()
+                }
+            });
+
             var paymentEngine = RmPaymentEngine.init({
                 key: 'SlVERU98NDIzNzMwNDZ8N2QyOWNmZmZlNTdmMTA5MTYwYjFkYzAyYTM4ZDljYzljNzZkYWFmMjdhY2UyMDhjOGE2NTgwZDkyNDMzOGZjNzJlMTZkZGE3M2NhYjZjYWE2NDIzMGE2YzMzNWE4OTM4YWFlZGIxYmQ3NmEyNjk5NDVjM2Q4ODkyMTExODlhNWY=',
                 customerId: form.querySelector('input[name="email"]').value,
@@ -106,6 +148,35 @@
                 // amount: form.querySelector('input[name="amount"]').value,
                 narration: form.querySelector('input[name="narration"]').value,
                 onSuccess: function (response) {
+                    $.ajax({
+                        url : url,
+                        type : "POST",
+                        data : {user_id:user_id, amount:amount, rrr:rrr, month:month},
+                        // data : {user_id:user_id, amount:amount, rrr:response.paymentReference, month:month},
+                        success : function(data) {
+                            $('#editSectionModal').modal('hide');
+                            new Noty({
+                                type: 'success',
+                                layout: 'bottomRight',
+                                theme: 'metroui',
+                                text: data.message,
+                                timeout: 8000,
+                                progressBar: true,
+//                            closeWith: ['click', 'button'],
+                                animation: {
+                                    open: 'noty_effects_open',
+                                    close: 'noty_effects_close'
+                                },
+                                id: false,
+                                force: false,
+                                killer: false,
+                                queue: 'global',
+                                container: false,
+
+                                modal: false
+                            }).show()
+                        }
+                    });
                     console.log('callback Successful Response', response);
                 },
                 onError: function (response) {

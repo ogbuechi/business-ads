@@ -96,6 +96,10 @@ class InvestsController extends Controller
     {
         $invest = Invest::with('user')->findOrFail($id);
 
+        if($invest->user_id != Auth::id() && Auth::user()->plan->level == 0){
+            return redirect()->route('admin.account.upgrade');
+        }
+
         return view('invests.show', compact('invest'));
     }
 

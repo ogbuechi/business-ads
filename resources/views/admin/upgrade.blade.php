@@ -10,10 +10,6 @@
                     <div class="card-box" >
 
                         <div class="card text-center" style="max-width: 70%; margin: 40px auto auto; padding-bottom: 40px">
-{{--                            <div class="card-heading bg-warning">--}}
-{{--                                <h3 class="card-title text-white">Card Primary</h3>--}}
-{{--                                <p class="card-sub-title font-13">Sub title goes here with small font</p>--}}
-{{--                            </div>--}}
                             <div class="card-body">
                                 <p class="mt-1 h3" style="color: #c9174e;">You cannot "Sale a Business", view "Deals" or "Basic Information on the Deals" or "Bid on Deals"
                                     unless you upgrade to Premium User.</p>

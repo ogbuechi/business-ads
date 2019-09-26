@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Payment extends Model
 {
-    
+
 
     /**
      * The database table used by the model.
@@ -22,14 +22,17 @@ class Payment extends Model
     */
     protected $primaryKey = 'id';
 
+    protected $with = ['user'];
+
     /**
      * Attributes that should be mass-assignable.
      *
      * @var array
      */
+
     protected $fillable = [
                   'user_id',
-                  'plan_level',
+                  'month',
                   'valid_till',
                   'amount',
                   'rrr'
@@ -40,21 +43,21 @@ class Payment extends Model
      *
      * @var array
      */
-    protected $dates = [];
-    
+    protected $dates = ['valid_till'];
+
     /**
      * The attributes that should be cast to native types.
      *
      * @var array
      */
     protected $casts = [];
-    
+
     /**
      * Get the user for this model.
      */
     public function user()
     {
-        return $this->belongsTo('App\Models\User','user_id');
+        return $this->belongsTo('App\User','user_id');
     }
 
 

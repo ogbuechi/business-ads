@@ -8,27 +8,38 @@
             <div class="row">
                 @foreach($ads as $item)
                 <div class="col-xs-6 col-sm-6 col-md-6 col-lg-4">
-                    <div class="featured-box">
+                    <div class="featured-box" style="background-color: @if($item['type'] != 'Open Partnership' && $can_view != 1) #dee2e6; @endif">
                         <figure>
                             <div class="icon">
-                                <i class="lni-heart"></i>
+                                @if($item['type'] != 'Open Partnership' && $can_view != 1)
+                                <i class="lni-lock"></i>
+                                    @endif
                             </div>
-                            <a href="{{ $item->link }}"><img class="img-fluid" src="{{ $item['image'] }}" alt=""></a>
+                            <a href="{{ $item->link }}"><img class="img-fluid" src="{{ $item['image'] }}" alt="">
+
+                            </a>
                         </figure>
                         <div class="feature-content">
                             <div class="product">
                                 <a href="#"><i class="lni-folder"></i> {{ $item['type'] }}</a>
                             </div>
-                            <h4><a target="_blank" href="{{ $item->link }}">
-
+                            <h4>
+                                @if($item['type'] != 'Open Partnership' && $can_view != 1)
+                                <a disabled="true">
                                         {{ $item['name'] }}
+                                </a>
+                                @else
+                                    <a target="_blank" href="{{ $item->link }}">
+                                        {{ $item['name'] }}
+                                    </a>
+                                @endif
 
-                                </a></h4>
+                            </h4>
                             <span>Posted: {{ $item->created_at->diffForHumans() }}</span>
                             <p>{{ $item['short_desc'] }}</p>
                             <div class="listing-bottom">
                                 <h3 class="price float-left h6">{{ $item['amount'] }}</h3>
-                                <a href="#" class="btn-verified float-right"><i class="lni-check-box"></i> Verified Ad</a>
+{{--                                <a href="#" class="btn-verified float-right"><i class="lni-check-box"></i> Verified Ad</a>--}}
                             </div>
                         </div>
                     </div>
@@ -180,7 +191,7 @@
                             <p class="price-value">No Charges</p>
                         </div>
                         <ul class="description package">
-                            <li><strong>View</strong> Listed Ads</li>
+                            <li><strong>List & View</strong> Listed Partnership Ads</li>
                             <li class="line"><strong>Business</strong> Ad posting</li>
                             <li class="line"><strong>View</strong> Poster Details</li>
                             <li class="line"><strong>View </strong> Ads Details</li>
@@ -199,7 +210,7 @@
                             <h3>Premium User</h3>
                         </div>
                         <div class="pricing-header">
-                            <p class="price-value">₦20,000</p>
+                            <p class="price-value">${{ $premium }}</p>
                         </div>
                         <ul class="description package">
                             <li><strong>View</strong> Listed Ads</li>

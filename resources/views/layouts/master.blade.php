@@ -38,17 +38,27 @@
         }
         .search-box .btn-search {
             position: absolute;
-            top: 3px;
-            right: 3px;
-            background-color: transparent !important;
-            border: none !important;
-            font-size: 16px;
-            -webkit-box-shadow: none !important;
-            box-shadow: none !important;
-            outline: none !important;
-            color: #98a6ad;
+            top: 0;
+            left: 0;
+            margin: 0;
+            border: none;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(013, 130, 230, 0.5);
+            cursor: not-allowed;
         }
-        .package .line{
+            /*position: absolute;*/
+            /*top: 3px;*/
+            /*right: 3px;*/
+            /*background-color: transparent !important;*/
+            /*border: none !important;*/
+            /*font-size: 16px;*/
+            /*-webkit-box-shadow: none !important;*/
+            /*box-shadow: none !important;*/
+            /*outline: none !important;*/
+            /*color: #98a6ad;*/
+        /*}*/
+        .package .line {
             text-decoration-line: line-through
         }
         .search-bar .form-group {
@@ -68,6 +78,22 @@
             float: none;
             position: relative;
             background: rgba(128,128,128,.5);
+        }
+        .featured-box .feature-content .listing-bottom .price {
+            font-size: 14px;
+        }
+        .overlay-lock- {
+            position: fixed;
+            display: block;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0,0,0,0.5);
+            z-index: 2;
+            cursor: pointer;
         }
         @media (max-width: 767px){
             .search-bar .search-inner {
